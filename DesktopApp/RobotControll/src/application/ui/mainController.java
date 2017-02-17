@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.Timer;
@@ -39,6 +40,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -50,88 +52,97 @@ import javafx.util.Duration;
 import netscape.javascript.JSObject;
 
 @SuppressWarnings("unused")
-public class mainController
-	implements Initializable, MapComponentInitializedListener {
+public class mainController implements Initializable, MapComponentInitializedListener {
 
-    @FXML
-    private LineChart<?, ?> temperature;
+	@FXML
+	private LineChart<?, ?> temperature;
 
-    @FXML
-    private Button rightButton;
+	@FXML
+	private Button rightButton;
 
-    @FXML
-    private Button leftButton;
+	@FXML
+	private Button leftButton;
 
-    @FXML
-    private Button upButton;
+	@FXML
+	private Button upButton;
 
-    @FXML
-    private Button downButton;
+	@FXML
+	private Button downButton;
 
-    @FXML
-    private Button rightRotationButton;
+	@FXML
+	private Button rightRotationButton;
 
-    @FXML
-    private Button leftRotationButton;
+	@FXML
+	private Button leftRotationButton;
 
-    @FXML
-    private BarChart<?, ?> humidity;
+	@FXML
+	private BarChart<?, ?> humidity;
 
-    @FXML
-    private BarChart<?, ?> gas;
+	@FXML
+	private BarChart<?, ?> gas;
 
-    @FXML
-    private GridPane sensorPane;
+	@FXML
+	private GridPane sensorPane;
 
-    private Main mainApp;
-    private GoogleMap map;
-    private Marker robotPos;
+	private Main mainApp;
+	private GoogleMap map;
+	private Marker robotPos;
 
-    @FXML
-    private Label humL;
-    
-    @FXML
-    private NumberAxis yAxis ;
-    
-    @FXML
-    private GoogleMapView mapView;
-
-    private Timer t;
-    
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-	// Datos de prueba para rellenar gráficas
-	chargeData();
+	@FXML
+	private Label humL;
 	
-	// Añadir el mapa
-	mapView.addMapInializedListener(this);
+	@FXML
+	private Label tempL;
 
-	// Añadir imágenes
-	setImages();
+	@FXML
+	private TextArea gasL;
 	
-	// Añadir Cámara
-	setCamera();
-	try {
-	    dataDaemon();
-	} catch (IOException e) {
-	    e.printStackTrace();
+	@FXML
+	private TextArea gpsL;
+	
+	@FXML
+	private NumberAxis yAxis;
+
+	@FXML
+	private GoogleMapView mapView;
+
+	private Timer t;
+	private int i=0;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+
+		// Datos de prueba para rellenar gráficas
+		chargeData();
+
+		// Añadir el mapa
+		mapView.addMapInializedListener(this);
+
+		// Añadir imágenes
+		setImages();
+
+		// Añadir Cámara
+		setCamera();
+		try {
+			dataDaemon();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-    }
 
-    /*
-     * Charge of data to testing
-     */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    private void chargeData() {
-	// Sensor de humedad
+	/*
+	 * Charge of data to testing
+	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	private void chargeData() {
+		// Sensor de humedad
 		XYChart.Series hum = new XYChart.Series();
 		hum.setName("Percentage of humidity");
 		hum.getData().add(new XYChart.Data("10:00", 23));
 
 		humidity.getData().addAll(hum);
-		
-		//Set ranges
+
+		// Set ranges
 		yAxis.setAutoRanging(false);
 		yAxis.setLowerBound(0);
 		yAxis.setUpperBound(60);
@@ -173,163 +184,158 @@ public class mainController
 		gs.getData().add(new XYChart.Data("Butano", 3));
 		gs.getData().add(new XYChart.Data("CO2", 1));
 		gas.setLegendVisible(false);
-		gas.getData().addAll(gs);	
-    }
+		gas.getData().addAll(gs);
+	}
 
-    /*
-     * Set all images of the buttons
-     * 
-     * */
-    private void setImages() {
-	// Boton derecho
-	Image image = new Image(
-		getClass().getResourceAsStream("images/rightArrow.png")); // Cargamos
-									  // la
-									  // imagen
-	ImageView imageViewRight = new ImageView(image); // Creamos el imageView
-							 // con la imagen
-							 // anterior
-	// Ajustamos el tamaño de la imagen al del boton
-	imageViewRight.setFitHeight(50);
-	imageViewRight.setFitWidth(50);
-	// Le ponemos la imagen al boton
-	rightButton.setGraphic(imageViewRight);
+	/*
+	 * Set all images of the buttons
+	 * 
+	 */
+	private void setImages() {
+		// Boton derecho
+		Image image = new Image(getClass().getResourceAsStream("images/rightArrow.png")); // Cargamos
+		// la
+		// imagen
+		ImageView imageViewRight = new ImageView(image); // Creamos el imageView
+		// con la imagen
+		// anterior
+		// Ajustamos el tamaño de la imagen al del boton
+		imageViewRight.setFitHeight(50);
+		imageViewRight.setFitWidth(50);
+		// Le ponemos la imagen al boton
+		rightButton.setGraphic(imageViewRight);
 
-	// Boton izquierdo
-	image = new Image(
-		getClass().getResourceAsStream("images/leftArrow.png"));
-	ImageView imageViewLeft = new ImageView(image);
-	imageViewLeft.setFitHeight(50);
-	imageViewLeft.setFitWidth(50);
-	leftButton.setGraphic(imageViewLeft);
+		// Boton izquierdo
+		image = new Image(getClass().getResourceAsStream("images/leftArrow.png"));
+		ImageView imageViewLeft = new ImageView(image);
+		imageViewLeft.setFitHeight(50);
+		imageViewLeft.setFitWidth(50);
+		leftButton.setGraphic(imageViewLeft);
 
-	// Boton arriba
-	image = new Image(getClass().getResourceAsStream("images/upArrow.png"));
-	ImageView imageViewUp = new ImageView(image);
-	imageViewUp.setFitHeight(50);
-	imageViewUp.setFitWidth(50);
-	upButton.setGraphic(imageViewUp);
+		// Boton arriba
+		image = new Image(getClass().getResourceAsStream("images/upArrow.png"));
+		ImageView imageViewUp = new ImageView(image);
+		imageViewUp.setFitHeight(50);
+		imageViewUp.setFitWidth(50);
+		upButton.setGraphic(imageViewUp);
 
-	// Boton abajo
-	image = new Image(
-		getClass().getResourceAsStream("images/downArrow.png"));
-	ImageView imageViewDown = new ImageView(image);
-	imageViewDown.setFitHeight(50);
-	imageViewDown.setFitWidth(50);
-	downButton.setGraphic(imageViewDown);
+		// Boton abajo
+		image = new Image(getClass().getResourceAsStream("images/downArrow.png"));
+		ImageView imageViewDown = new ImageView(image);
+		imageViewDown.setFitHeight(50);
+		imageViewDown.setFitWidth(50);
+		downButton.setGraphic(imageViewDown);
 
-	// Boton rotar derecha
-	image = new Image(getClass()
-		.getResourceAsStream("images/rightRotationArrow.png"));
-	ImageView imageViewRightR = new ImageView(image);
-	imageViewRightR.setFitHeight(50);
-	imageViewRightR.setFitWidth(50);
-	rightRotationButton.setGraphic(imageViewRightR);
+		// Boton rotar derecha
+		image = new Image(getClass().getResourceAsStream("images/rightRotationArrow.png"));
+		ImageView imageViewRightR = new ImageView(image);
+		imageViewRightR.setFitHeight(50);
+		imageViewRightR.setFitWidth(50);
+		rightRotationButton.setGraphic(imageViewRightR);
 
-	// Boton rotar izquierda
-	image = new Image(
-		getClass().getResourceAsStream("images/leftRotationArrow.png"));
-	ImageView imageViewLeftR = new ImageView(image);
-	imageViewLeftR.setFitHeight(50);
-	imageViewLeftR.setFitWidth(50);
-	leftRotationButton.setGraphic(imageViewLeftR);
-    }
+		// Boton rotar izquierda
+		image = new Image(getClass().getResourceAsStream("images/leftRotationArrow.png"));
+		ImageView imageViewLeftR = new ImageView(image);
+		imageViewLeftR.setFitHeight(50);
+		imageViewLeftR.setFitWidth(50);
+		leftRotationButton.setGraphic(imageViewLeftR);
+	}
 
-    /*
-     * Conect the main app with the FXML controller
-     */
-    public void setMainApp(Main mainApp) {
-	this.mainApp = mainApp;
-    }
+	/*
+	 * Conect the main app with the FXML controller
+	 */
+	public void setMainApp(Main mainApp) {
+		this.mainApp = mainApp;
+	}
 
-    private void dataDaemon() throws IOException {
-		
-	Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(2.5), ev -> {
-	    humL.setText(RobotData.getInstance().getHum()+"%");
-	    for(int i=0; i<humidity.getData().size()-1;i=0)
-		humidity.getData().remove(i);
-	    //humidity.getData().clear();
-	    XYChart.Series hum = new XYChart.Series();
-		//hum.setName("Percentage of humidity");
-		hum.getData().add(new XYChart.Data("Hum%", RobotData.getInstance().getHum()));
-		
-		//humidity.getData().add(hum);
-		humidity.getData().get(0).setData(hum.getData());;
-	    }));
-	    timeline.setCycleCount(Integer.MAX_VALUE);
-	    timeline.play();
-    }
-    
-    /* 
-     * Inicialization of the map, with the position of the robot
-     * @see com.lynden.gmapsfx.MapComponentInitializedListener#mapInitialized()
-     */
-    @Override
-    public void mapInitialized() {
-	// Set the position of the map.
-	LatLong robotPosition = new LatLong(43.538762, -5.698957);
+	private void dataDaemon() throws IOException {
 
-	// Set the initial properties of the map.
-	MapOptions mapOptions = new MapOptions();
+		Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
+			humL.setText(RobotData.getInstance().getHum() + "%");
+			tempL.setText(RobotData.getInstance().getTemp() + "ºC");
+			gpsL.setText("Lat: \t\t" + RobotData.getInstance().getLat() + "º\n" +
+					"Lon: \t\t" + RobotData.getInstance().getLon() + "º");
+			gasL.setText( "Metano: \t" + RobotData.getInstance().getMet() + "%\n" + 
+					"Butano: \t" + RobotData.getInstance().getBut() + "%\n" +
+					"CO2: \t" + RobotData.getInstance().getCo2() + "%");
+			((XYChart.Series<String, Number>)humidity.getData().get(0)).getData().get(0).setYValue(RobotData.getInstance().getHum());
+			;
+		}));
+		timeline.setCycleCount(Integer.MAX_VALUE);
+		timeline.play();
+	}
 
-	mapOptions.center(robotPosition).overviewMapControl(false)
-		.panControl(false).rotateControl(false).scaleControl(false)
-		.streetViewControl(false).zoomControl(false).zoom(20);
+	/*
+	 * Inicialization of the map, with the position of the robot
+	 * 
+	 * @see com.lynden.gmapsfx.MapComponentInitializedListener#mapInitialized()
+	 */
+	@Override
+	public void mapInitialized() {
+		// Set the position of the map.
+		LatLong robotPosition = new LatLong(43.538762, -5.698957);
 
-	// Opciones del marcador del robot
-	MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(robotPosition)
-                .title("Tank position")
-                .animation(Animation.DROP)
-                .visible(true);
-	
-	map = mapView.createMap(mapOptions, false);
-	
-	// Añadimos el marcador en la posición actual del tanque
-        robotPos = new Marker(markerOptions);
-	map.addMarker(robotPos);
-	
-	// Añadimos un evento al pulsar en el mapa
-	map.addUIEventHandler(UIEventType.click, (JSObject obj) -> {
-	            LatLong ll = new LatLong((JSObject) obj.getMember("latLng"));
-	            
-	            Parent root;
-	            try {
-	                FXMLLoader loader = new FXMLLoader();
-	    		loader.setLocation(mainController.class.getResource("MapPopUp.fxml"));
-	    		loader.setController(new mapPopUpController());
-	                root = loader.load();
-	                Stage stage = new Stage();
-	                stage.setTitle("Location info");
-	                stage.setScene(new Scene(root));
-		        ((mapPopUpController)loader.getController()).setLatLon(ll);;
-	                stage.show();
+		// Set the initial properties of the map.
+		MapOptions mapOptions = new MapOptions();
 
-	            } catch (IOException e) {e.printStackTrace();}
-	            
-	        });
+		mapOptions.center(robotPosition).overviewMapControl(false).panControl(false).rotateControl(false)
+				.scaleControl(false).streetViewControl(false).zoomControl(false).zoom(20);
 
-    }
-    
-    @FXML
-    private void openHelp() {
-        Parent root;
-        try {
-            FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(mainController.class.getResource("help.fxml"));
-		loader.setController(new helpController());
-            root = loader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Help");
-            stage.setScene(new Scene(root));
-            stage.show();
+		// Opciones del marcador del robot
+		MarkerOptions markerOptions = new MarkerOptions();
+		markerOptions.position(robotPosition).title("Tank position").animation(Animation.DROP).visible(true);
 
-        } catch (IOException e) {e.printStackTrace();}
-    }
-    
-    
-    private void setCamera() {
-	sensorPane.add(new WebCam().cam(), 2, 1);
-    }
-    
+		map = mapView.createMap(mapOptions, false);
+
+		// Añadimos el marcador en la posición actual del tanque
+		robotPos = new Marker(markerOptions);
+		map.addMarker(robotPos);
+
+		// Añadimos un evento al pulsar en el mapa
+		map.addUIEventHandler(UIEventType.click, (JSObject obj) -> {
+			LatLong ll = new LatLong((JSObject) obj.getMember("latLng"));
+
+			Parent root;
+			try {
+				FXMLLoader loader = new FXMLLoader();
+				loader.setLocation(mainController.class.getResource("MapPopUp.fxml"));
+				loader.setController(new mapPopUpController());
+				root = loader.load();
+				Stage stage = new Stage();
+				stage.setTitle("Location info");
+				stage.setScene(new Scene(root));
+				((mapPopUpController) loader.getController()).setLatLon(ll);
+				;
+				stage.show();
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		});
+
+	}
+
+	@FXML
+	private void openHelp() {
+		Parent root;
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(mainController.class.getResource("help.fxml"));
+			loader.setController(new helpController());
+			root = loader.load();
+			Stage stage = new Stage();
+			stage.setTitle("Help");
+			stage.setScene(new Scene(root));
+			stage.show();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void setCamera() {
+		sensorPane.add(new WebCam().cam(), 2, 1);
+	}
+
 }

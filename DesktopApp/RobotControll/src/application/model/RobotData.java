@@ -1,23 +1,31 @@
 package application.model;
 
-import java.util.ArrayList;
+import javafx.collections.ObservableList;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import com.lynden.gmapsfx.javascript.object.LatLong;
-
+import javafx.collections.FXCollections;
 /*
  * Class with all the info of the robot
  */
+@SuppressWarnings("restriction")
 public class RobotData {
 
-    private ArrayList<Double> temp;
-    private ArrayList<Double> hum;
-    private ArrayList<Double> met;
-    private ArrayList<Double> but;
-    private ArrayList<Double> co2;
+	private ObservableList<Double> temp;
+    private ObservableList<Double> hum;
+    private ObservableList<Double> met;
+    private ObservableList<Double> but;
+    private ObservableList<Double> co2;
     
-    private ArrayList<LatLong> robotPos;
-    private LatLong newPos;
-        
+    private ObservableList<double[]> robotPos;
+    private double[] newPos = new double[2];
+    private double tempMax = Integer.MIN_VALUE;
+    private double tempMin = Integer.MAX_VALUE;
+    
+    
     private final static RobotData instance = new RobotData();
 
     public static RobotData getInstance() {
@@ -25,57 +33,109 @@ public class RobotData {
     }
     
     public RobotData() {
-	temp = new ArrayList<Double>();
-	temp.add(0.0);
-	hum = new ArrayList<Double>();
+	temp = FXCollections.observableArrayList();
+    temp.add(0.0);
+    
+	hum = FXCollections.observableArrayList();
 	hum.add(0.0);
-	met = new ArrayList<Double>();
-	but = new ArrayList<Double>();
-	co2 = new ArrayList<Double>();
-	robotPos = new ArrayList<LatLong>();
+	
+	met = FXCollections.observableArrayList();
+	met.add(0.0);
+	
+	but = FXCollections.observableArrayList();
+	but.add(0.0);
+	
+	co2 = FXCollections.observableArrayList();
+	co2.add(0.0);
+	
+	robotPos = FXCollections.observableArrayList();
+	newPos[0] = 43.538762;
+	newPos[1] = -5.698957;
+	robotPos.add(newPos);
     }
     
     public double getTemp() {
-        return temp.get(temp.size());
+        return temp.get(temp.size()-1);
     }
+    
+    public double getTempMax(){
+    	return tempMax;
+    }
+    
+    public double getTempMin(){
+    	return tempMin;
+    }
+        
     public double getHum() {
         return hum.get(hum.size()-1);
     }
+        
+    public ObservableList<Double> getDataHum() {
+        return hum;
+    }
+    
     public double getMet() {
-        return met.get(met.size());
+        return met.get(met.size()-1);
     }
+    
     public double getBut() {
-        return but.get(but.size());
+        return but.get(but.size()-1);
     }
+    
     public double getCo2() {
-        return co2.get(co2.size());
+        return co2.get(co2.size()-1);
     }
-    public LatLong getRobotPos() {
-        return robotPos.get(robotPos.size());
+    
+   /* public LatLong getRobotPos() {
+        return robotPos.get(robotPos.size()-1);
+    }*/
+    
+    public double getLat(){
+    	return robotPos.get(robotPos.size()-1)[0];
     }
-    public LatLong getNewPos() {
+    
+    public double getLon(){
+    	return robotPos.get(robotPos.size()-1)[1];
+    }
+    
+    
+    public double[] getNewPos() {
         return newPos;
     }
+    
     public void setTemp(double temp) {
         this.temp.add(temp);
+        if(temp > tempMax)
+        	tempMax = temp;
+        if(temp < tempMin)
+        	tempMin = temp;
     }
+    
     public void setHum(double hum) {
         this.hum.add(hum);
     }
+    
     public void setMet(double met) {
         this.met.add(met);
     }
+    
     public void setBut(double but) {
         this.but.add(but);
     }
+    
     public void setCo2(double co2) {
         this.co2.add(co2);
     }
+    
     public void setRobotPos(LatLong robotPos) {
-        this.robotPos.add(robotPos);
+    	newPos[0] = robotPos.getLatitude();
+    	newPos[1] = robotPos.getLongitude();
+    	this.robotPos.add(newPos);
     }
+    
     public void setNewPos(LatLong newPos) {
-        this.newPos = newPos;
+    	this.newPos[0] = newPos.getLatitude();
+    	this.newPos[1] = newPos.getLongitude();
     }
     
     

@@ -136,7 +136,7 @@
                         <Insets top="10.0" />
                      </padding>
                   </Label>
-                  <Label text="27ºC" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="tempL" text="27ºC" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -152,7 +152,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextArea editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="Metano - 5%&#10;Butano - 3%&#10;CO2 - 1%" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <TextArea fx:id="gasL" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="Metano - 5%&#10;Butano - 3%&#10;CO2 - 1%" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -173,7 +173,7 @@
                         <Insets top="10.0" />
                      </padding>
                   </Label>
-                  <TextArea editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="Lat: - 43.54654º&#10;Lon: -5.45632º" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <TextArea fx:id="gpsL" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="Lat: - 43.54654º&#10;Lon: -5.45632º" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
                         <Font size="18.0" />
                      </font>
