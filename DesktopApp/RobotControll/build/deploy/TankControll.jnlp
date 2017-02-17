@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="TankControll.jnlp">
+  <information>
+    <title>TankControll</title>
+    <vendor>Enol Matilla Blanco</vendor>
+    <description>Tank Controller</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="TankControll.jar" size="147613" download="eager" />
+    <jar href="libs\bridj-0.6.2.jar" size="878674" download="eager" />
+    <jar href="libs\hamcrest-core-1.1.jar" size="76643" download="eager" />
+    <jar href="libs\junit-4.10.jar" size="253160" download="eager" />
+    <jar href="libs\mockito-core-1.9.5.jar" size="1500011" download="eager" />
+    <jar href="libs\objenesis-1.0.jar" size="28569" download="eager" />
+    <jar href="libs\slf4j-api-1.7.2.jar" size="26083" download="eager" />
+    <jar href="libs\webcam-capture-0.3.10.jar" size="409084" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="application.Main"  name="Tank Controller" />
+  <update check="background"/>
+</jnlp>
