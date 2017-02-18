@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="TankControll.jar" size="147613" download="eager" />
+    <jar href="TankControll.jar" size="152846" download="eager" />
     <jar href="libs\bridj-0.6.2.jar" size="878674" download="eager" />
     <jar href="libs\hamcrest-core-1.1.jar" size="76643" download="eager" />
     <jar href="libs\junit-4.10.jar" size="253160" download="eager" />

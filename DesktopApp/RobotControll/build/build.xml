@@ -30,13 +30,13 @@
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="C:\Users\Enol\.m2\repository\org\hamcrest\hamcrest-core\1.1">
-				<filename name="hamcrest-core-1.1.jar"/>
+			<fileset dir="Z:\git\TFG\DesktopApp\RobotControll\libs">
+				<filename name="slf4j-api-1.7.2.jar"/>
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="J:\Usuarios\Enol\Dropbox\Universidad Enol\TFG\Robot\libs">
-				<filename name="slf4j-api-1.7.2.jar"/>
+			<fileset dir="C:\Users\Enol\.m2\repository\org\hamcrest\hamcrest-core\1.1">
+				<filename name="hamcrest-core-1.1.jar"/>
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
@@ -45,37 +45,37 @@
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="J:\Usuarios\Enol\Dropbox\Universidad Enol\TFG\Robot\libs">
+			<fileset dir="Z:\git\TFG\DesktopApp\RobotControll\libs">
 				<filename name="bridj-0.6.2.jar"/>
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="J:\Usuarios\Enol\Dropbox\Universidad Enol\TFG\Robot\libs">
+			<fileset dir="Z:\git\TFG\DesktopApp\RobotControll\libs">
 				<filename name="webcam-capture-0.3.10.jar"/>
 			</fileset>
 		</copy>
 	
 		<mkdir dir="project" />
 		<copy todir="project">
-			<fileset dir="J:\Usuarios\Enol\Dropbox\Universidad Enol\TFG\Robot\TankControll">
+			<fileset dir="Z:\git\TFG\DesktopApp\RobotControll">
 				<include name="src/**" />
 			</fileset>
 		</copy>
 	
 		<mkdir dir="projectRefs" />
 		<copy todir="projectRefs">
-			<fileset dir="J:\Usuarios\Enol\Dropbox\Universidad Enol\TFG\Robot\rterp-GMapsFX-141f023">
-				<include name="GMapsFX\src\main\java/**" />
+			<fileset dir="Z:\git\TFG\DesktopApp\rterp-GMapsFX-141f023">
+				<include name="GMapsFX\src\test\java/**" />
 			</fileset>
 		</copy>
 		<copy todir="projectRefs">
-			<fileset dir="J:\Usuarios\Enol\Dropbox\Universidad Enol\TFG\Robot\rterp-GMapsFX-141f023">
+			<fileset dir="Z:\git\TFG\DesktopApp\rterp-GMapsFX-141f023">
 				<include name="GMapsFX\src\main\resources/**" />
 			</fileset>
 		</copy>
 		<copy todir="projectRefs">
-			<fileset dir="J:\Usuarios\Enol\Dropbox\Universidad Enol\TFG\Robot\rterp-GMapsFX-141f023">
-				<include name="GMapsFX\src\test\java/**" />
+			<fileset dir="Z:\git\TFG\DesktopApp\rterp-GMapsFX-141f023">
+				<include name="GMapsFX\src\main\java/**" />
 			</fileset>
 		</copy>
 	</target>
@@ -88,8 +88,8 @@
 		<!-- Copy project-libs references -->
 		<copy todir="build/libs">
 			<fileset dir="externalLibs">
-				<include name="mockito-core-1.9.5.jar"/>
 				<include name="webcam-capture-0.3.10.jar"/>
+				<include name="mockito-core-1.9.5.jar"/>
 				<include name="slf4j-api-1.7.2.jar"/>
 				<include name="junit-4.10.jar"/>
 				<include name="hamcrest-core-1.1.jar"/>

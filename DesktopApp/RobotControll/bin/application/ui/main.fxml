@@ -82,7 +82,7 @@
 								<CategoryAxis side="BOTTOM" />
 							</xAxis>
 							<yAxis>
-								<NumberAxis side="LEFT" />
+								<NumberAxis side="LEFT" fx:id="tmpAxis" />
 							</yAxis>
 						</LineChart>
 						<BarChart fx:id="humidity" title="Humidity" GridPane.columnIndex="1">
@@ -90,17 +90,17 @@
 								<CategoryAxis side="BOTTOM" />
 							</xAxis>
 							<yAxis>
-								<NumberAxis side="LEFT" fx:id="yAxis" />
+								<NumberAxis side="LEFT" fx:id="humAxis" />
 							</yAxis>
 						</BarChart>
-						<BarChart fx:id="gas" title="Gas" GridPane.ColumnIndex="2">
+						<StackedBarChart fx:id="gas" title="Gas" GridPane.ColumnIndex="2">
 							<xAxis>
 								<CategoryAxis side="BOTTOM" />
 							</xAxis>
 							<yAxis>
-								<NumberAxis side="LEFT" />
+								<NumberAxis side="LEFT" fx:id="gasAxis"/>
 							</yAxis>
-						</BarChart>
+						</StackedBarChart>
 						<GoogleMapView fx:id="mapView" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <GridPane GridPane.rowIndex="1">
               <columnConstraints>

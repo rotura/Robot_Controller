@@ -49,8 +49,9 @@ public class Main extends Application {
 					try (Scanner scanner = new Scanner(response)) {
 						String responseBody = scanner.useDelimiter("\\A").next();
 						System.out.println(responseBody);
-						RobotData.getInstance().setTemp((Double.parseDouble(responseBody.split(";")[1].split(":")[1])));
-						RobotData.getInstance().setHum((Double.parseDouble(responseBody.split(";")[0].split(":")[1])));
+						String[] data = responseBody.split(";");
+						RobotData.getInstance().setTemp((Double.parseDouble(data[1].split(":")[1])));
+						RobotData.getInstance().setHum((Double.parseDouble(data[0].split(":")[1])));
 					}
 				} catch (IOException e) {
 					System.out.println("Error al conectarse a la WeMos");
@@ -58,7 +59,7 @@ public class Main extends Application {
 
 			}
 		}, 0, // run first occurrence immediately
-				2500);
+				500);
 	}
 
 	private void initAplicationView() {

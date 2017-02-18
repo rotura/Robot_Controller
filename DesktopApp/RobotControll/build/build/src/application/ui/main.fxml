@@ -85,14 +85,14 @@
 								<NumberAxis side="LEFT" />
 							</yAxis>
 						</LineChart>
-						<StackedBarChart fx:id="humidity" title="Humidity" GridPane.columnIndex="1">
+						<BarChart fx:id="humidity" title="Humidity" GridPane.columnIndex="1">
 							<xAxis>
 								<CategoryAxis side="BOTTOM" />
 							</xAxis>
 							<yAxis>
-								<NumberAxis side="LEFT" />
+								<NumberAxis side="LEFT" fx:id="yAxis" />
 							</yAxis>
-						</StackedBarChart>
+						</BarChart>
 						<BarChart fx:id="gas" title="Gas" GridPane.ColumnIndex="2">
 							<xAxis>
 								<CategoryAxis side="BOTTOM" />
@@ -136,7 +136,7 @@
                         <Insets top="10.0" />
                      </padding>
                   </Label>
-                  <Label text="27ºC" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="tempL" text="27ºC" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -144,7 +144,7 @@
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </Label>
-                  <Label text="21%" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label fx:id="humL" text="21%" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets left="10.0" />
                      </GridPane.margin>
@@ -152,7 +152,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextArea editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="Metano - 5%&#10;Butano - 3%&#10;CO2 - 1%" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <TextArea fx:id="gasL" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="Metano - 5%&#10;Butano - 3%&#10;CO2 - 1%" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -173,7 +173,7 @@
                         <Insets top="10.0" />
                      </padding>
                   </Label>
-                  <TextArea editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="Lat: - 43.54654º&#10;Lon: -5.45632º" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <TextArea fx:id="gpsL" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="Lat: - 43.54654º&#10;Lon: -5.45632º" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
                         <Font size="18.0" />
                      </font>

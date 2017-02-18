@@ -7,6 +7,7 @@ import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -29,6 +30,7 @@ import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
@@ -49,6 +51,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.util.StringConverter;
 import netscape.javascript.JSObject;
 
 @SuppressWarnings("unused")
@@ -79,7 +82,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	private BarChart<?, ?> humidity;
 
 	@FXML
-	private BarChart<?, ?> gas;
+	private StackedBarChart<?, ?> gas;
 
 	@FXML
 	private GridPane sensorPane;
@@ -90,24 +93,24 @@ public class mainController implements Initializable, MapComponentInitializedLis
 
 	@FXML
 	private Label humL;
-	
+
 	@FXML
 	private Label tempL;
 
 	@FXML
 	private TextArea gasL;
-	
+
 	@FXML
 	private TextArea gpsL;
-	
+
 	@FXML
-	private NumberAxis yAxis;
+	private NumberAxis humAxis, tmpAxis, gasAxis;
 
 	@FXML
 	private GoogleMapView mapView;
 
 	private Timer t;
-	private int i=0;
+	private int i = 0;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -143,10 +146,14 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		humidity.getData().addAll(hum);
 
 		// Set ranges
-		yAxis.setAutoRanging(false);
-		yAxis.setLowerBound(0);
-		yAxis.setUpperBound(60);
-		yAxis.setTickUnit(5);
+		humAxis.setAutoRanging(false);
+		humAxis.setLowerBound(0);
+		humAxis.setUpperBound(60);
+		humAxis.setTickUnit(10);
+		humAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(gasAxis) {  @Override
+	        public String toString(Number object) {
+	            return (object.intValue()) + "%";
+	        }});
 
 		// Sensor de Temeperatura
 		XYChart.Series series1 = new XYChart.Series<>();
@@ -168,7 +175,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		series2.getData().add(new XYChart.Data<>("10:06", 27));
 
 		XYChart.Series series3 = new XYChart.Series<>();
-		series3.setName("Temp Max");
+		series3.setName("Temp Min");
 		series3.getData().add(new XYChart.Data<>("10:01", 28));
 		series3.getData().add(new XYChart.Data<>("10:02", 28));
 		series3.getData().add(new XYChart.Data<>("10:03", 28));
@@ -176,16 +183,38 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		series3.getData().add(new XYChart.Data<>("10:05", 25));
 		series3.getData().add(new XYChart.Data<>("10:06", 25));
 
+		// Set ranges
+		tmpAxis.setAutoRanging(false);
+		tmpAxis.setLowerBound(-30);
+		tmpAxis.setUpperBound(50);
+		tmpAxis.setTickUnit(10);
+		tmpAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(gasAxis) {  @Override
+	        public String toString(Number object) {
+	            return (object.intValue()) + "ºC";
+	        }});
+		
 		temperature.getData().addAll(series1, series2, series3);
 
 		// Sensor de Gas
-		XYChart.Series gs = new XYChart.Series<>();
-		gs.getData().add(new XYChart.Data("Metano", 5));
-		gs.getData().add(new XYChart.Data("Butano", 3));
-		gs.getData().add(new XYChart.Data("CO2", 1));
+		XYChart.Series met = new XYChart.Series<>();
+		XYChart.Series but = new XYChart.Series<>();
+		XYChart.Series co2 = new XYChart.Series<>();
+		met.getData().add(new XYChart.Data("Metano", 5));
+		but.getData().add(new XYChart.Data("Butano", 3));
+		co2.getData().add(new XYChart.Data("CO2", 1));
+
 		gas.setLegendVisible(false);
-		gas.getData().addAll(gs);
-	}
+		gas.getData().addAll(met, but, co2);
+
+		// Set ranges
+		gasAxis.setAutoRanging(false);
+		gasAxis.setLowerBound(0);
+		gasAxis.setUpperBound(10);
+		gasAxis.setTickUnit(1);
+		gasAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(gasAxis) {  @Override
+        public String toString(Number object) {
+            return (object.intValue()) + "%";
+        }});	}
 
 	/*
 	 * Set all images of the buttons
@@ -250,16 +279,85 @@ public class mainController implements Initializable, MapComponentInitializedLis
 
 	private void dataDaemon() throws IOException {
 
-		Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
+		Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), ev -> {
+
+			// Actualizamos el texto plano
 			humL.setText(RobotData.getInstance().getHum() + "%");
 			tempL.setText(RobotData.getInstance().getTemp() + "ºC");
-			gpsL.setText("Lat: \t\t" + RobotData.getInstance().getLat() + "º\n" +
-					"Lon: \t\t" + RobotData.getInstance().getLon() + "º");
-			gasL.setText( "Metano: \t" + RobotData.getInstance().getMet() + "%\n" + 
-					"Butano: \t" + RobotData.getInstance().getBut() + "%\n" +
-					"CO2: \t" + RobotData.getInstance().getCo2() + "%");
-			((XYChart.Series<String, Number>)humidity.getData().get(0)).getData().get(0).setYValue(RobotData.getInstance().getHum());
-			;
+			gpsL.setText("Lat: \t\t" + RobotData.getInstance().getLat() + "º\n" + "Lon: \t\t"
+					+ RobotData.getInstance().getLon() + "º");
+			gasL.setText("Metano: \t" + RobotData.getInstance().getMet() + "%\n" + "Butano: \t"
+					+ RobotData.getInstance().getBut() + "%\n" + "CO2: \t" + RobotData.getInstance().getCo2() + "%");
+
+			// Actualizamos las gráficas
+			// Humedad
+			((XYChart.Series<String, Number>) humidity.getData().get(0)).getData().get(0)
+					.setYValue(RobotData.getInstance().getHum());
+
+			for (Node n : humidity.lookupAll(".default-color0.chart-bar")) {
+				n.setStyle("-fx-bar-fill: blue;");
+			}
+
+			// Temp Max
+			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(0)
+					.setYValue((Number) temperature.getData().get(0).getData().get(1).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(1)
+					.setYValue((Number) temperature.getData().get(0).getData().get(2).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(2)
+					.setYValue((Number) temperature.getData().get(0).getData().get(3).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(3)
+					.setYValue((Number) temperature.getData().get(0).getData().get(4).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(4)
+					.setYValue((Number) temperature.getData().get(0).getData().get(5).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(5)
+					.setYValue(RobotData.getInstance().getTempMax());
+
+			// Temp Actual
+			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(0)
+					.setYValue((Number) temperature.getData().get(1).getData().get(1).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(1)
+					.setYValue((Number) temperature.getData().get(1).getData().get(2).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(2)
+					.setYValue((Number) temperature.getData().get(1).getData().get(3).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(3)
+					.setYValue((Number) temperature.getData().get(1).getData().get(4).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(4)
+					.setYValue((Number) temperature.getData().get(1).getData().get(5).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(5)
+					.setYValue(RobotData.getInstance().getTemp());
+
+			// Temp Min
+			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(0)
+					.setYValue((Number) temperature.getData().get(2).getData().get(1).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(1)
+					.setYValue((Number) temperature.getData().get(2).getData().get(2).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(2)
+					.setYValue((Number) temperature.getData().get(2).getData().get(3).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(3)
+					.setYValue((Number) temperature.getData().get(2).getData().get(4).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(4)
+					.setYValue((Number) temperature.getData().get(2).getData().get(5).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(5)
+					.setYValue(RobotData.getInstance().getTempMin());
+
+			// Butano
+			for (Node n : gas.lookupAll(".default-color1.chart-bar")) {
+				n.setStyle("-fx-bar-fill: #ff6b00;");
+			}
+
+			// Co2
+			for (Node n : gas.lookupAll(".default-color2.chart-bar")) {
+				n.setStyle("-fx-bar-fill: #a75acb;");
+			}
+
+			// Met
+			for (Node n : gas.lookupAll(".default-color0.chart-bar")) {
+				n.setStyle("-fx-bar-fill: #ccd100;");
+			}
+
+			
+
+			
 		}));
 		timeline.setCycleCount(Integer.MAX_VALUE);
 		timeline.play();
