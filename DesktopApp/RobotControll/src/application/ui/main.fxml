@@ -22,7 +22,7 @@
 <?import javafx.scene.text.Font?>
 <?import com.lynden.gmapsfx.GoogleMapView?>
 
-<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
 			<left>
 				<FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
 					<children>
@@ -55,7 +55,7 @@
 								</GridPane>
 							</center>
 							<top>
-								<Label fx:id="tankControllName" text="Tank's Controll" BorderPane.alignment="CENTER">
+								<Label fx:id="controllerText" text="Tank's Controll" BorderPane.alignment="CENTER">
 									<BorderPane.margin>
 										<Insets top="10.0" />
 									</BorderPane.margin>
@@ -82,7 +82,7 @@
 								<CategoryAxis side="BOTTOM" />
 							</xAxis>
 							<yAxis>
-								<NumberAxis side="LEFT" fx:id="tmpAxis" />
+								<NumberAxis fx:id="tmpAxis" side="LEFT" />
 							</yAxis>
 						</LineChart>
 						<BarChart fx:id="humidity" title="Humidity" GridPane.columnIndex="1">
@@ -90,7 +90,7 @@
 								<CategoryAxis side="BOTTOM" />
 							</xAxis>
 							<yAxis>
-								<NumberAxis side="LEFT" fx:id="humAxis" />
+								<NumberAxis fx:id="humAxis" side="LEFT" />
 							</yAxis>
 						</BarChart>
 						<StackedBarChart fx:id="gas" title="Gas" GridPane.ColumnIndex="2">
@@ -98,7 +98,7 @@
 								<CategoryAxis side="BOTTOM" />
 							</xAxis>
 							<yAxis>
-								<NumberAxis side="LEFT" fx:id="gasAxis"/>
+								<NumberAxis fx:id="gasAxis" side="LEFT" />
 							</yAxis>
 						</StackedBarChart>
 						<GoogleMapView fx:id="mapView" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -194,7 +194,7 @@
 								<MenuItem mnemonicParsing="false" text="Export Data" />
 							</items>
 						</Menu>
-						<Menu mnemonicParsing="false" text="Help">
+						<Menu fx:id = "helpText" mnemonicParsing="false" text="Help">
 							<items>
 								<MenuItem mnemonicParsing="false" onAction="#openHelp" text="Tank Controll Help" />
 								<MenuItem mnemonicParsing="false" text="More Info" />
@@ -203,6 +203,12 @@
 								<KeyCodeCombination alt="UP" code="F1" control="UP" meta="UP" shift="UP" shortcut="UP" />
 							</accelerator>
 						</Menu>
+            <Menu fx:id = "languajeText" mnemonicParsing="false" text="Languaje">
+              <items>
+                <MenuItem fx:id = "enLanguaje" mnemonicParsing="false" text="English" />
+                  <MenuItem fx:id = "esLanguaje" mnemonicParsing="false" text="Spanish" />
+              </items>
+            </Menu>
 					</menus>
 				</MenuBar>
 			</top>

@@ -13,6 +13,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.swing.text.html.HTML;
+import javax.xml.stream.Location;
 
 import com.lynden.gmapsfx.GoogleMapView;
 import com.lynden.gmapsfx.MapComponentInitializedListener;
@@ -45,6 +46,8 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -115,24 +118,50 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	private Timer t;
 	private int i = 0;
 
-	private ResourceBundle resources;
 	@FXML
-	private Label tempText, humText, gasText, gpsText, sensorText, tankControllName;
+	private Label humText, tempText, gasText, gpsText, sensorText, controllerText;
+	
+	@FXML
+	private Menu helpText, languajeText;
+	
+	@FXML
+	private MenuItem esLanguaje, enLanguaje;
+	
+	private ResourceBundle resources;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
 		this.resources = resources;
-		tempText.setText(resources.getString("Temp"));
 		humText.setText(resources.getString("Hum"));
+		tempText.setText(resources.getString("Temp"));
 		gasText.setText(resources.getString("Gas"));
 		gpsText.setText(resources.getString("GPS"));
 		sensorText.setText(resources.getString("sensor"));
-		tankControllName.setText(resources.getString("tankControll"));
+		controllerText.setText(resources.getString("tankControll"));
+		helpText.setText(resources.getString("Help"));
+		languajeText.setText(resources.getString("languajeText"));
+		esLanguaje.setText(resources.getString("esLanguaje"));
+		enLanguaje.setText(resources.getString("enLanguaje"));
+		
+		gas.setTitle(resources.getString("Gas"));
 		temperature.setTitle(resources.getString("Temp"));
 		humidity.setTitle(resources.getString("Hum"));
-		gas.setTitle(resources.getString("Gas"));
 
+		esLanguaje.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override
+		    public void handle(ActionEvent event) {
+		    	setLocale(new Locale("es","ES"));
+		    }
+		});
+		
+		enLanguaje.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override
+		    public void handle(ActionEvent event) {
+		    	setLocale(new Locale("en","EN"));
+		    }
+		});
+		
 		// Datos de prueba para rellenar gráficas
 		chargeData();
 
@@ -278,11 +307,6 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		ImageView imageViewRightR = new ImageView(image);
 		imageViewRightR.setFitHeight(50);
 		imageViewRightR.setFitWidth(50);
-		rightRotationButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent event) {
-                setLocale(new Locale("en", "EN"));
-            }
-        });
 		rightRotationButton.setGraphic(imageViewRightR);
 
 		// Boton rotar izquierda
@@ -290,11 +314,6 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		ImageView imageViewLeftR = new ImageView(image);
 		imageViewLeftR.setFitHeight(50);
 		imageViewLeftR.setFitWidth(50);
-		leftRotationButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent event) {
-                setLocale(new Locale("es", "ES"));
-            }
-        });
 		leftRotationButton.setGraphic(imageViewLeftR);
 	}
 
@@ -305,16 +324,17 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		this.mainApp = mainApp;
 	}
 
+	@SuppressWarnings("unchecked")
 	private void dataDaemon() throws IOException {
 
 		Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), ev -> {
 
-			//DATOS PARA PRUEBAS
-			RobotData.getInstance().setHum(new Random().nextInt(50));
-			RobotData.getInstance().setTemp(new Random().nextInt(60) - 25);
+			//Datos para prueba
 			RobotData.getInstance().setBut(new Random().nextInt(10));
 			RobotData.getInstance().setMet(new Random().nextInt(10));
 			RobotData.getInstance().setCo2(new Random().nextInt(10));
+			RobotData.getInstance().setTemp(new Random().nextInt(50) -25);
+			RobotData.getInstance().setHum(new Random().nextInt(50));
 			
 			
 			// Actualizamos el texto plano
@@ -382,20 +402,21 @@ public class mainController implements Initializable, MapComponentInitializedLis
 			}
 			((XYChart.Series<String, Number>) gas.getData().get(1)).getData().get(0)
 			.setYValue(RobotData.getInstance().getBut());
-			
+
 			// Co2
 			for (Node n : gas.lookupAll(".default-color2.chart-bar")) {
 				n.setStyle("-fx-bar-fill: #a75acb;");
 			}
 			((XYChart.Series<String, Number>) gas.getData().get(2)).getData().get(0)
 			.setYValue(RobotData.getInstance().getCo2());
-			
+
 			// Met
 			for (Node n : gas.lookupAll(".default-color0.chart-bar")) {
 				n.setStyle("-fx-bar-fill: #ccd100;");
 			}
 			((XYChart.Series<String, Number>) gas.getData().get(0)).getData().get(0)
 			.setYValue(RobotData.getInstance().getMet());
+
 			
 
 			
@@ -473,24 +494,25 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		}
 	}
 
-	@FXML
 	private void setLocale(Locale locale){
 		resources = ResourceBundle.getBundle("bundles.MyBundle", locale);
-		updateUI();
-	}
-
-	private void updateUI() {
-		tempText.setText(resources.getString("Temp"));
+		
 		humText.setText(resources.getString("Hum"));
+		tempText.setText(resources.getString("Temp"));
 		gasText.setText(resources.getString("Gas"));
 		gpsText.setText(resources.getString("GPS"));
 		sensorText.setText(resources.getString("sensor"));
-		tankControllName.setText(resources.getString("tankControll"));
+		controllerText.setText(resources.getString("tankControll"));
+		helpText.setText(resources.getString("Help"));
+		languajeText.setText(resources.getString("languajeText"));
+		esLanguaje.setText(resources.getString("esLanguaje"));
+		enLanguaje.setText(resources.getString("enLanguaje"));
+		
+		gas.setTitle(resources.getString("Gas"));
 		temperature.setTitle(resources.getString("Temp"));
 		humidity.setTitle(resources.getString("Hum"));
-		gas.setTitle(resources.getString("Gas"));		
 	}
-
+	
 	private void setCamera() {
 		sensorPane.add(new WebCam().cam(), 2, 1);
 	}
