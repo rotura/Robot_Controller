@@ -3,6 +3,9 @@ package application;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.Locale;
+import java.util.Random;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -65,6 +68,7 @@ public class Main extends Application {
 	private void initAplicationView() {
 		try {
 			FXMLLoader loader = new FXMLLoader();
+            loader.setResources(ResourceBundle.getBundle("bundles.MyBundle", new Locale("es", "ES")));
 			loader.setLocation(Main.class.getResource("ui/main.fxml"));
 			loader.setController(new mainController());
 			MainView = (BorderPane) loader.load();

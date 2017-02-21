@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Locale;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.Scanner;
@@ -27,6 +28,8 @@ import application.Main;
 import application.model.RobotData;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -112,8 +115,23 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	private Timer t;
 	private int i = 0;
 
+	private ResourceBundle resources;
+	@FXML
+	private Label tempText, humText, gasText, gpsText, sensorText, tankControllName;
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+
+		this.resources = resources;
+		tempText.setText(resources.getString("Temp"));
+		humText.setText(resources.getString("Hum"));
+		gasText.setText(resources.getString("Gas"));
+		gpsText.setText(resources.getString("GPS"));
+		sensorText.setText(resources.getString("sensor"));
+		tankControllName.setText(resources.getString("tankControll"));
+		temperature.setTitle(resources.getString("Temp"));
+		humidity.setTitle(resources.getString("Hum"));
+		gas.setTitle(resources.getString("Gas"));
 
 		// Datos de prueba para rellenar gráficas
 		chargeData();
@@ -222,7 +240,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	 */
 	private void setImages() {
 		// Boton derecho
-		Image image = new Image(getClass().getResourceAsStream("images/rightArrow.png")); // Cargamos
+		Image image = new Image(getClass().getResourceAsStream("/images/rightArrow.png")); // Cargamos
 		// la
 		// imagen
 		ImageView imageViewRight = new ImageView(image); // Creamos el imageView
@@ -235,38 +253,48 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		rightButton.setGraphic(imageViewRight);
 
 		// Boton izquierdo
-		image = new Image(getClass().getResourceAsStream("images/leftArrow.png"));
+		image = new Image(getClass().getResourceAsStream("/images/leftArrow.png"));
 		ImageView imageViewLeft = new ImageView(image);
 		imageViewLeft.setFitHeight(50);
 		imageViewLeft.setFitWidth(50);
 		leftButton.setGraphic(imageViewLeft);
 
 		// Boton arriba
-		image = new Image(getClass().getResourceAsStream("images/upArrow.png"));
+		image = new Image(getClass().getResourceAsStream("/images/upArrow.png"));
 		ImageView imageViewUp = new ImageView(image);
 		imageViewUp.setFitHeight(50);
 		imageViewUp.setFitWidth(50);
 		upButton.setGraphic(imageViewUp);
 
 		// Boton abajo
-		image = new Image(getClass().getResourceAsStream("images/downArrow.png"));
+		image = new Image(getClass().getResourceAsStream("/images/downArrow.png"));
 		ImageView imageViewDown = new ImageView(image);
 		imageViewDown.setFitHeight(50);
 		imageViewDown.setFitWidth(50);
 		downButton.setGraphic(imageViewDown);
 
 		// Boton rotar derecha
-		image = new Image(getClass().getResourceAsStream("images/rightRotationArrow.png"));
+		image = new Image(getClass().getResourceAsStream("/images/rightRotationArrow.png"));
 		ImageView imageViewRightR = new ImageView(image);
 		imageViewRightR.setFitHeight(50);
 		imageViewRightR.setFitWidth(50);
+		rightRotationButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent event) {
+                setLocale(new Locale("en", "EN"));
+            }
+        });
 		rightRotationButton.setGraphic(imageViewRightR);
 
 		// Boton rotar izquierda
-		image = new Image(getClass().getResourceAsStream("images/leftRotationArrow.png"));
+		image = new Image(getClass().getResourceAsStream("/images/leftRotationArrow.png"));
 		ImageView imageViewLeftR = new ImageView(image);
 		imageViewLeftR.setFitHeight(50);
 		imageViewLeftR.setFitWidth(50);
+		leftRotationButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent event) {
+                setLocale(new Locale("es", "ES"));
+            }
+        });
 		leftRotationButton.setGraphic(imageViewLeftR);
 	}
 
@@ -281,6 +309,14 @@ public class mainController implements Initializable, MapComponentInitializedLis
 
 		Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), ev -> {
 
+			//DATOS PARA PRUEBAS
+			RobotData.getInstance().setHum(new Random().nextInt(50));
+			RobotData.getInstance().setTemp(new Random().nextInt(60) - 25);
+			RobotData.getInstance().setBut(new Random().nextInt(10));
+			RobotData.getInstance().setMet(new Random().nextInt(10));
+			RobotData.getInstance().setCo2(new Random().nextInt(10));
+			
+			
 			// Actualizamos el texto plano
 			humL.setText(RobotData.getInstance().getHum() + "%");
 			tempL.setText(RobotData.getInstance().getTemp() + "ºC");
@@ -344,17 +380,22 @@ public class mainController implements Initializable, MapComponentInitializedLis
 			for (Node n : gas.lookupAll(".default-color1.chart-bar")) {
 				n.setStyle("-fx-bar-fill: #ff6b00;");
 			}
-
+			((XYChart.Series<String, Number>) gas.getData().get(1)).getData().get(0)
+			.setYValue(RobotData.getInstance().getBut());
+			
 			// Co2
 			for (Node n : gas.lookupAll(".default-color2.chart-bar")) {
 				n.setStyle("-fx-bar-fill: #a75acb;");
 			}
-
+			((XYChart.Series<String, Number>) gas.getData().get(2)).getData().get(0)
+			.setYValue(RobotData.getInstance().getCo2());
+			
 			// Met
 			for (Node n : gas.lookupAll(".default-color0.chart-bar")) {
 				n.setStyle("-fx-bar-fill: #ccd100;");
 			}
-
+			((XYChart.Series<String, Number>) gas.getData().get(0)).getData().get(0)
+			.setYValue(RobotData.getInstance().getMet());
 			
 
 			
@@ -423,13 +464,31 @@ public class mainController implements Initializable, MapComponentInitializedLis
 			loader.setController(new helpController());
 			root = loader.load();
 			Stage stage = new Stage();
-			stage.setTitle("Help");
+			stage.setTitle(resources.getString("Help"));
 			stage.setScene(new Scene(root));
 			stage.show();
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@FXML
+	private void setLocale(Locale locale){
+		resources = ResourceBundle.getBundle("bundles.MyBundle", locale);
+		updateUI();
+	}
+
+	private void updateUI() {
+		tempText.setText(resources.getString("Temp"));
+		humText.setText(resources.getString("Hum"));
+		gasText.setText(resources.getString("Gas"));
+		gpsText.setText(resources.getString("GPS"));
+		sensorText.setText(resources.getString("sensor"));
+		tankControllName.setText(resources.getString("tankControll"));
+		temperature.setTitle(resources.getString("Temp"));
+		humidity.setTitle(resources.getString("Hum"));
+		gas.setTitle(resources.getString("Gas"));		
 	}
 
 	private void setCamera() {

@@ -55,7 +55,7 @@
 								</GridPane>
 							</center>
 							<top>
-								<Label text="Tank's Controll" BorderPane.alignment="CENTER">
+								<Label fx:id="tankControllName" text="Tank's Controll" BorderPane.alignment="CENTER">
 									<BorderPane.margin>
 										<Insets top="10.0" />
 									</BorderPane.margin>
@@ -115,7 +115,7 @@
                   <RowConstraints maxHeight="242.0" minHeight="10.0" prefHeight="134.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Temperature:" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                  <Label fx:id="tempText" text="Temperature:" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -123,12 +123,12 @@
                         <Insets />
                      </GridPane.margin>
                   </Label>
-                  <Label text="Humidity:" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                  <Label fx:id="humText" text="Humidity:" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label text="Gas:" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                  <Label fx:id="gasText" text="Gas:" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -157,7 +157,7 @@
                         <Font size="18.0" />
                      </font>
                   </TextArea>
-                  <Label text="Sensors data:">
+                  <Label fx:id="sensorText" text="Sensors data:">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -165,7 +165,7 @@
                         <Insets left="5.0" />
                      </padding>
                   </Label>
-                  <Label text="GPS:" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                  <Label fx:id="gpsText" text="GPS:" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="TOP">
                      <font>
                         <Font size="18.0" />
                      </font>
