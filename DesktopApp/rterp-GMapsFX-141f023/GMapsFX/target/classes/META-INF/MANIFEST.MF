@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Built-By: emantill
+Build-Jdk: 1.8.0_05
+Created-By: Apache Maven
+Main-Class: com.lynden.gmapsfx.MainApp
+
