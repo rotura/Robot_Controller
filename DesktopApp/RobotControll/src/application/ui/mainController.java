@@ -55,6 +55,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.util.StringConverter;
@@ -122,10 +123,10 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	private Label humText, tempText, gasText, gpsText, sensorText, controllerText;
 	
 	@FXML
-	private Menu helpText, languajeText;
+	private Menu helpText, languajeText, controll;
 	
 	@FXML
-	private MenuItem esLanguaje, enLanguaje;
+	private MenuItem esLanguaje, enLanguaje, help, moreInfo;
 	
 	private ResourceBundle resources;
 	
@@ -455,7 +456,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		map.addUIEventHandler(UIEventType.click, (JSObject obj) -> {
 			LatLong ll = new LatLong((JSObject) obj.getMember("latLng"));
 
-			Parent root;
+			Parent root ;
 			try {
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(mainController.class.getResource("MapPopUp.fxml"));
@@ -464,6 +465,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 				Stage stage = new Stage();
 				stage.setTitle("Location info");
 				stage.setScene(new Scene(root));
+				stage.initModality(Modality.APPLICATION_MODAL);
 				((mapPopUpController) loader.getController()).setLatLon(ll);
 				;
 				stage.show();
