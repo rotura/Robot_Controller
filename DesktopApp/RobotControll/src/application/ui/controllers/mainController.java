@@ -1,9 +1,11 @@
 package application.ui.controllers;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -59,6 +61,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -157,6 +160,24 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		    }
 		});
 		
+		exportData.setOnAction(new EventHandler<ActionEvent>() {
+			  
+	          @Override
+	          public void handle(ActionEvent event) {
+	              FileChooser fileChooser = new FileChooser();
+	  
+	              //Set extension filter
+	              FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.csv");
+	              fileChooser.getExtensionFilters().add(extFilter);
+	              
+	              //Show save file dialog
+	              File file = fileChooser.showSaveDialog(null);
+	              
+	              if(file != null){
+	                  RobotData.getInstance().exportData(file);
+	              }
+	          }
+	      });
 		// Datos de prueba para rellenar gráficas
 		chargeData();
 
@@ -330,6 +351,8 @@ public class mainController implements Initializable, MapComponentInitializedLis
 			RobotData.getInstance().setCo2(new Random().nextInt(10));
 			RobotData.getInstance().setTemp(new Random().nextInt(50) -25);
 			RobotData.getInstance().setHum(new Random().nextInt(50));
+			RobotData.getInstance().setDate(new Date());
+			RobotData.getInstance().setRobotPos(RobotData.getInstance().getNewPos()[0] , RobotData.getInstance().getNewPos()[1]);
 			
 			
 			// Actualizamos el texto plano
