@@ -1,6 +1,12 @@
 # Robot_Controller
 Finish project of the University. A javaFX application to control the robot and view in real time sensors and camera, and an Arduino Code to make the robot.
 
+## User Manual
+### Export Data
+- In the menu "Controll", is the option "Export Data".
+- The data will be saved in a CSV.
+- The column separator to Excel is '_**,**_'.
+
 ## Requirements:
  - Show robot's camera in real time
  - Show all sensor as raw input
