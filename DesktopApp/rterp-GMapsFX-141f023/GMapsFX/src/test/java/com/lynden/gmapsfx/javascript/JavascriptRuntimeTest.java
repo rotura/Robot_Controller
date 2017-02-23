@@ -17,7 +17,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.Mockito;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
@@ -97,7 +96,8 @@ public class JavascriptRuntimeTest {
     @Test
     public void testGetArgString_JavascriptObject() {
         JavascriptObject object = Mockito.mock(JavascriptObject.class);
-        String myProps = "myProps";
+        @SuppressWarnings("unused")
+		String myProps = "myProps";
         
         when(object.getVariableName()).thenReturn("PropVar1");
                 

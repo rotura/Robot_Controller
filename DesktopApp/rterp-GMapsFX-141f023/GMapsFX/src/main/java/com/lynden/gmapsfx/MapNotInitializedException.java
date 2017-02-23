@@ -22,7 +22,12 @@ package com.lynden.gmapsfx;
  */
 public class MapNotInitializedException extends RuntimeException {
 
-    public MapNotInitializedException() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public MapNotInitializedException() {
         super( "Map has not yet been initialized");
     }
     

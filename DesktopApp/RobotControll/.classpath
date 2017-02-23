@@ -7,5 +7,11 @@
 	<classpathentry kind="lib" path="libs/slf4j-api-1.7.2.jar"/>
 	<classpathentry kind="lib" path="libs/webcam-capture-0.3.10.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="libs/jxbrowser-6.12.jar"/>
+	<classpathentry kind="lib" path="libs/jxbrowser-linux32-6.12.jar"/>
+	<classpathentry kind="lib" path="libs/jxbrowser-linux64-6.12.jar"/>
+	<classpathentry kind="lib" path="libs/jxbrowser-mac-6.12.jar"/>
+	<classpathentry kind="lib" path="libs/jxbrowser-win-6.12.jar"/>
+	<classpathentry kind="lib" path="libs/license.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

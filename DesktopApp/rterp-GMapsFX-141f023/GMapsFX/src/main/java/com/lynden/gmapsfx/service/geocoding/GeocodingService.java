@@ -19,9 +19,6 @@ package com.lynden.gmapsfx.service.geocoding;
 import com.lynden.gmapsfx.javascript.JavascriptObject;
 import com.lynden.gmapsfx.javascript.object.GMapObjectType;
 import com.lynden.gmapsfx.javascript.object.LatLong;
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.List;
 import netscape.javascript.JSObject;
 
 /**

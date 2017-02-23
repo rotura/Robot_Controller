@@ -18,8 +18,6 @@ package com.lynden.gmapsfx.javascript;
 import java.lang.reflect.Constructor;
 import java.util.Map;
 import java.util.WeakHashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import netscape.javascript.JSObject;
 
 /**
@@ -189,7 +187,8 @@ public class JavascriptObject {
      * @param type The property type
      * @return The value of the property
      */
-    protected <T> T getProperty(String key, Class<T> type) {
+    @SuppressWarnings("unchecked")
+	protected <T> T getProperty(String key, Class<T> type) {
         Object returnValue = getProperty(key);
         if (returnValue != null) {
             return (T) returnValue;
@@ -238,7 +237,8 @@ public class JavascriptObject {
      * @param returnType The type of object to return
      * @return The result of the function.
      */
-    protected <T> T invokeJavascriptReturnValue(String function, Class<T> returnType) {
+    @SuppressWarnings("unchecked")
+	protected <T> T invokeJavascriptReturnValue(String function, Class<T> returnType) {
         Object returnObject = invokeJavascript(function);
         if (returnObject instanceof JSObject) {
             try {
@@ -261,7 +261,8 @@ public class JavascriptObject {
      * @param args Any arguments to pass to the function
      * @return The result of the function.
      */
-    protected <T> T invokeJavascriptReturnValue(String function, Class<T> returnType, Object... args) {
+    @SuppressWarnings("unchecked")
+	protected <T> T invokeJavascriptReturnValue(String function, Class<T> returnType, Object... args) {
         Object returnObject = invokeJavascript(function, args);
         if (returnObject != null) {
             return (T) returnObject;

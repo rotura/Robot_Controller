@@ -24,8 +24,10 @@ import com.lynden.gmapsfx.javascript.object.LatLong;
  */
 public class CircleOptions extends FillableMapShapeOptions<CircleOptions> {
     
-    private LatLong center;
-    private double radius;// in metres
+    @SuppressWarnings("unused")
+	private LatLong center;
+    @SuppressWarnings("unused")
+	private double radius;// in metres
     
     
     public CircleOptions center(LatLong center) {

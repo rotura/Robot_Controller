@@ -219,7 +219,7 @@ public class GoogleMapView extends AnchorPane {
                 */
                 webengine.getLoadWorker().stateProperty().addListener(
                         new ChangeListener<Worker.State>() {
-                            public void changed(ObservableValue ov, Worker.State oldState, Worker.State newState) {
+                            public void changed(@SuppressWarnings("rawtypes") ObservableValue ov, Worker.State oldState, Worker.State newState) {
                                 if (newState == Worker.State.SUCCEEDED) {
                                     initialiseScript();
                                     //setInitialized(true);

@@ -25,9 +25,10 @@ import com.lynden.gmapsfx.javascript.object.GMapObjectType;
  * @author Geoff Capper
  * @param <T>
  */
+@SuppressWarnings({ "unused", "rawtypes" })
 public abstract class MapShapeOptions<T extends MapShapeOptions> extends JavascriptObject {
     
-    private boolean clickable;
+	private boolean clickable;
     private boolean draggable;
     private boolean editable;
     private boolean geodesic;

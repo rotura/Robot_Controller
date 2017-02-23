@@ -30,7 +30,8 @@ public abstract class MapShape extends JavascriptObject {
         super(type);
     }
     
-    public MapShape(String type, MapShapeOptions opts) {
+    @SuppressWarnings("rawtypes")
+	public MapShape(String type, MapShapeOptions opts) {
         super(type, opts);
     }
     

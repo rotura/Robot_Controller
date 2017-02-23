@@ -23,7 +23,6 @@ import com.lynden.gmapsfx.javascript.JavascriptObject;
 import com.lynden.gmapsfx.javascript.object.GMapObjectType;
 import com.lynden.gmapsfx.javascript.object.LatLong;
 import com.lynden.gmapsfx.javascript.object.LatLongBounds;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import netscape.javascript.JSObject;

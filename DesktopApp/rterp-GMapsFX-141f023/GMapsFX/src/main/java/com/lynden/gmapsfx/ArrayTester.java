@@ -21,7 +21,6 @@ import com.lynden.gmapsfx.javascript.JavascriptArray;
 import com.lynden.gmapsfx.javascript.JavascriptObject;
 import com.lynden.gmapsfx.javascript.JavascriptRuntime;
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Worker;
@@ -52,7 +51,7 @@ public class ArrayTester extends Application {
         
         webengine.getLoadWorker().stateProperty().addListener(
                 new ChangeListener<Worker.State>() {
-                    public void changed(ObservableValue ov, Worker.State oldState, Worker.State newState) {
+                    public void changed(@SuppressWarnings("rawtypes") ObservableValue ov, Worker.State oldState, Worker.State newState) {
                         if (newState == Worker.State.SUCCEEDED) {
                             runTests();
                             //Platform.exit();

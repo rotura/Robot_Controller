@@ -102,7 +102,8 @@ public class JavascriptArray extends JavascriptObject {
     //slice() 	Selects a part of an array, and returns the new array
     
     //sort() 	Sorts the elements of an array
-    public void sort(String func) {
+    @SuppressWarnings("unused")
+	public void sort(String func) {
         if (func == null || func.isEmpty()) {
             Object ary = invokeJavascript("sort");
         } else {

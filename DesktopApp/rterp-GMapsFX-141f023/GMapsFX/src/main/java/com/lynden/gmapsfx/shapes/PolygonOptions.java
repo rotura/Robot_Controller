@@ -24,7 +24,8 @@ import com.lynden.gmapsfx.javascript.object.MVCArray;
  */
 public class PolygonOptions extends FillableMapShapeOptions<PolygonOptions> {
     
-    private MVCArray paths;
+    @SuppressWarnings("unused")
+	private MVCArray paths;
     
     public PolygonOptions() {
     }

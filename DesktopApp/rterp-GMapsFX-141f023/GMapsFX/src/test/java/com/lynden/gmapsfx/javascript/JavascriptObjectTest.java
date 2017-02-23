@@ -149,7 +149,8 @@ public class JavascriptObjectTest {
         JavascriptObject functionArg = mock(JavascriptObject.class);
         
         
-        Object[] argArray = new Object[] {functionArg};
+        @SuppressWarnings("unused")
+		Object[] argArray = new Object[] {functionArg};
         Object[] jsCallArgArray = new Object[]{returnJSObject};
         String function = "myFunction";
         String result = "result";

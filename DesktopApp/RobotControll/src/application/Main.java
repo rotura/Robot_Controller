@@ -10,7 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import application.model.RobotData;
-import application.ui.mainController;
+import application.ui.controllers.mainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -22,6 +22,7 @@ public class Main extends Application {
 	private Stage primaryStage;
 	private BorderPane MainView;
 	private Timer t;
+	FXMLLoader loader;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -38,6 +39,7 @@ public class Main extends Application {
 	@Override
 	public void stop() {
 		t.cancel();
+		((mainController) loader.getController()).stopFunctions();
 	}
 
 	private void webDaemon() throws IOException {
@@ -65,7 +67,7 @@ public class Main extends Application {
 
 	private void initAplicationView() {
 		try {
-			FXMLLoader loader = new FXMLLoader();
+			loader = new FXMLLoader();
 			loader.setResources(ResourceBundle.getBundle("bundles.MyBundle", new Locale("es", "ES")));
 			loader.setLocation(Main.class.getResource("ui/main.fxml"));
 			loader.setController(new mainController());

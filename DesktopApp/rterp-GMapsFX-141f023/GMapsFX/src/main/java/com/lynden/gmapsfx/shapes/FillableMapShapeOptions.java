@@ -21,9 +21,10 @@ package com.lynden.gmapsfx.shapes;
  * @author Geoff Capper
  * @param <T>
  */
+@SuppressWarnings({ "unused", "rawtypes" })
 public abstract class FillableMapShapeOptions<T extends FillableMapShapeOptions> extends MapShapeOptions<T> {
     
-    private String fillColor;
+	private String fillColor;
     private double fillOpacity;
     private StrokePosition strokePosition;
     

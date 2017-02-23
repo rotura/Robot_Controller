@@ -24,7 +24,8 @@ import com.lynden.gmapsfx.javascript.object.LatLongBounds;
  */
 public class RectangleOptions extends FillableMapShapeOptions<RectangleOptions> {
     
-    private LatLongBounds bounds;
+    @SuppressWarnings("unused")
+	private LatLongBounds bounds;
     
     public RectangleOptions bounds(LatLongBounds bounds) {
         setProperty("bounds", bounds);

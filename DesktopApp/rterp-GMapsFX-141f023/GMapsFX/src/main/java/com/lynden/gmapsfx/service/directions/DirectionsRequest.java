@@ -26,7 +26,8 @@ import com.lynden.gmapsfx.javascript.object.LatLong;
 public class DirectionsRequest extends JavascriptObject{
     static boolean opt = true;
 
-    public void setOpt(boolean opt) {
+    @SuppressWarnings("static-access")
+	public void setOpt(boolean opt) {
         this.opt = opt;
     }
         

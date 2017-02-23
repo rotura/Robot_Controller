@@ -26,7 +26,8 @@ public class PolylineOptions extends MapShapeOptions<PolylineOptions> {
     
     // icons Array.<IconSequence> The icons to be rendered along the polyline.
     
-    private MVCArray path;
+    @SuppressWarnings("unused")
+	private MVCArray path;
     
     public PolylineOptions() {
     }

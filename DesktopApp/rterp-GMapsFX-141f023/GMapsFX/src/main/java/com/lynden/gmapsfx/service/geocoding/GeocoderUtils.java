@@ -51,7 +51,8 @@ public class GeocoderUtils {
         return result;
     }
 
-    public static <T extends Enum> List<T> convertJSObjectToListOfEnum(JSObject jsObject, Class<T> enumClass) {
+    @SuppressWarnings("rawtypes")
+	public static <T extends Enum> List<T> convertJSObjectToListOfEnum(JSObject jsObject, Class<T> enumClass) {
         List<T> result = new ArrayList<>();
         if (jsObject != null) {
             try {
