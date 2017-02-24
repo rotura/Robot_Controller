@@ -3,9 +3,16 @@ Finish project of the University. A javaFX application to control the robot and 
 
 ## User Manual
 ### Export Data
-- In the menu "Controll", is the option "Export Data".
-- The data will be saved in a CSV.
-- The column separator to Excel is '_**,**_'.
+- In the menu **"Controll"**, is the option **"Export Data"**.
+- The data will be saved in a **CSV**.
+- The column separator to Excel is '**;**'.
+- The csv opened with Excel format the data automatically.
+
+### Camera controll usage
+- The camera controller is runing in a Tomcat server.
+- This server is Open and Close automatically with the App.
+- To make it run, you need a **JAVA_HOME** or **JRE_HOME** variable in the System.
+- If dont work, you need to set **CATALINA_HOME** system's variable pointing to **/DesktopApp/apache-tomcat-9.0.0.M17**
 
 ## Requirements:
  - Show robot's camera in real time
