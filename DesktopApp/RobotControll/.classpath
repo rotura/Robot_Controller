@@ -13,5 +13,8 @@
 	<classpathentry kind="lib" path="libs/jxbrowser-mac-6.12.jar"/>
 	<classpathentry kind="lib" path="libs/jxbrowser-win-6.12.jar"/>
 	<classpathentry kind="lib" path="libs/license.jar"/>
+	<classpathentry kind="lib" path="D:/Users/emantill/Desktop/git/DesktopApp/apache-tomcat-9.0.0.M17/bin/bootstrap.jar"/>
+	<classpathentry kind="lib" path="D:/Users/emantill/Desktop/git/DesktopApp/apache-tomcat-9.0.0.M17/bin/commons-daemon.jar"/>
+	<classpathentry kind="lib" path="D:/Users/emantill/Desktop/git/DesktopApp/apache-tomcat-9.0.0.M17/bin/tomcat-juli.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

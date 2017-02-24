@@ -544,7 +544,8 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		view = new BrowserView(browser);
 		view.setPadding(new Insets(2, 2, 2, 2));
 		sensorPane.add(view, 2, 1);
-		browser.loadURL("https://actividad7.000webhostapp.com/cam.html");
+		//browser.loadURL("https://actividad7.000webhostapp.com/cam.html");
+		browser.loadURL("https://localhost:8080/cam.html");
 	}
 	public void stopFunctions(){
 		timeline.stop();

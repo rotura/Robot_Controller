@@ -23,10 +23,13 @@ public class Main extends Application {
 	private BorderPane MainView;
 	private Timer t;
 	FXMLLoader loader;
+	Process child;
 
 	@Override
 	public void start(Stage primaryStage) {
+		String command = "D:/Users/emantill/Desktop/git/DesktopApp/apache-tomcat-9.0.0.M17/bin/startup.bat";		
 		try {
+			child = Runtime.getRuntime().exec(command);
 			this.primaryStage = primaryStage;
 			primaryStage.setTitle("Tank Aplication");
 			initAplicationView();
@@ -38,6 +41,7 @@ public class Main extends Application {
 
 	@Override
 	public void stop() {
+		child.destroy();
 		t.cancel();
 		((mainController) loader.getController()).stopFunctions();
 	}
