@@ -3,7 +3,7 @@ Finish project of the University. A javaFX application to control the robot and 
 
 ## User Manual
 ### Export Data
-- In the menu **"Controll"**, is the option **"Export Data"**.
+- In the menu **"Control"**, is the option **"Export Data"**.
 - The data will be saved in a **CSV**.
 - The column separator to Excel is '**;**'.
 - The csv opened with Excel format the data automatically.
