@@ -27,7 +27,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-		String command = "D:/Users/emantill/Desktop/git/DesktopApp/apache-tomcat-9.0.0.M17/bin/startup.bat";		
+		String command = "../apache-tomcat-9.0.0.M17/bin/startup.bat";		
 		try {
 			child = Runtime.getRuntime().exec(command);
 			this.primaryStage = primaryStage;
@@ -41,6 +41,11 @@ public class Main extends Application {
 
 	@Override
 	public void stop() {
+		try {
+			Runtime.getRuntime().exec("../apache-tomcat-9.0.0.M17/bin/shutdown.bat");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		child.destroy();
 		t.cancel();
 		((mainController) loader.getController()).stopFunctions();

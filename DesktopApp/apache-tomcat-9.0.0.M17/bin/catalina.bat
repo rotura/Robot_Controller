@@ -345,3 +345,4 @@ goto end
 goto end
 
 :end
+exit

@@ -160,6 +160,7 @@ public class RobotData {
             fileWriter = new FileWriter(file);
             fileWriter.write(getContent());
             fileWriter.close();
+        	System.out.println("Fichero guardado exitosamente");
         } catch (IOException ex) {
         	System.out.println("Fichero no guardado");
         }
@@ -168,18 +169,19 @@ public class RobotData {
 
 	@SuppressWarnings("deprecation")
 	private char[] getContent() {
-		String data = "Date,Temp,Hum,Met,But,Co2,Lat,Lon";
+		String data = "Date;Temp;Hum;Met;But;Co2;Lat;Lon";
 		for(int i = 0; i < hum.size(); i++){
-			data += "\n" + date.get(i).toGMTString() + ","
-					+ temp.get(i).toString() + ","
-					+ hum.get(i).toString() + ","
-					+ met.get(i).toString() + ","
-					+ but.get(i).toString() + ","
-					+ co2.get(i).toString() + ","
-					+ robotPos.get(i)[0] + ","
-					+ robotPos.get(i)[1] + ","
+			data += "\n" + date.get(i).toGMTString() + ";"
+					+ temp.get(i).toString() + ";"
+					+ hum.get(i).toString() + ";"
+					+ met.get(i).toString() + ";"
+					+ but.get(i).toString() + ";"
+					+ co2.get(i).toString() + ";"
+					+ robotPos.get(i)[0] + ";"
+					+ robotPos.get(i)[1] + ";"
 					;
 		}
+		System.out.println(data);
 		return data.toCharArray();
 	}
 
