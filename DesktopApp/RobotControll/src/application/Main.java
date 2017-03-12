@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -24,14 +25,28 @@ public class Main extends Application {
 	private Timer t;
 	FXMLLoader loader;
 	Process child;
+	static String path;
 
 	@Override
 	public void start(Stage primaryStage) {
-		String command = "../apache-tomcat-9.0.0.M17/bin/startup.bat";		
+
+		// Create a canonical file to get the actual path of the aplication
+		File miDir = new File(".");
+		try {
+			path = miDir.getCanonicalPath();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		// Get the path to run the Tomcat Server
+		// This is fot the package app
+		// String command = path + "/apache-tomcat-9.0.0.M17/bin/startup.bat";
+
+		// This is to test in Eclipse
+		String command = path + "/../apache-tomcat-9.0.0.M17/bin/startup.bat";
 		try {
 			child = Runtime.getRuntime().exec(command);
 			this.primaryStage = primaryStage;
-			primaryStage.setTitle("Tank Aplication");
+			primaryStage.setTitle("Robot Controller");
 			initAplicationView();
 			webDaemon();
 		} catch (Exception e) {
@@ -41,8 +56,14 @@ public class Main extends Application {
 
 	@Override
 	public void stop() {
+		// Get the path to stop the Tomcat Server
 		try {
-			Runtime.getRuntime().exec("../apache-tomcat-9.0.0.M17/bin/shutdown.bat");
+			// This is for the package app
+			// Runtime.getRuntime().exec(path +
+			// "/apache-tomcat-9.0.0.M17/bin/shutdown.bat");
+
+			// This is to test in Eclipse
+			Runtime.getRuntime().exec(path + "/../apache-tomcat-9.0.0.M17/bin/shutdown.bat");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -51,6 +72,11 @@ public class Main extends Application {
 		((mainController) loader.getController()).stopFunctions();
 	}
 
+	/**
+	 * Method to run a background task that get Data of the Arduino robot
+	 * 
+	 * @throws IOException
+	 */
 	private void webDaemon() throws IOException {
 		t = new Timer();
 		t.scheduleAtFixedRate(new TimerTask() {
@@ -66,7 +92,7 @@ public class Main extends Application {
 						RobotData.getInstance().setHum((Double.parseDouble(data[0].split(":")[1])));
 					}
 				} catch (IOException e) {
-					System.out.println("Error al conectarse a la WeMos");
+					System.out.println("Fail to connect with the robot");
 				}
 
 			}
