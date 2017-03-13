@@ -1,0 +1,15 @@
+"{
+    \"JBAS014771: Services with missing/unavailable dependencies\" => [\"jboss.data-source.java:jboss/datasources/NotaneitorDS is missing [jboss.jdbc-driver.hsqldb_jar]\"],
+    \"JBAS014879: One or more services were unable to start due to one or more indirect dependencies not being available.\" => {
+        \"Services that were unable to start:\" => [
+            \"jboss.data-source.reference-factory.java:jboss/datasources/NotaneitorDS\",
+            \"jboss.deployment.unit.\\\"notaneitor-ds.xml\\\".INSTALL\",
+            \"jboss.naming.context.java.jboss.datasources.NotaneitorDS\"
+        ],
+        \"Services that may be the cause:\" => [
+            \"jboss.http-upgrade-registry.default\",
+            \"jboss.jdbc-driver.hsqldb_jar\",
+            \"jboss.remoting.remotingConnectorInfoService.http-remoting-connector\"
+        ]
+    }
+}"

@@ -10,10 +10,6 @@
 	<classpathentry kind="lib" path="libs/jxbrowser-linux64-6.12.jar"/>
 	<classpathentry kind="lib" path="libs/jxbrowser-mac-6.12.jar"/>
 	<classpathentry kind="lib" path="libs/jxbrowser-win-6.12.jar"/>
-	<classpathentry kind="lib" path="libs/license.jar"/>
 	<classpathentry kind="lib" path="libs/slf4j-api-1.7.2.jar"/>
-	<classpathentry kind="lib" path="Z:/git/TFG/DesktopApp/apache-tomcat-9.0.0.M17/bin/bootstrap.jar"/>
-	<classpathentry kind="lib" path="Z:/git/TFG/DesktopApp/apache-tomcat-9.0.0.M17/bin/commons-daemon.jar"/>
-	<classpathentry kind="lib" path="Z:/git/TFG/DesktopApp/apache-tomcat-9.0.0.M17/bin/tomcat-juli.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,0 +1,1397 @@
+2014-03-25 02:42:56,609 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.0.Final
+2014-03-25 02:42:59,648 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.0.Final
+2014-03-25 02:43:00,774 INFO  [org.jboss.as] (MSC service thread 1-2) JBAS015899: WildFly 8.0.0.Final "WildFly" starting
+2014-03-25 02:43:00,831 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
+	awt.toolkit = sun.awt.windows.WToolkit
+	file.encoding = Cp1252
+	file.encoding.pkg = sun.io
+	file.separator = \
+	java.awt.graphicsenv = sun.awt.Win32GraphicsEnvironment
+	java.awt.printerjob = sun.awt.windows.WPrinterJob
+	java.class.path = S:\wildfly\jboss-modules.jar
+	java.class.version = 51.0
+	java.endorsed.dirs = S:\jdk\jre\lib\endorsed
+	java.ext.dirs = S:\jdk\jre\lib\ext;C:\Windows\Sun\Java\lib\ext
+	java.home = S:\jdk\jre
+	java.io.tmpdir = C:\Users\delacal\AppData\Local\Temp\
+	java.library.path = S:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;S:\jdk\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files (x86)\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;.
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.7.0_25-b17
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.7
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.7.0_25
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.7
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 23.25-b01
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.home.dir = S:\wildfly
+	jboss.host.name = win-e7ecmam7osb
+	jboss.modules.dir = S:\wildfly\modules
+	jboss.node.name = win-e7ecmam7osb
+	jboss.qualified.host.name = win-e7ecmam7osb
+	jboss.server.base.dir = S:\wildfly\standalone
+	jboss.server.config.dir = S:\wildfly\standalone\configuration
+	jboss.server.data.dir = S:\wildfly\standalone\data
+	jboss.server.deploy.dir = S:\wildfly\standalone\data\content
+	jboss.server.log.dir = S:\wildfly\standalone\log
+	jboss.server.log.threshold = INFO
+	jboss.server.name = win-e7ecmam7osb
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = S:\wildfly\standalone\tmp
+	line.separator = 
+
+	logging.configuration = file:S:\wildfly\standalone\configuration/logging.properties
+	module.path = S:\wildfly\modules
+	org.jboss.boot.log.file = S:\wildfly\standalone\log\server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Windows 7
+	os.version = 6.1
+	path.separator = ;
+	program.name = standalone.bat
+	sun.arch.data.model = 64
+	sun.boot.class.path = S:\jdk\jre\lib\resources.jar;S:\jdk\jre\lib\rt.jar;S:\jdk\jre\lib\sunrsasign.jar;S:\jdk\jre\lib\jsse.jar;S:\jdk\jre\lib\jce.jar;S:\jdk\jre\lib\charsets.jar;S:\jdk\jre\lib\jfr.jar;S:\jdk\jre\classes
+	sun.boot.library.path = S:\jdk\jre\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.desktop = windows
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = S:\wildfly\jboss-modules.jar -mp S:\wildfly\modules org.jboss.as.standalone -Djboss.home.dir=S:\wildfly --server-config=standalone-full.xml
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = Service Pack 1
+	user.country = ES
+	user.dir = S:\wildfly\bin
+	user.home = \\vmware-host\Shared Folders
+	user.language = es
+	user.name = delacal
+	user.script = 
+	user.timezone = Europe/Berlin
+	user.variant = 
+2014-03-25 02:43:00,845 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -XX:+UseCompressedOops -Dprogram.name=standalone.bat -Djboss.server.log.threshold=INFO -Xms512m -Xmx1000m -XX:MaxPermSize=256m -Dorg.jboss.boot.log.file=S:\wildfly\standalone\log\server.log -Dlogging.configuration=file:S:\wildfly\standalone\configuration/logging.properties 
+2014-03-25 02:43:16,132 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Creating http management service using socket-binding (management-http)
+2014-03-25 02:43:16,695 INFO  [org.xnio] (MSC service thread 1-2) XNIO version 3.2.0.Final
+2014-03-25 02:43:16,765 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 36) JBAS010280: Activating Infinispan subsystem.
+2014-03-25 02:43:16,821 INFO  [org.xnio.nio] (MSC service thread 1-2) XNIO NIO Implementation Version 3.2.0.Final
+2014-03-25 02:43:16,905 INFO  [org.jboss.as.jacorb] (ServerService Thread Pool -- 37) JBAS016300: Activating JacORB Subsystem
+2014-03-25 02:43:17,047 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 56) JBAS015537: Activating WebServices Extension
+2014-03-25 02:43:17,033 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 43) JBAS012615: Activated the following JSF Implementations: [main]
+2014-03-25 02:43:16,976 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 47) JBAS011800: Activating Naming Subsystem
+2014-03-25 02:43:16,948 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 52) JBAS013171: Activating Security Subsystem
+2014-03-25 02:43:18,116 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) JBAS017502: Undertow 1.0.0.Final starting
+2014-03-25 02:43:19,340 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) JBAS017527: Creating file handler for path S:\wildfly/welcome-content
+2014-03-25 02:43:20,184 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 31) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2014-03-25 02:43:21,985 INFO  [org.jboss.as.security] (MSC service thread 1-1) JBAS013170: Current PicketBox version=4.0.20.Final
+2014-03-25 02:43:22,506 INFO  [org.jboss.remoting] (MSC service thread 1-2) JBoss Remoting version 4.0.0.Final
+2014-03-25 02:43:23,026 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017502: Undertow 1.0.0.Final starting
+2014-03-25 02:43:23,069 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-2) JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.3.Final)
+2014-03-25 02:43:23,280 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) JBAS010417: Started Driver service with driver-name = h2
+2014-03-25 02:43:23,336 INFO  [org.jboss.as.naming] (MSC service thread 1-2) JBAS011802: Starting Naming Service
+2014-03-25 02:43:23,449 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-1) JBAS015400: Bound mail session [java:jboss/mail/Default]
+2014-03-25 02:43:23,561 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-2) JBAS015012: Started FileSystemDeploymentService for directory S:\wildfly\standalone\deployments
+2014-03-25 02:43:23,576 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017525: Started server default-server.
+2014-03-25 02:43:24,462 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017519: Undertow HTTP listener default listening on /127.0.0.1:8280
+2014-03-25 02:43:24,462 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017531: Host default-host starting
+2014-03-25 02:43:24,588 WARN  [jacorb.codeset] (MSC service thread 1-2) Warning - unknown codeset (Cp1252) - defaulting to ISO-8859-1
+2014-03-25 02:43:24,828 INFO  [org.jboss.as.jacorb] (MSC service thread 1-2) JBAS016330: CORBA ORB Service started
+2014-03-25 02:43:26,150 INFO  [org.jboss.as.jacorb] (MSC service thread 1-2) JBAS016328: CORBA Naming Service started
+2014-03-25 02:43:26,362 WARN  [org.jboss.as.messaging] (MSC service thread 1-2) JBAS011600: AIO wasn't located on this platform, it will fall back to using pure Java NIO. If your platform is Linux, install LibAIO to enable the AIO journal
+2014-03-25 02:43:27,136 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+2014-03-25 02:43:27,642 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221000: live server is starting with configuration HornetQ Configuration (clustered=false,backup=false,sharedStore=true,journalDirectory=S:\wildfly\standalone\data\messagingjournal,bindingsDirectory=S:\wildfly\standalone\data\messagingbindings,largeMessagesDirectory=S:\wildfly\standalone\data\messaginglargemessages,pagingDirectory=S:\wildfly\standalone\data\messagingpaging)
+2014-03-25 02:43:27,670 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221006: Waiting to obtain live lock
+2014-03-25 02:43:27,783 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221013: Using NIO Journal
+2014-03-25 02:43:27,896 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.2.3.Final
+2014-03-25 02:43:27,980 INFO  [io.netty.util.internal.PlatformDependent] (ServerService Thread Pool -- 58) Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+2014-03-25 02:43:28,093 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support CORE
+2014-03-25 02:43:28,149 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support AMQP
+2014-03-25 02:43:28,163 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support STOMP
+2014-03-25 02:43:28,276 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221034: Waiting to obtain live lock
+2014-03-25 02:43:28,276 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221035: Live Server Obtained live lock
+2014-03-25 02:43:28,853 INFO  [org.jboss.messaging] (MSC service thread 1-1) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor acceptor
+2014-03-25 02:43:28,853 INFO  [org.jboss.messaging] (MSC service thread 1-2) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor-throughput acceptor
+2014-03-25 02:43:29,388 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221007: Server is now live
+2014-03-25 02:43:29,388 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221001: HornetQ Server version 2.4.1.Final (Fast Hornet, 124) [dc857a2d-b3be-11e3-bd61-b7940c80e733] 
+2014-03-25 02:43:29,501 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 58) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2014-03-25 02:43:29,515 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 59) JBAS011601: Bound messaging object to jndi name java:/ConnectionFactory
+2014-03-25 02:43:29,725 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-2) JBAS010406: Registered connection factory java:/JmsXA
+2014-03-25 02:43:29,895 INFO  [org.hornetq.ra] (MSC service thread 1-2) HornetQ resource adaptor started
+2014-03-25 02:43:29,909 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-2) IJ020002: Deployed: file://RaActivatorhornetq-ra
+2014-03-25 02:43:29,923 INFO  [org.jboss.as.messaging] (MSC service thread 1-1) JBAS011601: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2014-03-25 02:43:29,909 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-2) JBAS010401: Bound JCA ConnectionFactory [java:/JmsXA]
+2014-03-25 02:43:30,147 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:10190/management
+2014-03-25 02:43:30,147 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:10190
+2014-03-25 02:43:30,147 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.0.0.Final "WildFly" started in 37689ms - Started 215 of 263 services (89 services are lazy, passive or on-demand)
+2014-03-25 02:45:22,738 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.0.Final
+2014-03-25 02:45:24,412 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.0.Final
+2014-03-25 02:45:24,637 INFO  [org.jboss.as] (MSC service thread 1-1) JBAS015899: WildFly 8.0.0.Final "WildFly" starting
+2014-03-25 02:45:24,665 DEBUG [org.jboss.as.config] (MSC service thread 1-1) Configured system properties:
+	awt.toolkit = sun.awt.windows.WToolkit
+	file.encoding = Cp1252
+	file.encoding.pkg = sun.io
+	file.separator = \
+	java.awt.graphicsenv = sun.awt.Win32GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.awt.windows.WPrinterJob
+	java.class.path = S:\wildfly\jboss-modules.jar
+	java.class.version = 51.0
+	java.endorsed.dirs = S:\jdk\jre\lib\endorsed
+	java.ext.dirs = S:\jdk\jre\lib\ext;C:\Windows\Sun\Java\lib\ext
+	java.home = S:\jdk\jre
+	java.io.tmpdir = C:\Users\delacal\AppData\Local\Temp\
+	java.library.path = S:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;native;S:/jdk/bin/../jre/bin/server;S:/jdk/bin/../jre/bin;S:/jdk/bin/../jre/lib/amd64;S:\jdk\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files (x86)\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;S:\eclipse;;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.7.0_25-b17
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.7
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.7.0_25
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.7
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 23.25-b01
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = 0.0.0.0
+	jboss.bind.address.management = localhost
+	jboss.home.dir = S:\wildfly
+	jboss.host.name = win-e7ecmam7osb
+	jboss.modules.dir = S:\wildfly\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = win-e7ecmam7osb
+	jboss.qualified.host.name = win-e7ecmam7osb
+	jboss.server.base.dir = S:\wildfly\standalone
+	jboss.server.config.dir = S:\wildfly\standalone\configuration
+	jboss.server.data.dir = S:\wildfly\standalone\data
+	jboss.server.deploy.dir = S:\wildfly\standalone\data\content
+	jboss.server.log.dir = S:\wildfly\standalone\log
+	jboss.server.name = win-e7ecmam7osb
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = S:\wildfly\standalone\tmp
+	line.separator = 
+
+	logging.configuration = file:/S:/wildfly/standalone/configuration/logging.properties
+	module.path = S:/wildfly/modules
+	org.jboss.boot.log.file = S:/wildfly/standalone/log/boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Windows 7
+	os.version = 6.1
+	path.separator = ;
+	program.name = JBossTools: WildFly 8.0 Runtime Server (INTERNO)
+	sun.arch.data.model = 64
+	sun.boot.class.path = S:\jdk\jre\lib\resources.jar;S:\jdk\jre\lib\rt.jar;S:\jdk\jre\lib\sunrsasign.jar;S:\jdk\jre\lib\jsse.jar;S:\jdk\jre\lib\jce.jar;S:\jdk\jre\lib\charsets.jar;S:\jdk\jre\lib\jfr.jar;S:\jdk\jre\classes
+	sun.boot.library.path = S:\jdk\jre\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.desktop = windows
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp S:/wildfly/modules -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b 0.0.0.0 --server-config=standalone-full.xml
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = Service Pack 1
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = ES
+	user.dir = S:\wildfly\bin
+	user.home = \\vmware-host\Shared Folders
+	user.language = es
+	user.name = delacal
+	user.script = 
+	user.timezone = Europe/Berlin
+	user.variant = 
+2014-03-25 02:45:24,680 DEBUG [org.jboss.as.config] (MSC service thread 1-1) VM Arguments: -Dprogram.name=JBossTools: WildFly 8.0 Runtime Server (INTERNO) -Xms64m -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=S:/wildfly/standalone/log/boot.log -Dlogging.configuration=file:/S:/wildfly/standalone/configuration/logging.properties -Djboss.home.dir=S:/wildfly -Dorg.jboss.logmanager.nocolor=true -Djboss.bind.address.management=localhost -Dfile.encoding=Cp1252 
+2014-03-25 02:45:28,952 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Creating http management service using socket-binding (management-http)
+2014-03-25 02:45:29,038 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.2.0.Final
+2014-03-25 02:45:29,052 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.2.0.Final
+2014-03-25 02:45:29,179 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 56) JBAS015537: Activating WebServices Extension
+2014-03-25 02:45:29,207 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) JBAS017502: Undertow 1.0.0.Final starting
+2014-03-25 02:45:29,361 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 52) JBAS013171: Activating Security Subsystem
+2014-03-25 02:45:29,685 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 36) JBAS010280: Activating Infinispan subsystem.
+2014-03-25 02:45:29,727 INFO  [org.jboss.as.jacorb] (ServerService Thread Pool -- 37) JBAS016300: Activating JacORB Subsystem
+2014-03-25 02:45:29,811 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 43) JBAS012615: Activated the following JSF Implementations: [main]
+2014-03-25 02:45:29,839 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 47) JBAS011800: Activating Naming Subsystem
+2014-03-25 02:45:30,106 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 31) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2014-03-25 02:45:30,177 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 4.0.0.Final
+2014-03-25 02:45:31,091 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) JBAS017527: Creating file handler for path S:\wildfly/welcome-content
+2014-03-25 02:45:31,864 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017502: Undertow 1.0.0.Final starting
+2014-03-25 02:45:31,878 INFO  [org.jboss.as.security] (MSC service thread 1-2) JBAS013170: Current PicketBox version=4.0.20.Final
+2014-03-25 02:45:32,089 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-2) JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.3.Final)
+2014-03-25 02:45:32,188 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) JBAS010417: Started Driver service with driver-name = h2
+2014-03-25 02:45:32,188 INFO  [org.jboss.as.naming] (MSC service thread 1-2) JBAS011802: Starting Naming Service
+2014-03-25 02:45:32,231 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) JBAS015400: Bound mail session [java:jboss/mail/Default]
+2014-03-25 02:45:32,259 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-2) JBAS015012: Started FileSystemDeploymentService for directory S:\wildfly\standalone\deployments
+2014-03-25 02:45:32,301 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017525: Started server default-server.
+2014-03-25 02:45:32,652 WARN  [jacorb.codeset] (MSC service thread 1-1) Warning - unknown codeset (Cp1252) - defaulting to ISO-8859-1
+2014-03-25 02:45:32,806 INFO  [org.jboss.as.jacorb] (MSC service thread 1-1) JBAS016330: CORBA ORB Service started
+2014-03-25 02:45:32,834 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017519: Undertow HTTP listener default listening on /0.0.0.0:8280
+2014-03-25 02:45:32,848 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017531: Host default-host starting
+2014-03-25 02:45:33,495 WARN  [org.jboss.as.messaging] (MSC service thread 1-2) JBAS011600: AIO wasn't located on this platform, it will fall back to using pure Java NIO. If your platform is Linux, install LibAIO to enable the AIO journal
+2014-03-25 02:45:33,959 INFO  [org.jboss.as.jacorb] (MSC service thread 1-2) JBAS016328: CORBA Naming Service started
+2014-03-25 02:45:34,185 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+2014-03-25 02:45:34,255 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221000: live server is starting with configuration HornetQ Configuration (clustered=false,backup=false,sharedStore=true,journalDirectory=S:\wildfly\standalone\data\messagingjournal,bindingsDirectory=S:\wildfly\standalone\data\messagingbindings,largeMessagesDirectory=S:\wildfly\standalone\data\messaginglargemessages,pagingDirectory=S:\wildfly\standalone\data\messagingpaging)
+2014-03-25 02:45:34,255 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221006: Waiting to obtain live lock
+2014-03-25 02:45:34,438 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.2.3.Final
+2014-03-25 02:45:34,452 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221013: Using NIO Journal
+2014-03-25 02:45:34,494 INFO  [io.netty.util.internal.PlatformDependent] (ServerService Thread Pool -- 58) Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+2014-03-25 02:45:34,550 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support CORE
+2014-03-25 02:45:34,550 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support AMQP
+2014-03-25 02:45:34,551 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support STOMP
+2014-03-25 02:45:34,663 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221034: Waiting to obtain live lock
+2014-03-25 02:45:34,663 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221035: Live Server Obtained live lock
+2014-03-25 02:45:34,932 INFO  [org.jboss.messaging] (MSC service thread 1-1) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor acceptor
+2014-03-25 02:45:34,960 INFO  [org.jboss.messaging] (MSC service thread 1-1) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor-throughput acceptor
+2014-03-25 02:45:35,044 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221007: Server is now live
+2014-03-25 02:45:35,044 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221001: HornetQ Server version 2.4.1.Final (Fast Hornet, 124) [dc857a2d-b3be-11e3-bd61-b7940c80e733] 
+2014-03-25 02:45:35,354 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 58) JBAS011601: Bound messaging object to jndi name java:/ConnectionFactory
+2014-03-25 02:45:35,438 INFO  [org.hornetq.jms.server] (ServerService Thread Pool -- 59) HQ121005: Invalid "host" value "0.0.0.0" detected for "http-connector" connector. Switching to "WIN-E7ECMAM7OSB". If this new address is incorrect please manually configure the connector to use the proper one.
+2014-03-25 02:45:35,466 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-1) JBAS010406: Registered connection factory java:/JmsXA
+2014-03-25 02:45:35,522 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 59) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2014-03-25 02:45:35,536 INFO  [org.hornetq.ra] (MSC service thread 1-1) HornetQ resource adaptor started
+2014-03-25 02:45:35,536 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-1) IJ020002: Deployed: file://RaActivatorhornetq-ra
+2014-03-25 02:45:35,536 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-1) JBAS010401: Bound JCA ConnectionFactory [java:/JmsXA]
+2014-03-25 02:45:35,536 INFO  [org.jboss.as.messaging] (MSC service thread 1-1) JBAS011601: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2014-03-25 02:45:35,705 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:10190/management
+2014-03-25 02:45:35,705 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:10190
+2014-03-25 02:45:35,705 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.0.0.Final "WildFly" started in 15131ms - Started 215 of 263 services (89 services are lazy, passive or on-demand)
+2014-03-25 02:47:02,683 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found xx.war in deployment directory. To trigger deployment create a file called xx.war.dodeploy
+2014-03-25 02:47:02,806 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "xx.war" (runtime-name: "xx.war")
+2014-03-25 02:47:05,215 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) JBAS016002: Processing weld deployment xx.war
+2014-03-25 02:47:06,052 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-2) HV000001: Hibernate Validator 5.0.3.Final
+2014-03-25 02:47:07,780 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) JBAS016005: Starting Services for CDI deployment: xx.war
+2014-03-25 02:47:08,070 INFO  [org.jboss.weld.Version] (MSC service thread 1-2) WELD-000900: 2.1.2 (Final)
+2014-03-25 02:47:08,200 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) JBAS016008: Starting weld service for deployment xx.war
+2014-03-25 02:47:14,076 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/xx'
+2014-03-25 02:47:21,405 SEVERE [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Critical error during deployment: : com.sun.faces.config.ConfigurationException: The tag named passThroughAttribute from namespace http://xmlns.jcp.org/jsf/core has a null handler-class defined
+	at com.sun.faces.config.processor.FaceletTaglibConfigProcessor.processHandlerClass(FaceletTaglibConfigProcessor.java:422) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.config.processor.FaceletTaglibConfigProcessor.processTags(FaceletTaglibConfigProcessor.java:378) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.config.processor.FaceletTaglibConfigProcessor.processTagLibrary(FaceletTaglibConfigProcessor.java:321) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.config.processor.FaceletTaglibConfigProcessor.process(FaceletTaglibConfigProcessor.java:270) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.config.ConfigManager.initialize(ConfigManager.java:437) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.config.ConfigureListener.contextInitialized(ConfigureListener.java:214) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at io.undertow.servlet.core.ApplicationListeners.contextInitialized(ApplicationListeners.java:173) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.core.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:187) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentService.startContext(UndertowDeploymentService.java:86)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentService.start(UndertowDeploymentService.java:71)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+
+2014-03-25 02:47:21,424 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-1) MSC000001: Failed to start service jboss.undertow.deployment.default-server.default-host./xx: org.jboss.msc.service.StartException in service jboss.undertow.deployment.default-server.default-host./xx: Failed to start service
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1904) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+Caused by: java.lang.RuntimeException: java.lang.RuntimeException: com.sun.faces.config.ConfigurationException: The tag named passThroughAttribute from namespace http://xmlns.jcp.org/jsf/core has a null handler-class defined
+	at io.undertow.servlet.core.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:216)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentService.startContext(UndertowDeploymentService.java:86)
+	at org.wildfly.extension.undertow.deployment.UndertowDeploymentService.start(UndertowDeploymentService.java:71)
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	... 3 more
+Caused by: java.lang.RuntimeException: com.sun.faces.config.ConfigurationException: The tag named passThroughAttribute from namespace http://xmlns.jcp.org/jsf/core has a null handler-class defined
+	at com.sun.faces.config.ConfigureListener.contextInitialized(ConfigureListener.java:273)
+	at io.undertow.servlet.core.ApplicationListeners.contextInitialized(ApplicationListeners.java:173)
+	at io.undertow.servlet.core.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:187)
+	... 7 more
+Caused by: com.sun.faces.config.ConfigurationException: The tag named passThroughAttribute from namespace http://xmlns.jcp.org/jsf/core has a null handler-class defined
+	at com.sun.faces.config.processor.FaceletTaglibConfigProcessor.processHandlerClass(FaceletTaglibConfigProcessor.java:422)
+	at com.sun.faces.config.processor.FaceletTaglibConfigProcessor.processTags(FaceletTaglibConfigProcessor.java:378)
+	at com.sun.faces.config.processor.FaceletTaglibConfigProcessor.processTagLibrary(FaceletTaglibConfigProcessor.java:321)
+	at com.sun.faces.config.processor.FaceletTaglibConfigProcessor.process(FaceletTaglibConfigProcessor.java:270)
+	at com.sun.faces.config.ConfigManager.initialize(ConfigManager.java:437)
+	at com.sun.faces.config.ConfigureListener.contextInitialized(ConfigureListener.java:214)
+	... 9 more
+
+2014-03-25 02:47:21,448 ERROR [org.jboss.as.controller.management-operation] (DeploymentScanner-threads - 2) JBAS014613: Operation ("deploy") failed - address: ([("deployment" => "xx.war")]) - failure description: {"JBAS014671: Failed services" => {"jboss.undertow.deployment.default-server.default-host./xx" => "org.jboss.msc.service.StartException in service jboss.undertow.deployment.default-server.default-host./xx: Failed to start service
+    Caused by: java.lang.RuntimeException: java.lang.RuntimeException: com.sun.faces.config.ConfigurationException: The tag named passThroughAttribute from namespace http://xmlns.jcp.org/jsf/core has a null handler-class defined
+    Caused by: java.lang.RuntimeException: com.sun.faces.config.ConfigurationException: The tag named passThroughAttribute from namespace http://xmlns.jcp.org/jsf/core has a null handler-class defined
+    Caused by: com.sun.faces.config.ConfigurationException: The tag named passThroughAttribute from namespace http://xmlns.jcp.org/jsf/core has a null handler-class defined"}}
+2014-03-25 02:47:21,661 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018559: Deployed "xx.war" (runtime-name : "xx.war")
+2014-03-25 02:47:21,662 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.undertow.deployment.default-server.default-host./xx: org.jboss.msc.service.StartException in service jboss.undertow.deployment.default-server.default-host./xx: Failed to start service
+
+2014-03-25 02:52:16,495 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 2) JBAS015003: Found proyecto0_wf8.war in deployment directory. To trigger deployment create a file called proyecto0_wf8.war.dodeploy
+2014-03-25 02:52:16,593 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-25 02:52:16,946 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/proyecto0_wf8'
+2014-03-25 02:52:18,001 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /proyecto0_wf8
+2014-03-25 02:52:18,100 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018559: Deployed "proyecto0_wf8.war" (runtime-name : "proyecto0_wf8.war")
+2014-03-25 02:52:18,100 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 1) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.undertow.deployment.default-server.default-host./xx: org.jboss.msc.service.StartException in service jboss.undertow.deployment.default-server.default-host./xx: Failed to start service
+
+2014-03-25 02:58:13,121 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.0.Final
+2014-03-25 02:58:15,055 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.0.Final
+2014-03-25 02:58:15,333 INFO  [org.jboss.as] (MSC service thread 1-2) JBAS015899: WildFly 8.0.0.Final "WildFly" starting
+2014-03-25 02:58:15,350 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
+	awt.toolkit = sun.awt.windows.WToolkit
+	file.encoding = Cp1252
+	file.encoding.pkg = sun.io
+	file.separator = \
+	java.awt.graphicsenv = sun.awt.Win32GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.awt.windows.WPrinterJob
+	java.class.path = S:\wildfly\jboss-modules.jar
+	java.class.version = 51.0
+	java.endorsed.dirs = S:\jdk\jre\lib\endorsed
+	java.ext.dirs = S:\jdk\jre\lib\ext;C:\Windows\Sun\Java\lib\ext
+	java.home = S:\jdk\jre
+	java.io.tmpdir = C:\Users\delacal\AppData\Local\Temp\
+	java.library.path = S:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;native;S:/jdk/bin/../jre/bin/server;S:/jdk/bin/../jre/bin;S:/jdk/bin/../jre/lib/amd64;S:\jdk\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files (x86)\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;S:\eclipse;;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.7.0_25-b17
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.7
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.7.0_25
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.7
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 23.25-b01
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = 0.0.0.0
+	jboss.bind.address.management = localhost
+	jboss.home.dir = S:\wildfly
+	jboss.host.name = win-e7ecmam7osb
+	jboss.modules.dir = S:\wildfly\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = win-e7ecmam7osb
+	jboss.qualified.host.name = win-e7ecmam7osb
+	jboss.server.base.dir = S:\wildfly\standalone
+	jboss.server.config.dir = S:\wildfly\standalone\configuration
+	jboss.server.data.dir = S:\wildfly\standalone\data
+	jboss.server.deploy.dir = S:\wildfly\standalone\data\content
+	jboss.server.log.dir = S:\wildfly\standalone\log
+	jboss.server.name = win-e7ecmam7osb
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = S:\wildfly\standalone\tmp
+	line.separator = 
+
+	logging.configuration = file:/S:/wildfly/standalone/configuration/logging.properties
+	module.path = S:/wildfly/modules
+	org.jboss.boot.log.file = S:/wildfly/standalone/log/boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Windows 7
+	os.version = 6.1
+	path.separator = ;
+	program.name = JBossTools: WildFly 8.0 Runtime Server (INTERNO)
+	sun.arch.data.model = 64
+	sun.boot.class.path = S:\jdk\jre\lib\resources.jar;S:\jdk\jre\lib\rt.jar;S:\jdk\jre\lib\sunrsasign.jar;S:\jdk\jre\lib\jsse.jar;S:\jdk\jre\lib\jce.jar;S:\jdk\jre\lib\charsets.jar;S:\jdk\jre\lib\jfr.jar;S:\jdk\jre\classes
+	sun.boot.library.path = S:\jdk\jre\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.desktop = windows
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp S:/wildfly/modules -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b 0.0.0.0 --server-config=standalone-full.xml
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = Service Pack 1
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = ES
+	user.dir = S:\wildfly\bin
+	user.home = \\vmware-host\Shared Folders
+	user.language = es
+	user.name = delacal
+	user.script = 
+	user.timezone = Europe/Berlin
+	user.variant = 
+2014-03-25 02:58:15,355 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -Dprogram.name=JBossTools: WildFly 8.0 Runtime Server (INTERNO) -Xms64m -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=S:/wildfly/standalone/log/boot.log -Dlogging.configuration=file:/S:/wildfly/standalone/configuration/logging.properties -Djboss.home.dir=S:/wildfly -Dorg.jboss.logmanager.nocolor=true -Djboss.bind.address.management=localhost -Dfile.encoding=Cp1252 
+2014-03-25 02:58:19,937 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found xx.war in deployment directory. To trigger deployment create a file called xx.war.dodeploy
+2014-03-25 02:58:19,939 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found proyecto0_wf8.war in deployment directory. To trigger deployment create a file called proyecto0_wf8.war.dodeploy
+2014-03-25 02:58:19,994 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Creating http management service using socket-binding (management-http)
+2014-03-25 02:58:20,051 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.2.0.Final
+2014-03-25 02:58:20,061 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.2.0.Final
+2014-03-25 02:58:20,287 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 56) JBAS015537: Activating WebServices Extension
+2014-03-25 02:58:20,312 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 52) JBAS013171: Activating Security Subsystem
+2014-03-25 02:58:20,485 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 47) JBAS011800: Activating Naming Subsystem
+2014-03-25 02:58:20,509 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) JBAS017502: Undertow 1.0.0.Final starting
+2014-03-25 02:58:20,550 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 43) JBAS012615: Activated the following JSF Implementations: [main]
+2014-03-25 02:58:20,636 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) JBAS017527: Creating file handler for path S:\wildfly/welcome-content
+2014-03-25 02:58:20,815 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 36) JBAS010280: Activating Infinispan subsystem.
+2014-03-25 02:58:20,846 INFO  [org.jboss.as.jacorb] (ServerService Thread Pool -- 37) JBAS016300: Activating JacORB Subsystem
+2014-03-25 02:58:21,120 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 4.0.0.Final
+2014-03-25 02:58:21,590 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017502: Undertow 1.0.0.Final starting
+2014-03-25 02:58:21,593 INFO  [org.jboss.as.security] (MSC service thread 1-1) JBAS013170: Current PicketBox version=4.0.20.Final
+2014-03-25 02:58:22,560 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-1) JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.3.Final)
+2014-03-25 02:58:23,137 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 31) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2014-03-25 02:58:23,348 INFO  [org.jboss.as.naming] (MSC service thread 1-2) JBAS011802: Starting Naming Service
+2014-03-25 02:58:23,351 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) JBAS010417: Started Driver service with driver-name = h2
+2014-03-25 02:58:23,358 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) JBAS015400: Bound mail session [java:jboss/mail/Default]
+2014-03-25 02:58:23,406 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017525: Started server default-server.
+2014-03-25 02:58:23,728 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017531: Host default-host starting
+2014-03-25 02:58:23,804 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017519: Undertow HTTP listener default listening on /0.0.0.0:8280
+2014-03-25 02:58:23,834 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-2) JBAS015012: Started FileSystemDeploymentService for directory S:\wildfly\standalone\deployments
+2014-03-25 02:58:23,851 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-25 02:58:24,971 WARN  [jacorb.codeset] (MSC service thread 1-1) Warning - unknown codeset (Cp1252) - defaulting to ISO-8859-1
+2014-03-25 02:58:25,481 INFO  [org.jboss.as.jacorb] (MSC service thread 1-1) JBAS016330: CORBA ORB Service started
+2014-03-25 02:58:25,631 WARN  [org.jboss.as.messaging] (MSC service thread 1-1) JBAS011600: AIO wasn't located on this platform, it will fall back to using pure Java NIO. If your platform is Linux, install LibAIO to enable the AIO journal
+2014-03-25 02:58:25,836 INFO  [org.jboss.ws.common.management] (MSC service thread 1-2) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.2.3.Final
+2014-03-25 02:58:26,272 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221000: live server is starting with configuration HornetQ Configuration (clustered=false,backup=false,sharedStore=true,journalDirectory=S:\wildfly\standalone\data\messagingjournal,bindingsDirectory=S:\wildfly\standalone\data\messagingbindings,largeMessagesDirectory=S:\wildfly\standalone\data\messaginglargemessages,pagingDirectory=S:\wildfly\standalone\data\messagingpaging)
+2014-03-25 02:58:26,303 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221006: Waiting to obtain live lock
+2014-03-25 02:58:26,337 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221013: Using NIO Journal
+2014-03-25 02:58:26,464 INFO  [org.jboss.as.jacorb] (MSC service thread 1-1) JBAS016328: CORBA Naming Service started
+2014-03-25 02:58:26,599 INFO  [io.netty.util.internal.PlatformDependent] (ServerService Thread Pool -- 58) Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+2014-03-25 02:58:26,647 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support CORE
+2014-03-25 02:58:26,863 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+2014-03-25 02:58:26,911 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support AMQP
+2014-03-25 02:58:26,917 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support STOMP
+2014-03-25 02:58:27,031 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221034: Waiting to obtain live lock
+2014-03-25 02:58:27,031 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221035: Live Server Obtained live lock
+2014-03-25 02:58:27,965 INFO  [org.jboss.messaging] (MSC service thread 1-2) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor acceptor
+2014-03-25 02:58:27,989 INFO  [org.jboss.messaging] (MSC service thread 1-2) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor-throughput acceptor
+2014-03-25 02:58:28,021 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221007: Server is now live
+2014-03-25 02:58:28,021 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221001: HornetQ Server version 2.4.1.Final (Fast Hornet, 124) [dc857a2d-b3be-11e3-bd61-b7940c80e733] 
+2014-03-25 02:58:28,112 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 58) JBAS011601: Bound messaging object to jndi name java:/ConnectionFactory
+2014-03-25 02:58:28,213 INFO  [org.hornetq.jms.server] (ServerService Thread Pool -- 59) HQ121005: Invalid "host" value "0.0.0.0" detected for "http-connector" connector. Switching to "WIN-E7ECMAM7OSB". If this new address is incorrect please manually configure the connector to use the proper one.
+2014-03-25 02:58:28,214 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 59) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2014-03-25 02:58:28,291 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-1) JBAS010406: Registered connection factory java:/JmsXA
+2014-03-25 02:58:28,351 INFO  [org.hornetq.ra] (MSC service thread 1-1) HornetQ resource adaptor started
+2014-03-25 02:58:28,352 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-1) IJ020002: Deployed: file://RaActivatorhornetq-ra
+2014-03-25 02:58:28,355 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-1) JBAS010401: Bound JCA ConnectionFactory [java:/JmsXA]
+2014-03-25 02:58:28,356 INFO  [org.jboss.as.messaging] (MSC service thread 1-1) JBAS011601: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2014-03-25 02:58:29,336 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/proyecto0_wf8'
+2014-03-25 02:58:31,979 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /proyecto0_wf8
+2014-03-25 02:58:32,090 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 32) JBAS018559: Deployed "proyecto0_wf8.war" (runtime-name : "proyecto0_wf8.war")
+2014-03-25 02:58:32,153 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:10190/management
+2014-03-25 02:58:32,154 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:10190
+2014-03-25 02:58:32,155 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.0.0.Final "WildFly" started in 21595ms - Started 292 of 345 services (99 services are lazy, passive or on-demand)
+2014-03-25 03:16:15,681 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 2) JBAS015003: Found Notaneitorv3_7.war in deployment directory. To trigger deployment create a file called Notaneitorv3_7.war.dodeploy
+2014-03-25 03:16:20,268 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "Notaneitorv3_7.war" (runtime-name: "Notaneitorv3_7.war")
+2014-03-25 03:16:20,987 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) JBAS010403: Deploying JDBC-compliant driver class org.hsqldb.jdbc.JDBCDriver (version 2.2)
+2014-03-25 03:16:21,001 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) JBAS010417: Started Driver service with driver-name = Notaneitorv3_7.war_org.hsqldb.jdbc.JDBCDriver_2_2
+2014-03-25 03:16:21,071 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/Notaneitorv3_7'
+2014-03-25 03:16:22,126 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/S:/wildfly/standalone/deployments/Notaneitorv3_7.war/WEB-INF/faces-config.xml for modifications
+2014-03-25 03:16:22,197 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /Notaneitorv3_7
+2014-03-25 03:16:22,521 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018559: Deployed "Notaneitorv3_7.war" (runtime-name : "Notaneitorv3_7.war")
+2014-03-25 03:16:31,476 INFO  [stdout] (default task-3) BeanAlumno - No existia
+2014-03-25 03:16:31,498 INFO  [stdout] (default task-3) BeanSettings - PostConstruct
+2014-03-25 03:16:31,503 INFO  [stdout] (default task-3) BeanSettings - idioma: es
+2014-03-25 03:16:34,392 INFO  [stdout] (default task-3) BeanLogin - No existia
+2014-03-25 03:16:38,464 INFO  [stdout] (default task-5) BeanSettings - idioma: es
+2014-03-25 03:16:38,573 INFO  [stdout] (default task-5) BeanSettings - idioma - in: en
+2014-03-25 03:16:38,608 INFO  [stdout] (default task-5) BeanSettings - idioma: en
+2014-03-25 03:16:39,648 INFO  [stdout] (default task-6) BeanSettings - idioma: en
+2014-03-25 03:16:39,674 INFO  [stdout] (default task-6) BeanSettings - idioma - in: es
+2014-03-25 03:16:39,677 INFO  [stdout] (default task-6) BeanSettings - idioma: es
+2014-03-25 03:16:41,043 INFO  [stdout] (default task-7) BeanSettings - idioma: es
+2014-03-25 03:16:41,075 INFO  [stdout] (default task-7) BeanSettings - idioma - in: en
+2014-03-25 03:16:41,078 INFO  [stdout] (default task-7) BeanSettings - idioma: en
+2014-03-25 03:16:42,262 INFO  [stdout] (default task-8) BeanSettings - idioma: en
+2014-03-25 03:16:42,290 INFO  [stdout] (default task-8) BeanSettings - idioma - in: es
+2014-03-25 03:16:42,293 INFO  [stdout] (default task-8) BeanSettings - idioma: es
+2014-03-25 03:17:03,652 INFO  [stdout] (default task-10) BeanSettings - idioma: es
+2014-03-25 03:17:11,661 INFO  [stdout] (default task-12) BeanSettings - idioma: es
+2014-03-25 03:17:11,913 INFO  [org.hibernate.validator.internal.util.Version] (default task-12) HV000001: Hibernate Validator 5.0.3.Final
+2014-03-25 03:17:12,357 INFO  [stdout] (default task-12) BeanSettings - idioma: es
+2014-03-25 03:17:16,246 INFO  [stdout] (default task-13) BeanSettings - idioma: es
+2014-03-25 03:17:16,412 INFO  [stdout] (default task-13) BeanSettings - idioma: es
+2014-03-25 03:17:19,348 INFO  [stdout] (default task-15) BeanSettings - idioma: es
+2014-03-25 03:17:19,379 INFO  [stdout] (default task-15) BeanSettings - idioma - in: en
+2014-03-25 03:17:19,390 INFO  [stdout] (default task-15) BeanSettings - idioma: en
+2014-03-25 03:17:20,704 INFO  [stdout] (default task-1) BeanSettings - idioma: en
+2014-03-25 03:17:20,743 INFO  [stdout] (default task-1) BeanAlumnos - PostConstruct
+2014-03-25 03:17:21,622 INFO  [stdout] (default task-1) BeanSettings - idioma: en
+2014-03-25 03:17:24,839 INFO  [stdout] (default task-3) BeanSettings - idioma: en
+2014-03-25 03:17:24,927 INFO  [stdout] (default task-3) BeanSettings - idioma: en
+2014-03-25 03:17:28,583 INFO  [stdout] (default task-5) BeanSettings - idioma: en
+2014-03-25 03:17:28,889 INFO  [stdout] (default task-5) BeanSettings - idioma: en
+2014-03-25 03:17:33,792 INFO  [stdout] (default task-7) BeanSettings - idioma: en
+2014-03-25 03:17:34,042 INFO  [stdout] (default task-7) BeanSettings - idioma: en
+2014-03-25 03:17:35,666 INFO  [stdout] (default task-8) BeanSettings - idioma: en
+2014-03-25 03:17:35,699 INFO  [stdout] (default task-8) BeanSettings - idioma: en
+2014-03-25 03:17:37,878 INFO  [stdout] (default task-10) BeanSettings - idioma: en
+2014-03-25 03:17:37,931 INFO  [stdout] (default task-10) BeanSettings - idioma: en
+2014-03-25 03:20:04,383 INFO  [stdout] (default task-12) BeanSettings - idioma: en
+2014-03-25 03:20:06,929 INFO  [stdout] (default task-14) BeanSettings - idioma: en
+2014-03-25 03:20:06,966 INFO  [stdout] (default task-14) BeanSettings - idioma: en
+2014-03-25 03:20:08,896 INFO  [stdout] (default task-2) BeanSettings - idioma: en
+2014-03-25 03:20:08,937 INFO  [stdout] (default task-2) BeanSettings - idioma - in: en
+2014-03-25 03:20:08,940 INFO  [stdout] (default task-2) BeanSettings - idioma: en
+2014-03-25 03:20:09,930 INFO  [stdout] (default task-1) BeanSettings - idioma: en
+2014-03-25 03:20:09,944 INFO  [stdout] (default task-1) BeanSettings - idioma - in: es
+2014-03-25 03:20:09,946 INFO  [stdout] (default task-1) BeanSettings - idioma: es
+2014-03-25 03:20:11,156 INFO  [stdout] (default task-3) BeanSettings - idioma: es
+2014-03-25 03:20:11,179 INFO  [stdout] (default task-3) BeanSettings - idioma - in: en
+2014-03-25 03:20:11,182 INFO  [stdout] (default task-3) BeanSettings - idioma: en
+2014-03-25 03:20:12,387 INFO  [stdout] (default task-4) BeanSettings - idioma: en
+2014-03-25 03:20:12,401 INFO  [stdout] (default task-4) BeanSettings - idioma - in: es
+2014-03-25 03:20:12,403 INFO  [stdout] (default task-4) BeanSettings - idioma: es
+2014-03-25 03:20:15,110 INFO  [stdout] (default task-5) BeanSettings - idioma: es
+2014-03-25 03:20:15,255 INFO  [stdout] (default task-5) BeanSettings - idioma: es
+2014-03-25 03:20:18,187 INFO  [stdout] (default task-7) BeanSettings - idioma: es
+2014-03-25 03:20:18,207 INFO  [stdout] (default task-7) BeanSettings - idioma - in: en
+2014-03-25 03:20:18,211 INFO  [stdout] (default task-7) BeanSettings - idioma: en
+2014-03-25 03:20:21,626 INFO  [stdout] (default task-9) BeanSettings - idioma: en
+2014-03-25 03:20:21,661 INFO  [stdout] (default task-9) BeanSettings - idioma - in: es
+2014-03-25 03:20:21,663 INFO  [stdout] (default task-9) BeanSettings - idioma: es
+2014-03-25 03:20:30,695 INFO  [stdout] (default task-10) BeanSettings - idioma: es
+2014-03-25 03:20:30,739 INFO  [stdout] (default task-10) BeanSettings - idioma: es
+2014-03-25 03:20:33,310 INFO  [stdout] (default task-12) BeanSettings - idioma: es
+2014-03-25 03:20:33,551 INFO  [stdout] (default task-12) BeanSettings - idioma - in: es
+2014-03-25 03:20:33,552 INFO  [stdout] (default task-12) BeanSettings - idioma: es
+2014-03-25 03:20:36,486 INFO  [stdout] (default task-14) BeanSettings - idioma: es
+2014-03-25 03:20:36,499 INFO  [stdout] (default task-14) BeanSettings - idioma - in: es
+2014-03-25 03:20:36,503 INFO  [stdout] (default task-14) BeanSettings - idioma: es
+2014-03-25 03:20:38,187 INFO  [stdout] (default task-15) BeanSettings - idioma: es
+2014-03-25 03:20:38,207 INFO  [stdout] (default task-15) BeanSettings - idioma - in: en
+2014-03-25 03:20:38,240 INFO  [stdout] (default task-15) BeanSettings - idioma: en
+2014-03-25 03:20:39,706 INFO  [stdout] (default task-2) BeanSettings - idioma: en
+2014-03-25 03:20:39,736 INFO  [stdout] (default task-2) BeanSettings - idioma - in: es
+2014-03-25 03:20:39,738 INFO  [stdout] (default task-2) BeanSettings - idioma: es
+2014-03-25 03:20:40,595 INFO  [stdout] (default task-1) BeanSettings - idioma: es
+2014-03-25 03:20:40,619 INFO  [stdout] (default task-1) BeanSettings - idioma - in: en
+2014-03-25 03:20:40,623 INFO  [stdout] (default task-1) BeanSettings - idioma: en
+2014-03-25 03:20:41,774 INFO  [stdout] (default task-3) BeanSettings - idioma: en
+2014-03-25 03:20:41,787 INFO  [stdout] (default task-3) BeanSettings - idioma - in: es
+2014-03-25 03:20:41,789 INFO  [stdout] (default task-3) BeanSettings - idioma: es
+2014-03-25 03:20:43,173 INFO  [stdout] (default task-4) BeanSettings - idioma: es
+2014-03-25 03:20:43,236 INFO  [stdout] (default task-4) BeanSettings - idioma - in: en
+2014-03-25 03:20:43,238 INFO  [stdout] (default task-4) BeanSettings - idioma: en
+2014-03-25 03:20:45,033 INFO  [stdout] (default task-5) BeanSettings - idioma: en
+2014-03-25 03:20:45,080 INFO  [stdout] (default task-5) BeanSettings - idioma: en
+2014-03-25 03:20:47,742 INFO  [stdout] (default task-7) BeanSettings - idioma: en
+2014-03-25 03:20:47,772 INFO  [stdout] (default task-7) BeanSettings - idioma - in: es
+2014-03-25 03:20:47,775 INFO  [stdout] (default task-7) BeanSettings - idioma: es
+2014-03-25 03:20:49,301 INFO  [stdout] (default task-9) BeanSettings - idioma: es
+2014-03-25 03:20:49,325 INFO  [stdout] (default task-9) BeanSettings - idioma - in: en
+2014-03-25 03:20:49,327 INFO  [stdout] (default task-9) BeanSettings - idioma: en
+2014-03-25 03:20:50,532 INFO  [stdout] (default task-10) BeanSettings - idioma: en
+2014-03-25 03:20:50,576 INFO  [stdout] (default task-10) BeanSettings - idioma - in: es
+2014-03-25 03:20:50,578 INFO  [stdout] (default task-10) BeanSettings - idioma: es
+2014-03-25 03:20:51,913 INFO  [stdout] (default task-12) BeanSettings - idioma: es
+2014-03-25 03:20:51,937 INFO  [stdout] (default task-12) BeanSettings - idioma: es
+2014-03-25 03:20:57,762 INFO  [stdout] (default task-15) BeanSettings - idioma: es
+2014-03-25 03:20:59,805 INFO  [stdout] (default task-1) BeanSettings - idioma: es
+2014-03-25 03:20:59,965 INFO  [stdout] (default task-1) BeanSettings - idioma: es
+2014-03-25 03:21:01,646 INFO  [stdout] (default task-4) BeanSettings - idioma: es
+2014-03-25 03:21:01,666 INFO  [stdout] (default task-4) BeanSettings - idioma: es
+2014-03-25 03:21:03,040 INFO  [stdout] (default task-6) BeanSettings - idioma: es
+2014-03-25 03:21:07,038 INFO  [stdout] (default task-8) BeanSettings - idioma: es
+2014-03-25 03:21:07,048 INFO  [stdout] (default task-8) BeanSettings - idioma - in: en
+2014-03-25 03:21:07,050 INFO  [stdout] (default task-8) BeanSettings - idioma: en
+2014-03-25 03:21:08,711 INFO  [stdout] (default task-9) BeanSettings - idioma: en
+2014-03-25 03:21:08,843 INFO  [stdout] (default task-9) BeanSettings - idioma: en
+2014-03-25 03:21:10,881 INFO  [stdout] (default task-10) BeanSettings - idioma: en
+2014-03-25 03:21:10,923 INFO  [stdout] (default task-10) BeanSettings - idioma: en
+2014-03-25 03:21:12,249 INFO  [stdout] (default task-12) BeanSettings - idioma: en
+2014-03-25 03:21:14,846 INFO  [stdout] (default task-15) BeanSettings - idioma: en
+2014-03-25 03:21:15,011 INFO  [stdout] (default task-15) BeanSettings - idioma: en
+2014-03-25 03:21:16,239 INFO  [stdout] (default task-1) BeanSettings - idioma: en
+2014-03-25 03:21:16,322 INFO  [stdout] (default task-1) BeanSettings - idioma: en
+2014-03-25 03:21:18,026 INFO  [stdout] (default task-4) BeanSettings - idioma: en
+2014-03-25 03:21:20,354 INFO  [stdout] (default task-6) BeanSettings - idioma: en
+2014-03-25 03:21:20,490 INFO  [stdout] (default task-6) BeanSettings - idioma: en
+2014-03-25 03:21:24,026 INFO  [stdout] (default task-8) BeanSettings - idioma: en
+2014-03-25 03:21:24,065 INFO  [stdout] (default task-8) BeanSettings - idioma: en
+2014-03-25 03:21:25,275 INFO  [stdout] (default task-11) BeanSettings - idioma: en
+2014-03-25 03:21:26,445 INFO  [stdout] (default task-13) BeanSettings - idioma: en
+2014-03-25 03:21:26,587 INFO  [stdout] (default task-13) BeanSettings - idioma: en
+2014-03-25 03:21:28,050 INFO  [stdout] (default task-14) BeanSettings - idioma: en
+2014-03-25 03:21:28,065 INFO  [stdout] (default task-14) BeanSettings - idioma: en
+2014-03-25 03:21:29,285 INFO  [stdout] (default task-2) BeanSettings - idioma: en
+2014-03-25 03:21:30,468 INFO  [stdout] (default task-3) BeanSettings - idioma: en
+2014-03-25 03:21:30,609 INFO  [stdout] (default task-3) BeanSettings - idioma: en
+2014-03-25 03:21:33,072 INFO  [stdout] (default task-5) BeanSettings - idioma: en
+2014-03-25 03:21:33,086 INFO  [stdout] (default task-5) BeanSettings - idioma: en
+2014-03-25 03:21:34,841 INFO  [stdout] (default task-7) BeanSettings - idioma: en
+2014-03-25 03:21:35,584 INFO  [stdout] (default task-9) BeanSettings - idioma: en
+2014-03-25 03:21:35,725 INFO  [stdout] (default task-9) BeanSettings - idioma: en
+2014-03-25 03:22:49,053 INFO  [stdout] (default task-13) BeanSettings - idioma: en
+2014-03-25 03:22:50,950 INFO  [stdout] (default task-14) BeanSettings - idioma: en
+2014-03-25 03:22:50,981 INFO  [stdout] (default task-14) BeanSettings - idioma: en
+2014-03-25 03:22:53,267 INFO  [stdout] (default task-2) BeanSettings - idioma: en
+2014-03-25 03:22:53,406 INFO  [stdout] (default task-2) BeanSettings - idioma: en
+2014-03-25 03:22:54,912 INFO  [stdout] (default task-3) BeanSettings - idioma: en
+2014-03-25 03:22:55,019 INFO  [stdout] (default task-3) BeanSettings - idioma: en
+2014-03-25 03:22:56,256 INFO  [stdout] (default task-5) BeanSettings - idioma: en
+2014-03-25 03:22:56,366 INFO  [stdout] (default task-5) BeanSettings - idioma: en
+2014-03-25 03:22:57,880 INFO  [stdout] (default task-7) BeanSettings - idioma: en
+2014-03-25 03:22:57,897 INFO  [stdout] (default task-7) BeanSettings - idioma: en
+2014-03-25 03:22:59,104 INFO  [stdout] (default task-9) BeanSettings - idioma: en
+2014-03-25 03:22:59,264 INFO  [stdout] (default task-9) BeanSettings - idioma: en
+2014-03-23 15:47:45,349 INFO  [stdout] (default task-10) BeanSettings - idioma: en
+2014-03-23 15:47:45,615 INFO  [stdout] (default task-10) BeanSettings - idioma: en
+2014-03-23 15:47:46,755 INFO  [stdout] (default task-13) BeanSettings - idioma: en
+2014-03-23 15:47:47,022 INFO  [stdout] (default task-13) BeanSettings - idioma: en
+2014-03-23 16:23:09,960 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /proyecto0_wf8
+2014-03-23 16:23:10,303 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 443ms
+2014-03-23 16:23:10,303 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 16:23:10,771 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/proyecto0_wf8'
+2014-03-23 16:23:11,317 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /proyecto0_wf8
+2014-03-23 16:23:11,488 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 16:23:26,604 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /proyecto0_wf8
+2014-03-23 16:23:26,650 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 51ms
+2014-03-23 16:23:26,650 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 16:23:26,806 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/proyecto0_wf8'
+2014-03-23 16:23:27,228 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /proyecto0_wf8
+2014-03-23 16:23:27,290 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 16:23:50,358 ERROR [io.undertow.request] (default task-15) UT005023: Exception handling request to /proyecto0_wf8/tecnica3.xhtml: javax.servlet.ServletException: /tecnica3.xhtml @12,70 value="#{yo.html5Attributes}" /tecnica3.xhtml @12,70 value="#{yo.html5Attributes}": The class 'MyBean' does not have the property 'html5Attributes'.
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:659) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:113) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AuthenticationCallHandler.handleRequest(AuthenticationCallHandler.java:52) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:240) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:227) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:73) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:146) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:168) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:687) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+Caused by: javax.faces.view.facelets.TagAttributeException: /tecnica3.xhtml @12,70 value="#{yo.html5Attributes}" /tecnica3.xhtml @12,70 value="#{yo.html5Attributes}": The class 'MyBean' does not have the property 'html5Attributes'.
+	at com.sun.faces.facelets.tag.TagAttributeImpl.getObject(TagAttributeImpl.java:358) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.jsf.core.PassThroughAttributesHandler.apply(PassThroughAttributesHandler.java:90) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.view.facelets.DelegatingMetaTagHandler.applyNextHandler(DelegatingMetaTagHandler.java:137) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at com.sun.faces.facelets.tag.jsf.ComponentTagHandlerDelegateImpl.apply(ComponentTagHandlerDelegateImpl.java:203) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.view.facelets.DelegatingMetaTagHandler.apply(DelegatingMetaTagHandler.java:120) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at javax.faces.view.facelets.DelegatingMetaTagHandler.applyNextHandler(DelegatingMetaTagHandler.java:137) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at com.sun.faces.facelets.tag.jsf.ComponentTagHandlerDelegateImpl.apply(ComponentTagHandlerDelegateImpl.java:203) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.view.facelets.DelegatingMetaTagHandler.apply(DelegatingMetaTagHandler.java:120) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at javax.faces.view.facelets.CompositeFaceletHandler.apply(CompositeFaceletHandler.java:95) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at com.sun.faces.facelets.compiler.NamespaceHandler.apply(NamespaceHandler.java:93) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.compiler.EncodingHandler.apply(EncodingHandler.java:87) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFacelet.apply(DefaultFacelet.java:161) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.application.view.FaceletViewHandlingStrategy.buildView(FaceletViewHandlingStrategy.java:995) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RenderResponsePhase.execute(RenderResponsePhase.java:99) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:219) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:647) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	... 24 more
+Caused by: javax.el.PropertyNotFoundException: /tecnica3.xhtml @12,70 value="#{yo.html5Attributes}": The class 'MyBean' does not have the property 'html5Attributes'.
+	at com.sun.faces.facelets.el.TagValueExpression.getValue(TagValueExpression.java:111) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.TagAttributeImpl.getObject(TagAttributeImpl.java:356) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	... 40 more
+Caused by: javax.el.PropertyNotFoundException: The class 'MyBean' does not have the property 'html5Attributes'.
+	at javax.el.BeanELResolver.getBeanProperty(BeanELResolver.java:730) [javax.el-3.0.0.jar:3.0.0]
+	at javax.el.BeanELResolver.getValue(BeanELResolver.java:351) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.faces.el.DemuxCompositeELResolver._getValue(DemuxCompositeELResolver.java:176) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.DemuxCompositeELResolver.getValue(DemuxCompositeELResolver.java:203) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.el.parser.AstValue.getValue(AstValue.java:140) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.el.parser.AstValue.getValue(AstValue.java:204) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:226) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.faces.facelets.el.TagValueExpression.getValue(TagValueExpression.java:109) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	... 41 more
+
+2014-03-23 16:24:32,637 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017535: Unregistered web context: /proyecto0_wf8
+2014-03-23 16:24:32,686 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 53ms
+2014-03-23 16:24:32,687 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 16:24:32,817 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/proyecto0_wf8'
+2014-03-23 16:24:32,960 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /proyecto0_wf8
+2014-03-23 16:24:33,096 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 16:52:17,733 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /proyecto0_wf8
+2014-03-23 16:52:17,764 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 38ms
+2014-03-23 16:52:17,764 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 16:52:17,858 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-2) MSC000001: Failed to start service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: org.jboss.msc.service.StartException in service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment "proyecto0_wf8.war"
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:166) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+Caused by: java.lang.RuntimeException: JBAS018757: Error getting reflective information for class MyBean with ClassLoader ModuleClassLoader for Module "deployment.proyecto0_wf8.war:main" from Service Module Loader
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:72) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.as.ee.metadata.MethodAnnotationAggregator.runtimeAnnotationInformation(MethodAnnotationAggregator.java:58)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.handleAnnotations(InterceptorAnnotationProcessor.java:107)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.processComponentConfig(InterceptorAnnotationProcessor.java:92)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.deploy(InterceptorAnnotationProcessor.java:77)
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:159) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	... 5 more
+Caused by: java.lang.NoClassDefFoundError: LHtmlInputText;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.7.0_25]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2387) [rt.jar:1.7.0_25]
+	at java.lang.Class.getDeclaredFields(Class.java:1796) [rt.jar:1.7.0_25]
+	at org.jboss.as.server.deployment.reflect.ClassReflectionIndex.<init>(ClassReflectionIndex.java:57) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:68) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: HtmlInputText from [Module "deployment.proyecto0_wf8.war:main" from Service Module Loader]
+	at org.jboss.modules.ModuleClassLoader.findClass(ModuleClassLoader.java:197) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClassUnchecked(ConcurrentClassLoader.java:443) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClassChecked(ConcurrentClassLoader.java:431) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClass(ConcurrentClassLoader.java:373) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.loadClass(ConcurrentClassLoader.java:118) [jboss-modules.jar:1.3.0.Final]
+	... 15 more
+
+2014-03-23 16:52:17,920 ERROR [org.jboss.as.controller.management-operation] (DeploymentScanner-threads - 2) JBAS014613: Operation ("full-replace-deployment") failed - address: ([]) - failure description: {"JBAS014671: Failed services" => {"jboss.deployment.unit.\"proyecto0_wf8.war\".POST_MODULE" => "org.jboss.msc.service.StartException in service jboss.deployment.unit.\"proyecto0_wf8.war\".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment \"proyecto0_wf8.war\"
+    Caused by: java.lang.RuntimeException: JBAS018757: Error getting reflective information for class MyBean with ClassLoader ModuleClassLoader for Module \"deployment.proyecto0_wf8.war:main\" from Service Module Loader
+    Caused by: java.lang.NoClassDefFoundError: LHtmlInputText;
+    Caused by: java.lang.ClassNotFoundException: HtmlInputText from [Module \"deployment.proyecto0_wf8.war:main\" from Service Module Loader]"}}
+2014-03-23 16:52:18,029 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 16:52:18,045 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: org.jboss.msc.service.StartException in service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment "proyecto0_wf8.war"
+
+2014-03-23 16:52:48,354 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 26ms
+2014-03-23 16:52:48,354 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 16:52:48,385 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-2) MSC000001: Failed to start service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: org.jboss.msc.service.StartException in service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment "proyecto0_wf8.war"
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:166) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+Caused by: java.lang.RuntimeException: JBAS018757: Error getting reflective information for class MyBean with ClassLoader ModuleClassLoader for Module "deployment.proyecto0_wf8.war:main" from Service Module Loader
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:72) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.as.ee.metadata.MethodAnnotationAggregator.runtimeAnnotationInformation(MethodAnnotationAggregator.java:58)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.handleAnnotations(InterceptorAnnotationProcessor.java:107)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.processComponentConfig(InterceptorAnnotationProcessor.java:92)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.deploy(InterceptorAnnotationProcessor.java:77)
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:159) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	... 5 more
+Caused by: java.lang.NoClassDefFoundError: LHtmlInputText;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.7.0_25]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2387) [rt.jar:1.7.0_25]
+	at java.lang.Class.getDeclaredFields(Class.java:1796) [rt.jar:1.7.0_25]
+	at org.jboss.as.server.deployment.reflect.ClassReflectionIndex.<init>(ClassReflectionIndex.java:57) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:68) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: HtmlInputText from [Module "deployment.proyecto0_wf8.war:main" from Service Module Loader]
+	at org.jboss.modules.ModuleClassLoader.findClass(ModuleClassLoader.java:197) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClassUnchecked(ConcurrentClassLoader.java:443) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClassChecked(ConcurrentClassLoader.java:431) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClass(ConcurrentClassLoader.java:373) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.loadClass(ConcurrentClassLoader.java:118) [jboss-modules.jar:1.3.0.Final]
+	... 15 more
+
+2014-03-23 16:52:48,401 ERROR [org.jboss.as.controller.management-operation] (DeploymentScanner-threads - 1) JBAS014613: Operation ("full-replace-deployment") failed - address: ([]) - failure description: {"JBAS014671: Failed services" => {"jboss.deployment.unit.\"proyecto0_wf8.war\".POST_MODULE" => "org.jboss.msc.service.StartException in service jboss.deployment.unit.\"proyecto0_wf8.war\".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment \"proyecto0_wf8.war\"
+    Caused by: java.lang.RuntimeException: JBAS018757: Error getting reflective information for class MyBean with ClassLoader ModuleClassLoader for Module \"deployment.proyecto0_wf8.war:main\" from Service Module Loader
+    Caused by: java.lang.NoClassDefFoundError: LHtmlInputText;
+    Caused by: java.lang.ClassNotFoundException: HtmlInputText from [Module \"deployment.proyecto0_wf8.war:main\" from Service Module Loader]"}}
+2014-03-23 16:52:48,448 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 16:52:48,448 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 1) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE
+      service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: org.jboss.msc.service.StartException in service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment "proyecto0_wf8.war"
+
+2014-03-23 16:53:48,707 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 4ms
+2014-03-23 16:53:48,707 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 16:53:48,738 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-2) MSC000001: Failed to start service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: org.jboss.msc.service.StartException in service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment "proyecto0_wf8.war"
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:166) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+Caused by: java.lang.RuntimeException: JBAS018757: Error getting reflective information for class MyBean with ClassLoader ModuleClassLoader for Module "deployment.proyecto0_wf8.war:main" from Service Module Loader
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:72) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.as.ee.metadata.MethodAnnotationAggregator.runtimeAnnotationInformation(MethodAnnotationAggregator.java:58)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.handleAnnotations(InterceptorAnnotationProcessor.java:107)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.processComponentConfig(InterceptorAnnotationProcessor.java:92)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.deploy(InterceptorAnnotationProcessor.java:77)
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:159) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	... 5 more
+Caused by: java.lang.NoClassDefFoundError: LHtmlInputText;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.7.0_25]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2387) [rt.jar:1.7.0_25]
+	at java.lang.Class.getDeclaredFields(Class.java:1796) [rt.jar:1.7.0_25]
+	at org.jboss.as.server.deployment.reflect.ClassReflectionIndex.<init>(ClassReflectionIndex.java:57) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:68) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: HtmlInputText from [Module "deployment.proyecto0_wf8.war:main" from Service Module Loader]
+	at org.jboss.modules.ModuleClassLoader.findClass(ModuleClassLoader.java:197) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClassUnchecked(ConcurrentClassLoader.java:443) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClassChecked(ConcurrentClassLoader.java:431) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClass(ConcurrentClassLoader.java:373) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.loadClass(ConcurrentClassLoader.java:118) [jboss-modules.jar:1.3.0.Final]
+	... 15 more
+
+2014-03-23 16:53:48,754 ERROR [org.jboss.as.controller.management-operation] (DeploymentScanner-threads - 2) JBAS014613: Operation ("full-replace-deployment") failed - address: ([]) - failure description: {"JBAS014671: Failed services" => {"jboss.deployment.unit.\"proyecto0_wf8.war\".POST_MODULE" => "org.jboss.msc.service.StartException in service jboss.deployment.unit.\"proyecto0_wf8.war\".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment \"proyecto0_wf8.war\"
+    Caused by: java.lang.RuntimeException: JBAS018757: Error getting reflective information for class MyBean with ClassLoader ModuleClassLoader for Module \"deployment.proyecto0_wf8.war:main\" from Service Module Loader
+    Caused by: java.lang.NoClassDefFoundError: LHtmlInputText;
+    Caused by: java.lang.ClassNotFoundException: HtmlInputText from [Module \"deployment.proyecto0_wf8.war:main\" from Service Module Loader]"}}
+2014-03-23 16:53:48,816 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 16:53:48,816 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE
+      service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: org.jboss.msc.service.StartException in service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment "proyecto0_wf8.war"
+
+2014-03-23 16:53:53,948 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 2ms
+2014-03-23 16:53:53,964 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 16:53:53,995 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-1) MSC000001: Failed to start service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: org.jboss.msc.service.StartException in service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment "proyecto0_wf8.war"
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:166) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+Caused by: java.lang.RuntimeException: JBAS018757: Error getting reflective information for class MyBean with ClassLoader ModuleClassLoader for Module "deployment.proyecto0_wf8.war:main" from Service Module Loader
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:72) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.as.ee.metadata.MethodAnnotationAggregator.runtimeAnnotationInformation(MethodAnnotationAggregator.java:58)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.handleAnnotations(InterceptorAnnotationProcessor.java:107)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.processComponentConfig(InterceptorAnnotationProcessor.java:92)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.deploy(InterceptorAnnotationProcessor.java:77)
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:159) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	... 5 more
+Caused by: java.lang.NoClassDefFoundError: LHtmlInputText;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.7.0_25]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2387) [rt.jar:1.7.0_25]
+	at java.lang.Class.getDeclaredFields(Class.java:1796) [rt.jar:1.7.0_25]
+	at org.jboss.as.server.deployment.reflect.ClassReflectionIndex.<init>(ClassReflectionIndex.java:57) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:68) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: HtmlInputText from [Module "deployment.proyecto0_wf8.war:main" from Service Module Loader]
+	at org.jboss.modules.ModuleClassLoader.findClass(ModuleClassLoader.java:197) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClassUnchecked(ConcurrentClassLoader.java:443) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClassChecked(ConcurrentClassLoader.java:431) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClass(ConcurrentClassLoader.java:373) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.loadClass(ConcurrentClassLoader.java:118) [jboss-modules.jar:1.3.0.Final]
+	... 15 more
+
+2014-03-23 16:53:53,995 ERROR [org.jboss.as.controller.management-operation] (DeploymentScanner-threads - 2) JBAS014613: Operation ("full-replace-deployment") failed - address: ([]) - failure description: {"JBAS014671: Failed services" => {"jboss.deployment.unit.\"proyecto0_wf8.war\".POST_MODULE" => "org.jboss.msc.service.StartException in service jboss.deployment.unit.\"proyecto0_wf8.war\".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment \"proyecto0_wf8.war\"
+    Caused by: java.lang.RuntimeException: JBAS018757: Error getting reflective information for class MyBean with ClassLoader ModuleClassLoader for Module \"deployment.proyecto0_wf8.war:main\" from Service Module Loader
+    Caused by: java.lang.NoClassDefFoundError: LHtmlInputText;
+    Caused by: java.lang.ClassNotFoundException: HtmlInputText from [Module \"deployment.proyecto0_wf8.war:main\" from Service Module Loader]"}}
+2014-03-23 16:53:54,245 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 16:53:54,245 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: org.jboss.msc.service.StartException in service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment "proyecto0_wf8.war"
+      service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE
+
+2014-03-23 16:54:09,344 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 1ms
+2014-03-23 16:54:10,951 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 16:54:10,982 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-1) MSC000001: Failed to start service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: org.jboss.msc.service.StartException in service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment "proyecto0_wf8.war"
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:166) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+Caused by: java.lang.RuntimeException: JBAS018757: Error getting reflective information for class MyBean with ClassLoader ModuleClassLoader for Module "deployment.proyecto0_wf8.war:main" from Service Module Loader
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:72) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.as.ee.metadata.MethodAnnotationAggregator.runtimeAnnotationInformation(MethodAnnotationAggregator.java:58)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.handleAnnotations(InterceptorAnnotationProcessor.java:107)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.processComponentConfig(InterceptorAnnotationProcessor.java:92)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.deploy(InterceptorAnnotationProcessor.java:77)
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:159) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	... 5 more
+Caused by: java.lang.NoClassDefFoundError: LHtmlInputText;
+	at java.lang.Class.getDeclaredFields0(Native Method) [rt.jar:1.7.0_25]
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2387) [rt.jar:1.7.0_25]
+	at java.lang.Class.getDeclaredFields(Class.java:1796) [rt.jar:1.7.0_25]
+	at org.jboss.as.server.deployment.reflect.ClassReflectionIndex.<init>(ClassReflectionIndex.java:57) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:68) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: HtmlInputText from [Module "deployment.proyecto0_wf8.war:main" from Service Module Loader]
+	at org.jboss.modules.ModuleClassLoader.findClass(ModuleClassLoader.java:197) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClassUnchecked(ConcurrentClassLoader.java:443) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClassChecked(ConcurrentClassLoader.java:431) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClass(ConcurrentClassLoader.java:373) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.loadClass(ConcurrentClassLoader.java:118) [jboss-modules.jar:1.3.0.Final]
+	... 15 more
+
+2014-03-23 16:54:10,982 ERROR [org.jboss.as.controller.management-operation] (DeploymentScanner-threads - 2) JBAS014613: Operation ("full-replace-deployment") failed - address: ([]) - failure description: {"JBAS014671: Failed services" => {"jboss.deployment.unit.\"proyecto0_wf8.war\".POST_MODULE" => "org.jboss.msc.service.StartException in service jboss.deployment.unit.\"proyecto0_wf8.war\".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment \"proyecto0_wf8.war\"
+    Caused by: java.lang.RuntimeException: JBAS018757: Error getting reflective information for class MyBean with ClassLoader ModuleClassLoader for Module \"deployment.proyecto0_wf8.war:main\" from Service Module Loader
+    Caused by: java.lang.NoClassDefFoundError: LHtmlInputText;
+    Caused by: java.lang.ClassNotFoundException: HtmlInputText from [Module \"deployment.proyecto0_wf8.war:main\" from Service Module Loader]"}}
+2014-03-23 16:54:11,232 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 16:54:11,232 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: org.jboss.msc.service.StartException in service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment "proyecto0_wf8.war"
+      service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE
+
+2014-03-23 16:54:16,317 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 4ms
+2014-03-23 16:54:16,317 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 16:54:16,411 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/proyecto0_wf8'
+2014-03-23 16:54:16,957 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/S:/wildfly/standalone/deployments/proyecto0_wf8.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 16:54:16,972 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /proyecto0_wf8
+2014-03-23 16:54:17,097 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 16:54:17,113 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 1) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE
+
+2014-03-23 16:55:07,529 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017535: Unregistered web context: /proyecto0_wf8
+2014-03-23 16:55:07,700 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 189ms
+2014-03-23 16:55:07,700 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 16:55:07,888 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/proyecto0_wf8'
+2014-03-23 16:55:08,636 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/proyecto0_wf8.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 16:55:08,636 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /proyecto0_wf8
+2014-03-23 16:55:08,714 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 16:55:33,798 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /proyecto0_wf8
+2014-03-23 16:55:33,813 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 14ms
+2014-03-23 16:55:33,813 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 16:55:33,891 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/proyecto0_wf8'
+2014-03-23 16:55:34,203 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/S:/wildfly/standalone/deployments/proyecto0_wf8.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 16:55:34,203 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /proyecto0_wf8
+2014-03-23 16:55:34,250 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 16:56:45,081 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-5) JSF1073: se ha interceptado javax.faces.view.facelets.FaceletException durante el procesamiento de RESTORE_VIEW 1 : UIComponent-ClientId=, Mensaje=Error Parsing /tecnica4.xhtml: Error Traced[line: 12] The element type "h:form" must be terminated by the matching end-tag "</h:form>".
+2014-03-23 16:56:45,083 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-5) Error Parsing /tecnica4.xhtml: Error Traced[line: 12] The element type "h:form" must be terminated by the matching end-tag "</h:form>".: javax.faces.view.facelets.FaceletException: Error Parsing /tecnica4.xhtml: Error Traced[line: 12] The element type "h:form" must be terminated by the matching end-tag "</h:form>".
+	at com.sun.faces.facelets.compiler.SAXCompiler.doCompile(SAXCompiler.java:456) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.compiler.SAXCompiler.doMetadataCompile(SAXCompiler.java:439) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.compiler.Compiler.metadataCompile(Compiler.java:130) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFaceletFactory.createMetadataFacelet(DefaultFaceletFactory.java:495) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFaceletFactory.access$200(DefaultFaceletFactory.java:106) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFaceletFactory$2.newInstance(DefaultFaceletFactory.java:205) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFaceletFactory$2.newInstance(DefaultFaceletFactory.java:203) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFaceletCache$2.newInstance(DefaultFaceletCache.java:97) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFaceletCache$2.newInstance(DefaultFaceletCache.java:92) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.util.ExpiringConcurrentCache$1.call(ExpiringConcurrentCache.java:99) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334) [rt.jar:1.7.0_25]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:166) [rt.jar:1.7.0_25]
+	at com.sun.faces.util.ExpiringConcurrentCache.get(ExpiringConcurrentCache.java:114) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFaceletCache.getViewMetadataFacelet(DefaultFaceletCache.java:146) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFaceletCache.getViewMetadataFacelet(DefaultFaceletCache.java:63) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFaceletFactory.getMetadataFacelet(DefaultFaceletFactory.java:316) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFaceletFactory.getMetadataFacelet(DefaultFaceletFactory.java:246) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.application.view.ViewMetadataImpl.createMetadataView(ViewMetadataImpl.java:114) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RestoreViewPhase.execute(RestoreViewPhase.java:241) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RestoreViewPhase.doPhase(RestoreViewPhase.java:121) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:198) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:646) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:113) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AuthenticationCallHandler.handleRequest(AuthenticationCallHandler.java:52) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:240) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:227) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:73) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:146) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:168) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:687) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+
+2014-03-23 16:57:27,760 ERROR [org.jboss.remoting.remote.connection] (XNIO-1 I/O-1) JBREM000200: Remote connection failed: java.io.IOException: Se ha anulado una conexión establecida por el software en su equipo host.
+2014-03-23 17:05:48,128 SEVERE [javax.enterprise.resource.webcontainer.jsf.application] (default task-7) JSF1005: no se puede crear una instancia para el validador del tipo myValidator
+2014-03-23 17:05:48,266 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-7) JSF1073: se ha interceptado javax.faces.FacesException durante el procesamiento de RENDER_RESPONSE 6 : UIComponent-ClientId=, Mensaje=Error de expresión: objeto con nombre: myValidator no encontrado.
+2014-03-23 17:05:48,266 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-7) Error de expresión: objeto con nombre: myValidator no encontrado.: javax.faces.FacesException: Error de expresión: objeto con nombre: myValidator no encontrado.
+	at com.sun.faces.application.ApplicationImpl.createValidator(ApplicationImpl.java:1596) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at org.jboss.as.jsf.injection.weld.ForwardingApplication.createValidator(ForwardingApplication.java:158) [wildfly-jsf-injection-8.0.0.Final.jar:8.0.0.Final]
+	at com.sun.faces.facelets.tag.jsf.EditableValueHolderRule$LiteralValidatorMetadata.applyMetadata(EditableValueHolderRule.java:86) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.MetadataImpl.applyMetadata(MetadataImpl.java:81) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.view.facelets.MetaTagHandler.setAttributes(MetaTagHandler.java:129) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at javax.faces.view.facelets.DelegatingMetaTagHandler.setAttributes(DelegatingMetaTagHandler.java:102) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at com.sun.faces.facelets.tag.jsf.ComponentTagHandlerDelegateImpl.doNewComponentActions(ComponentTagHandlerDelegateImpl.java:473) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.jsf.ComponentTagHandlerDelegateImpl.apply(ComponentTagHandlerDelegateImpl.java:179) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.view.facelets.DelegatingMetaTagHandler.apply(DelegatingMetaTagHandler.java:120) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at javax.faces.view.facelets.CompositeFaceletHandler.apply(CompositeFaceletHandler.java:95) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at javax.faces.view.facelets.DelegatingMetaTagHandler.applyNextHandler(DelegatingMetaTagHandler.java:137) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at com.sun.faces.facelets.tag.jsf.ComponentTagHandlerDelegateImpl.apply(ComponentTagHandlerDelegateImpl.java:203) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.view.facelets.DelegatingMetaTagHandler.apply(DelegatingMetaTagHandler.java:120) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at javax.faces.view.facelets.CompositeFaceletHandler.apply(CompositeFaceletHandler.java:95) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at com.sun.faces.facelets.compiler.NamespaceHandler.apply(NamespaceHandler.java:93) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.compiler.EncodingHandler.apply(EncodingHandler.java:87) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFacelet.apply(DefaultFacelet.java:161) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.application.view.FaceletViewHandlingStrategy.buildView(FaceletViewHandlingStrategy.java:995) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RenderResponsePhase.execute(RenderResponsePhase.java:99) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:219) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:647) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:113) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AuthenticationCallHandler.handleRequest(AuthenticationCallHandler.java:52) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:240) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:227) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:73) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:146) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:168) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:687) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+
+2014-03-23 17:08:10,265 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017535: Unregistered web context: /proyecto0_wf8
+2014-03-23 17:08:10,281 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 20ms
+2014-03-23 17:08:10,281 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 17:08:10,499 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/proyecto0_wf8'
+2014-03-23 17:08:10,640 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/proyecto0_wf8.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:08:10,640 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /proyecto0_wf8
+2014-03-23 17:08:10,686 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 17:10:31,976 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /proyecto0_wf8
+2014-03-23 17:10:31,991 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 19ms
+2014-03-23 17:10:31,991 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 17:10:32,023 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-2) MSC000001: Failed to start service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: org.jboss.msc.service.StartException in service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment "proyecto0_wf8.war"
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:166) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881) [jboss-msc-1.2.0.Final.jar:1.2.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+Caused by: java.lang.RuntimeException: JBAS018757: Error getting reflective information for class MyBean with ClassLoader ModuleClassLoader for Module "deployment.proyecto0_wf8.war:main" from Service Module Loader
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:72) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.as.ee.metadata.MethodAnnotationAggregator.runtimeAnnotationInformation(MethodAnnotationAggregator.java:58)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.handleAnnotations(InterceptorAnnotationProcessor.java:107)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.processComponentConfig(InterceptorAnnotationProcessor.java:92)
+	at org.jboss.as.ee.component.deployers.InterceptorAnnotationProcessor.deploy(InterceptorAnnotationProcessor.java:77)
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:159) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	... 5 more
+Caused by: java.lang.NoClassDefFoundError: FacesContext
+	at java.lang.Class.getDeclaredMethods0(Native Method) [rt.jar:1.7.0_25]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2521) [rt.jar:1.7.0_25]
+	at java.lang.Class.getDeclaredMethods(Class.java:1845) [rt.jar:1.7.0_25]
+	at org.jboss.as.server.deployment.reflect.ClassReflectionIndex.<init>(ClassReflectionIndex.java:65) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	at org.jboss.as.server.deployment.reflect.DeploymentReflectionIndex.getClassIndex(DeploymentReflectionIndex.java:68) [wildfly-server-8.0.0.Final.jar:8.0.0.Final]
+	... 10 more
+Caused by: java.lang.ClassNotFoundException: FacesContext from [Module "deployment.proyecto0_wf8.war:main" from Service Module Loader]
+	at org.jboss.modules.ModuleClassLoader.findClass(ModuleClassLoader.java:197) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClassUnchecked(ConcurrentClassLoader.java:443) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClassChecked(ConcurrentClassLoader.java:431) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.performLoadClass(ConcurrentClassLoader.java:373) [jboss-modules.jar:1.3.0.Final]
+	at org.jboss.modules.ConcurrentClassLoader.loadClass(ConcurrentClassLoader.java:118) [jboss-modules.jar:1.3.0.Final]
+	... 15 more
+
+2014-03-23 17:10:32,101 ERROR [org.jboss.as.controller.management-operation] (DeploymentScanner-threads - 1) JBAS014613: Operation ("full-replace-deployment") failed - address: ([]) - failure description: {"JBAS014671: Failed services" => {"jboss.deployment.unit.\"proyecto0_wf8.war\".POST_MODULE" => "org.jboss.msc.service.StartException in service jboss.deployment.unit.\"proyecto0_wf8.war\".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment \"proyecto0_wf8.war\"
+    Caused by: java.lang.RuntimeException: JBAS018757: Error getting reflective information for class MyBean with ClassLoader ModuleClassLoader for Module \"deployment.proyecto0_wf8.war:main\" from Service Module Loader
+    Caused by: java.lang.NoClassDefFoundError: FacesContext
+    Caused by: java.lang.ClassNotFoundException: FacesContext from [Module \"deployment.proyecto0_wf8.war:main\" from Service Module Loader]"}}
+2014-03-23 17:10:32,163 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 17:10:32,163 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 1) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: org.jboss.msc.service.StartException in service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE: JBAS018733: Failed to process phase POST_MODULE of deployment "proyecto0_wf8.war"
+
+2014-03-23 17:12:07,471 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 1ms
+2014-03-23 17:12:07,471 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 17:12:07,580 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/proyecto0_wf8'
+2014-03-23 17:12:07,721 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/proyecto0_wf8.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:12:07,721 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /proyecto0_wf8
+2014-03-23 17:12:07,767 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 17:12:07,767 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) JBAS014774: Service status report
+JBAS014777:   Services which failed to start:      service jboss.deployment.unit."proyecto0_wf8.war".POST_MODULE
+
+2014-03-23 17:12:18,078 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /proyecto0_wf8
+2014-03-23 17:12:18,094 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 11ms
+2014-03-23 17:12:18,094 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 17:12:18,187 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/proyecto0_wf8'
+2014-03-23 17:12:18,484 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/S:/wildfly/standalone/deployments/proyecto0_wf8.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:12:18,484 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /proyecto0_wf8
+2014-03-23 17:12:18,530 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 17:12:23,725 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017535: Unregistered web context: /proyecto0_wf8
+2014-03-23 17:12:23,740 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 13ms
+2014-03-23 17:12:23,740 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 17:12:23,928 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/proyecto0_wf8'
+2014-03-23 17:12:24,193 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/S:/wildfly/standalone/deployments/proyecto0_wf8.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:12:24,193 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /proyecto0_wf8
+2014-03-23 17:12:24,271 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 17:12:29,387 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017535: Unregistered web context: /proyecto0_wf8
+2014-03-23 17:12:29,403 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 12ms
+2014-03-23 17:12:29,403 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 17:12:29,481 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/proyecto0_wf8'
+2014-03-23 17:12:29,621 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/proyecto0_wf8.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:12:29,637 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /proyecto0_wf8
+2014-03-23 17:12:29,715 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 17:13:54,978 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017535: Unregistered web context: /proyecto0_wf8
+2014-03-23 17:13:55,040 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 70ms
+2014-03-23 17:13:55,040 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 17:13:55,228 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/proyecto0_wf8'
+2014-03-23 17:13:55,493 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/S:/wildfly/standalone/deployments/proyecto0_wf8.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:13:55,493 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /proyecto0_wf8
+2014-03-23 17:13:55,524 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "proyecto0_wf8.war" with deployment "proyecto0_wf8.war"
+2014-03-23 17:16:29,486 SEVERE [javax.enterprise.resource.webcontainer.jsf.config] (Mojarra-WebResourceMonitor-10-thread-1) Unable to access url file:/S:/wildfly/standalone/deployments/proyecto0_wf8.war/WEB-INF/faces-config.xml.  Monitoring for this resource will no longer occur.
+2014-03-23 17:16:31,732 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 2) JBAS015003: Found JSFwithHTML5.war in deployment directory. To trigger deployment create a file called JSFwithHTML5.war.dodeploy
+2014-03-23 17:16:31,950 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:16:31,950 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017535: Unregistered web context: /proyecto0_wf8
+2014-03-23 17:16:32,091 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment proyecto0_wf8.war (runtime-name: proyecto0_wf8.war) in 153ms
+2014-03-23 17:16:32,122 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:16:32,543 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:16:32,543 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:16:32,606 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018558: Undeployed "proyecto0_wf8.war" (runtime-name: "proyecto0_wf8.war")
+2014-03-23 17:16:32,606 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018559: Deployed "JSFwithHTML5.war" (runtime-name : "JSFwithHTML5.war")
+2014-03-23 17:16:37,769 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 2) JBAS015003: Found proyecto0_wf8.war in deployment directory. To trigger deployment create a file called proyecto0_wf8.war.dodeploy
+2014-03-23 17:17:17,917 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:17:17,933 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 28ms
+2014-03-23 17:17:17,933 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:17:18,026 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:17:18,260 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:17:18,260 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:17:18,307 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:19:29,106 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:19:29,121 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 16ms
+2014-03-23 17:19:29,121 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:19:29,199 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:19:29,355 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:19:29,355 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:19:29,418 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:20:29,863 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:20:29,879 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 14ms
+2014-03-23 17:20:29,879 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:20:30,081 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:20:30,222 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:20:30,222 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:20:30,269 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:20:45,415 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:20:45,415 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 7ms
+2014-03-23 17:20:45,415 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:20:45,462 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:20:45,602 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:20:45,602 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:20:45,680 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:21:10,966 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:21:10,982 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 15ms
+2014-03-23 17:21:10,982 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:21:11,091 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:21:11,294 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:21:11,294 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:21:11,325 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:22:52,141 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:22:52,156 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 14ms
+2014-03-23 17:22:52,156 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:22:52,312 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:22:52,437 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:22:52,437 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:22:52,484 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:25:43,295 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:25:43,311 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 13ms
+2014-03-23 17:25:43,311 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:25:43,373 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:25:43,607 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:25:43,607 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:25:43,654 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:29:04,038 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:29:04,085 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 41ms
+2014-03-23 17:29:04,085 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:29:04,163 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:29:04,319 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:29:04,365 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:29:04,412 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:29:14,520 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:29:14,598 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 71ms
+2014-03-23 17:29:14,598 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:29:14,676 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:29:14,786 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:29:14,801 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:29:14,942 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:29:20,011 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:29:20,027 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 10ms
+2014-03-23 17:29:20,027 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:29:21,088 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:29:21,244 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:29:21,244 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:29:21,368 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:30:01,567 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:30:01,583 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 11ms
+2014-03-23 17:30:01,583 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:30:01,661 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:30:01,817 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:30:01,832 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:30:01,941 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:30:12,049 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:30:12,065 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 12ms
+2014-03-23 17:30:12,065 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:30:12,159 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:30:13,141 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:30:13,157 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:30:13,204 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:30:53,581 SEVERE [javax.enterprise.resource.webcontainer.jsf.application] (default task-8) JSF1005: no se puede crear una instancia para el validador del tipo myValidator
+2014-03-23 17:30:53,732 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-8) JSF1073: se ha interceptado javax.faces.FacesException durante el procesamiento de RENDER_RESPONSE 6 : UIComponent-ClientId=, Mensaje=Error de expresión: objeto con nombre: myValidator no encontrado.
+2014-03-23 17:30:53,732 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-8) Error de expresión: objeto con nombre: myValidator no encontrado.: javax.faces.FacesException: Error de expresión: objeto con nombre: myValidator no encontrado.
+	at com.sun.faces.application.ApplicationImpl.createValidator(ApplicationImpl.java:1596) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at org.jboss.as.jsf.injection.weld.ForwardingApplication.createValidator(ForwardingApplication.java:158) [wildfly-jsf-injection-8.0.0.Final.jar:8.0.0.Final]
+	at com.sun.faces.facelets.tag.jsf.EditableValueHolderRule$LiteralValidatorMetadata.applyMetadata(EditableValueHolderRule.java:86) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.MetadataImpl.applyMetadata(MetadataImpl.java:81) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.view.facelets.MetaTagHandler.setAttributes(MetaTagHandler.java:129) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at javax.faces.view.facelets.DelegatingMetaTagHandler.setAttributes(DelegatingMetaTagHandler.java:102) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at com.sun.faces.facelets.tag.jsf.ComponentTagHandlerDelegateImpl.doNewComponentActions(ComponentTagHandlerDelegateImpl.java:473) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.jsf.ComponentTagHandlerDelegateImpl.apply(ComponentTagHandlerDelegateImpl.java:179) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.view.facelets.DelegatingMetaTagHandler.apply(DelegatingMetaTagHandler.java:120) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at javax.faces.view.facelets.CompositeFaceletHandler.apply(CompositeFaceletHandler.java:95) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at javax.faces.view.facelets.DelegatingMetaTagHandler.applyNextHandler(DelegatingMetaTagHandler.java:137) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at com.sun.faces.facelets.tag.jsf.ComponentTagHandlerDelegateImpl.apply(ComponentTagHandlerDelegateImpl.java:203) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.view.facelets.DelegatingMetaTagHandler.apply(DelegatingMetaTagHandler.java:120) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at javax.faces.view.facelets.CompositeFaceletHandler.apply(CompositeFaceletHandler.java:95) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at com.sun.faces.facelets.compiler.NamespaceHandler.apply(NamespaceHandler.java:93) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.compiler.EncodingHandler.apply(EncodingHandler.java:87) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFacelet.apply(DefaultFacelet.java:161) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.application.view.FaceletViewHandlingStrategy.buildView(FaceletViewHandlingStrategy.java:995) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RenderResponsePhase.execute(RenderResponsePhase.java:99) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:219) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:647) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:113) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AuthenticationCallHandler.handleRequest(AuthenticationCallHandler.java:52) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:240) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:227) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:73) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:146) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:168) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:687) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+
+2014-03-23 17:36:48,978 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:36:49,017 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 58ms
+2014-03-23 17:36:49,020 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:36:49,116 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:36:49,255 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:36:49,265 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:36:49,358 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:37:39,721 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:37:39,730 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 9ms
+2014-03-23 17:37:39,731 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:37:39,979 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:37:40,131 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:37:40,134 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:37:40,178 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:39:55,723 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:39:55,738 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 13ms
+2014-03-23 17:39:55,738 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:39:55,832 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:39:56,004 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:39:56,004 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:39:56,050 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:40:21,191 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:40:21,206 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 13ms
+2014-03-23 17:40:21,206 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:40:21,253 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:40:21,456 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:40:21,456 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:40:21,502 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:41:11,818 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:41:11,833 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 25ms
+2014-03-23 17:41:11,833 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:41:11,943 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:41:12,130 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:41:12,130 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:41:12,177 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:42:17,882 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:42:17,891 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 9ms
+2014-03-23 17:42:17,892 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:42:18,246 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:42:18,392 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:42:18,395 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:42:18,563 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:45:34,721 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:45:34,737 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 8ms
+2014-03-23 17:45:34,737 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:45:34,893 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:45:34,987 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:45:35,002 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:45:35,049 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:45:45,140 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:45:45,156 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 8ms
+2014-03-23 17:45:45,156 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:45:45,234 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:45:45,343 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:45:45,359 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:45:45,405 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:46:35,692 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:46:35,692 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 14ms
+2014-03-23 17:46:35,708 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:46:35,739 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:46:35,864 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:46:35,864 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:46:35,895 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:47:06,030 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:47:06,046 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 11ms
+2014-03-23 17:47:06,046 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:47:06,171 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:47:06,451 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:47:06,451 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:47:06,498 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:47:11,630 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:47:11,630 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 7ms
+2014-03-23 17:47:11,630 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:47:11,723 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:47:11,817 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:47:11,817 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:47:11,848 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"
+2014-03-23 17:47:21,956 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-03-23 17:47:21,971 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 13ms
+2014-03-23 17:47:21,971 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-03-23 17:47:22,034 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-03-23 17:47:22,704 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/S:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-03-23 17:47:22,704 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /JSFwithHTML5
+2014-03-23 17:47:22,767 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "JSFwithHTML5.war" with deployment "JSFwithHTML5.war"

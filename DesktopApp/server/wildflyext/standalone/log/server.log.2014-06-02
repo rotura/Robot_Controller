@@ -1,0 +1,1136 @@
+2014-06-02 12:30:40,768 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.0.Final
+2014-06-02 12:30:42,620 ERROR [stderr] (main) java.lang.IllegalStateException: JBAS014805: Could not get main file: S:standalone-full.xml. Specified files must be relative to the configuration dir: s:\wildfly\standalone\configuration
+2014-06-02 12:30:42,620 ERROR [stderr] (main) 	at org.jboss.as.controller.persistence.ConfigurationFile.determineMainFile(ConfigurationFile.java:167)
+2014-06-02 12:30:42,620 ERROR [stderr] (main) 	at org.jboss.as.controller.persistence.ConfigurationFile.<init>(ConfigurationFile.java:94)
+2014-06-02 12:30:42,621 ERROR [stderr] (main) 	at org.jboss.as.server.ServerEnvironment.<init>(ServerEnvironment.java:394)
+2014-06-02 12:30:42,621 ERROR [stderr] (main) 	at org.jboss.as.server.Main.determineEnvironment(Main.java:257)
+2014-06-02 12:30:42,621 ERROR [stderr] (main) 	at org.jboss.as.server.Main.main(Main.java:88)
+2014-06-02 12:30:42,622 ERROR [stderr] (main) 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2014-06-02 12:30:42,622 ERROR [stderr] (main) 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+2014-06-02 12:30:42,622 ERROR [stderr] (main) 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2014-06-02 12:30:42,622 ERROR [stderr] (main) 	at java.lang.reflect.Method.invoke(Method.java:606)
+2014-06-02 12:30:42,623 ERROR [stderr] (main) 	at org.jboss.modules.Module.run(Module.java:292)
+2014-06-02 12:30:42,623 ERROR [stderr] (main) 	at org.jboss.modules.Main.main(Main.java:455)
+2014-06-02 12:32:30,301 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.0.Final
+2014-06-02 12:32:30,666 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.0.Final
+2014-06-02 12:32:30,765 INFO  [org.jboss.as] (MSC service thread 1-5) JBAS015899: WildFly 8.0.0.Final "WildFly" starting
+2014-06-02 12:32:30,772 DEBUG [org.jboss.as.config] (MSC service thread 1-5) Configured system properties:
+	awt.toolkit = sun.awt.windows.WToolkit
+	file.encoding = Cp1252
+	file.encoding.pkg = sun.io
+	file.separator = \
+	java.awt.graphicsenv = sun.awt.Win32GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.awt.windows.WPrinterJob
+	java.class.path = S:\wildfly\jboss-modules.jar
+	java.class.version = 51.0
+	java.endorsed.dirs = S:\jdk\jre\lib\endorsed
+	java.ext.dirs = S:\jdk\jre\lib\ext;C:\Windows\Sun\Java\lib\ext
+	java.home = S:\jdk\jre
+	java.io.tmpdir = C:\Users\alb\AppData\Local\Temp\
+	java.library.path = S:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;native;S:/jdk/bin/../jre/bin/server;S:/jdk/bin/../jre/bin;S:/jdk/bin/../jre/lib/amd64;S:\jdk\bin;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jre7\bin;C:\Program Files (x86)\Calibre2\;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Graphviz2.30\bin;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\sbt\;C:\Ruby193\bin;S:\eclipse;;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.7.0_25-b17
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.7
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.7.0_25
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.7
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 23.25-b01
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = 0.0.0.0
+	jboss.home.dir = s:\wildfly
+	jboss.host.name = dell-off-ovd
+	jboss.modules.dir = s:\wildfly\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = dell-off-ovd
+	jboss.qualified.host.name = dell-off-ovd
+	jboss.server.base.dir = s:\wildfly\standalone
+	jboss.server.config.dir = s:\wildfly\standalone\configuration
+	jboss.server.data.dir = s:\wildfly\standalone\data
+	jboss.server.deploy.dir = s:\wildfly\standalone\data\content
+	jboss.server.log.dir = s:\wildfly\standalone\log
+	jboss.server.name = dell-off-ovd
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = s:\wildfly\standalone\tmp
+	line.separator = 
+
+	logging.configuration = file:/s:/wildfly/standalone/configuration/logging.properties
+	module.path = s:/wildfly/modules
+	org.jboss.boot.log.file = s:/wildfly/standalone/log/boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Windows 7
+	os.version = 6.1
+	path.separator = ;
+	program.name = JBossTools: WildFly 8.0 Runtime Server
+	sun.arch.data.model = 64
+	sun.boot.class.path = S:\jdk\jre\lib\resources.jar;S:\jdk\jre\lib\rt.jar;S:\jdk\jre\lib\sunrsasign.jar;S:\jdk\jre\lib\jsse.jar;S:\jdk\jre\lib\jce.jar;S:\jdk\jre\lib\charsets.jar;S:\jdk\jre\lib\jfr.jar;S:\jdk\jre\classes
+	sun.boot.library.path = S:\jdk\jre\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.desktop = windows
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp s:/wildfly/modules -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b 0.0.0.0 --server-config=standalone-full.xml
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = Service Pack 1
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = ES
+	user.dir = s:\wildfly\bin
+	user.home = C:\Users\alb
+	user.language = es
+	user.name = alb
+	user.script = 
+	user.timezone = Europe/Paris
+	user.variant = 
+2014-06-02 12:32:30,773 DEBUG [org.jboss.as.config] (MSC service thread 1-5) VM Arguments: -Dprogram.name=JBossTools: WildFly 8.0 Runtime Server -Xms64m -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=s:/wildfly/standalone/log/boot.log -Dlogging.configuration=file:/s:/wildfly/standalone/configuration/logging.properties -Djboss.home.dir=s:/wildfly -Dorg.jboss.logmanager.nocolor=true -Dfile.encoding=Cp1252 
+2014-06-02 12:32:37,271 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found Notaneitorv3_7.war in deployment directory. To trigger deployment create a file called Notaneitorv3_7.war.dodeploy
+2014-06-02 12:32:37,272 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found proyecto0_wf8.war in deployment directory. To trigger deployment create a file called proyecto0_wf8.war.dodeploy
+2014-06-02 12:32:37,273 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found NataliaNegri.war in deployment directory. To trigger deployment create a file called NataliaNegri.war.dodeploy
+2014-06-02 12:32:37,273 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found JSFwithHTML5.war in deployment directory. To trigger deployment create a file called JSFwithHTML5.war.dodeploy
+2014-06-02 12:32:37,345 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Creating http management service using socket-binding (management-http)
+2014-06-02 12:32:37,415 INFO  [org.xnio] (MSC service thread 1-3) XNIO version 3.2.0.Final
+2014-06-02 12:32:37,425 INFO  [org.xnio.nio] (MSC service thread 1-3) XNIO NIO Implementation Version 3.2.0.Final
+2014-06-02 12:32:37,459 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 52) JBAS013171: Activating Security Subsystem
+2014-06-02 12:32:37,471 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 47) JBAS011800: Activating Naming Subsystem
+2014-06-02 12:32:37,486 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 36) JBAS010280: Activating Infinispan subsystem.
+2014-06-02 12:32:37,500 INFO  [org.jboss.as.jacorb] (ServerService Thread Pool -- 37) JBAS016300: Activating JacORB Subsystem
+2014-06-02 12:32:37,505 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 43) JBAS012615: Activated the following JSF Implementations: [main]
+2014-06-02 12:32:37,590 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 56) JBAS015537: Activating WebServices Extension
+2014-06-02 12:32:37,652 INFO  [org.jboss.remoting] (MSC service thread 1-3) JBoss Remoting version 4.0.0.Final
+2014-06-02 12:32:37,689 INFO  [org.jboss.as.security] (MSC service thread 1-5) JBAS013170: Current PicketBox version=4.0.20.Final
+2014-06-02 12:32:37,912 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-6) JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.3.Final)
+2014-06-02 12:32:38,161 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) JBAS017502: Undertow 1.0.0.Final starting
+2014-06-02 12:32:38,161 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017502: Undertow 1.0.0.Final starting
+2014-06-02 12:32:38,685 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 31) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2014-06-02 12:32:38,689 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) JBAS010417: Started Driver service with driver-name = h2
+2014-06-02 12:32:38,689 INFO  [org.jboss.as.naming] (MSC service thread 1-3) JBAS011802: Starting Naming Service
+2014-06-02 12:32:38,694 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) JBAS015400: Bound mail session [java:jboss/mail/Default]
+2014-06-02 12:32:38,715 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) JBAS017527: Creating file handler for path s:\wildfly/welcome-content
+2014-06-02 12:32:38,873 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017525: Started server default-server.
+2014-06-02 12:32:38,914 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017531: Host default-host starting
+2014-06-02 12:32:39,037 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017519: Undertow HTTP listener default listening on /0.0.0.0:8280
+2014-06-02 12:32:39,589 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-06-02 12:32:39,589 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "NataliaNegri.war" (runtime-name: "NataliaNegri.war")
+2014-06-02 12:32:39,589 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) JBAS015876: Starting deployment of "Notaneitorv3_7.war" (runtime-name: "Notaneitorv3_7.war")
+2014-06-02 12:32:39,622 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-6) JBAS015012: Started FileSystemDeploymentService for directory s:\wildfly\standalone\deployments
+2014-06-02 12:32:39,818 WARN  [jacorb.codeset] (MSC service thread 1-8) Warning - unknown codeset (Cp1252) - defaulting to ISO-8859-1
+2014-06-02 12:32:40,164 INFO  [org.jboss.as.jacorb] (MSC service thread 1-8) JBAS016330: CORBA ORB Service started
+2014-06-02 12:32:40,271 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+2014-06-02 12:32:40,292 WARN  [org.jboss.as.messaging] (MSC service thread 1-5) JBAS011600: AIO wasn't located on this platform, it will fall back to using pure Java NIO. If your platform is Linux, install LibAIO to enable the AIO journal
+2014-06-02 12:32:40,313 INFO  [org.jboss.ws.common.management] (MSC service thread 1-3) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.2.3.Final
+2014-06-02 12:32:40,645 INFO  [org.jboss.as.jpa] (MSC service thread 1-6) JBAS011401: Read persistence.xml for arenasforum
+2014-06-02 12:32:40,671 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221000: live server is starting with configuration HornetQ Configuration (clustered=false,backup=false,sharedStore=true,journalDirectory=s:\wildfly\standalone\data\messagingjournal,bindingsDirectory=s:\wildfly\standalone\data\messagingbindings,largeMessagesDirectory=s:\wildfly\standalone\data\messaginglargemessages,pagingDirectory=s:\wildfly\standalone\data\messagingpaging)
+2014-06-02 12:32:40,673 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221006: Waiting to obtain live lock
+2014-06-02 12:32:40,777 INFO  [org.jboss.as.jacorb] (MSC service thread 1-3) JBAS016328: CORBA Naming Service started
+2014-06-02 12:32:40,884 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221013: Using NIO Journal
+2014-06-02 12:32:41,132 INFO  [io.netty.util.internal.PlatformDependent] (ServerService Thread Pool -- 58) Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+2014-06-02 12:32:41,241 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support CORE
+2014-06-02 12:32:41,349 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support AMQP
+2014-06-02 12:32:41,352 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support STOMP
+2014-06-02 12:32:41,513 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221034: Waiting to obtain live lock
+2014-06-02 12:32:41,514 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221035: Live Server Obtained live lock
+2014-06-02 12:32:42,116 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) JBAS010403: Deploying JDBC-compliant driver class org.hsqldb.jdbc.JDBCDriver (version 2.2)
+2014-06-02 12:32:42,538 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) JBAS010417: Started Driver service with driver-name = Notaneitorv3_7.war_org.hsqldb.jdbc.JDBCDriver_2_2
+2014-06-02 12:32:42,807 INFO  [org.jboss.messaging] (MSC service thread 1-1) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor acceptor
+2014-06-02 12:32:42,807 INFO  [org.jboss.messaging] (MSC service thread 1-2) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor-throughput acceptor
+2014-06-02 12:32:42,964 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221007: Server is now live
+2014-06-02 12:32:42,965 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221001: HornetQ Server version 2.4.1.Final (Fast Hornet, 124) [dc857a2d-b3be-11e3-bd61-b7940c80e733] 
+2014-06-02 12:32:42,969 INFO  [org.hornetq.jms.server] (ServerService Thread Pool -- 58) HQ121005: Invalid "host" value "0.0.0.0" detected for "http-connector" connector. Switching to "dell-off-ovd". If this new address is incorrect please manually configure the connector to use the proper one.
+2014-06-02 12:32:43,002 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 58) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2014-06-02 12:32:43,004 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 59) JBAS011601: Bound messaging object to jndi name java:/ConnectionFactory
+2014-06-02 12:32:43,101 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-2) JBAS010406: Registered connection factory java:/JmsXA
+2014-06-02 12:32:43,133 INFO  [org.hornetq.ra] (MSC service thread 1-2) HornetQ resource adaptor started
+2014-06-02 12:32:43,133 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-2) IJ020002: Deployed: file://RaActivatorhornetq-ra
+2014-06-02 12:32:43,135 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-2) JBAS010401: Bound JCA ConnectionFactory [java:/JmsXA]
+2014-06-02 12:32:43,135 INFO  [org.jboss.as.messaging] (MSC service thread 1-5) JBAS011601: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2014-06-02 12:32:43,425 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-06-02 12:32:43,426 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-8) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/Notaneitorv3_7'
+2014-06-02 12:32:44,385 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/s:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-06-02 12:32:44,385 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-8) Monitoring file:/s:/wildfly/standalone/deployments/Notaneitorv3_7.war/WEB-INF/faces-config.xml for modifications
+2014-06-02 12:32:44,490 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /JSFwithHTML5
+2014-06-02 12:32:44,490 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) JBAS017534: Registered web context: /Notaneitorv3_7
+2014-06-02 12:32:44,500 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) JBAS014613: Operation ("deploy") failed - address: ([("deployment" => "NataliaNegri.war")]) - failure description: {"JBAS014771: Services with missing/unavailable dependencies" => ["jboss.persistenceunit.\"NataliaNegri.war#arenasforum\".__FIRST_PHASE__ is missing [jboss.naming.context.java.jboss.datasources.NotaneitorDS]"]}
+2014-06-02 12:32:44,546 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 32) JBAS018559: Deployed "Notaneitorv3_7.war" (runtime-name : "Notaneitorv3_7.war")
+2014-06-02 12:32:44,547 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 32) JBAS018559: Deployed "NataliaNegri.war" (runtime-name : "NataliaNegri.war")
+2014-06-02 12:32:44,547 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 32) JBAS018559: Deployed "JSFwithHTML5.war" (runtime-name : "JSFwithHTML5.war")
+2014-06-02 12:32:44,559 INFO  [org.jboss.as.controller] (Controller Boot Thread) JBAS014774: Service status report
+JBAS014775:    New missing/unsatisfied dependencies:
+      service jboss.naming.context.java.jboss.datasources.NotaneitorDS (missing) dependents: [service jboss.persistenceunit."NataliaNegri.war#arenasforum".__FIRST_PHASE__] 
+
+2014-06-02 12:32:44,920 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) JBAS015877: Stopped deployment NataliaNegri.war (runtime-name: NataliaNegri.war) in 117ms
+2014-06-02 12:32:44,925 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:10190/management
+2014-06-02 12:32:44,925 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:10190
+2014-06-02 12:32:44,926 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.0.0.Final "WildFly" started in 14903ms - Started 385 of 444 services (109 services are lazy, passive or on-demand)
+2014-06-02 12:32:45,172 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018558: Undeployed "NataliaNegri.war" (runtime-name: "NataliaNegri.war")
+2014-06-02 12:32:45,173 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 2) JBAS014774: Service status report
+JBAS014775:    New missing/unsatisfied dependencies:
+      service jboss.persistenceunit."NataliaNegri.war#arenasforum".__FIRST_PHASE__ (missing) dependents: [service jboss.deployment.unit."NataliaNegri.war".POST_MODULE] 
+
+2014-06-02 12:32:49,626 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 2) JBAS015003: Found proyecto0_wf8.war in deployment directory. To trigger deployment create a file called proyecto0_wf8.war.dodeploy
+2014-06-02 12:32:49,627 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 2) JBAS015003: Found NataliaNegri.war in deployment directory. To trigger deployment create a file called NataliaNegri.war.dodeploy
+2014-06-02 12:40:10,838 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) JBAS015876: Starting deployment of "hsqldb.jar" (runtime-name: "hsqldb.jar")
+2014-06-02 12:40:10,838 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015876: Starting deployment of "notaneitor-ds.xml" (runtime-name: "notaneitor-ds.xml")
+2014-06-02 12:40:10,944 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) JBAS010403: Deploying JDBC-compliant driver class org.hsqldb.jdbc.JDBCDriver (version 2.2)
+2014-06-02 12:40:10,948 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) JBAS010417: Started Driver service with driver-name = hsqldb.jar
+2014-06-02 12:40:10,951 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) JBAS010400: Bound data source [java:jboss/datasources/NotaneitorDS]
+2014-06-02 12:40:11,082 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018559: Deployed "notaneitor-ds.xml" (runtime-name : "notaneitor-ds.xml")
+2014-06-02 12:40:11,083 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018559: Deployed "hsqldb.jar" (runtime-name : "hsqldb.jar")
+2014-06-02 12:40:11,085 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 1) JBAS014774: Service status report
+JBAS014776:    Newly corrected services:
+      service jboss.naming.context.java.jboss.datasources.NotaneitorDS (new available)
+      service jboss.persistenceunit."NataliaNegri.war#arenasforum".__FIRST_PHASE__ (no longer required)
+
+2014-06-02 12:40:56,317 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-6) HV000001: Hibernate Validator 5.0.3.Final
+2014-06-02 12:40:56,359 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-7) JBAS010409: Unbound data source [java:jboss/datasources/NotaneitorDS]
+2014-06-02 12:40:56,361 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015877: Stopped deployment notaneitor-ds.xml (runtime-name: notaneitor-ds.xml) in 76ms
+2014-06-02 12:40:56,361 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015876: Starting deployment of "notaneitor-ds.xml" (runtime-name: "notaneitor-ds.xml")
+2014-06-02 12:40:56,372 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) JBAS010400: Bound data source [java:jboss/datasources/NotaneitorDS]
+2014-06-02 12:40:56,568 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018565: Replaced deployment "notaneitor-ds.xml" with deployment "notaneitor-ds.xml"
+2014-06-02 12:41:31,753 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found NataliaNegri.war in deployment directory. To trigger deployment create a file called NataliaNegri.war.dodeploy
+2014-06-02 12:41:31,759 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "NataliaNegri.war" (runtime-name: "NataliaNegri.war")
+2014-06-02 12:41:31,910 INFO  [org.jboss.as.jpa] (MSC service thread 1-5) JBAS011401: Read persistence.xml for arenasforum
+2014-06-02 12:41:31,971 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 75) JBAS011409: Starting Persistence Unit (phase 1 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:41:32,026 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 75) HHH000204: Processing PersistenceUnitInfo [
+	name: arenasforum
+	...]
+2014-06-02 12:41:32,178 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 75) HHH000412: Hibernate Core {4.3.1.Final}
+2014-06-02 12:41:32,180 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 75) HHH000206: hibernate.properties not found
+2014-06-02 12:41:32,181 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 75) HHH000021: Bytecode provider name : javassist
+2014-06-02 12:41:32,508 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 77) JBAS011409: Starting Persistence Unit (phase 2 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:41:32,665 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 77) HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2014-06-02 12:41:33,333 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 77) HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2014-06-02 12:41:33,591 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] (ServerService Thread Pool -- 77) HHH000397: Using ASTQueryTranslatorFactory
+2014-06-02 12:41:34,065 WARN  [org.hibernate.internal.SessionFactoryImpl] (ServerService Thread Pool -- 77) HHH000008: JTASessionContext being used with JDBCTransactionFactory; auto-flush will not operate correctly with getCurrentSession()
+2014-06-02 12:41:34,499 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-3) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/NataliaNegri'
+2014-06-02 12:41:34,854 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-3) Monitoring file:/s:/wildfly/standalone/deployments/NataliaNegri.war/WEB-INF/faces-config.xml for modifications
+2014-06-02 12:41:34,858 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017534: Registered web context: /NataliaNegri
+2014-06-02 12:41:34,980 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018559: Deployed "NataliaNegri.war" (runtime-name : "NataliaNegri.war")
+2014-06-02 12:41:36,591 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-1) JSF1073: se ha interceptado javax.faces.view.facelets.TagAttributeException durante el procesamiento de RESTORE_VIEW 1 : UIComponent-ClientId=, Mensaje=/index.xhtml @7,37 locale="#{settings.locale}" No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.
+2014-06-02 12:41:36,591 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-1) /index.xhtml @7,37 locale="#{settings.locale}" No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.: javax.faces.view.facelets.TagAttributeException: /index.xhtml @7,37 locale="#{settings.locale}" No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.
+	at com.sun.faces.facelets.tag.TagAttributeImpl.getObject(TagAttributeImpl.java:358) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.TagAttributeImpl.getObject(TagAttributeImpl.java:276) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.jsf.core.ViewHandler.apply(ViewHandler.java:205) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.compiler.NamespaceHandler.apply(NamespaceHandler.java:93) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.compiler.EncodingHandler.apply(EncodingHandler.java:87) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFacelet.apply(DefaultFacelet.java:161) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.application.view.ViewMetadataImpl.createMetadataView(ViewMetadataImpl.java:116) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RestoreViewPhase.execute(RestoreViewPhase.java:241) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RestoreViewPhase.doPhase(RestoreViewPhase.java:121) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:198) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:646) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:113) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AuthenticationCallHandler.handleRequest(AuthenticationCallHandler.java:52) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:240) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:227) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:73) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:146) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:168) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:687) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+Caused by: com.sun.faces.mgbean.ManagedBeanCreationException: No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.
+	at com.sun.faces.mgbean.BeanBuilder.newBeanInstance(BeanBuilder.java:191) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.mgbean.BeanBuilder.build(BeanBuilder.java:100) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.mgbean.BeanManager.createAndPush(BeanManager.java:409) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.mgbean.BeanManager.create(BeanManager.java:269) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.ManagedBeanELResolver.resolveBean(ManagedBeanELResolver.java:257) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.ManagedBeanELResolver.getValue(ManagedBeanELResolver.java:117) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.DemuxCompositeELResolver._getValue(DemuxCompositeELResolver.java:176) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.DemuxCompositeELResolver.getValue(DemuxCompositeELResolver.java:203) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.el.parser.AstIdentifier.getValue(AstIdentifier.java:116) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.el.parser.AstValue.getBase(AstValue.java:151) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.el.parser.AstValue.getValue(AstValue.java:200) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:226) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.faces.facelets.el.TagValueExpression.getValue(TagValueExpression.java:109) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.TagAttributeImpl.getObject(TagAttributeImpl.java:356) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	... 35 more
+Caused by: java.lang.NullPointerException
+	at com.sdi.presentation.BeanSettings.calcularIdiomas(BeanSettings.java:58) [classes:]
+	at com.sdi.presentation.BeanSettings.<init>(BeanSettings.java:25) [classes:]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) [rt.jar:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) [rt.jar:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) [rt.jar:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) [rt.jar:1.7.0_25]
+	at java.lang.Class.newInstance(Class.java:374) [rt.jar:1.7.0_25]
+	at com.sun.faces.mgbean.BeanBuilder.newBeanInstance(BeanBuilder.java:186) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	... 48 more
+
+2014-06-02 12:41:36,610 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-2) JSF1073: se ha interceptado javax.faces.view.facelets.TagAttributeException durante el procesamiento de RESTORE_VIEW 1 : UIComponent-ClientId=, Mensaje=/index.xhtml @7,37 locale="#{settings.locale}" No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.
+2014-06-02 12:41:36,612 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-2) /index.xhtml @7,37 locale="#{settings.locale}" No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.: javax.faces.view.facelets.TagAttributeException: /index.xhtml @7,37 locale="#{settings.locale}" No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.
+	at com.sun.faces.facelets.tag.TagAttributeImpl.getObject(TagAttributeImpl.java:358) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.TagAttributeImpl.getObject(TagAttributeImpl.java:276) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.jsf.core.ViewHandler.apply(ViewHandler.java:205) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.compiler.NamespaceHandler.apply(NamespaceHandler.java:93) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.compiler.EncodingHandler.apply(EncodingHandler.java:87) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFacelet.apply(DefaultFacelet.java:161) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.application.view.ViewMetadataImpl.createMetadataView(ViewMetadataImpl.java:116) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RestoreViewPhase.execute(RestoreViewPhase.java:241) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RestoreViewPhase.doPhase(RestoreViewPhase.java:121) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:198) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:646) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:113) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AuthenticationCallHandler.handleRequest(AuthenticationCallHandler.java:52) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:240) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:227) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:73) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:146) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:168) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:687) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+Caused by: com.sun.faces.mgbean.ManagedBeanCreationException: No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.
+	at com.sun.faces.mgbean.BeanBuilder.newBeanInstance(BeanBuilder.java:191) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.mgbean.BeanBuilder.build(BeanBuilder.java:100) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.mgbean.BeanManager.createAndPush(BeanManager.java:409) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.mgbean.BeanManager.create(BeanManager.java:269) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.ManagedBeanELResolver.resolveBean(ManagedBeanELResolver.java:257) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.ManagedBeanELResolver.getValue(ManagedBeanELResolver.java:117) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.DemuxCompositeELResolver._getValue(DemuxCompositeELResolver.java:176) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.DemuxCompositeELResolver.getValue(DemuxCompositeELResolver.java:203) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.el.parser.AstIdentifier.getValue(AstIdentifier.java:116) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.el.parser.AstValue.getBase(AstValue.java:151) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.el.parser.AstValue.getValue(AstValue.java:200) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:226) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.faces.facelets.el.TagValueExpression.getValue(TagValueExpression.java:109) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.TagAttributeImpl.getObject(TagAttributeImpl.java:356) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	... 35 more
+Caused by: java.lang.NullPointerException
+	at com.sdi.presentation.BeanSettings.calcularIdiomas(BeanSettings.java:58) [classes:]
+	at com.sdi.presentation.BeanSettings.<init>(BeanSettings.java:25) [classes:]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) [rt.jar:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) [rt.jar:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) [rt.jar:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) [rt.jar:1.7.0_25]
+	at java.lang.Class.newInstance(Class.java:374) [rt.jar:1.7.0_25]
+	at com.sun.faces.mgbean.BeanBuilder.newBeanInstance(BeanBuilder.java:186) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	... 48 more
+
+2014-06-02 12:43:22,708 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-3) JSF1073: se ha interceptado javax.faces.view.facelets.TagAttributeException durante el procesamiento de RESTORE_VIEW 1 : UIComponent-ClientId=, Mensaje=/index.xhtml @7,37 locale="#{settings.locale}" No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.
+2014-06-02 12:43:22,708 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-3) /index.xhtml @7,37 locale="#{settings.locale}" No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.: javax.faces.view.facelets.TagAttributeException: /index.xhtml @7,37 locale="#{settings.locale}" No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.
+	at com.sun.faces.facelets.tag.TagAttributeImpl.getObject(TagAttributeImpl.java:358) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.TagAttributeImpl.getObject(TagAttributeImpl.java:276) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.jsf.core.ViewHandler.apply(ViewHandler.java:205) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.compiler.NamespaceHandler.apply(NamespaceHandler.java:93) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.compiler.EncodingHandler.apply(EncodingHandler.java:87) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFacelet.apply(DefaultFacelet.java:161) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.application.view.ViewMetadataImpl.createMetadataView(ViewMetadataImpl.java:116) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RestoreViewPhase.execute(RestoreViewPhase.java:241) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RestoreViewPhase.doPhase(RestoreViewPhase.java:121) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:198) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:646) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:113) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AuthenticationCallHandler.handleRequest(AuthenticationCallHandler.java:52) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:240) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:227) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:73) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:146) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:168) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:687) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+Caused by: com.sun.faces.mgbean.ManagedBeanCreationException: No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.
+	at com.sun.faces.mgbean.BeanBuilder.newBeanInstance(BeanBuilder.java:191) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.mgbean.BeanBuilder.build(BeanBuilder.java:100) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.mgbean.BeanManager.createAndPush(BeanManager.java:409) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.mgbean.BeanManager.create(BeanManager.java:269) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.ManagedBeanELResolver.resolveBean(ManagedBeanELResolver.java:257) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.ManagedBeanELResolver.getValue(ManagedBeanELResolver.java:117) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.DemuxCompositeELResolver._getValue(DemuxCompositeELResolver.java:176) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.DemuxCompositeELResolver.getValue(DemuxCompositeELResolver.java:203) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.el.parser.AstIdentifier.getValue(AstIdentifier.java:116) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.el.parser.AstValue.getBase(AstValue.java:151) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.el.parser.AstValue.getValue(AstValue.java:200) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:226) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.faces.facelets.el.TagValueExpression.getValue(TagValueExpression.java:109) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.TagAttributeImpl.getObject(TagAttributeImpl.java:356) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	... 35 more
+Caused by: java.lang.NullPointerException
+	at com.sdi.presentation.BeanSettings.calcularIdiomas(BeanSettings.java:58) [classes:]
+	at com.sdi.presentation.BeanSettings.<init>(BeanSettings.java:25) [classes:]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) [rt.jar:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) [rt.jar:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) [rt.jar:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) [rt.jar:1.7.0_25]
+	at java.lang.Class.newInstance(Class.java:374) [rt.jar:1.7.0_25]
+	at com.sun.faces.mgbean.BeanBuilder.newBeanInstance(BeanBuilder.java:186) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	... 48 more
+
+2014-06-02 12:43:30,434 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017535: Unregistered web context: /NataliaNegri
+2014-06-02 12:43:30,454 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 82) JBAS011410: Stopping Persistence Unit (phase 2 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:43:30,461 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 82) JBAS011410: Stopping Persistence Unit (phase 1 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:43:30,464 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) JBAS015877: Stopped deployment NataliaNegri.war (runtime-name: NataliaNegri.war) in 31ms
+2014-06-02 12:43:30,614 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018558: Undeployed "NataliaNegri.war" (runtime-name: "NataliaNegri.war")
+2014-06-02 12:43:35,634 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 2) JBAS015003: Found NataliaNegri.war in deployment directory. To trigger deployment create a file called NataliaNegri.war.dodeploy
+2014-06-02 12:43:40,693 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "NataliaNegri.war" (runtime-name: "NataliaNegri.war")
+2014-06-02 12:43:40,837 INFO  [org.jboss.as.jpa] (MSC service thread 1-3) JBAS011401: Read persistence.xml for arenasforum
+2014-06-02 12:43:40,893 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 82) JBAS011409: Starting Persistence Unit (phase 1 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:43:40,893 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 82) HHH000204: Processing PersistenceUnitInfo [
+	name: arenasforum
+	...]
+2014-06-02 12:43:41,020 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 82) JBAS011409: Starting Persistence Unit (phase 2 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:43:41,071 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 82) HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2014-06-02 12:43:41,163 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] (ServerService Thread Pool -- 82) HHH000397: Using ASTQueryTranslatorFactory
+2014-06-02 12:43:41,269 WARN  [org.hibernate.internal.SessionFactoryImpl] (ServerService Thread Pool -- 82) HHH000008: JTASessionContext being used with JDBCTransactionFactory; auto-flush will not operate correctly with getCurrentSession()
+2014-06-02 12:43:41,370 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/NataliaNegri'
+2014-06-02 12:43:41,597 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/s:/wildfly/standalone/deployments/NataliaNegri.war/WEB-INF/faces-config.xml for modifications
+2014-06-02 12:43:41,599 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /NataliaNegri
+2014-06-02 12:43:41,845 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) JBAS018559: Deployed "NataliaNegri.war" (runtime-name : "NataliaNegri.war")
+2014-06-02 12:43:42,962 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-4) JSF1073: se ha interceptado javax.faces.view.facelets.TagAttributeException durante el procesamiento de RESTORE_VIEW 1 : UIComponent-ClientId=, Mensaje=/index.xhtml @7,37 locale="#{settings.locale}" No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.
+2014-06-02 12:43:42,962 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-4) /index.xhtml @7,37 locale="#{settings.locale}" No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.: javax.faces.view.facelets.TagAttributeException: /index.xhtml @7,37 locale="#{settings.locale}" No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.
+	at com.sun.faces.facelets.tag.TagAttributeImpl.getObject(TagAttributeImpl.java:358) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.TagAttributeImpl.getObject(TagAttributeImpl.java:276) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.jsf.core.ViewHandler.apply(ViewHandler.java:205) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.compiler.NamespaceHandler.apply(NamespaceHandler.java:93) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.compiler.EncodingHandler.apply(EncodingHandler.java:87) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.impl.DefaultFacelet.apply(DefaultFacelet.java:161) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.application.view.ViewMetadataImpl.createMetadataView(ViewMetadataImpl.java:116) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RestoreViewPhase.execute(RestoreViewPhase.java:241) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RestoreViewPhase.doPhase(RestoreViewPhase.java:121) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:198) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:646) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:113) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AuthenticationCallHandler.handleRequest(AuthenticationCallHandler.java:52) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:240) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:227) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:73) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:146) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:168) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:687) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+Caused by: com.sun.faces.mgbean.ManagedBeanCreationException: No se puede crear la instancia de clase: com.sdi.presentation.BeanSettings.
+	at com.sun.faces.mgbean.BeanBuilder.newBeanInstance(BeanBuilder.java:191) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.mgbean.BeanBuilder.build(BeanBuilder.java:100) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.mgbean.BeanManager.createAndPush(BeanManager.java:409) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.mgbean.BeanManager.create(BeanManager.java:269) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.ManagedBeanELResolver.resolveBean(ManagedBeanELResolver.java:257) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.ManagedBeanELResolver.getValue(ManagedBeanELResolver.java:117) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.DemuxCompositeELResolver._getValue(DemuxCompositeELResolver.java:176) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.el.DemuxCompositeELResolver.getValue(DemuxCompositeELResolver.java:203) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.el.parser.AstIdentifier.getValue(AstIdentifier.java:116) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.el.parser.AstValue.getBase(AstValue.java:151) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.el.parser.AstValue.getValue(AstValue.java:200) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:226) [javax.el-3.0.0.jar:3.0.0]
+	at com.sun.faces.facelets.el.TagValueExpression.getValue(TagValueExpression.java:109) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.facelets.tag.TagAttributeImpl.getObject(TagAttributeImpl.java:356) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	... 35 more
+Caused by: java.lang.NullPointerException
+	at com.sdi.presentation.BeanSettings.calcularIdiomas(BeanSettings.java:58) [classes:]
+	at com.sdi.presentation.BeanSettings.<init>(BeanSettings.java:25) [classes:]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) [rt.jar:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) [rt.jar:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) [rt.jar:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) [rt.jar:1.7.0_25]
+	at java.lang.Class.newInstance(Class.java:374) [rt.jar:1.7.0_25]
+	at com.sun.faces.mgbean.BeanBuilder.newBeanInstance(BeanBuilder.java:186) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	... 48 more
+
+2014-06-02 12:44:33,599 SEVERE [javax.enterprise.resource.webcontainer.jsf.config] (Mojarra-WebResourceMonitor-4-thread-1) Unable to access url file:/s:/wildfly/standalone/deployments/NataliaNegri.war/WEB-INF/faces-config.xml.  Monitoring for this resource will no longer occur.
+2014-06-02 12:44:37,059 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017535: Unregistered web context: /NataliaNegri
+2014-06-02 12:44:37,065 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 100) JBAS011410: Stopping Persistence Unit (phase 2 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:44:37,072 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 100) JBAS011410: Stopping Persistence Unit (phase 1 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:44:37,074 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015877: Stopped deployment NataliaNegri.war (runtime-name: NataliaNegri.war) in 15ms
+2014-06-02 12:44:37,248 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018558: Undeployed "NataliaNegri.war" (runtime-name: "NataliaNegri.war")
+2014-06-02 12:44:42,269 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found NataliaNegri.war in deployment directory. To trigger deployment create a file called NataliaNegri.war.dodeploy
+2014-06-02 12:46:58,031 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) JBAS015876: Starting deployment of "NataliaNegri.war" (runtime-name: "NataliaNegri.war")
+2014-06-02 12:46:58,087 INFO  [org.jboss.as.jpa] (MSC service thread 1-5) JBAS011401: Read persistence.xml for arenasforum
+2014-06-02 12:46:58,155 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 101) JBAS011409: Starting Persistence Unit (phase 1 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:46:58,156 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 101) HHH000204: Processing PersistenceUnitInfo [
+	name: arenasforum
+	...]
+2014-06-02 12:46:58,282 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 101) JBAS011409: Starting Persistence Unit (phase 2 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:46:58,313 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 101) HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2014-06-02 12:46:58,374 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] (ServerService Thread Pool -- 101) HHH000397: Using ASTQueryTranslatorFactory
+2014-06-02 12:46:58,474 WARN  [org.hibernate.internal.SessionFactoryImpl] (ServerService Thread Pool -- 101) HHH000008: JTASessionContext being used with JDBCTransactionFactory; auto-flush will not operate correctly with getCurrentSession()
+2014-06-02 12:46:58,570 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/NataliaNegri'
+2014-06-02 12:46:58,749 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/s:/wildfly/standalone/deployments/NataliaNegri.war/WEB-INF/faces-config.xml for modifications
+2014-06-02 12:46:58,751 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /NataliaNegri
+2014-06-02 12:46:58,887 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018559: Deployed "NataliaNegri.war" (runtime-name : "NataliaNegri.war")
+2014-06-02 12:47:18,641 INFO  [stdout] (default task-9) Hibernate: 
+2014-06-02 12:47:18,642 INFO  [stdout] (default task-9)     select
+2014-06-02 12:47:18,642 INFO  [stdout] (default task-9)         asignatura0_.ASIGNATURA_ID as ASIGNATU1_2_,
+2014-06-02 12:47:18,642 INFO  [stdout] (default task-9)         asignatura0_.anio as anio2_2_,
+2014-06-02 12:47:18,642 INFO  [stdout] (default task-9)         asignatura0_.creditos as creditos3_2_,
+2014-06-02 12:47:18,642 INFO  [stdout] (default task-9)         asignatura0_.nombre as nombre4_2_ 
+2014-06-02 12:47:18,642 INFO  [stdout] (default task-9)     from
+2014-06-02 12:47:18,642 INFO  [stdout] (default task-9)         TASIGNATURAS asignatura0_
+2014-06-02 12:47:18,657 WARN  [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-9) SQL Error: -5501, SQLState: 42501
+2014-06-02 12:47:18,657 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-9) usuario no tiene privilegios suficientes o objeto no encontrado: TASIGNATURAS
+2014-06-02 12:47:18,661 ERROR [stderr] (default task-9) javax.persistence.PersistenceException: org.hibernate.exception.SQLGrammarException: could not prepare statement
+2014-06-02 12:47:18,661 ERROR [stderr] (default task-9) 	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1763)
+2014-06-02 12:47:18,662 ERROR [stderr] (default task-9) 	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1677)
+2014-06-02 12:47:18,662 ERROR [stderr] (default task-9) 	at org.hibernate.jpa.internal.QueryImpl.getResultList(QueryImpl.java:458)
+2014-06-02 12:47:18,662 ERROR [stderr] (default task-9) 	at com.sdi.persistence.impl.AsignaturaFinderImpl.listarTodas(AsignaturaFinderImpl.java:14)
+2014-06-02 12:47:18,662 ERROR [stderr] (default task-9) 	at com.sdi.business.impl.classes.asignatura.ListarTodas.listar(ListarTodas.java:16)
+2014-06-02 12:47:18,662 ERROR [stderr] (default task-9) 	at com.sdi.business.impl.classes.asignatura.ListarTodas.execute(ListarTodas.java:23)
+2014-06-02 12:47:18,662 ERROR [stderr] (default task-9) 	at com.sdi.business.CommandExecutor.execute(CommandExecutor.java:24)
+2014-06-02 12:47:18,663 ERROR [stderr] (default task-9) 	at com.sdi.business.impl.SimpleAsignaturasService.listarTodas(SimpleAsignaturasService.java:17)
+2014-06-02 12:47:18,663 ERROR [stderr] (default task-9) 	at com.sdi.presentation.BeanAsignaturas.listadoTodas(BeanAsignaturas.java:71)
+2014-06-02 12:47:18,663 ERROR [stderr] (default task-9) 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2014-06-02 12:47:18,663 ERROR [stderr] (default task-9) 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+2014-06-02 12:47:18,663 ERROR [stderr] (default task-9) 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2014-06-02 12:47:18,663 ERROR [stderr] (default task-9) 	at java.lang.reflect.Method.invoke(Method.java:606)
+2014-06-02 12:47:18,664 ERROR [stderr] (default task-9) 	at com.sun.el.parser.AstValue.invoke(AstValue.java:275)
+2014-06-02 12:47:18,664 ERROR [stderr] (default task-9) 	at com.sun.el.MethodExpressionImpl.invoke(MethodExpressionImpl.java:304)
+2014-06-02 12:47:18,664 ERROR [stderr] (default task-9) 	at com.sun.faces.facelets.el.TagMethodExpression.invoke(TagMethodExpression.java:105)
+2014-06-02 12:47:18,664 ERROR [stderr] (default task-9) 	at javax.faces.component.MethodBindingMethodExpressionAdapter.invoke(MethodBindingMethodExpressionAdapter.java:87)
+2014-06-02 12:47:18,664 ERROR [stderr] (default task-9) 	at com.sun.faces.application.ActionListenerImpl.processAction(ActionListenerImpl.java:102)
+2014-06-02 12:47:18,665 ERROR [stderr] (default task-9) 	at javax.faces.component.UICommand.broadcast(UICommand.java:315)
+2014-06-02 12:47:18,665 ERROR [stderr] (default task-9) 	at javax.faces.component.UIViewRoot.broadcastEvents(UIViewRoot.java:790)
+2014-06-02 12:47:18,665 ERROR [stderr] (default task-9) 	at javax.faces.component.UIViewRoot.processApplication(UIViewRoot.java:1282)
+2014-06-02 12:47:18,665 ERROR [stderr] (default task-9) 	at com.sun.faces.lifecycle.InvokeApplicationPhase.execute(InvokeApplicationPhase.java:81)
+2014-06-02 12:47:18,665 ERROR [stderr] (default task-9) 	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101)
+2014-06-02 12:47:18,666 ERROR [stderr] (default task-9) 	at com.sun.faces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:198)
+2014-06-02 12:47:18,666 ERROR [stderr] (default task-9) 	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:646)
+2014-06-02 12:47:18,666 ERROR [stderr] (default task-9) 	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+2014-06-02 12:47:18,666 ERROR [stderr] (default task-9) 	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61)
+2014-06-02 12:47:18,666 ERROR [stderr] (default task-9) 	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+2014-06-02 12:47:18,667 ERROR [stderr] (default task-9) 	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+2014-06-02 12:47:18,667 ERROR [stderr] (default task-9) 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+2014-06-02 12:47:18,667 ERROR [stderr] (default task-9) 	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:113)
+2014-06-02 12:47:18,667 ERROR [stderr] (default task-9) 	at io.undertow.security.handlers.AuthenticationCallHandler.handleRequest(AuthenticationCallHandler.java:52)
+2014-06-02 12:47:18,667 ERROR [stderr] (default task-9) 	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45)
+2014-06-02 12:47:18,668 ERROR [stderr] (default task-9) 	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61)
+2014-06-02 12:47:18,668 ERROR [stderr] (default task-9) 	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70)
+2014-06-02 12:47:18,668 ERROR [stderr] (default task-9) 	at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76)
+2014-06-02 12:47:18,668 ERROR [stderr] (default task-9) 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+2014-06-02 12:47:18,668 ERROR [stderr] (default task-9) 	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+2014-06-02 12:47:18,669 ERROR [stderr] (default task-9) 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+2014-06-02 12:47:18,669 ERROR [stderr] (default task-9) 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+2014-06-02 12:47:18,669 ERROR [stderr] (default task-9) 	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:240)
+2014-06-02 12:47:18,669 ERROR [stderr] (default task-9) 	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:227)
+2014-06-02 12:47:18,669 ERROR [stderr] (default task-9) 	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:73)
+2014-06-02 12:47:18,670 ERROR [stderr] (default task-9) 	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:146)
+2014-06-02 12:47:18,670 ERROR [stderr] (default task-9) 	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:168)
+2014-06-02 12:47:18,670 ERROR [stderr] (default task-9) 	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:687)
+2014-06-02 12:47:18,670 ERROR [stderr] (default task-9) 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+2014-06-02 12:47:18,670 ERROR [stderr] (default task-9) 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+2014-06-02 12:47:18,670 ERROR [stderr] (default task-9) 	at java.lang.Thread.run(Thread.java:724)
+2014-06-02 12:47:18,671 ERROR [stderr] (default task-9) Caused by: org.hibernate.exception.SQLGrammarException: could not prepare statement
+2014-06-02 12:47:18,671 ERROR [stderr] (default task-9) 	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+2014-06-02 12:47:18,671 ERROR [stderr] (default task-9) 	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+2014-06-02 12:47:18,671 ERROR [stderr] (default task-9) 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+2014-06-02 12:47:18,671 ERROR [stderr] (default task-9) 	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:196)
+2014-06-02 12:47:18,672 ERROR [stderr] (default task-9) 	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:160)
+2014-06-02 12:47:18,672 ERROR [stderr] (default task-9) 	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1884)
+2014-06-02 12:47:18,672 ERROR [stderr] (default task-9) 	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1861)
+2014-06-02 12:47:18,672 ERROR [stderr] (default task-9) 	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1838)
+2014-06-02 12:47:18,672 ERROR [stderr] (default task-9) 	at org.hibernate.loader.Loader.doQuery(Loader.java:909)
+2014-06-02 12:47:18,672 ERROR [stderr] (default task-9) 	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:354)
+2014-06-02 12:47:18,672 ERROR [stderr] (default task-9) 	at org.hibernate.loader.Loader.doList(Loader.java:2551)
+2014-06-02 12:47:18,673 ERROR [stderr] (default task-9) 	at org.hibernate.loader.Loader.doList(Loader.java:2537)
+2014-06-02 12:47:18,673 ERROR [stderr] (default task-9) 	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2367)
+2014-06-02 12:47:18,673 ERROR [stderr] (default task-9) 	at org.hibernate.loader.Loader.list(Loader.java:2362)
+2014-06-02 12:47:18,673 ERROR [stderr] (default task-9) 	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:496)
+2014-06-02 12:47:18,673 ERROR [stderr] (default task-9) 	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:387)
+2014-06-02 12:47:18,673 ERROR [stderr] (default task-9) 	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:229)
+2014-06-02 12:47:18,674 ERROR [stderr] (default task-9) 	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1260)
+2014-06-02 12:47:18,674 ERROR [stderr] (default task-9) 	at org.hibernate.internal.QueryImpl.list(QueryImpl.java:103)
+2014-06-02 12:47:18,674 ERROR [stderr] (default task-9) 	at org.hibernate.jpa.internal.QueryImpl.list(QueryImpl.java:573)
+2014-06-02 12:47:18,674 ERROR [stderr] (default task-9) 	at org.hibernate.jpa.internal.QueryImpl.getResultList(QueryImpl.java:449)
+2014-06-02 12:47:18,674 ERROR [stderr] (default task-9) 	... 46 more
+2014-06-02 12:47:18,674 ERROR [stderr] (default task-9) Caused by: java.sql.SQLSyntaxErrorException: usuario no tiene privilegios suficientes o objeto no encontrado: TASIGNATURAS
+2014-06-02 12:47:18,675 ERROR [stderr] (default task-9) 	at org.hsqldb.jdbc.Util.sqlException(Unknown Source)
+2014-06-02 12:47:18,675 ERROR [stderr] (default task-9) 	at org.hsqldb.jdbc.Util.sqlException(Unknown Source)
+2014-06-02 12:47:18,675 ERROR [stderr] (default task-9) 	at org.hsqldb.jdbc.JDBCPreparedStatement.<init>(Unknown Source)
+2014-06-02 12:47:18,675 ERROR [stderr] (default task-9) 	at org.hsqldb.jdbc.JDBCConnection.prepareStatement(Unknown Source)
+2014-06-02 12:47:18,676 ERROR [stderr] (default task-9) 	at org.jboss.jca.adapters.jdbc.BaseWrapperManagedConnection.doPrepareStatement(BaseWrapperManagedConnection.java:745)
+2014-06-02 12:47:18,676 ERROR [stderr] (default task-9) 	at org.jboss.jca.adapters.jdbc.BaseWrapperManagedConnection.prepareStatement(BaseWrapperManagedConnection.java:731)
+2014-06-02 12:47:18,676 ERROR [stderr] (default task-9) 	at org.jboss.jca.adapters.jdbc.WrappedConnection.prepareStatement(WrappedConnection.java:405)
+2014-06-02 12:47:18,676 ERROR [stderr] (default task-9) 	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:162)
+2014-06-02 12:47:18,677 ERROR [stderr] (default task-9) 	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:186)
+2014-06-02 12:47:18,677 ERROR [stderr] (default task-9) 	... 63 more
+2014-06-02 12:47:18,680 WARNING [javax.enterprise.resource.webcontainer.jsf.application] (default task-9) JSF1064: no se encuentra o sirve el recurso, /error.xhtml.
+2014-06-02 12:53:43,576 INFO  [stdout] (default task-11) Hibernate: 
+2014-06-02 12:53:43,577 INFO  [stdout] (default task-11)     select
+2014-06-02 12:53:43,577 INFO  [stdout] (default task-11)         asignatura0_.ASIGNATURA_ID as ASIGNATU1_2_,
+2014-06-02 12:53:43,577 INFO  [stdout] (default task-11)         asignatura0_.anio as anio2_2_,
+2014-06-02 12:53:43,577 INFO  [stdout] (default task-11)         asignatura0_.creditos as creditos3_2_,
+2014-06-02 12:53:43,577 INFO  [stdout] (default task-11)         asignatura0_.nombre as nombre4_2_ 
+2014-06-02 12:53:43,577 INFO  [stdout] (default task-11)     from
+2014-06-02 12:53:43,577 INFO  [stdout] (default task-11)         TASIGNATURAS asignatura0_
+2014-06-02 12:53:43,582 WARN  [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-11) SQL Error: -1305, SQLState: 08006
+2014-06-02 12:53:43,582 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-11) excepción de conexión: fallo de conexión: java.net.SocketException: Software caused connection abort: socket write error
+2014-06-02 12:53:43,583 ERROR [stderr] (default task-11) javax.persistence.PersistenceException: unexpected error when rollbacking
+2014-06-02 12:53:43,583 ERROR [stderr] (default task-11) 	at org.hibernate.jpa.internal.TransactionImpl.rollback(TransactionImpl.java:111)
+2014-06-02 12:53:43,583 ERROR [stderr] (default task-11) 	at com.sdi.business.CommandExecutor.execute(CommandExecutor.java:32)
+2014-06-02 12:53:43,583 ERROR [stderr] (default task-11) 	at com.sdi.business.impl.SimpleAsignaturasService.listarTodas(SimpleAsignaturasService.java:17)
+2014-06-02 12:53:43,584 ERROR [stderr] (default task-11) 	at com.sdi.presentation.BeanAsignaturas.listadoTodas(BeanAsignaturas.java:71)
+2014-06-02 12:53:43,584 ERROR [stderr] (default task-11) 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2014-06-02 12:53:43,584 ERROR [stderr] (default task-11) 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+2014-06-02 12:53:43,584 ERROR [stderr] (default task-11) 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2014-06-02 12:53:43,584 ERROR [stderr] (default task-11) 	at java.lang.reflect.Method.invoke(Method.java:606)
+2014-06-02 12:53:43,584 ERROR [stderr] (default task-11) 	at com.sun.el.parser.AstValue.invoke(AstValue.java:275)
+2014-06-02 12:53:43,585 ERROR [stderr] (default task-11) 	at com.sun.el.MethodExpressionImpl.invoke(MethodExpressionImpl.java:304)
+2014-06-02 12:53:43,585 ERROR [stderr] (default task-11) 	at com.sun.faces.facelets.el.TagMethodExpression.invoke(TagMethodExpression.java:105)
+2014-06-02 12:53:43,585 ERROR [stderr] (default task-11) 	at javax.faces.component.MethodBindingMethodExpressionAdapter.invoke(MethodBindingMethodExpressionAdapter.java:87)
+2014-06-02 12:53:43,585 ERROR [stderr] (default task-11) 	at com.sun.faces.application.ActionListenerImpl.processAction(ActionListenerImpl.java:102)
+2014-06-02 12:53:43,585 ERROR [stderr] (default task-11) 	at javax.faces.component.UICommand.broadcast(UICommand.java:315)
+2014-06-02 12:53:43,585 ERROR [stderr] (default task-11) 	at javax.faces.component.UIViewRoot.broadcastEvents(UIViewRoot.java:790)
+2014-06-02 12:53:43,586 ERROR [stderr] (default task-11) 	at javax.faces.component.UIViewRoot.processApplication(UIViewRoot.java:1282)
+2014-06-02 12:53:43,586 ERROR [stderr] (default task-11) 	at com.sun.faces.lifecycle.InvokeApplicationPhase.execute(InvokeApplicationPhase.java:81)
+2014-06-02 12:53:43,586 ERROR [stderr] (default task-11) 	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101)
+2014-06-02 12:53:43,586 ERROR [stderr] (default task-11) 	at com.sun.faces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:198)
+2014-06-02 12:53:43,586 ERROR [stderr] (default task-11) 	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:646)
+2014-06-02 12:53:43,586 ERROR [stderr] (default task-11) 	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+2014-06-02 12:53:43,586 ERROR [stderr] (default task-11) 	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61)
+2014-06-02 12:53:43,587 ERROR [stderr] (default task-11) 	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+2014-06-02 12:53:43,587 ERROR [stderr] (default task-11) 	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+2014-06-02 12:53:43,587 ERROR [stderr] (default task-11) 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+2014-06-02 12:53:43,587 ERROR [stderr] (default task-11) 	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:113)
+2014-06-02 12:53:43,587 ERROR [stderr] (default task-11) 	at io.undertow.security.handlers.AuthenticationCallHandler.handleRequest(AuthenticationCallHandler.java:52)
+2014-06-02 12:53:43,587 ERROR [stderr] (default task-11) 	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45)
+2014-06-02 12:53:43,588 ERROR [stderr] (default task-11) 	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61)
+2014-06-02 12:53:43,588 ERROR [stderr] (default task-11) 	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70)
+2014-06-02 12:53:43,588 ERROR [stderr] (default task-11) 	at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76)
+2014-06-02 12:53:43,588 ERROR [stderr] (default task-11) 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+2014-06-02 12:53:43,588 ERROR [stderr] (default task-11) 	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+2014-06-02 12:53:43,588 ERROR [stderr] (default task-11) 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+2014-06-02 12:53:43,589 ERROR [stderr] (default task-11) 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+2014-06-02 12:53:43,589 ERROR [stderr] (default task-11) 	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:240)
+2014-06-02 12:53:43,589 ERROR [stderr] (default task-11) 	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:227)
+2014-06-02 12:53:43,589 ERROR [stderr] (default task-11) 	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:73)
+2014-06-02 12:53:43,589 ERROR [stderr] (default task-11) 	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:146)
+2014-06-02 12:53:43,589 ERROR [stderr] (default task-11) 	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:168)
+2014-06-02 12:53:43,589 ERROR [stderr] (default task-11) 	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:687)
+2014-06-02 12:53:43,590 ERROR [stderr] (default task-11) 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+2014-06-02 12:53:43,590 ERROR [stderr] (default task-11) 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+2014-06-02 12:53:43,590 ERROR [stderr] (default task-11) 	at java.lang.Thread.run(Thread.java:724)
+2014-06-02 12:53:43,590 ERROR [stderr] (default task-11) Caused by: org.hibernate.TransactionException: rollback failed
+2014-06-02 12:53:43,590 ERROR [stderr] (default task-11) 	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.rollback(AbstractTransactionImpl.java:217)
+2014-06-02 12:53:43,591 ERROR [stderr] (default task-11) 	at org.hibernate.jpa.internal.TransactionImpl.rollback(TransactionImpl.java:108)
+2014-06-02 12:53:43,591 ERROR [stderr] (default task-11) 	... 43 more
+2014-06-02 12:53:43,591 ERROR [stderr] (default task-11) Caused by: org.hibernate.TransactionException: unable to rollback against JDBC connection
+2014-06-02 12:53:43,591 ERROR [stderr] (default task-11) 	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doRollback(JdbcTransaction.java:167)
+2014-06-02 12:53:43,592 ERROR [stderr] (default task-11) 	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.rollback(AbstractTransactionImpl.java:211)
+2014-06-02 12:53:43,592 ERROR [stderr] (default task-11) 	... 44 more
+2014-06-02 12:53:43,592 ERROR [stderr] (default task-11) Caused by: java.sql.SQLTransientConnectionException: excepción de conexión: fallo de conexión: java.net.SocketException: Software caused connection abort: socket write error
+2014-06-02 12:53:43,592 ERROR [stderr] (default task-11) 	at org.hsqldb.jdbc.Util.sqlException(Unknown Source)
+2014-06-02 12:53:43,592 ERROR [stderr] (default task-11) 	at org.hsqldb.jdbc.Util.sqlException(Unknown Source)
+2014-06-02 12:53:43,593 ERROR [stderr] (default task-11) 	at org.hsqldb.jdbc.JDBCConnection.setAutoCommit(Unknown Source)
+2014-06-02 12:53:43,593 ERROR [stderr] (default task-11) 	at org.jboss.jca.adapters.jdbc.BaseWrapperManagedConnection.checkTransaction(BaseWrapperManagedConnection.java:893)
+2014-06-02 12:53:43,593 ERROR [stderr] (default task-11) 	at org.jboss.jca.adapters.jdbc.WrappedConnection.checkTransaction(WrappedConnection.java:1594)
+2014-06-02 12:53:43,593 ERROR [stderr] (default task-11) 	at org.jboss.jca.adapters.jdbc.WrappedConnection.rollback(WrappedConnection.java:774)
+2014-06-02 12:53:43,593 ERROR [stderr] (default task-11) 	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doRollback(JdbcTransaction.java:163)
+2014-06-02 12:53:43,593 ERROR [stderr] (default task-11) 	... 45 more
+2014-06-02 12:53:43,594 ERROR [stderr] (default task-11) Caused by: org.hsqldb.HsqlException: excepción de conexión: fallo de conexión: java.net.SocketException: Software caused connection abort: socket write error
+2014-06-02 12:53:43,594 ERROR [stderr] (default task-11) 	at org.hsqldb.error.Error.error(Unknown Source)
+2014-06-02 12:53:43,594 ERROR [stderr] (default task-11) 	at org.hsqldb.error.Error.error(Unknown Source)
+2014-06-02 12:53:43,594 ERROR [stderr] (default task-11) 	at org.hsqldb.ClientConnection.execute(Unknown Source)
+2014-06-02 12:53:43,595 ERROR [stderr] (default task-11) 	at org.hsqldb.ClientConnection.setAttribute(Unknown Source)
+2014-06-02 12:53:43,595 ERROR [stderr] (default task-11) 	at org.hsqldb.ClientConnection.setAutoCommit(Unknown Source)
+2014-06-02 12:53:43,595 ERROR [stderr] (default task-11) 	... 50 more
+2014-06-02 12:53:43,597 WARNING [javax.enterprise.resource.webcontainer.jsf.application] (default task-11) JSF1064: no se encuentra o sirve el recurso, /error.xhtml.
+2014-06-02 12:53:45,709 INFO  [stdout] (default task-13) Hibernate: 
+2014-06-02 12:53:45,709 INFO  [stdout] (default task-13)     select
+2014-06-02 12:53:45,710 INFO  [stdout] (default task-13)         asignatura0_.ASIGNATURA_ID as ASIGNATU1_2_,
+2014-06-02 12:53:45,710 INFO  [stdout] (default task-13)         asignatura0_.anio as anio2_2_,
+2014-06-02 12:53:45,710 INFO  [stdout] (default task-13)         asignatura0_.creditos as creditos3_2_,
+2014-06-02 12:53:45,710 INFO  [stdout] (default task-13)         asignatura0_.nombre as nombre4_2_ 
+2014-06-02 12:53:45,710 INFO  [stdout] (default task-13)     from
+2014-06-02 12:53:45,710 INFO  [stdout] (default task-13)         TASIGNATURAS asignatura0_
+2014-06-02 12:53:45,711 WARN  [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-13) SQL Error: -1305, SQLState: 08006
+2014-06-02 12:53:45,711 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] (default task-13) excepción de conexión: fallo de conexión: java.net.SocketException: Software caused connection abort: socket write error
+2014-06-02 12:53:45,712 ERROR [stderr] (default task-13) javax.persistence.PersistenceException: unexpected error when rollbacking
+2014-06-02 12:53:45,712 ERROR [stderr] (default task-13) 	at org.hibernate.jpa.internal.TransactionImpl.rollback(TransactionImpl.java:111)
+2014-06-02 12:53:45,712 ERROR [stderr] (default task-13) 	at com.sdi.business.CommandExecutor.execute(CommandExecutor.java:32)
+2014-06-02 12:53:45,712 ERROR [stderr] (default task-13) 	at com.sdi.business.impl.SimpleAsignaturasService.listarTodas(SimpleAsignaturasService.java:17)
+2014-06-02 12:53:45,713 ERROR [stderr] (default task-13) 	at com.sdi.presentation.BeanAsignaturas.listadoTodas(BeanAsignaturas.java:71)
+2014-06-02 12:53:45,713 ERROR [stderr] (default task-13) 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2014-06-02 12:53:45,713 ERROR [stderr] (default task-13) 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+2014-06-02 12:53:45,713 ERROR [stderr] (default task-13) 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2014-06-02 12:53:45,714 ERROR [stderr] (default task-13) 	at java.lang.reflect.Method.invoke(Method.java:606)
+2014-06-02 12:53:45,714 ERROR [stderr] (default task-13) 	at com.sun.el.parser.AstValue.invoke(AstValue.java:275)
+2014-06-02 12:53:45,714 ERROR [stderr] (default task-13) 	at com.sun.el.MethodExpressionImpl.invoke(MethodExpressionImpl.java:304)
+2014-06-02 12:53:45,714 ERROR [stderr] (default task-13) 	at com.sun.faces.facelets.el.TagMethodExpression.invoke(TagMethodExpression.java:105)
+2014-06-02 12:53:45,714 ERROR [stderr] (default task-13) 	at javax.faces.component.MethodBindingMethodExpressionAdapter.invoke(MethodBindingMethodExpressionAdapter.java:87)
+2014-06-02 12:53:45,714 ERROR [stderr] (default task-13) 	at com.sun.faces.application.ActionListenerImpl.processAction(ActionListenerImpl.java:102)
+2014-06-02 12:53:45,715 ERROR [stderr] (default task-13) 	at javax.faces.component.UICommand.broadcast(UICommand.java:315)
+2014-06-02 12:53:45,715 ERROR [stderr] (default task-13) 	at javax.faces.component.UIViewRoot.broadcastEvents(UIViewRoot.java:790)
+2014-06-02 12:53:45,715 ERROR [stderr] (default task-13) 	at javax.faces.component.UIViewRoot.processApplication(UIViewRoot.java:1282)
+2014-06-02 12:53:45,715 ERROR [stderr] (default task-13) 	at com.sun.faces.lifecycle.InvokeApplicationPhase.execute(InvokeApplicationPhase.java:81)
+2014-06-02 12:53:45,715 ERROR [stderr] (default task-13) 	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101)
+2014-06-02 12:53:45,715 ERROR [stderr] (default task-13) 	at com.sun.faces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:198)
+2014-06-02 12:53:45,716 ERROR [stderr] (default task-13) 	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:646)
+2014-06-02 12:53:45,716 ERROR [stderr] (default task-13) 	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+2014-06-02 12:53:45,716 ERROR [stderr] (default task-13) 	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61)
+2014-06-02 12:53:45,716 ERROR [stderr] (default task-13) 	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+2014-06-02 12:53:45,716 ERROR [stderr] (default task-13) 	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+2014-06-02 12:53:45,716 ERROR [stderr] (default task-13) 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+2014-06-02 12:53:45,716 ERROR [stderr] (default task-13) 	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:113)
+2014-06-02 12:53:45,717 ERROR [stderr] (default task-13) 	at io.undertow.security.handlers.AuthenticationCallHandler.handleRequest(AuthenticationCallHandler.java:52)
+2014-06-02 12:53:45,717 ERROR [stderr] (default task-13) 	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45)
+2014-06-02 12:53:45,717 ERROR [stderr] (default task-13) 	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61)
+2014-06-02 12:53:45,717 ERROR [stderr] (default task-13) 	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70)
+2014-06-02 12:53:45,717 ERROR [stderr] (default task-13) 	at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76)
+2014-06-02 12:53:45,717 ERROR [stderr] (default task-13) 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+2014-06-02 12:53:45,718 ERROR [stderr] (default task-13) 	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+2014-06-02 12:53:45,718 ERROR [stderr] (default task-13) 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+2014-06-02 12:53:45,718 ERROR [stderr] (default task-13) 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25)
+2014-06-02 12:53:45,718 ERROR [stderr] (default task-13) 	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:240)
+2014-06-02 12:53:45,718 ERROR [stderr] (default task-13) 	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:227)
+2014-06-02 12:53:45,718 ERROR [stderr] (default task-13) 	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:73)
+2014-06-02 12:53:45,719 ERROR [stderr] (default task-13) 	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:146)
+2014-06-02 12:53:45,719 ERROR [stderr] (default task-13) 	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:168)
+2014-06-02 12:53:45,719 ERROR [stderr] (default task-13) 	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:687)
+2014-06-02 12:53:45,719 ERROR [stderr] (default task-13) 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+2014-06-02 12:53:45,719 ERROR [stderr] (default task-13) 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+2014-06-02 12:53:45,719 ERROR [stderr] (default task-13) 	at java.lang.Thread.run(Thread.java:724)
+2014-06-02 12:53:45,720 ERROR [stderr] (default task-13) Caused by: org.hibernate.TransactionException: rollback failed
+2014-06-02 12:53:45,720 ERROR [stderr] (default task-13) 	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.rollback(AbstractTransactionImpl.java:217)
+2014-06-02 12:53:45,720 ERROR [stderr] (default task-13) 	at org.hibernate.jpa.internal.TransactionImpl.rollback(TransactionImpl.java:108)
+2014-06-02 12:53:45,720 ERROR [stderr] (default task-13) 	... 43 more
+2014-06-02 12:53:45,720 ERROR [stderr] (default task-13) Caused by: org.hibernate.TransactionException: unable to rollback against JDBC connection
+2014-06-02 12:53:45,721 ERROR [stderr] (default task-13) 	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doRollback(JdbcTransaction.java:167)
+2014-06-02 12:53:45,721 ERROR [stderr] (default task-13) 	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.rollback(AbstractTransactionImpl.java:211)
+2014-06-02 12:53:45,721 ERROR [stderr] (default task-13) 	... 44 more
+2014-06-02 12:53:45,721 ERROR [stderr] (default task-13) Caused by: java.sql.SQLTransientConnectionException: excepción de conexión: fallo de conexión: java.net.SocketException: Software caused connection abort: socket write error
+2014-06-02 12:53:45,721 ERROR [stderr] (default task-13) 	at org.hsqldb.jdbc.Util.sqlException(Unknown Source)
+2014-06-02 12:53:45,721 ERROR [stderr] (default task-13) 	at org.hsqldb.jdbc.Util.sqlException(Unknown Source)
+2014-06-02 12:53:45,722 ERROR [stderr] (default task-13) 	at org.hsqldb.jdbc.JDBCConnection.setAutoCommit(Unknown Source)
+2014-06-02 12:53:45,722 ERROR [stderr] (default task-13) 	at org.jboss.jca.adapters.jdbc.BaseWrapperManagedConnection.checkTransaction(BaseWrapperManagedConnection.java:893)
+2014-06-02 12:53:45,722 ERROR [stderr] (default task-13) 	at org.jboss.jca.adapters.jdbc.WrappedConnection.checkTransaction(WrappedConnection.java:1594)
+2014-06-02 12:53:45,722 ERROR [stderr] (default task-13) 	at org.jboss.jca.adapters.jdbc.WrappedConnection.rollback(WrappedConnection.java:774)
+2014-06-02 12:53:45,722 ERROR [stderr] (default task-13) 	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doRollback(JdbcTransaction.java:163)
+2014-06-02 12:53:45,722 ERROR [stderr] (default task-13) 	... 45 more
+2014-06-02 12:53:45,723 ERROR [stderr] (default task-13) Caused by: org.hsqldb.HsqlException: excepción de conexión: fallo de conexión: java.net.SocketException: Software caused connection abort: socket write error
+2014-06-02 12:53:45,723 ERROR [stderr] (default task-13) 	at org.hsqldb.error.Error.error(Unknown Source)
+2014-06-02 12:53:45,723 ERROR [stderr] (default task-13) 	at org.hsqldb.error.Error.error(Unknown Source)
+2014-06-02 12:53:45,723 ERROR [stderr] (default task-13) 	at org.hsqldb.ClientConnection.execute(Unknown Source)
+2014-06-02 12:53:45,723 ERROR [stderr] (default task-13) 	at org.hsqldb.ClientConnection.setAttribute(Unknown Source)
+2014-06-02 12:53:45,723 ERROR [stderr] (default task-13) 	at org.hsqldb.ClientConnection.setAutoCommit(Unknown Source)
+2014-06-02 12:53:45,724 ERROR [stderr] (default task-13) 	... 50 more
+2014-06-02 12:53:45,725 WARNING [javax.enterprise.resource.webcontainer.jsf.application] (default task-13) JSF1064: no se encuentra o sirve el recurso, /error.xhtml.
+2014-06-02 12:53:53,434 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) JBAS010418: Stopped Driver service with driver-name = Notaneitorv3_7.war_org.hsqldb.jdbc.JDBCDriver_2_2
+2014-06-02 12:53:53,445 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017535: Unregistered web context: /NataliaNegri
+2014-06-02 12:53:53,446 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017535: Unregistered web context: /Notaneitorv3_7
+2014-06-02 12:53:53,446 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017535: Unregistered web context: /JSFwithHTML5
+2014-06-02 12:53:53,448 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 106) JBAS011605: Unbound messaging object to jndi name java:/ConnectionFactory
+2014-06-02 12:53:53,466 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 110) JBAS011410: Stopping Persistence Unit (phase 2 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:53:53,480 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) JBAS017532: Host default-host stopping
+2014-06-02 12:53:53,481 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 107) JBAS011410: Stopping Persistence Unit (phase 1 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:53:53,488 ERROR [stderr] (xnio-file-watcher[Watcher for s:\wildfly\standalone\deployments\Notaneitorv3_7.war/]-0) Exception in thread "xnio-file-watcher[Watcher for s:\wildfly\standalone\deployments\Notaneitorv3_7.war/]-0" java.nio.file.ClosedWatchServiceException
+2014-06-02 12:53:53,488 ERROR [stderr] (xnio-file-watcher[Watcher for s:\wildfly\standalone\deployments\Notaneitorv3_7.war/]-0) 	at sun.nio.fs.AbstractWatchService.checkOpen(AbstractWatchService.java:80)
+2014-06-02 12:53:53,490 INFO  [org.jboss.as.messaging] (MSC service thread 1-2) JBAS011605: Unbound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2014-06-02 12:53:53,491 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) JBAS010418: Stopped Driver service with driver-name = hsqldb.jar
+2014-06-02 12:53:53,490 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) JBAS010409: Unbound data source [java:jboss/datasources/ExampleDS]
+2014-06-02 12:53:53,492 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-5) JBAS010410: Unbound JCA ConnectionFactory [java:/JmsXA]
+2014-06-02 12:53:53,490 ERROR [stderr] (xnio-file-watcher[Watcher for s:\wildfly\standalone\deployments\Notaneitorv3_7.war/]-0) 	at sun.nio.fs.AbstractWatchService.checkKey(AbstractWatchService.java:92)
+2014-06-02 12:53:53,493 ERROR [stderr] (xnio-file-watcher[Watcher for s:\wildfly\standalone\deployments\Notaneitorv3_7.war/]-0) 	at sun.nio.fs.AbstractWatchService.take(AbstractWatchService.java:119)
+2014-06-02 12:53:53,497 ERROR [stderr] (xnio-file-watcher[Watcher for s:\wildfly\standalone\deployments\Notaneitorv3_7.war/]-0) 	at org.xnio.nio.WatchServiceFileSystemWatcher.run(WatchServiceFileSystemWatcher.java:85)
+2014-06-02 12:53:53,497 ERROR [stderr] (xnio-file-watcher[Watcher for s:\wildfly\standalone\deployments\Notaneitorv3_7.war/]-0) 	at java.lang.Thread.run(Thread.java:724)
+2014-06-02 12:53:53,497 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) JBAS010418: Stopped Driver service with driver-name = h2
+2014-06-02 12:53:53,512 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) JBAS015877: Stopped deployment JSFwithHTML5.war (runtime-name: JSFwithHTML5.war) in 107ms
+2014-06-02 12:53:53,518 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) JBAS015877: Stopped deployment notaneitor-ds.xml (runtime-name: notaneitor-ds.xml) in 108ms
+2014-06-02 12:53:53,524 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) JBAS015877: Stopped deployment hsqldb.jar (runtime-name: hsqldb.jar) in 122ms
+2014-06-02 12:53:53,525 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015877: Stopped deployment NataliaNegri.war (runtime-name: NataliaNegri.war) in 114ms
+2014-06-02 12:53:53,533 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) JBAS015877: Stopped deployment Notaneitorv3_7.war (runtime-name: Notaneitorv3_7.war) in 123ms
+2014-06-02 12:53:53,577 INFO  [org.hornetq.ra] (ServerService Thread Pool -- 112) HQ151003: HornetQ resource adaptor stopped
+2014-06-02 12:53:53,689 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 112) HQ221002: HornetQ Server version 2.4.1.Final (Fast Hornet, 124) [dc857a2d-b3be-11e3-bd61-b7940c80e733] stopped
+2014-06-02 12:53:53,691 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017521: Undertow HTTP listener default suspending
+2014-06-02 12:53:53,692 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) JBAS017520: Undertow HTTP listener default stopped, was bound to /0.0.0.0:8280
+2014-06-02 12:53:53,695 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017506: Undertow 1.0.0.Final stopping
+2014-06-02 12:53:53,698 INFO  [org.jboss.as] (MSC service thread 1-8) JBAS015950: WildFly 8.0.0.Final "WildFly" stopped in 291ms
+2014-06-02 12:54:01,198 INFO  [org.jboss.modules] (main) JBoss Modules version 1.3.0.Final
+2014-06-02 12:54:01,534 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.0.Final
+2014-06-02 12:54:01,601 INFO  [org.jboss.as] (MSC service thread 1-6) JBAS015899: WildFly 8.0.0.Final "WildFly" starting
+2014-06-02 12:54:01,607 DEBUG [org.jboss.as.config] (MSC service thread 1-6) Configured system properties:
+	awt.toolkit = sun.awt.windows.WToolkit
+	file.encoding = Cp1252
+	file.encoding.pkg = sun.io
+	file.separator = \
+	java.awt.graphicsenv = sun.awt.Win32GraphicsEnvironment
+	java.awt.headless = true
+	java.awt.printerjob = sun.awt.windows.WPrinterJob
+	java.class.path = S:\wildfly\jboss-modules.jar
+	java.class.version = 51.0
+	java.endorsed.dirs = S:\jdk\jre\lib\endorsed
+	java.ext.dirs = S:\jdk\jre\lib\ext;C:\Windows\Sun\Java\lib\ext
+	java.home = S:\jdk\jre
+	java.io.tmpdir = C:\Users\alb\AppData\Local\Temp\
+	java.library.path = S:\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;native;S:/jdk/bin/../jre/bin/server;S:/jdk/bin/../jre/bin;S:/jdk/bin/../jre/lib/amd64;S:\jdk\bin;C:\Program Files (x86)\AMD APP\bin\x86_64;C:\Program Files (x86)\AMD APP\bin\x86;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jre7\bin;C:\Program Files (x86)\Calibre2\;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Graphviz2.30\bin;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\sbt\;C:\Ruby193\bin;S:\eclipse;;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 1.7.0_25-b17
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.7
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = http://java.oracle.com/
+	java.vendor.url.bug = http://bugreport.sun.com/bugreport/
+	java.version = 1.7.0_25
+	java.vm.info = mixed mode
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.7
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 23.25-b01
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = 0.0.0.0
+	jboss.home.dir = s:\wildfly
+	jboss.host.name = dell-off-ovd
+	jboss.modules.dir = s:\wildfly\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = dell-off-ovd
+	jboss.qualified.host.name = dell-off-ovd
+	jboss.server.base.dir = s:\wildfly\standalone
+	jboss.server.config.dir = s:\wildfly\standalone\configuration
+	jboss.server.data.dir = s:\wildfly\standalone\data
+	jboss.server.deploy.dir = s:\wildfly\standalone\data\content
+	jboss.server.log.dir = s:\wildfly\standalone\log
+	jboss.server.name = dell-off-ovd
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = s:\wildfly\standalone\tmp
+	line.separator = 
+
+	logging.configuration = file:/s:/wildfly/standalone/configuration/logging.properties
+	module.path = s:/wildfly/modules
+	org.jboss.boot.log.file = s:/wildfly/standalone/log/boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Windows 7
+	os.version = 6.1
+	path.separator = ;
+	program.name = JBossTools: WildFly 8.0 Runtime Server
+	sun.arch.data.model = 64
+	sun.boot.class.path = S:\jdk\jre\lib\resources.jar;S:\jdk\jre\lib\rt.jar;S:\jdk\jre\lib\sunrsasign.jar;S:\jdk\jre\lib\jsse.jar;S:\jdk\jre\lib\jce.jar;S:\jdk\jre\lib\charsets.jar;S:\jdk\jre\lib\jfr.jar;S:\jdk\jre\classes
+	sun.boot.library.path = S:\jdk\jre\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.desktop = windows
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp s:/wildfly/modules -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -b 0.0.0.0 --server-config=standalone-full.xml
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = Service Pack 1
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = ES
+	user.dir = s:\wildfly\bin
+	user.home = C:\Users\alb
+	user.language = es
+	user.name = alb
+	user.script = 
+	user.timezone = Europe/Paris
+	user.variant = 
+2014-06-02 12:54:01,608 DEBUG [org.jboss.as.config] (MSC service thread 1-6) VM Arguments: -Dprogram.name=JBossTools: WildFly 8.0 Runtime Server -Xms64m -Xmx512m -XX:MaxPermSize=256m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=s:/wildfly/standalone/log/boot.log -Dlogging.configuration=file:/s:/wildfly/standalone/configuration/logging.properties -Djboss.home.dir=s:/wildfly -Dorg.jboss.logmanager.nocolor=true -Dfile.encoding=Cp1252 
+2014-06-02 12:54:02,893 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found Notaneitorv3_7.war in deployment directory. To trigger deployment create a file called Notaneitorv3_7.war.dodeploy
+2014-06-02 12:54:02,894 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found proyecto0_wf8.war in deployment directory. To trigger deployment create a file called proyecto0_wf8.war.dodeploy
+2014-06-02 12:54:02,894 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found NataliaNegri.war in deployment directory. To trigger deployment create a file called NataliaNegri.war.dodeploy
+2014-06-02 12:54:02,894 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found JSFwithHTML5.war in deployment directory. To trigger deployment create a file called JSFwithHTML5.war.dodeploy
+2014-06-02 12:54:02,932 INFO  [org.jboss.as.server] (Controller Boot Thread) JBAS015888: Creating http management service using socket-binding (management-http)
+2014-06-02 12:54:02,954 INFO  [org.xnio] (MSC service thread 1-7) XNIO version 3.2.0.Final
+2014-06-02 12:54:02,963 INFO  [org.xnio.nio] (MSC service thread 1-7) XNIO NIO Implementation Version 3.2.0.Final
+2014-06-02 12:54:02,991 INFO  [org.jboss.as.jacorb] (ServerService Thread Pool -- 37) JBAS016300: Activating JacORB Subsystem
+2014-06-02 12:54:03,003 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 52) JBAS013171: Activating Security Subsystem
+2014-06-02 12:54:03,005 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 56) JBAS015537: Activating WebServices Extension
+2014-06-02 12:54:03,011 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 47) JBAS011800: Activating Naming Subsystem
+2014-06-02 12:54:03,025 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 36) JBAS010280: Activating Infinispan subsystem.
+2014-06-02 12:54:03,063 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 43) JBAS012615: Activated the following JSF Implementations: [main]
+2014-06-02 12:54:03,094 INFO  [org.jboss.as.security] (MSC service thread 1-8) JBAS013170: Current PicketBox version=4.0.20.Final
+2014-06-02 12:54:03,112 INFO  [org.jboss.as.connector.logging] (MSC service thread 1-5) JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.3.Final)
+2014-06-02 12:54:03,115 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) JBAS017502: Undertow 1.0.0.Final starting
+2014-06-02 12:54:03,122 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017502: Undertow 1.0.0.Final starting
+2014-06-02 12:54:03,244 INFO  [org.jboss.as.naming] (MSC service thread 1-6) JBAS011802: Starting Naming Service
+2014-06-02 12:54:03,247 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-6) JBAS015400: Bound mail session [java:jboss/mail/Default]
+2014-06-02 12:54:03,277 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 31) JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+2014-06-02 12:54:03,281 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) JBAS010417: Started Driver service with driver-name = h2
+2014-06-02 12:54:03,393 INFO  [org.jboss.remoting] (MSC service thread 1-7) JBoss Remoting version 4.0.0.Final
+2014-06-02 12:54:03,530 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 55) JBAS017527: Creating file handler for path s:\wildfly/welcome-content
+2014-06-02 12:54:03,562 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017525: Started server default-server.
+2014-06-02 12:54:03,586 WARN  [jacorb.codeset] (MSC service thread 1-6) Warning - unknown codeset (Cp1252) - defaulting to ISO-8859-1
+2014-06-02 12:54:03,635 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) JBAS017519: Undertow HTTP listener default listening on /0.0.0.0:8280
+2014-06-02 12:54:03,639 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017531: Host default-host starting
+2014-06-02 12:54:03,653 INFO  [org.jboss.as.jacorb] (MSC service thread 1-6) JBAS016330: CORBA ORB Service started
+2014-06-02 12:54:03,807 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-4) JBAS015012: Started FileSystemDeploymentService for directory s:\wildfly\standalone\deployments
+2014-06-02 12:54:03,810 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) JBAS015876: Starting deployment of "hsqldb.jar" (runtime-name: "hsqldb.jar")
+2014-06-02 12:54:03,811 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) JBAS015876: Starting deployment of "NataliaNegri.war" (runtime-name: "NataliaNegri.war")
+2014-06-02 12:54:03,812 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) JBAS015876: Starting deployment of "JSFwithHTML5.war" (runtime-name: "JSFwithHTML5.war")
+2014-06-02 12:54:03,812 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015876: Starting deployment of "Notaneitorv3_7.war" (runtime-name: "Notaneitorv3_7.war")
+2014-06-02 12:54:03,813 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) JBAS015876: Starting deployment of "notaneitor-ds.xml" (runtime-name: "notaneitor-ds.xml")
+2014-06-02 12:54:03,875 INFO  [org.jboss.as.jacorb] (MSC service thread 1-3) JBAS016328: CORBA Naming Service started
+2014-06-02 12:54:04,390 INFO  [org.jboss.ws.common.management] (MSC service thread 1-7) JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.2.3.Final
+2014-06-02 12:54:04,401 WARN  [org.jboss.as.messaging] (MSC service thread 1-4) JBAS011600: AIO wasn't located on this platform, it will fall back to using pure Java NIO. If your platform is Linux, install LibAIO to enable the AIO journal
+2014-06-02 12:54:04,468 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+2014-06-02 12:54:04,537 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221000: live server is starting with configuration HornetQ Configuration (clustered=false,backup=false,sharedStore=true,journalDirectory=s:\wildfly\standalone\data\messagingjournal,bindingsDirectory=s:\wildfly\standalone\data\messagingbindings,largeMessagesDirectory=s:\wildfly\standalone\data\messaginglargemessages,pagingDirectory=s:\wildfly\standalone\data\messagingpaging)
+2014-06-02 12:54:04,540 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221006: Waiting to obtain live lock
+2014-06-02 12:54:04,590 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221013: Using NIO Journal
+2014-06-02 12:54:04,620 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) JBAS010403: Deploying JDBC-compliant driver class org.hsqldb.jdbc.JDBCDriver (version 2.2)
+2014-06-02 12:54:04,637 INFO  [io.netty.util.internal.PlatformDependent] (ServerService Thread Pool -- 58) Your platform does not provide complete low-level API for accessing direct buffers reliably. Unless explicitly requested, heap buffer will always be preferred to avoid potential system unstability.
+2014-06-02 12:54:04,651 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) JBAS010417: Started Driver service with driver-name = hsqldb.jar
+2014-06-02 12:54:04,661 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) JBAS010400: Bound data source [java:jboss/datasources/NotaneitorDS]
+2014-06-02 12:54:04,687 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support CORE
+2014-06-02 12:54:04,698 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support AMQP
+2014-06-02 12:54:04,699 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) JBAS010403: Deploying JDBC-compliant driver class org.hsqldb.jdbc.JDBCDriver (version 2.2)
+2014-06-02 12:54:04,702 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221043: Adding protocol support STOMP
+2014-06-02 12:54:04,726 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) JBAS010417: Started Driver service with driver-name = Notaneitorv3_7.war_org.hsqldb.jdbc.JDBCDriver_2_2
+2014-06-02 12:54:04,771 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221034: Waiting to obtain live lock
+2014-06-02 12:54:04,772 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221035: Live Server Obtained live lock
+2014-06-02 12:54:04,784 INFO  [org.jboss.as.jpa] (MSC service thread 1-4) JBAS011401: Read persistence.xml for arenasforum
+2014-06-02 12:54:04,888 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 59) JBAS011409: Starting Persistence Unit (phase 1 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:54:04,895 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 59) HHH000204: Processing PersistenceUnitInfo [
+	name: arenasforum
+	...]
+2014-06-02 12:54:04,940 INFO  [org.jboss.messaging] (MSC service thread 1-6) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor acceptor
+2014-06-02 12:54:04,940 INFO  [org.jboss.messaging] (MSC service thread 1-8) JBAS011615: Registered HTTP upgrade for hornetq-remoting protocol handled by http-acceptor-throughput acceptor
+2014-06-02 12:54:04,956 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 59) HHH000412: Hibernate Core {4.3.1.Final}
+2014-06-02 12:54:04,959 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 59) HHH000206: hibernate.properties not found
+2014-06-02 12:54:04,961 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 59) HHH000021: Bytecode provider name : javassist
+2014-06-02 12:54:05,120 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221007: Server is now live
+2014-06-02 12:54:05,120 INFO  [org.hornetq.core.server] (ServerService Thread Pool -- 58) HQ221001: HornetQ Server version 2.4.1.Final (Fast Hornet, 124) [dc857a2d-b3be-11e3-bd61-b7940c80e733] 
+2014-06-02 12:54:05,125 INFO  [org.hornetq.jms.server] (ServerService Thread Pool -- 58) HQ121005: Invalid "host" value "0.0.0.0" detected for "http-connector" connector. Switching to "dell-off-ovd". If this new address is incorrect please manually configure the connector to use the proper one.
+2014-06-02 12:54:05,163 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 58) JBAS011601: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2014-06-02 12:54:05,165 INFO  [org.jboss.as.messaging] (ServerService Thread Pool -- 60) JBAS011601: Bound messaging object to jndi name java:/ConnectionFactory
+2014-06-02 12:54:05,209 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-5) JBAS010406: Registered connection factory java:/JmsXA
+2014-06-02 12:54:05,254 INFO  [org.hornetq.ra] (MSC service thread 1-5) HornetQ resource adaptor started
+2014-06-02 12:54:05,255 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-5) IJ020002: Deployed: file://RaActivatorhornetq-ra
+2014-06-02 12:54:05,257 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-5) JBAS010401: Bound JCA ConnectionFactory [java:/JmsXA]
+2014-06-02 12:54:05,257 INFO  [org.jboss.as.messaging] (MSC service thread 1-5) JBAS011601: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2014-06-02 12:54:05,300 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 64) JBAS011409: Starting Persistence Unit (phase 2 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:54:05,390 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 64) HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2014-06-02 12:54:05,475 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-3) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/Notaneitorv3_7'
+2014-06-02 12:54:05,475 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-8) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/JSFwithHTML5'
+2014-06-02 12:54:06,009 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 64) HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2014-06-02 12:54:06,272 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] (ServerService Thread Pool -- 64) HHH000397: Using ASTQueryTranslatorFactory
+2014-06-02 12:54:06,327 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 64) HV000001: Hibernate Validator 5.0.3.Final
+2014-06-02 12:54:06,368 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-8) Monitoring file:/s:/wildfly/standalone/deployments/JSFwithHTML5.war/WEB-INF/faces-config.xml for modifications
+2014-06-02 12:54:06,368 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-3) Monitoring file:/s:/wildfly/standalone/deployments/Notaneitorv3_7.war/WEB-INF/faces-config.xml for modifications
+2014-06-02 12:54:06,442 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017534: Registered web context: /Notaneitorv3_7
+2014-06-02 12:54:06,442 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) JBAS017534: Registered web context: /JSFwithHTML5
+2014-06-02 12:54:06,750 WARN  [org.hibernate.internal.SessionFactoryImpl] (ServerService Thread Pool -- 64) HHH000008: JTASessionContext being used with JDBCTransactionFactory; auto-flush will not operate correctly with getCurrentSession()
+2014-06-02 12:54:07,005 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/NataliaNegri'
+2014-06-02 12:54:07,278 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-1) Monitoring file:/s:/wildfly/standalone/deployments/NataliaNegri.war/WEB-INF/faces-config.xml for modifications
+2014-06-02 12:54:07,281 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) JBAS017534: Registered web context: /NataliaNegri
+2014-06-02 12:54:07,370 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 32) JBAS018559: Deployed "Notaneitorv3_7.war" (runtime-name : "Notaneitorv3_7.war")
+2014-06-02 12:54:07,371 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 32) JBAS018559: Deployed "notaneitor-ds.xml" (runtime-name : "notaneitor-ds.xml")
+2014-06-02 12:54:07,371 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 32) JBAS018559: Deployed "NataliaNegri.war" (runtime-name : "NataliaNegri.war")
+2014-06-02 12:54:07,371 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 32) JBAS018559: Deployed "JSFwithHTML5.war" (runtime-name : "JSFwithHTML5.war")
+2014-06-02 12:54:07,371 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 32) JBAS018559: Deployed "hsqldb.jar" (runtime-name : "hsqldb.jar")
+2014-06-02 12:54:07,540 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015961: Http management interface listening on http://127.0.0.1:10190/management
+2014-06-02 12:54:07,540 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015951: Admin console listening on http://127.0.0.1:10190
+2014-06-02 12:54:07,541 INFO  [org.jboss.as] (Controller Boot Thread) JBAS015874: WildFly 8.0.0.Final "WildFly" started in 6629ms - Started 568 of 645 services (135 services are lazy, passive or on-demand)
+2014-06-02 12:54:19,266 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-1) JSF1073: se ha interceptado javax.faces.application.ViewExpiredException durante el procesamiento de RESTORE_VIEW 1 : UIComponent-ClientId=, Mensaje=viewId:/index.xhtml - No se pudo restablecer la vista /index.xhtml.
+2014-06-02 12:54:19,267 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-1) viewId:/index.xhtml - No se pudo restablecer la vista /index.xhtml.: javax.faces.application.ViewExpiredException: viewId:/index.xhtml - No se pudo restablecer la vista /index.xhtml.
+	at com.sun.faces.lifecycle.RestoreViewPhase.execute(RestoreViewPhase.java:210) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RestoreViewPhase.doPhase(RestoreViewPhase.java:121) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:198) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:646) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:113) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AuthenticationCallHandler.handleRequest(AuthenticationCallHandler.java:52) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:240) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:227) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:73) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:146) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:168) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:687) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+
+2014-06-02 12:54:26,059 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-2) JSF1073: se ha interceptado javax.faces.application.ViewExpiredException durante el procesamiento de RESTORE_VIEW 1 : UIComponent-ClientId=, Mensaje=viewId:/index.xhtml - No se pudo restablecer la vista /index.xhtml.
+2014-06-02 12:54:26,059 FATAL [javax.enterprise.resource.webcontainer.jsf.context] (default task-2) viewId:/index.xhtml - No se pudo restablecer la vista /index.xhtml.: javax.faces.application.ViewExpiredException: viewId:/index.xhtml - No se pudo restablecer la vista /index.xhtml.
+	at com.sun.faces.lifecycle.RestoreViewPhase.execute(RestoreViewPhase.java:210) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.Phase.doPhase(Phase.java:101) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.RestoreViewPhase.doPhase(RestoreViewPhase.java:121) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at com.sun.faces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:198) [jsf-impl-2.2.5-jbossorg-3.jar:]
+	at javax.faces.webapp.FacesServlet.service(FacesServlet.java:646) [jboss-jsf-api_2.2_spec-2.2.5.jar:2.2.5]
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:113) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AuthenticationCallHandler.handleRequest(AuthenticationCallHandler.java:52) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:25) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:240) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:227) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:73) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:146) [undertow-servlet-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:168) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:687) [undertow-core-1.0.0.Final.jar:1.0.0.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+
+2014-06-02 12:54:37,280 SEVERE [javax.enterprise.resource.webcontainer.jsf.config] (Mojarra-WebResourceMonitor-3-thread-1) Unable to access url file:/s:/wildfly/standalone/deployments/NataliaNegri.war/WEB-INF/faces-config.xml.  Monitoring for this resource will no longer occur.
+2014-06-02 12:54:37,642 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) JBAS017535: Unregistered web context: /NataliaNegri
+2014-06-02 12:54:37,661 ERROR [stderr] (xnio-file-watcher[Watcher for s:\wildfly\standalone\deployments\NataliaNegri.war/]-0) Exception in thread "xnio-file-watcher[Watcher for s:\wildfly\standalone\deployments\NataliaNegri.war/]-0" java.nio.file.ClosedWatchServiceException
+2014-06-02 12:54:37,661 ERROR [stderr] (xnio-file-watcher[Watcher for s:\wildfly\standalone\deployments\NataliaNegri.war/]-0) 	at sun.nio.fs.AbstractWatchService.checkOpen(AbstractWatchService.java:80)
+2014-06-02 12:54:37,661 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 74) JBAS011410: Stopping Persistence Unit (phase 2 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:54:37,662 ERROR [stderr] (xnio-file-watcher[Watcher for s:\wildfly\standalone\deployments\NataliaNegri.war/]-0) 	at sun.nio.fs.AbstractWatchService.checkKey(AbstractWatchService.java:92)
+2014-06-02 12:54:37,662 ERROR [stderr] (xnio-file-watcher[Watcher for s:\wildfly\standalone\deployments\NataliaNegri.war/]-0) 	at sun.nio.fs.AbstractWatchService.take(AbstractWatchService.java:119)
+2014-06-02 12:54:37,662 ERROR [stderr] (xnio-file-watcher[Watcher for s:\wildfly\standalone\deployments\NataliaNegri.war/]-0) 	at org.xnio.nio.WatchServiceFileSystemWatcher.run(WatchServiceFileSystemWatcher.java:85)
+2014-06-02 12:54:37,663 ERROR [stderr] (xnio-file-watcher[Watcher for s:\wildfly\standalone\deployments\NataliaNegri.war/]-0) 	at java.lang.Thread.run(Thread.java:724)
+2014-06-02 12:54:37,673 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 74) JBAS011410: Stopping Persistence Unit (phase 1 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:54:37,675 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) JBAS015877: Stopped deployment NataliaNegri.war (runtime-name: NataliaNegri.war) in 39ms
+2014-06-02 12:54:37,877 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018558: Undeployed "NataliaNegri.war" (runtime-name: "NataliaNegri.war")
+2014-06-02 12:54:42,912 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) JBAS015003: Found NataliaNegri.war in deployment directory. To trigger deployment create a file called NataliaNegri.war.dodeploy
+2014-06-02 12:54:47,979 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) JBAS015876: Starting deployment of "NataliaNegri.war" (runtime-name: "NataliaNegri.war")
+2014-06-02 12:54:48,160 INFO  [org.jboss.as.jpa] (MSC service thread 1-4) JBAS011401: Read persistence.xml for arenasforum
+2014-06-02 12:54:48,227 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 74) JBAS011409: Starting Persistence Unit (phase 1 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:54:48,227 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 74) HHH000204: Processing PersistenceUnitInfo [
+	name: arenasforum
+	...]
+2014-06-02 12:54:48,393 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 74) JBAS011409: Starting Persistence Unit (phase 2 of 2) Service 'NataliaNegri.war#arenasforum'
+2014-06-02 12:54:48,476 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 74) HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2014-06-02 12:54:48,533 INFO  [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] (ServerService Thread Pool -- 74) HHH000397: Using ASTQueryTranslatorFactory
+2014-06-02 12:54:48,694 WARN  [org.hibernate.internal.SessionFactoryImpl] (ServerService Thread Pool -- 74) HHH000008: JTASessionContext being used with JDBCTransactionFactory; auto-flush will not operate correctly with getCurrentSession()
+2014-06-02 12:54:48,786 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Inicializando Mojarra 2.2.5-jbossorg-3 20140128-1641 para el contexto '/NataliaNegri'
+2014-06-02 12:54:48,985 INFO  [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-2) Monitoring file:/s:/wildfly/standalone/deployments/NataliaNegri.war/WEB-INF/faces-config.xml for modifications
+2014-06-02 12:54:48,987 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) JBAS017534: Registered web context: /NataliaNegri
+2014-06-02 12:54:49,150 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) JBAS018559: Deployed "NataliaNegri.war" (runtime-name : "NataliaNegri.war")
+2014-06-02 12:54:53,458 INFO  [stdout] (default task-5) Hibernate: 
+2014-06-02 12:54:53,458 INFO  [stdout] (default task-5)     select
+2014-06-02 12:54:53,458 INFO  [stdout] (default task-5)         asignatura0_.ASIGNATURA_ID as ASIGNATU1_2_,
+2014-06-02 12:54:53,458 INFO  [stdout] (default task-5)         asignatura0_.anio as anio2_2_,
+2014-06-02 12:54:53,458 INFO  [stdout] (default task-5)         asignatura0_.creditos as creditos3_2_,
+2014-06-02 12:54:53,459 INFO  [stdout] (default task-5)         asignatura0_.nombre as nombre4_2_ 
+2014-06-02 12:54:53,459 INFO  [stdout] (default task-5)     from
+2014-06-02 12:54:53,459 INFO  [stdout] (default task-5)         TASIGNATURAS asignatura0_
+2014-06-02 12:56:16,673 INFO  [stdout] (default task-11) Hibernate: 
+2014-06-02 12:56:16,673 INFO  [stdout] (default task-11)     select
+2014-06-02 12:56:16,673 INFO  [stdout] (default task-11)         profesores0_.id as id1_7_,
+2014-06-02 12:56:16,673 INFO  [stdout] (default task-11)         profesores0_.activo as activo2_7_,
+2014-06-02 12:56:16,673 INFO  [stdout] (default task-11)         profesores0_.apellidos as apellido3_7_,
+2014-06-02 12:56:16,673 INFO  [stdout] (default task-11)         profesores0_.contrasenia as contrase4_7_,
+2014-06-02 12:56:16,674 INFO  [stdout] (default task-11)         profesores0_.email as email5_7_,
+2014-06-02 12:56:16,674 INFO  [stdout] (default task-11)         profesores0_.nombre as nombre6_7_,
+2014-06-02 12:56:16,674 INFO  [stdout] (default task-11)         profesores0_.identificador as identifi1_6_ 
+2014-06-02 12:56:16,674 INFO  [stdout] (default task-11)     from
+2014-06-02 12:56:16,674 INFO  [stdout] (default task-11)         TPROFESORES profesores0_
+2014-06-02 12:56:36,497 INFO  [stdout] (default task-3) Hibernate: 
+2014-06-02 12:56:36,498 INFO  [stdout] (default task-3)     select
+2014-06-02 12:56:36,498 INFO  [stdout] (default task-3)         asignatura0_.ASIGNATURA_ID as ASIGNATU1_2_,
+2014-06-02 12:56:36,498 INFO  [stdout] (default task-3)         asignatura0_.anio as anio2_2_,
+2014-06-02 12:56:36,498 INFO  [stdout] (default task-3)         asignatura0_.creditos as creditos3_2_,
+2014-06-02 12:56:36,498 INFO  [stdout] (default task-3)         asignatura0_.nombre as nombre4_2_ 
+2014-06-02 12:56:36,498 INFO  [stdout] (default task-3)     from
+2014-06-02 12:56:36,498 INFO  [stdout] (default task-3)         TASIGNATURAS asignatura0_
+2014-06-02 12:57:12,419 INFO  [stdout] (default task-1) Hibernate: 
+2014-06-02 12:57:12,419 INFO  [stdout] (default task-1)     select
+2014-06-02 12:57:12,419 INFO  [stdout] (default task-1)         asignatura0_.ASIGNATURA_ID as ASIGNATU1_2_,
+2014-06-02 12:57:12,419 INFO  [stdout] (default task-1)         asignatura0_.anio as anio2_2_,
+2014-06-02 12:57:12,419 INFO  [stdout] (default task-1)         asignatura0_.creditos as creditos3_2_,
+2014-06-02 12:57:12,419 INFO  [stdout] (default task-1)         asignatura0_.nombre as nombre4_2_ 
+2014-06-02 12:57:12,420 INFO  [stdout] (default task-1)     from
+2014-06-02 12:57:12,420 INFO  [stdout] (default task-1)         TASIGNATURAS asignatura0_

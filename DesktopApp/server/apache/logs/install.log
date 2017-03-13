@@ -1,0 +1,74 @@
+Installing Apache HTTP 2.0 server with
+ DomainName =    localhost
+ ServerName =    server
+ ServerAdmin =   me@root
+ ServerPort =    8080
+ ServerSslPort = 8080
+ ServerRoot =    C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache
+Rewrote C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-autoindex.conf.in
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-autoindex.conf
+Successfully removed C:\Documents and Settings\alb\Escritorio\wrk\entorno-dasdi\apache\conf\original\extra\httpd-autoindex.conf.in
+Rewrote C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-vhosts.conf.in
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-vhosts.conf
+Successfully removed C:\Documents and Settings\alb\Escritorio\wrk\entorno-dasdi\apache\conf\original\extra\httpd-vhosts.conf.in
+Rewrote C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-default.conf.in
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-default.conf
+Successfully removed C:\Documents and Settings\alb\Escritorio\wrk\entorno-dasdi\apache\conf\original\extra\httpd-default.conf.in
+Rewrote C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-manual.conf.in
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-manual.conf
+Successfully removed C:\Documents and Settings\alb\Escritorio\wrk\entorno-dasdi\apache\conf\original\extra\httpd-manual.conf.in
+Rewrote C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-mpm.conf.in
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-mpm.conf
+Successfully removed C:\Documents and Settings\alb\Escritorio\wrk\entorno-dasdi\apache\conf\original\extra\httpd-mpm.conf.in
+Rewrote C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-info.conf.in
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-info.conf
+Successfully removed C:\Documents and Settings\alb\Escritorio\wrk\entorno-dasdi\apache\conf\original\extra\httpd-info.conf.in
+Rewrote C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-dav.conf.in
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-dav.conf
+Successfully removed C:\Documents and Settings\alb\Escritorio\wrk\entorno-dasdi\apache\conf\original\extra\httpd-dav.conf.in
+Rewrote C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-languages.conf.in
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-languages.conf
+Successfully removed C:\Documents and Settings\alb\Escritorio\wrk\entorno-dasdi\apache\conf\original\extra\httpd-languages.conf.in
+Rewrote C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/httpd.conf.in
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/httpd.conf
+Successfully removed C:\Documents and Settings\alb\Escritorio\wrk\entorno-dasdi\apache\conf\original\httpd.conf.in
+Rewrote C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-userdir.conf.in
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-userdir.conf
+Successfully removed C:\Documents and Settings\alb\Escritorio\wrk\entorno-dasdi\apache\conf\original\extra\httpd-userdir.conf.in
+Rewrote C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-ssl.conf.in
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-ssl.conf
+Successfully removed C:\Documents and Settings\alb\Escritorio\wrk\entorno-dasdi\apache\conf\original\extra\httpd-ssl.conf.in
+Rewrote C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-multilang-errordoc.conf.in
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-multilang-errordoc.conf
+Successfully removed C:\Documents and Settings\alb\Escritorio\wrk\entorno-dasdi\apache\conf\original\extra\httpd-multilang-errordoc.conf.in
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/magic
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/magic
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-autoindex.conf
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/extra/httpd-autoindex.conf
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-vhosts.conf
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/extra/httpd-vhosts.conf
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-default.conf
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/extra/httpd-default.conf
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/mime.types
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/mime.types
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/charset.conv
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/charset.conv
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-manual.conf
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/extra/httpd-manual.conf
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-mpm.conf
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/extra/httpd-mpm.conf
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-info.conf
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/extra/httpd-info.conf
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-dav.conf
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/extra/httpd-dav.conf
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-languages.conf
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/extra/httpd-languages.conf
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/httpd.conf
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/httpd.conf
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-userdir.conf
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/extra/httpd-userdir.conf
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-ssl.conf
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/extra/httpd-ssl.conf
+Duplicated C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/original/extra/httpd-multilang-errordoc.conf
+ to C:/Documents and Settings/alb/Escritorio/wrk/entorno-dasdi/apache/conf/extra/httpd-multilang-errordoc.conf
+Successfully removed C:\Documents and Settings\alb\Escritorio\wrk\entorno-dasdi\apache\conf\original\installwinconf.awk

@@ -1,0 +1,233 @@
+<?xml version="1.0" ?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://impl.business.sdi.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="EjbAlumnosServiceService" targetNamespace="http://impl.business.sdi.com/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://impl.business.sdi.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://impl.business.sdi.com/">
+  <xs:element name="alumno" type="tns:alumno"></xs:element>
+  <xs:element name="deleteAlumno" type="tns:deleteAlumno"></xs:element>
+  <xs:element name="deleteAlumnoResponse" type="tns:deleteAlumnoResponse"></xs:element>
+  <xs:element name="findById" type="tns:findById"></xs:element>
+  <xs:element name="findByIdResponse" type="tns:findByIdResponse"></xs:element>
+  <xs:element name="getAlumnos" type="tns:getAlumnos"></xs:element>
+  <xs:element name="getAlumnosResponse" type="tns:getAlumnosResponse"></xs:element>
+  <xs:element name="saveAlumno" type="tns:saveAlumno"></xs:element>
+  <xs:element name="saveAlumnoResponse" type="tns:saveAlumnoResponse"></xs:element>
+  <xs:element name="updateAlumno" type="tns:updateAlumno"></xs:element>
+  <xs:element name="updateAlumnoResponse" type="tns:updateAlumnoResponse"></xs:element>
+  <xs:complexType name="saveAlumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:alumno"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="alumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidos" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="email" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="id" type="xs:long"></xs:element>
+      <xs:element minOccurs="0" name="iduser" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saveAlumnoResponse">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAlumnos">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAlumnosResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:alumno"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:alumno"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteAlumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteAlumnoResponse">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateAlumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:alumno"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateAlumnoResponse">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntityAlreadyExistsException" type="tns:EntityAlreadyExistsException"></xs:element>
+  <xs:complexType name="EntityAlreadyExistsException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntityNotFoundException" type="tns:EntityNotFoundException"></xs:element>
+  <xs:complexType name="EntityNotFoundException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="deleteAlumnoResponse">
+    <wsdl:part element="tns:deleteAlumnoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="EntityNotFoundException">
+    <wsdl:part element="tns:EntityNotFoundException" name="EntityNotFoundException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteAlumno">
+    <wsdl:part element="tns:deleteAlumno" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findByIdResponse">
+    <wsdl:part element="tns:findByIdResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAlumnos">
+    <wsdl:part element="tns:getAlumnos" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveAlumnoResponse">
+    <wsdl:part element="tns:saveAlumnoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateAlumno">
+    <wsdl:part element="tns:updateAlumno" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findById">
+    <wsdl:part element="tns:findById" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateAlumnoResponse">
+    <wsdl:part element="tns:updateAlumnoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAlumnosResponse">
+    <wsdl:part element="tns:getAlumnosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="EntityAlreadyExistsException">
+    <wsdl:part element="tns:EntityAlreadyExistsException" name="EntityAlreadyExistsException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveAlumno">
+    <wsdl:part element="tns:saveAlumno" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AlumnosService">
+    <wsdl:operation name="saveAlumno">
+      <wsdl:input message="tns:saveAlumno" name="saveAlumno">
+    </wsdl:input>
+      <wsdl:output message="tns:saveAlumnoResponse" name="saveAlumnoResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EntityAlreadyExistsException" name="EntityAlreadyExistsException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAlumnos">
+      <wsdl:input message="tns:getAlumnos" name="getAlumnos">
+    </wsdl:input>
+      <wsdl:output message="tns:getAlumnosResponse" name="getAlumnosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findById">
+      <wsdl:input message="tns:findById" name="findById">
+    </wsdl:input>
+      <wsdl:output message="tns:findByIdResponse" name="findByIdResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EntityNotFoundException" name="EntityNotFoundException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAlumno">
+      <wsdl:input message="tns:deleteAlumno" name="deleteAlumno">
+    </wsdl:input>
+      <wsdl:output message="tns:deleteAlumnoResponse" name="deleteAlumnoResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EntityNotFoundException" name="EntityNotFoundException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateAlumno">
+      <wsdl:input message="tns:updateAlumno" name="updateAlumno">
+    </wsdl:input>
+      <wsdl:output message="tns:updateAlumnoResponse" name="updateAlumnoResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:EntityNotFoundException" name="EntityNotFoundException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EjbAlumnosServiceServiceSoapBinding" type="tns:AlumnosService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <wsdl:operation name="findById">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="findById">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="findByIdResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+      <wsdl:fault name="EntityNotFoundException">
+        <soap:fault name="EntityNotFoundException" use="literal"></soap:fault>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAlumnos">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="getAlumnos">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="getAlumnosResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveAlumno">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="saveAlumno">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="saveAlumnoResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+      <wsdl:fault name="EntityAlreadyExistsException">
+        <soap:fault name="EntityAlreadyExistsException" use="literal"></soap:fault>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAlumno">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="deleteAlumno">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="deleteAlumnoResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+      <wsdl:fault name="EntityNotFoundException">
+        <soap:fault name="EntityNotFoundException" use="literal"></soap:fault>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateAlumno">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="updateAlumno">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="updateAlumnoResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+      <wsdl:fault name="EntityNotFoundException">
+        <soap:fault name="EntityNotFoundException" use="literal"></soap:fault>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EjbAlumnosServiceService">
+    <wsdl:port binding="tns:EjbAlumnosServiceServiceSoapBinding" name="AlumnosServicePort">
+      <soap:address location="http://dell-off-ovd:8280/Notaneitor_v7.0EJB/AlumnosService"></soap:address>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
