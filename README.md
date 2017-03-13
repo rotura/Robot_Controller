@@ -9,10 +9,18 @@ Finish project of the University. A javaFX application to control the robot and 
 - The csv opened with Excel format the data automatically.
 
 ### Camera controll usage
-- The camera controller is runing in a Tomcat server.
-- This server is Open and Close automatically with the App.
-- To make it run, you need a **JAVA_HOME** or **JRE_HOME** variable in the System.
-- If dont work, you need to set **CATALINA_HOME** system's variable pointing to **/DesktopApp/apache-tomcat-9.0.0.M17**
+- ~~The camera controller is runing in a Tomcat server.~~
+- ~~This server is Open and Close automatically with the App.~~
+- ~~To make it run, you need a **JAVA_HOME** or **JRE_HOME** variable in the System.~~
+- ~~If dont work, you need to set **CATALINA_HOME** system's variable pointing to **/DesktopApp/apache-tomcat-9.0.0.M17**~~
+
+### UPDATE 13/03/2017
+- Now the camera controller is running under WildFly. 
+- No need to set System's Variables.
+- No CMD window.
+- Autostart when application start.
+- (To Do) Close, actually, when System power off.
+
 
 ## Requirements:
  - Show robot's camera in real time
