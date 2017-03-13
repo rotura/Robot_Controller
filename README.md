@@ -24,16 +24,18 @@ Finish project of the University. A javaFX application to control the robot and 
 
 ## Requirements:
  - Show robot's camera in real time
+  - Used analog video capturer with a RX module (5.8Ghz)
+  - Used Cmos camera with a TX module (5.8Ghz)
  - Show all sensor as raw input
-  -  MQ2
-  -  MQ3
-  -  MQ7
-  -  Temprature Sensor
-  -  Humidity Sensor
-  -  Light Sensor
-  -  GPS (NMEA)
+  -  MQ-02
+  -  MQ-03
+  -  MQ-07
+  -  Temprature Sensor (Ky-013)
+  -  Humidity Sensor (DHT-11)
+  -  Light Sensor (GL55)
+  -  GPS (Ublox NEO-6)
  - Show all sensor in charts (GPS in a map)
- - Controlls for the robot
+ - Controlls for the robot (2x 9V motors)
   -  Move Forward, Backward
   -  Rotate Right, Left
   -  Move in circle Right, left
