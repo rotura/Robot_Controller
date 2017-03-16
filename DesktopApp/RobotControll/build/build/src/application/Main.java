@@ -39,10 +39,12 @@ public class Main extends Application {
 		}
 		// Get the path to run the Tomcat Server
 		// This is fot the package app
-		 String command = path + "/apache-tomcat-9.0.0.M17/bin/startup.bat";
+		// String command = path + "/apache-tomcat-9.0.0.M17/bin/startup.bat";
+		String command = path + "/server/wildflyext.bat";
 
 		// This is to test in Eclipse
 		//String command = path + "/../apache-tomcat-9.0.0.M17/bin/startup.bat";
+		//String command = path + "\\..\\server\\wildflyext.bat";
 		try {
 			child = Runtime.getRuntime().exec(command);
 			this.primaryStage = primaryStage;
@@ -59,11 +61,12 @@ public class Main extends Application {
 		// Get the path to stop the Tomcat Server
 		try {
 			// This is for the package app
-			 Runtime.getRuntime().exec(path +
-			 "/apache-tomcat-9.0.0.M17/bin/shutdown.bat");
+			// Runtime.getRuntime().exec(path +
+			// "/apache-tomcat-9.0.0.M17/bin/shutdown.bat");
 
 			// This is to test in Eclipse
 			//Runtime.getRuntime().exec(path + "/../apache-tomcat-9.0.0.M17/bin/shutdown.bat");
+			Runtime.getRuntime().exec(path + "\\..\\server\\wildflyext\\bin\\jboss-cli.bat --connect command=:shutdown");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

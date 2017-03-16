@@ -1,5 +1,7 @@
 Manifest-Version: 1.0
 Archiver-Version: Plexus Archiver
-Created-By: Apache Maven
+Built-By: Enol
 Build-Jdk: 1.8.0_05
+Created-By: Apache Maven
 Main-Class: com.lynden.gmapsfx.MainApp
+

@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="libs/jxbrowser-mac-6.12.jar"/>
 	<classpathentry kind="lib" path="libs/jxbrowser-win-6.12.jar"/>
 	<classpathentry kind="lib" path="libs/slf4j-api-1.7.2.jar"/>
+	<classpathentry kind="lib" path="libs/license.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,33 +1,24 @@
-#include <TinyGPS.h>
-
-#include <Wire.h>
-#include <Servo.h>
-#include <ESP8266WiFi.h>
-#include <SoftwareSerial.h>
+#include <ESP8266.h>
 
 const char password[] = "uniovi";
 
 WiFiServer server(80);
-String adelante = "15";
-String atras = "0";
-char charBuf[3];
 long temp, hum, co2, met, but = 0;
 float lat, lon = 0.0;
-int pinTemp = D3;
-int pinHum = D4;
-int pinCo2 = D7;
-int pinMet = D8;
-//But in A0
+int velocidad = 0;
 
-TinyGPS gps;
-SoftwareSerial ss(D5, D6);
+int IN3 = 5;    // Input3 conectada al pin 5
+int IN4 = 4;    // Input4 conectada al pin 4 
+int ENB = 3;    // ENB conectada al pin 3 de Arduino
+
+int IN1 = 8;    // Input3 conectada al pin 5
+int IN2 = 7;    // Input4 conectada al pin 4 
+int ENA = 6;    // ENB conectada al pin 3 de Arduino
 
 void setup() 
 {
-  Serial.begin(115200);
-  ss.begin(9600);
+  Serial.begin(9600);
   Serial.println("Inicio Setup");
-  Wire.begin(D1,D2); // join i2c bus (address optional for master)
 
   //WIFI
   setupWiFi();
@@ -36,34 +27,19 @@ void setup()
   Serial.print("Servidor Web en: http://");
   Serial.print(WiFi.softAPIP());
 
-  //SENSORES
-  pinMode(pinTemp, INPUT);      // set pin as input
-  pinMode(pinHum, INPUT);      // set pin as input
-  pinMode(pinCo2, INPUT);      // set pin as input
-  pinMode(pinMet, INPUT);      // set pin as input
-  
+
+ pinMode (ENB, OUTPUT); 
+ pinMode (IN3, OUTPUT);
+ pinMode (IN4, OUTPUT);
+
+ pinMode (ENA, OUTPUT); 
+ pinMode (IN1, OUTPUT);
+ pinMode (IN2, OUTPUT);
 }
 
 void loop() 
 {
-  /*Wire.beginTransmission(8); // transmit to device #8
-  atras.toCharArray(charBuf, 3);
-  Wire.write(charBuf);
-  adelante.toCharArray(charBuf, 3);
-  Wire.write(",");
-  Wire.write(charBuf);
-  Wire.write(",");*/
-  leerSensores();
-  llamarGps();
-  String result = "temp:" + String(temp) + ";hum:" + String(hum) + ";" + "lat:" + String(lat, 6) + ";" + "lon:" + String(lon, 6) + ";" + "met:" + String(met) + ";" + "but:" + String(but) + ";" + "co2:" + String(co2) + ";";
-  char res[result.length()+1]; 
-  result.toCharArray(res, result.length()+1);
-  Serial.println(res);
-
-
-
-
-  
+  Serial.println(velocidad);
   // Comprueba clientes conectados
   WiFiClient cliente = server.available();
   if (!cliente) {
@@ -97,19 +73,37 @@ void loop()
   // Miro si contiene alguna de las dos cadenas 
   if (peticion.indexOf("abrir") != -1) {
     cliente.write("ABIERTO");
-    //Wire.write("Abierto");        // sends five bytes
   } 
   if (peticion.indexOf("cerrar") != -1){
     cliente.write("CERRADO");
-    //Wire.write("Cerrado");        // sends five bytes
   }
     if (peticion.indexOf("datos") != -1){
-    cliente.write(res);
+    //cliente.write(res);
+  }
+  if (peticion.indexOf("w") != -1){
+    cliente.println("Adelante");
+    adelante();
+  }
+  if (peticion.indexOf("a") != -1){
+    cliente.println("Izquierda");
+    izquierda();
+  }
+  if (peticion.indexOf("s") != -1){
+    cliente.println("Atras");
+    atras();
+  }
+  if (peticion.indexOf("d") != -1){
+    cliente.println("Derecha");
+    derecha();
+  }
+  if (peticion.indexOf("v=") != -1){
+    cliente.println("Velocidad cambiada");
+    setVelocidad(getValue(peticion, '=', 1));
+    cliente.println(velocidad);
   }
  
-  //Wire.endTransmission();
   // Pequeña pausa para asegurar el envio de datos
-  delay(2000);
+  //delay(2000);
 
 }
 
@@ -120,11 +114,11 @@ void loop()
 
 void leerSensores(){
 
-  temp = digitalRead(pinTemp);     // read the input pin
+  /*temp = digitalRead(pinTemp);     // read the input pin
   hum = digitalRead(pinHum);     // read the input pin
   co2 = digitalRead(pinCo2);     // read the input pin
   met = digitalRead(pinMet);     // read the input pin 
-  but = analogRead(A0);     // read the input pin
+  but = analogRead(A0);     // read the input pin*/
 
 }
 
@@ -159,49 +153,87 @@ void setupWiFi()
 }
 
 
+void adelante(){
+  Serial.print("adelante");
+  digitalWrite (IN3, HIGH);
+  digitalWrite (IN4, LOW);
 
+  digitalWrite (IN1, HIGH);
+  digitalWrite (IN2, LOW);
 
-
-
-
-
-
-void llamarGps(){
-  bool newData = false;
-  unsigned long chars;
-  unsigned short sentences, failed;
-
-  // For one second we parse GPS data and report some key values
-  for (unsigned long start = millis(); millis() - start < 1000;)
-  {
-    while (ss.available())
-    {
-      char c = ss.read();
-      //Serial.write(c); // uncomment this line if you want to see the GPS data flowing
-      if (gps.encode(c)) // Did a new valid sentence come in?
-        newData = true;
-    }
-  }
-
-  if (newData)
-  {
-    float flat, flon;
-    unsigned long age;
-    gps.f_get_position(&flat, &flon, &age);
-    lat = flat;
-    lon = flon;
-  }
-  else
-  {
-  gps.stats(&chars, &sentences, &failed);
-  Serial.print(" CHARS=");
-  Serial.print(chars);
-  Serial.print(" SENTENCES=");
-  Serial.print(sentences);
-  Serial.print(" CSUM ERR=");
-  Serial.println(failed);
-  }
-  if (chars == 0)
-    Serial.println("** No characters received from GPS: check wiring **");
+  analogWrite(ENA,velocidad);
+  analogWrite(ENB,velocidad - 40); //Ajuste para igualar motores
+  delay(1000);
+  
+  analogWrite(ENA,0);
+  analogWrite(ENB,0);
 }
 
+void atras(){
+  Serial.print("atras");
+  digitalWrite (IN3, LOW);
+  digitalWrite (IN4, HIGH);
+
+  digitalWrite (IN1, LOW);
+  digitalWrite (IN2, HIGH);
+
+  analogWrite(ENA,velocidad);
+  analogWrite(ENB,velocidad - 40); //Ajuste para igualar motores
+  delay(1000);
+  
+  analogWrite(ENA,0);
+  analogWrite(ENB,0);
+}
+
+void derecha(){
+  Serial.print("derecha");
+  digitalWrite (IN3, LOW);
+  digitalWrite (IN4, LOW);
+
+  digitalWrite (IN1, HIGH);
+  digitalWrite (IN2, LOW);
+
+  analogWrite(ENA,velocidad);
+  analogWrite(ENB,velocidad - 40); //Ajuste para igualar motores
+  delay(1000);
+  
+  analogWrite(ENA,0);
+  analogWrite(ENB,0);
+}
+
+void izquierda(){
+  Serial.print("izquierda");
+  digitalWrite (IN3, HIGH);
+  digitalWrite (IN4, LOW);
+
+  digitalWrite (IN1, LOW);
+  digitalWrite (IN2, LOW);
+
+  analogWrite(ENA,velocidad);
+  analogWrite(ENB,velocidad - 40); //Ajuste para igualar motores
+  delay(1000);
+  
+  analogWrite(ENA,0);
+  analogWrite(ENB,0);
+}
+
+void setVelocidad(String s){
+  Serial.print("setVelocidad");
+  velocidad = s.toInt();
+}
+
+String getValue(String data, char separator, int index)
+{
+    int found = 0;
+    int strIndex[] = { 0, -1 };
+    int maxIndex = data.length() - 1;
+
+    for (int i = 0; i <= maxIndex && found <= index; i++) {
+        if (data.charAt(i) == separator || i == maxIndex) {
+            found++;
+            strIndex[0] = strIndex[1] + 1;
+            strIndex[1] = (i == maxIndex) ? i+1 : i;
+        }
+    }
+    return found > index ? data.substring(strIndex[0], strIndex[1]) : "";
+}

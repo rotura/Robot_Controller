@@ -40,16 +40,17 @@ public class Main extends Application {
 		// Get the path to run the Tomcat Server
 		// This is fot the package app
 		// String command = path + "/apache-tomcat-9.0.0.M17/bin/startup.bat";
+		//String command = path + "/server/wildflyext.bat";
 
 		// This is to test in Eclipse
 		//String command = path + "/../apache-tomcat-9.0.0.M17/bin/startup.bat";
-		String command = path + "\\..\\server\\wildflyext.bat";
+		String command = path + "/../server/wildflyext.bat";
 		try {
 			child = Runtime.getRuntime().exec(command);
 			this.primaryStage = primaryStage;
 			primaryStage.setTitle("Robot Controller");
 			initAplicationView();
-			webDaemon();
+			//webDaemon();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -58,19 +59,20 @@ public class Main extends Application {
 	@Override
 	public void stop() {
 		// Get the path to stop the Tomcat Server
-		try {
+		//try {
 			// This is for the package app
 			// Runtime.getRuntime().exec(path +
 			// "/apache-tomcat-9.0.0.M17/bin/shutdown.bat");
 
 			// This is to test in Eclipse
 			//Runtime.getRuntime().exec(path + "/../apache-tomcat-9.0.0.M17/bin/shutdown.bat");
-			Runtime.getRuntime().exec("CMD /C exit");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+			//Runtime.getRuntime().exec(path + "/../server/wildflyext/bin/jboss-cli.bat --connect command=:shutdown");
+			child.destroy();
+		//} catch (IOException e) {
+		//	e.printStackTrace();
+		//}
 		child.destroy();
-		t.cancel();
+		//t.cancel();
 		((mainController) loader.getController()).stopFunctions();
 	}
 
@@ -85,7 +87,7 @@ public class Main extends Application {
 			public void run() {
 				InputStream response = null;
 				try {
-					response = new URL("http://192.168.4.5/datos").openStream();
+					response = new URL("http://192.168.4.1/datos").openStream();
 					try (Scanner scanner = new Scanner(response)) {
 						String responseBody = scanner.useDelimiter("\\A").next();
 						System.out.println(responseBody);

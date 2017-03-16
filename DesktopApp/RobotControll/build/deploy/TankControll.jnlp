@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="TankControll.jar" size="140003" download="eager" />
+    <jar href="TankControll.jar" size="140026" download="eager" />
     <jar href="libs\bootstrap.jar" size="33902" download="eager" />
     <jar href="libs\bridj-0.6.2.jar" size="878674" download="eager" />
     <jar href="libs\commons-daemon.jar" size="24283" download="eager" />

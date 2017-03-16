@@ -542,11 +542,15 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	private void setCamera() {	
 		browser = new Browser();
 		view = new BrowserView(browser);
-		view.setPadding(new Insets(2, 2, 2, 2));
+		view.setPadding(new Insets(2,2,2,2));
 		sensorPane.add(view, 2, 1);
-		//browser.loadURL("https://actividad7.000webhostapp.com/cam.html");
-		browser.loadURL("http://localhost:8080/cam.html");
+		browser.loadURL("http://localhost:8180/cam.html");
+		/*WebView b = new WebView();
+		WebEngine webEngine = b.getEngine();
+		webEngine.load("http://localhost:8180/cam.html");
+		sensorPane.add(b, 2, 1);*/
 	}
+	
 	public void stopFunctions(){
 		timeline.stop();
 		browser.dispose();
