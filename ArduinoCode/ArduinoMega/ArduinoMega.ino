@@ -59,12 +59,12 @@ void loop() {
               delay(500);
           }
    }
-  if(counter < 1){
+  /*if(counter < 1){
     initLCD();
   }
   else{
     printLCD();  
-  }
+  }*/
 }
 
 
@@ -155,6 +155,9 @@ String GetLineWIFI()
 
 void webserver(void) 
     {   
+       String resp = "hum:" + String(hum) + ";temp:" + String(temp);
+       String httpResponse;
+       String httpHeader;
        if(peticion == "+camx")
           moveCamX(1, -1);
        if(peticion == "-camx")
@@ -167,9 +170,15 @@ void webserver(void)
           moveCamX(0, getValue(peticion,'=',1).toInt());
        if(getValue(peticion,'=',0) == "camy")
           moveCamY(0, getValue(peticion,'=',1).toInt());
-
-          
-       http("<!DOCTYPE HTML><html>" + peticion + "</html>");
+       if(peticion == "data"){
+       }
+       httpHeader = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\n"; 
+       httpHeader += "Content-Length: ";
+       httpHeader += resp.length();
+       httpHeader += "\r\n";
+       httpHeader +="Connection: close\r\n\r\n";
+       httpResponse = httpHeader + resp + " ";
+       http(httpResponse);
        delay(1);
        Serial1.println("AT+CIPCLOSE=0");
 
@@ -229,7 +238,6 @@ void moveCamX(int i, int pos){
        camX.write(acamX);  
       }  
     }
-  http("HTTP/1.1 200 OK");
   }
 
 void moveCamY(int i, int pos){
@@ -253,7 +261,6 @@ void moveCamY(int i, int pos){
         camY.write(acamY);  
       }  
     }
-    http("HTTP/1.1 200 OK");
   }
 
 void printLCD(){

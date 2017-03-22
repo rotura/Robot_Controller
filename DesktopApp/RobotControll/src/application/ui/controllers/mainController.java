@@ -242,9 +242,9 @@ public class mainController implements Initializable, MapComponentInitializedLis
 
 		// Set ranges
 		tmpAxis.setAutoRanging(false);
-		tmpAxis.setLowerBound(-30);
-		tmpAxis.setUpperBound(50);
-		tmpAxis.setTickUnit(10);
+		tmpAxis.setLowerBound(-10);
+		tmpAxis.setUpperBound(40);
+		tmpAxis.setTickUnit(2);
 		tmpAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(gasAxis) {
 			@Override
 			public String toString(Number object) {
@@ -363,7 +363,8 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		camRight.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				peticionHttp("http://192.168.4.1/-camx");
+				//peticionHttp("http://192.168.4.1/-camx");
+				addTarea("-camx");
 			}
 		});
 		// Boton camara izquierdo
@@ -375,7 +376,8 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		camLeft.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				peticionHttp("http://192.168.4.1/+camx");
+				//peticionHttp("http://192.168.4.1/+camx");
+				addTarea("+camx");
 			}
 		});
 
@@ -388,7 +390,8 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		camUp.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				peticionHttp("http://192.168.4.1/+camy");
+				//peticionHttp("http://192.168.4.1/+camy");
+				addTarea("+camy");
 			}
 		});
 
@@ -401,15 +404,20 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		camDown.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-					peticionHttp("http://192.168.4.1/-camy");
+					//peticionHttp("http://192.168.4.1/-camy");
+				addTarea("-camy");
 			}
 		});
 
 		camCenter.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				peticionHttp("http://192.168.4.1/camx=90");
-				peticionHttp("http://192.168.4.1/camy=120");
+				/*peticionHttp("http://192.168.4.1/camx=90");
+				long t = System.currentTimeMillis();
+				while(System.currentTimeMillis() - t < 1500){}
+				peticionHttp("http://192.168.4.1/camy=120");*/
+				addTarea("camx=90");
+				addTarea("camy=120");
 			}
 		});
 	}
@@ -434,8 +442,8 @@ public class mainController implements Initializable, MapComponentInitializedLis
 			RobotData.getInstance().setBut(new Random().nextInt(10));
 			RobotData.getInstance().setMet(new Random().nextInt(10));
 			RobotData.getInstance().setCo2(new Random().nextInt(10));
-			RobotData.getInstance().setTemp(new Random().nextInt(50) - 25);
-			RobotData.getInstance().setHum(new Random().nextInt(50));
+			//RobotData.getInstance().setTemp(new Random().nextInt(50) - 25);
+			//RobotData.getInstance().setHum(new Random().nextInt(50));
 			RobotData.getInstance().setDate(new Date());
 			RobotData.getInstance().setRobotPos(RobotData.getInstance().getNewPos()[0],
 					RobotData.getInstance().getNewPos()[1]);
@@ -470,6 +478,9 @@ public class mainController implements Initializable, MapComponentInitializedLis
 					.setYValue((Number) temperature.getData().get(0).getData().get(5).getYValue());
 			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(5)
 					.setYValue(RobotData.getInstance().getTempMax());
+			
+			tmpAxis.setLowerBound(RobotData.getInstance().getTempMin()-1);
+			tmpAxis.setUpperBound(RobotData.getInstance().getTempMax()+1);
 
 			// Temp Actual
 			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(0)
@@ -639,4 +650,8 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		browser.dispose();
 	}
 
+	public void addTarea(String t){
+		RobotData.getInstance().addTarea(t);
+	}
+	
 }

@@ -2,6 +2,8 @@ package application.model;
 
 import java.net.URL;
 
+import application.Main;
+
 public class PeticionHttp extends Thread {
 
 	String peticion;
@@ -9,14 +11,24 @@ public class PeticionHttp extends Thread {
 	public PeticionHttp(String msg) {
 		super(msg);
 		setMensaje(msg);
+		this.setDaemon(true);
 	}
 
 	public void run() {
 		try {
+			/*if(Main.getInstance().pet){
+				System.out.println("Peticion desechada: " + Main.getInstance().pet);
+				return;
+			}
+			else{
+			Main.getInstance().pet=true;*/
+			RobotData.getInstance().sem.acquire();
 			URL peticion = new URL(this.peticion);
 			peticion.openStream();
-			peticion = null;
+			RobotData.getInstance().sem.release();
+			//Main.getInstance().pet=false;
 			System.out.println("Peticion " + this.peticion + " enviada correctamente");
+			//}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		
