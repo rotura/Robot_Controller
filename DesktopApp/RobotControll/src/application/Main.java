@@ -111,8 +111,10 @@ public class Main extends Application {
 					ArrayList<String> tareas = RobotData.getInstance().getTareas();
 					for(String t: tareas)
 						uri += t +";" ;
+					uri = uri.substring(0, uri.length()-1);
 					URL url = new URL(uri);
 					System.out.println(uri);
+					url.openStream();
 					/*response = url.openStream();
 					// pet = false;
 
@@ -137,7 +139,7 @@ public class Main extends Application {
 				// pet = false;
 			}
 		}, 0, // run first occurrence immediately
-				5000);
+				3500);
 	}
 
 	private void initAplicationView() {

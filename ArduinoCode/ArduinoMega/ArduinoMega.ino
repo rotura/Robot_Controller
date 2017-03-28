@@ -1,3 +1,4 @@
+
 #include <Servo.h>
 #include <TinyGPS.h>
 #include <Wire.h>
@@ -11,12 +12,22 @@ SDA del modulo (varia dependiendo de la placa Arduino)
 */
 #include <LiquidCrystal_I2C.h>//Recuerda descargar la libreria en electrocrea.com    
 LiquidCrystal_I2C lcd(0x3F, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);//Direccion de LCD
+
+int IN3 = 10;    // Input3 conectada al pin 5
+int IN4 = 9;    // Input4 conectada al pin 4 
+int ENB = 3;    // ENB conectada al pin 3 de Arduino
+
+int IN1 = 8;    // Input1 conectada al pin 5
+int IN2 = 7;    // Input2 conectada al pin 4 
+int ENA = 6;    // ENA conectada al pin 3 de Arduino
+
 int counter = 0;
 TinyGPS gps;
-
+int pos = 0;
 Servo camX, camY;
 int acamX = 90;
 int acamY = 90;
+int velocidad = 255;
 
 double temp, alc, hum = 0.0;
 float lat, lon = 0.0;
@@ -37,11 +48,18 @@ void setup()   {
   delay(100); 
   //GPS
   Serial2.begin(9600);
-  lcd.begin(20,4);// Indicamos medidas de LCD     
+/*  lcd.begin(20,4);// Indicamos medidas de LCD     
   lcd.clear();//Elimina todos los simbolos del LCD
   lcd.setCursor(0,0);//Posiciona la primera letra despues del segmento 5 en linea 1             
   lcd.print("Robot:");
-  delay (1000);//Dura 2 segundos   
+  delay (1000);//Dura 2 segundos   */
+  pinMode (ENB, OUTPUT); 
+  pinMode (IN3, OUTPUT);
+  pinMode (IN4, OUTPUT);
+
+  pinMode (ENA, OUTPUT); 
+  pinMode (IN1, OUTPUT);
+  pinMode (IN2, OUTPUT);
 }
 
 void loop() {
@@ -52,11 +70,9 @@ void loop() {
        if (c == 71) 
           {   Serial.println("Enviada Web Request");
               String pet = getValue(getValue(Serial1.readStringUntil('\r'), '/', 1), ' ',0);
-              if(pet.length() > 0){
-               peticion = pet; 
-               webserver();
-                }
-              delay(500);
+              peticion = pet; 
+              savePet();
+              webserver();
           }
    }
   /*if(counter < 1){
@@ -118,7 +134,7 @@ void llamarGps(){
     }
   }
 
-  if (newData)
+  /*if (newData)
   {
     float flat, flon;
     unsigned long age;
@@ -137,7 +153,7 @@ void llamarGps(){
   Serial.println(failed);
   }
   if (chars == 0)
-    Serial.println("** No characters received from GPS: check wiring **");
+    Serial.println("** No characters received from GPS: check wiring **");*/
 }
 
 String GetLineWIFI()
@@ -158,20 +174,6 @@ void webserver(void)
        String resp = "hum:" + String(hum) + ";temp:" + String(temp);
        String httpResponse;
        String httpHeader;
-       if(peticion == "+camx")
-          moveCamX(1, -1);
-       if(peticion == "-camx")
-          moveCamX(-1, -1);
-       if(peticion == "+camy")
-          moveCamY(1, -1);
-       if(peticion == "-camy")
-          moveCamY(-1, -1);
-       if(getValue(peticion,'=',0) == "camx")
-          moveCamX(0, getValue(peticion,'=',1).toInt());
-       if(getValue(peticion,'=',0) == "camy")
-          moveCamY(0, getValue(peticion,'=',1).toInt());
-       if(peticion == "data"){
-       }
        httpHeader = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\n"; 
        httpHeader += "Content-Length: ";
        httpHeader += resp.length();
@@ -218,9 +220,7 @@ String getValue(String data, char separator, int index)
 }
 
 void moveCamX(int i, int pos){
-  Serial.print("CamX: ");
   if(pos >=0 && pos <= 180){
-    Serial.println(pos);
     acamX = pos;
     camX.write(acamX); 
   }
@@ -241,9 +241,7 @@ void moveCamX(int i, int pos){
   }
 
 void moveCamY(int i, int pos){
-  Serial.print("CamY: ");
  if(pos >=0 && pos <= 180){
-    Serial.println(pos);
     acamY = pos;
     camY.write(acamY); 
   }
@@ -262,6 +260,72 @@ void moveCamY(int i, int pos){
       }  
     }
   }
+
+
+void adelante(){
+  digitalWrite (IN3, HIGH);
+  digitalWrite (IN4, LOW);
+
+  digitalWrite (IN1, HIGH);
+  digitalWrite (IN2, LOW);
+
+  analogWrite(ENA,velocidad);
+  analogWrite(ENB,velocidad - 40); //Ajuste para igualar motores
+  delay(500);
+  
+  analogWrite(ENA,0);
+  analogWrite(ENB,0);
+}
+
+void atras(){
+  digitalWrite (IN3, LOW);
+  digitalWrite (IN4, HIGH);
+
+  digitalWrite (IN1, LOW);
+  digitalWrite (IN2, HIGH);
+
+  analogWrite(ENA,velocidad);
+  analogWrite(ENB,velocidad - 40); //Ajuste para igualar motores
+  delay(500);
+  
+  analogWrite(ENA,0);
+  analogWrite(ENB,0);
+}
+
+void derecha(){
+  digitalWrite (IN3, LOW);
+  digitalWrite (IN4, LOW);
+
+  digitalWrite (IN1, HIGH);
+  digitalWrite (IN2, LOW);
+
+  analogWrite(ENA,velocidad);
+  analogWrite(ENB,velocidad - 40); //Ajuste para igualar motores
+  delay(500);
+  
+  analogWrite(ENA,0);
+  analogWrite(ENB,0);
+}
+
+void izquierda(){
+  digitalWrite (IN3, HIGH);
+  digitalWrite (IN4, LOW);
+
+  digitalWrite (IN1, LOW);
+  digitalWrite (IN2, LOW);
+
+  analogWrite(ENA,velocidad);
+  analogWrite(ENB,velocidad - 40); //Ajuste para igualar motores
+  delay(500);
+  
+  analogWrite(ENA,0);
+  analogWrite(ENB,0);
+}
+
+void setVelocidad(String s){
+  if(s.toInt() >= 140)
+    velocidad = s.toInt();
+}
 
 void printLCD(){
   lcd.setCursor(0,0);             
@@ -309,4 +373,40 @@ void printLCD(){
     delay(1000);
     lcd.clear();
     counter++;
+  }
+
+  void savePet(){
+    for(int i=0; i<15; i++){
+      String aux = getValue(peticion, ';', i) ;
+      if(aux != "" && pos < 15){
+        ejecutar(aux);
+      }
+     }
+    }
+
+ void ejecutar(String p){
+    if(p == "+camx")
+       moveCamX(1, -1);
+    if(p == "-camx")
+       moveCamX(-1, -1);
+    if(p == "+camy")
+       moveCamY(1, -1);
+    if(p == "-camy")
+       moveCamY(-1, -1);
+    if(getValue(p,'=',0) == "camx")
+       moveCamX(0, getValue(peticion,'=',1).toInt());
+    if(getValue(p,'=',0) == "camy")
+       moveCamY(0, getValue(peticion,'=',1).toInt());
+    if(p == "data"){}
+    if (p == "w")
+      adelante();
+    if (p == "a")
+      izquierda();
+    if (p == "s")
+      atras();
+    if (p == "d")
+      derecha();
+    if (p.indexOf("v=") != -1)
+      setVelocidad(getValue(peticion, '=', 1));
+  
   }

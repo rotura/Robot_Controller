@@ -298,7 +298,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		rightButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-
+				addTarea("d");
 			}
 		});
 		// Boton izquierdo
@@ -310,7 +310,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		leftButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-
+				addTarea("a");
 			}
 		});
 
@@ -323,7 +323,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		upButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-
+				addTarea("w");
 			}
 		});
 
@@ -336,7 +336,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		downButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-
+				addTarea("s");
 			}
 		});
 
