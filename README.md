@@ -27,33 +27,33 @@ Finish project of the University. A javaFX application to control the robot and 
   - Used analog video capturer with a RX module (5.8Ghz)
   - Used Cmos camera with a TX module (5.8Ghz)
  - Show all sensor as raw input
-  -  MQ-02
-  -  MQ-03
-  -  MQ-07
-  -  Temprature Sensor (Ky-013)
-  -  Humidity Sensor (DHT-11)
-  -  Light Sensor (GL55)
-  -  GPS (Ublox NEO-6)
+   -  MQ-02
+   -  MQ-03
+   -  MQ-07
+   -  Temprature Sensor (Ky-013)
+   -  Humidity Sensor (DHT-11)
+   -  Light Sensor (GL55)
+   -  GPS (Ublox NEO-6)
  - Show all sensor in charts (GPS in a map)
  - Controlls for the robot (2x 9V motors)
-  -  Move Forward, Backward
-  -  Rotate Right, Left
-  -  Move in circle Right, left
+   -  Move Forward, Backward
+   -  Rotate Right, Left
+   -  Move in circle Right, left
  - Controlls for the camera
-  -  Move Tilt, Pan
+   -  Move Tilt, Pan
  - Mark a destiny point in th map
-  -  The robot must go to the marked position alone 
+   -  The robot must go to the marked position alone 
   
 ## Languages
  - Java
-  -  Logic and Model of the desktop application
+   -  Logic and Model of the desktop application
  - JavaFX
-  -  Desktop application's UI
+   -  Desktop application's UI
  - CSS
-  -  Style for the UI
+   -  Style for the UI
  - HTML
-  -  Special objects to inject in the Desktop Application
+   -  Special objects to inject in the Desktop Application
  - JavaScritp
-  -  Use in group with HTML in special objects
+   -  Use in group with HTML in special objects
  - Arduino
-  -  To programm the propper robot
+   -  To programm the propper robot
