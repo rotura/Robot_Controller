@@ -1,13 +1,11 @@
 package application;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -28,8 +26,6 @@ public class Main extends Application {
 	static Timer t;
 	FXMLLoader loader;
 	Process child;
-	static String path;
-	private Boolean start = false;
 	public Boolean pet = false;
 
 	private final static Main instance = new Main();
@@ -41,24 +37,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 
-		// Create a canonical file to get the actual path of the aplication
-		File miDir = new File(".");
 		try {
-			path = miDir.getCanonicalPath();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		// Get the path to run the Tomcat Server
-		// This is fot the package app
-		// String command = path + "/apache-tomcat-9.0.0.M17/bin/startup.bat";
-		// String command = path + "/server/wildflyext.bat";
-
-		// This is to test in Eclipse
-		// String command = path +
-		// "/../apache-tomcat-9.0.0.M17/bin/startup.bat";
-		String command = path + "/../server/wildflyext.bat";
-		try {
-			child = Runtime.getRuntime().exec(command);
 			this.primaryStage = primaryStage;
 			primaryStage.setTitle("Robot Controller");
 			initAplicationView();
@@ -70,23 +49,6 @@ public class Main extends Application {
 
 	@Override
 	public void stop() {
-		// Get the path to stop the Tomcat Server
-		// try {
-		// This is for the package app
-		// Runtime.getRuntime().exec(path +
-		// "/apache-tomcat-9.0.0.M17/bin/shutdown.bat");
-
-		// This is to test in Eclipse
-		// Runtime.getRuntime().exec(path +
-		// "/../apache-tomcat-9.0.0.M17/bin/shutdown.bat");
-		// Runtime.getRuntime().exec(path +
-		// "/../server/wildflyext/bin/jboss-cli.bat --connect
-		// command=:shutdown");
-		child.destroy();
-		// } catch (IOException e) {
-		// e.printStackTrace();
-		// }
-		child.destroy();
 		t.cancel();
 		((mainController) loader.getController()).stopFunctions();
 	}
@@ -100,6 +62,7 @@ public class Main extends Application {
 		t = new Timer();
 		t.scheduleAtFixedRate(new TimerTask() {
 			public void run() {
+				@SuppressWarnings("unused")
 				InputStream response = null;
 				try {
 					/*

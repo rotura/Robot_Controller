@@ -30,6 +30,7 @@ import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.javafx.BrowserView;
 
 import application.Main;
+import application.model.PeticionHttp;
 import application.model.RobotData;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -74,23 +75,13 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	@FXML
 	private LineChart<?, ?> temperature;
 
+	// Tank's control buttons
 	@FXML
-	private Button rightButton;
+	private Button rightButton, leftButton, upButton, downButton, rightRotationButton, leftRotationButton;
 
+	// Camera's control buttons
 	@FXML
-	private Button leftButton;
-
-	@FXML
-	private Button upButton;
-
-	@FXML
-	private Button downButton;
-
-	@FXML
-	private Button rightRotationButton;
-
-	@FXML
-	private Button leftRotationButton;
+	private Button camLeft, camRight, camCenter, camUp, camDown;
 
 	@FXML
 	private BarChart<?, ?> humidity;
@@ -127,57 +118,58 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	private int i = 0;
 
 	@FXML
-	private Label humText, tempText, gasText, gpsText, sensorText, controllerText;
-	
+	private Label humText, tempText, gasText, gpsText, sensorText, controllerText, camText;
+
 	@FXML
 	private Menu helpText, languajeText, controll;
-	
+
 	@FXML
 	private MenuItem esLanguaje, enLanguaje, help, moreInfo, exportData;
-	
+
 	private ResourceBundle resources;
 	private Browser browser;
 	private BrowserView view;
 	private Timeline timeline;
-	
+	private URL peticion;
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
 		this.resources = resources;
-		setLocale(new Locale("es","ES"));
-		
+		setLocale(new Locale("es", "ES"));
+
 		esLanguaje.setOnAction(new EventHandler<ActionEvent>() {
-		    @Override
-		    public void handle(ActionEvent event) {
-		    	setLocale(new Locale("es","ES"));
-		    }
+			@Override
+			public void handle(ActionEvent event) {
+				setLocale(new Locale("es", "ES"));
+			}
 		});
-		
+
 		enLanguaje.setOnAction(new EventHandler<ActionEvent>() {
-		    @Override
-		    public void handle(ActionEvent event) {
-		    	setLocale(new Locale("en","EN"));
-		    }
+			@Override
+			public void handle(ActionEvent event) {
+				setLocale(new Locale("en", "EN"));
+			}
 		});
-		
+
 		exportData.setOnAction(new EventHandler<ActionEvent>() {
-			  
-	          @Override
-	          public void handle(ActionEvent event) {
-	              FileChooser fileChooser = new FileChooser();
-	  
-	              //Set extension filter
-	              FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.csv");
-	              fileChooser.getExtensionFilters().add(extFilter);
-	              
-	              //Show save file dialog
-	              File file = fileChooser.showSaveDialog(null);
-	              
-	              if(file != null){
-	                  RobotData.getInstance().exportData(file);
-	              }
-	          }
-	      });
+
+			@Override
+			public void handle(ActionEvent event) {
+				FileChooser fileChooser = new FileChooser();
+
+				// Set extension filter
+				FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("CSV files (*.csv)", "*.csv");
+				fileChooser.getExtensionFilters().add(extFilter);
+
+				// Show save file dialog
+				File file = fileChooser.showSaveDialog(null);
+
+				if (file != null) {
+					RobotData.getInstance().exportData(file);
+				}
+			}
+		});
 		// Datos de prueba para rellenar gráficas
 		chargeData();
 
@@ -213,10 +205,12 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		humAxis.setLowerBound(0);
 		humAxis.setUpperBound(60);
 		humAxis.setTickUnit(10);
-		humAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(gasAxis) {  @Override
-	        public String toString(Number object) {
-	            return (object.intValue()) + "%";
-	        }});
+		humAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(gasAxis) {
+			@Override
+			public String toString(Number object) {
+				return (object.intValue()) + "%";
+			}
+		});
 
 		// Sensor de Temeperatura
 		XYChart.Series series1 = new XYChart.Series<>();
@@ -248,14 +242,16 @@ public class mainController implements Initializable, MapComponentInitializedLis
 
 		// Set ranges
 		tmpAxis.setAutoRanging(false);
-		tmpAxis.setLowerBound(-30);
-		tmpAxis.setUpperBound(50);
-		tmpAxis.setTickUnit(10);
-		tmpAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(gasAxis) {  @Override
-	        public String toString(Number object) {
-	            return (object.intValue()) + "ºC";
-	        }});
-		
+		tmpAxis.setLowerBound(-10);
+		tmpAxis.setUpperBound(40);
+		tmpAxis.setTickUnit(2);
+		tmpAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(gasAxis) {
+			@Override
+			public String toString(Number object) {
+				return (object.intValue()) + "ºC";
+			}
+		});
+
 		temperature.getData().addAll(series1, series2, series3);
 
 		// Sensor de Gas
@@ -274,10 +270,13 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		gasAxis.setLowerBound(0);
 		gasAxis.setUpperBound(10);
 		gasAxis.setTickUnit(1);
-		gasAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(gasAxis) {  @Override
-        public String toString(Number object) {
-            return (object.intValue()) + "%";
-        }});	}
+		gasAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(gasAxis) {
+			@Override
+			public String toString(Number object) {
+				return (object.intValue()) + "%";
+			}
+		});
+	}
 
 	/*
 	 * Set all images of the buttons
@@ -296,13 +295,24 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		imageViewRight.setFitWidth(50);
 		// Le ponemos la imagen al boton
 		rightButton.setGraphic(imageViewRight);
-
+		rightButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				addTarea("d");
+			}
+		});
 		// Boton izquierdo
 		image = new Image(getClass().getResourceAsStream("/images/leftArrow.png"));
 		ImageView imageViewLeft = new ImageView(image);
 		imageViewLeft.setFitHeight(50);
 		imageViewLeft.setFitWidth(50);
 		leftButton.setGraphic(imageViewLeft);
+		leftButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				addTarea("a");
+			}
+		});
 
 		// Boton arriba
 		image = new Image(getClass().getResourceAsStream("/images/upArrow.png"));
@@ -310,6 +320,12 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		imageViewUp.setFitHeight(50);
 		imageViewUp.setFitWidth(50);
 		upButton.setGraphic(imageViewUp);
+		upButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				addTarea("w");
+			}
+		});
 
 		// Boton abajo
 		image = new Image(getClass().getResourceAsStream("/images/downArrow.png"));
@@ -317,6 +333,12 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		imageViewDown.setFitHeight(50);
 		imageViewDown.setFitWidth(50);
 		downButton.setGraphic(imageViewDown);
+		downButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				addTarea("s");
+			}
+		});
 
 		// Boton rotar derecha
 		image = new Image(getClass().getResourceAsStream("/images/rightRotationArrow.png"));
@@ -331,6 +353,73 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		imageViewLeftR.setFitHeight(50);
 		imageViewLeftR.setFitWidth(50);
 		leftRotationButton.setGraphic(imageViewLeftR);
+
+		// Boton camara derecho
+		image = new Image(getClass().getResourceAsStream("/images/rightArrow.png"));
+		ImageView imageViewRightC = new ImageView(image);
+		imageViewRightC.setFitHeight(50);
+		imageViewRightC.setFitWidth(50);
+		camRight.setGraphic(imageViewRightC);
+		camRight.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				//peticionHttp("http://192.168.4.1/-camx");
+				addTarea("-camx");
+			}
+		});
+		// Boton camara izquierdo
+		image = new Image(getClass().getResourceAsStream("/images/leftArrow.png"));
+		ImageView imageViewLeftC = new ImageView(image);
+		imageViewLeftC.setFitHeight(50);
+		imageViewLeftC.setFitWidth(50);
+		camLeft.setGraphic(imageViewLeftC);
+		camLeft.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				//peticionHttp("http://192.168.4.1/+camx");
+				addTarea("+camx");
+			}
+		});
+
+		// Boton camara arriba
+		image = new Image(getClass().getResourceAsStream("/images/upArrow.png"));
+		ImageView imageViewUpC = new ImageView(image);
+		imageViewUpC.setFitHeight(50);
+		imageViewUpC.setFitWidth(50);
+		camUp.setGraphic(imageViewUpC);
+		camUp.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				//peticionHttp("http://192.168.4.1/+camy");
+				addTarea("+camy");
+			}
+		});
+
+		// Boton camara abajo
+		image = new Image(getClass().getResourceAsStream("/images/downArrow.png"));
+		ImageView imageViewDownC = new ImageView(image);
+		imageViewDownC.setFitHeight(50);
+		imageViewDownC.setFitWidth(50);
+		camDown.setGraphic(imageViewDownC);
+		camDown.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+					//peticionHttp("http://192.168.4.1/-camy");
+				addTarea("-camy");
+			}
+		});
+
+		camCenter.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				/*peticionHttp("http://192.168.4.1/camx=90");
+				long t = System.currentTimeMillis();
+				while(System.currentTimeMillis() - t < 1500){}
+				peticionHttp("http://192.168.4.1/camy=120");*/
+				addTarea("camx=90");
+				addTarea("camy=120");
+			}
+		});
 	}
 
 	/*
@@ -340,21 +429,25 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		this.mainApp = mainApp;
 	}
 
+	private void peticionHttp(String pet) {
+		new PeticionHttp(pet).start();
+	}
+
 	@SuppressWarnings("unchecked")
 	private void dataDaemon() throws IOException {
 
 		timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), ev -> {
 
-			//Datos para prueba
+			// Datos para prueba
 			RobotData.getInstance().setBut(new Random().nextInt(10));
 			RobotData.getInstance().setMet(new Random().nextInt(10));
 			RobotData.getInstance().setCo2(new Random().nextInt(10));
-			RobotData.getInstance().setTemp(new Random().nextInt(50) -25);
-			RobotData.getInstance().setHum(new Random().nextInt(50));
+			//RobotData.getInstance().setTemp(new Random().nextInt(50) - 25);
+			//RobotData.getInstance().setHum(new Random().nextInt(50));
 			RobotData.getInstance().setDate(new Date());
-			RobotData.getInstance().setRobotPos(RobotData.getInstance().getNewPos()[0] , RobotData.getInstance().getNewPos()[1]);
-			
-			
+			RobotData.getInstance().setRobotPos(RobotData.getInstance().getNewPos()[0],
+					RobotData.getInstance().getNewPos()[1]);
+
 			// Actualizamos el texto plano
 			humL.setText(RobotData.getInstance().getHum() + "%");
 			tempL.setText(RobotData.getInstance().getTemp() + "ºC");
@@ -385,6 +478,9 @@ public class mainController implements Initializable, MapComponentInitializedLis
 					.setYValue((Number) temperature.getData().get(0).getData().get(5).getYValue());
 			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(5)
 					.setYValue(RobotData.getInstance().getTempMax());
+			
+			tmpAxis.setLowerBound(RobotData.getInstance().getTempMin()-1);
+			tmpAxis.setUpperBound(RobotData.getInstance().getTempMax()+1);
 
 			// Temp Actual
 			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(0)
@@ -419,25 +515,22 @@ public class mainController implements Initializable, MapComponentInitializedLis
 				n.setStyle("-fx-bar-fill: #ff6b00;");
 			}
 			((XYChart.Series<String, Number>) gas.getData().get(1)).getData().get(0)
-			.setYValue(RobotData.getInstance().getBut());
+					.setYValue(RobotData.getInstance().getBut());
 
 			// Co2
 			for (Node n : gas.lookupAll(".default-color2.chart-bar")) {
 				n.setStyle("-fx-bar-fill: #a75acb;");
 			}
 			((XYChart.Series<String, Number>) gas.getData().get(2)).getData().get(0)
-			.setYValue(RobotData.getInstance().getCo2());
+					.setYValue(RobotData.getInstance().getCo2());
 
 			// Met
 			for (Node n : gas.lookupAll(".default-color0.chart-bar")) {
 				n.setStyle("-fx-bar-fill: #ccd100;");
 			}
 			((XYChart.Series<String, Number>) gas.getData().get(0)).getData().get(0)
-			.setYValue(RobotData.getInstance().getMet());
+					.setYValue(RobotData.getInstance().getMet());
 
-			
-
-			
 		}));
 		timeline.setCycleCount(Integer.MAX_VALUE);
 		timeline.play();
@@ -473,7 +566,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		map.addUIEventHandler(UIEventType.click, (JSObject obj) -> {
 			LatLong ll = new LatLong((JSObject) obj.getMember("latLng"));
 
-			Parent root ;
+			Parent root;
 			try {
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(Main.class.getResource("ui/MapPopUp.fxml"));
@@ -514,46 +607,51 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		}
 	}
 
-	private void setLocale(Locale locale){
+	private void setLocale(Locale locale) {
 		resources = ResourceBundle.getBundle("bundles.MyBundle", locale);
-		
+
 		humText.setText(resources.getString("Hum"));
 		tempText.setText(resources.getString("Temp"));
 		gasText.setText(resources.getString("Gas"));
 		gpsText.setText(resources.getString("GPS"));
 		sensorText.setText(resources.getString("sensor"));
 		controllerText.setText(resources.getString("tankControll"));
+		camText.setText(resources.getString("camControl"));
 		helpText.setText(resources.getString("Help"));
 		languajeText.setText(resources.getString("languajeText"));
 		esLanguaje.setText(resources.getString("esLanguaje"));
 		enLanguaje.setText(resources.getString("enLanguaje"));
-		
+
 		exportData.setText(resources.getString("exportData"));
 		controll.setText(resources.getString("controll"));
 		help.setText(resources.getString("Help"));
 		moreInfo.setText(resources.getString("moreInfo"));
-		
-		
+
 		gas.setTitle(resources.getString("Gas"));
 		temperature.setTitle(resources.getString("Temp"));
 		humidity.setTitle(resources.getString("Hum"));
 	}
-	
-	private void setCamera() {	
+
+	private void setCamera() {
 		browser = new Browser();
 		view = new BrowserView(browser);
-		view.setPadding(new Insets(2,2,2,2));
+		view.setPadding(new Insets(2, 2, 2, 2));
 		sensorPane.add(view, 2, 1);
 		browser.loadURL("http://localhost:8180/cam.html");
-		/*WebView b = new WebView();
-		WebEngine webEngine = b.getEngine();
-		webEngine.load("http://localhost:8180/cam.html");
-		sensorPane.add(b, 2, 1);*/
+		/*
+		 * WebView b = new WebView(); WebEngine webEngine = b.getEngine();
+		 * webEngine.load("http://localhost:8180/cam.html"); sensorPane.add(b,
+		 * 2, 1);
+		 */
 	}
-	
-	public void stopFunctions(){
+
+	public void stopFunctions() {
 		timeline.stop();
 		browser.dispose();
 	}
 
+	public void addTarea(String t){
+		RobotData.getInstance().addTarea(t);
+	}
+	
 }

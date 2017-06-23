@@ -26,6 +26,7 @@ import com.lynden.gmapsfx.javascript.object.LatLong;
 import com.lynden.gmapsfx.javascript.object.MapOptions;
 import com.lynden.gmapsfx.javascript.object.Marker;
 import com.lynden.gmapsfx.javascript.object.MarkerOptions;
+import com.sun.jndi.toolkit.url.Uri;
 import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.javafx.BrowserView;
 
@@ -55,10 +56,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.GridPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -295,24 +299,40 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		imageViewRight.setFitWidth(50);
 		// Le ponemos la imagen al boton
 		rightButton.setGraphic(imageViewRight);
-		rightButton.setOnAction(new EventHandler<ActionEvent>() {
+		rightButton.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
-			public void handle(ActionEvent event) {
+			public void handle(MouseEvent event) {
 				addTarea("d");
+				DropShadow shadow = new DropShadow();
+				rightButton.setEffect(shadow);
 			}
 		});
+		rightButton.addEventHandler(MouseEvent.MOUSE_RELEASED, 
+			    new EventHandler<MouseEvent>() {
+	        @Override public void handle(MouseEvent e) {
+	        	rightButton.setEffect(null);
+	    }
+	});
 		// Boton izquierdo
 		image = new Image(getClass().getResourceAsStream("/images/leftArrow.png"));
 		ImageView imageViewLeft = new ImageView(image);
 		imageViewLeft.setFitHeight(50);
 		imageViewLeft.setFitWidth(50);
 		leftButton.setGraphic(imageViewLeft);
-		leftButton.setOnAction(new EventHandler<ActionEvent>() {
+		leftButton.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
-			public void handle(ActionEvent event) {
+			public void handle(MouseEvent event) {
 				addTarea("a");
+				DropShadow shadow = new DropShadow();
+				leftButton.setEffect(shadow);
 			}
 		});
+		leftButton.addEventHandler(MouseEvent.MOUSE_RELEASED, 
+			    new EventHandler<MouseEvent>() {
+	        @Override public void handle(MouseEvent e) {
+	        	leftButton.setEffect(null);
+	    }
+	});
 
 		// Boton arriba
 		image = new Image(getClass().getResourceAsStream("/images/upArrow.png"));
@@ -320,12 +340,20 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		imageViewUp.setFitHeight(50);
 		imageViewUp.setFitWidth(50);
 		upButton.setGraphic(imageViewUp);
-		upButton.setOnAction(new EventHandler<ActionEvent>() {
+		upButton.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
-			public void handle(ActionEvent event) {
+			public void handle(MouseEvent event) {
 				addTarea("w");
+				DropShadow shadow = new DropShadow();
+				upButton.setEffect(shadow);
 			}
 		});
+		upButton.addEventHandler(MouseEvent.MOUSE_RELEASED, 
+			    new EventHandler<MouseEvent>() {
+	        @Override public void handle(MouseEvent e) {
+	        	upButton.setEffect(null);
+	    }
+	});
 
 		// Boton abajo
 		image = new Image(getClass().getResourceAsStream("/images/downArrow.png"));
@@ -333,12 +361,20 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		imageViewDown.setFitHeight(50);
 		imageViewDown.setFitWidth(50);
 		downButton.setGraphic(imageViewDown);
-		downButton.setOnAction(new EventHandler<ActionEvent>() {
+		downButton.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
-			public void handle(ActionEvent event) {
+			public void handle(MouseEvent event) {
 				addTarea("s");
+				DropShadow shadow = new DropShadow();
+				downButton.setEffect(shadow);
 			}
 		});
+		downButton.addEventHandler(MouseEvent.MOUSE_RELEASED, 
+			    new EventHandler<MouseEvent>() {
+	        @Override public void handle(MouseEvent e) {
+	        	downButton.setEffect(null);
+	    }
+	});
 
 		// Boton rotar derecha
 		image = new Image(getClass().getResourceAsStream("/images/rightRotationArrow.png"));
@@ -346,6 +382,19 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		imageViewRightR.setFitHeight(50);
 		imageViewRightR.setFitWidth(50);
 		rightRotationButton.setGraphic(imageViewRightR);
+		rightRotationButton.setOnMousePressed(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				DropShadow shadow = new DropShadow();
+				rightRotationButton.setEffect(shadow);
+			}
+		});
+		rightRotationButton.addEventHandler(MouseEvent.MOUSE_RELEASED, 
+			    new EventHandler<MouseEvent>() {
+	        @Override public void handle(MouseEvent e) {
+	        	rightRotationButton.setEffect(null);
+	    }
+	});
 
 		// Boton rotar izquierda
 		image = new Image(getClass().getResourceAsStream("/images/leftRotationArrow.png"));
@@ -353,6 +402,19 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		imageViewLeftR.setFitHeight(50);
 		imageViewLeftR.setFitWidth(50);
 		leftRotationButton.setGraphic(imageViewLeftR);
+		leftRotationButton.setOnMousePressed(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				DropShadow shadow = new DropShadow();
+				leftRotationButton.setEffect(shadow);
+			}
+		});
+		leftRotationButton.addEventHandler(MouseEvent.MOUSE_RELEASED, 
+			    new EventHandler<MouseEvent>() {
+	        @Override public void handle(MouseEvent e) {
+	        	leftRotationButton.setEffect(null);
+	    }
+	});
 
 		// Boton camara derecho
 		image = new Image(getClass().getResourceAsStream("/images/rightArrow.png"));
@@ -360,26 +422,40 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		imageViewRightC.setFitHeight(50);
 		imageViewRightC.setFitWidth(50);
 		camRight.setGraphic(imageViewRightC);
-		camRight.setOnAction(new EventHandler<ActionEvent>() {
+		camRight.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
-			public void handle(ActionEvent event) {
-				//peticionHttp("http://192.168.4.1/-camx");
+			public void handle(MouseEvent event) {
 				addTarea("-camx");
+				DropShadow shadow = new DropShadow();
+				camRight.setEffect(shadow);
 			}
 		});
+		camRight.addEventHandler(MouseEvent.MOUSE_RELEASED, 
+			    new EventHandler<MouseEvent>() {
+	        @Override public void handle(MouseEvent e) {
+	        	camRight.setEffect(null);
+	    }
+	});
 		// Boton camara izquierdo
 		image = new Image(getClass().getResourceAsStream("/images/leftArrow.png"));
 		ImageView imageViewLeftC = new ImageView(image);
 		imageViewLeftC.setFitHeight(50);
 		imageViewLeftC.setFitWidth(50);
 		camLeft.setGraphic(imageViewLeftC);
-		camLeft.setOnAction(new EventHandler<ActionEvent>() {
+		camLeft.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
-			public void handle(ActionEvent event) {
-				//peticionHttp("http://192.168.4.1/+camx");
+			public void handle(MouseEvent event) {
 				addTarea("+camx");
+				DropShadow shadow = new DropShadow();
+				camLeft.setEffect(shadow);
 			}
 		});
+		camLeft.addEventHandler(MouseEvent.MOUSE_RELEASED, 
+			    new EventHandler<MouseEvent>() {
+	        @Override public void handle(MouseEvent e) {
+	        	camLeft.setEffect(null);
+	    }
+	});
 
 		// Boton camara arriba
 		image = new Image(getClass().getResourceAsStream("/images/upArrow.png"));
@@ -387,13 +463,20 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		imageViewUpC.setFitHeight(50);
 		imageViewUpC.setFitWidth(50);
 		camUp.setGraphic(imageViewUpC);
-		camUp.setOnAction(new EventHandler<ActionEvent>() {
+		camUp.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
-			public void handle(ActionEvent event) {
-				//peticionHttp("http://192.168.4.1/+camy");
+			public void handle(MouseEvent event) {
 				addTarea("+camy");
+				DropShadow shadow = new DropShadow();
+				camUp.setEffect(shadow);
 			}
 		});
+		camUp.addEventHandler(MouseEvent.MOUSE_RELEASED, 
+			    new EventHandler<MouseEvent>() {
+	        @Override public void handle(MouseEvent e) {
+	        	camUp.setEffect(null);
+	    }
+	});
 
 		// Boton camara abajo
 		image = new Image(getClass().getResourceAsStream("/images/downArrow.png"));
@@ -401,25 +484,47 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		imageViewDownC.setFitHeight(50);
 		imageViewDownC.setFitWidth(50);
 		camDown.setGraphic(imageViewDownC);
-		camDown.setOnAction(new EventHandler<ActionEvent>() {
+		camDown.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
-			public void handle(ActionEvent event) {
-					//peticionHttp("http://192.168.4.1/-camy");
+			public void handle(MouseEvent event) {
 				addTarea("-camy");
+				DropShadow shadow = new DropShadow();
+				camDown.setEffect(shadow);
 			}
 		});
+		camDown.addEventHandler(MouseEvent.MOUSE_RELEASED, 
+			    new EventHandler<MouseEvent>() {
+	        @Override public void handle(MouseEvent e) {
+	        	camDown.setEffect(null);
+	    }
+	});
 
-		camCenter.setOnAction(new EventHandler<ActionEvent>() {
+//		camCenter.setOnAction(new EventHandler<ActionEvent>() {
+//			@Override
+//			public void handle(ActionEvent event) {
+//				/*peticionHttp("http://192.168.4.1/camx=90");
+//				long t = System.currentTimeMillis();
+//				while(System.currentTimeMillis() - t < 1500){}
+//				peticionHttp("http://192.168.4.1/camy=120");*/
+//				addTarea("camx=90");
+//				addTarea("camy=120");
+//			}
+//		});
+		camCenter.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
-			public void handle(ActionEvent event) {
-				/*peticionHttp("http://192.168.4.1/camx=90");
-				long t = System.currentTimeMillis();
-				while(System.currentTimeMillis() - t < 1500){}
-				peticionHttp("http://192.168.4.1/camy=120");*/
+			public void handle(MouseEvent event) {
 				addTarea("camx=90");
 				addTarea("camy=120");
+				DropShadow shadow = new DropShadow();
+				camCenter.setEffect(shadow);
 			}
 		});
+		camCenter.addEventHandler(MouseEvent.MOUSE_RELEASED, 
+			    new EventHandler<MouseEvent>() {
+	        @Override public void handle(MouseEvent e) {
+	    		camCenter.setEffect(null);
+	    }
+	});
 	}
 
 	/*
@@ -637,7 +742,17 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		view = new BrowserView(browser);
 		view.setPadding(new Insets(2, 2, 2, 2));
 		sensorPane.add(view, 2, 1);
-		browser.loadURL("http://localhost:8180/cam.html");
+		String location = null;
+		try {
+			location = new File(
+			        System.getProperty("user.dir") + File.separator + "src"
+			        		+ File.separator + "resources" + File.separator + "cam.html"
+			).toURI().toURL().toExternalForm();
+		} catch (MalformedURLException e) {
+			System.out.println("Error obteniendo la url");
+		}
+        
+        browser.loadURL(location);
 		/*
 		 * WebView b = new WebView(); WebEngine webEngine = b.getEngine();
 		 * webEngine.load("http://localhost:8180/cam.html"); sensorPane.add(b,

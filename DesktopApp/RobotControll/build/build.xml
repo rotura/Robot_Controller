@@ -20,87 +20,97 @@
 		<mkdir dir="externalLibs" />
 	
 		<copy todir="externalLibs">
-			<fileset dir="Z:\git\TFG\DesktopApp\RobotControll\libs">
-				<filename name="jxbrowser-mac-6.12.jar"/>
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="C:\Users\Enol\.m2\repository\org\objenesis\objenesis\1.0">
-				<filename name="objenesis-1.0.jar"/>
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="Z:\git\TFG\DesktopApp\RobotControll\libs">
-				<filename name="jxbrowser-win-6.12.jar"/>
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="C:\Users\Enol\.m2\repository\junit\junit\4.10">
-				<filename name="junit-4.10.jar"/>
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="Z:\git\TFG\DesktopApp\RobotControll\libs">
-				<filename name="jxbrowser-6.12.jar"/>
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="Z:\git\TFG\DesktopApp\RobotControll\libs">
-				<filename name="license.jar"/>
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="Z:\git\TFG\DesktopApp\RobotControll\libs">
-				<filename name="slf4j-api-1.7.2.jar"/>
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="Z:\git\TFG\DesktopApp\RobotControll\libs">
-				<filename name="jxbrowser-linux64-6.12.jar"/>
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="C:\Users\Enol\.m2\repository\org\hamcrest\hamcrest-core\1.1">
-				<filename name="hamcrest-core-1.1.jar"/>
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="Z:\git\TFG\DesktopApp\RobotControll\libs">
+			<fileset dir="C:\Users\enolm\Desktop\TFG\codigoNuevo\DesktopApp\RobotControll\libs">
 				<filename name="jxbrowser-linux32-6.12.jar"/>
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="C:\Users\Enol\.m2\repository\org\mockito\mockito-core\1.9.5">
-				<filename name="mockito-core-1.9.5.jar"/>
+			<fileset dir="C:\Users\enolm\Desktop\TFG\codigoNuevo\DesktopApp\RobotControll\libs">
+				<filename name="jxbrowser-linux64-6.12.jar"/>
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="Z:\git\TFG\DesktopApp\RobotControll\libs">
+			<fileset dir="C:\Users\enolm\Desktop\TFG\codigoNuevo\DesktopApp\RobotControll\libs">
+				<filename name="jxbrowser-6.12.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\enolm\Desktop\TFG\codigoNuevo\DesktopApp\RobotControll\libs">
+				<filename name="licence.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\enolm\Desktop\TFG\codigoNuevo\DesktopApp\RobotControll\libs">
 				<filename name="bridj-0.6.2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\enolm\.m2\repository\org\hamcrest\hamcrest-core\1.1">
+				<filename name="hamcrest-core-1.1.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\enolm\.m2\repository\junit\junit\4.10">
+				<filename name="junit-4.10.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\enolm\Desktop\TFG\codigoNuevo\DesktopApp\RobotControll\libs">
+				<filename name="slf4j-api-1.7.2.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Program Files\eclipse\plugins">
+				<filename name="org.hamcrest.core_1.3.0.v201303031735.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Program Files\eclipse\plugins\org.junit_4.12.0.v201504281640">
+				<filename name="junit.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\enolm\Desktop\TFG\codigoNuevo\DesktopApp\RobotControll\libs">
+				<filename name="jxbrowser-win-6.12.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\enolm\Desktop\TFG\codigoNuevo\DesktopApp\RobotControll\libs">
+				<filename name="jxbrowser-mac-6.12.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\enolm\.m2\repository\org\objenesis\objenesis\1.0">
+				<filename name="objenesis-1.0.jar"/>
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\enolm\.m2\repository\org\mockito\mockito-core\1.9.5">
+				<filename name="mockito-core-1.9.5.jar"/>
 			</fileset>
 		</copy>
 	
 		<mkdir dir="project" />
 		<copy todir="project">
-			<fileset dir="Z:\git\TFG\DesktopApp\RobotControll">
+			<fileset dir="C:\Users\enolm\Desktop\TFG\codigoNuevo\DesktopApp\RobotControll">
 				<include name="src/**" />
 			</fileset>
 		</copy>
 	
 		<mkdir dir="projectRefs" />
 		<copy todir="projectRefs">
-			<fileset dir="Z:\git\TFG\DesktopApp\rterp-GMapsFX-141f023">
-				<include name="GMapsFX\src\main\resources/**" />
-			</fileset>
-		</copy>
-		<copy todir="projectRefs">
-			<fileset dir="Z:\git\TFG\DesktopApp\rterp-GMapsFX-141f023">
+			<fileset dir="C:\Users\enolm\Desktop\TFG\codigoNuevo\DesktopApp\rterp-GMapsFX-141f023">
 				<include name="GMapsFX\src\main\java/**" />
 			</fileset>
 		</copy>
 		<copy todir="projectRefs">
-			<fileset dir="Z:\git\TFG\DesktopApp\rterp-GMapsFX-141f023">
+			<fileset dir="C:\Users\enolm\Desktop\TFG\codigoNuevo\DesktopApp\rterp-GMapsFX-141f023">
 				<include name="GMapsFX\src\test\java/**" />
+			</fileset>
+		</copy>
+		<copy todir="projectRefs">
+			<fileset dir="C:\Users\enolm\Desktop\TFG\codigoNuevo\DesktopApp\rterp-GMapsFX-141f023">
+				<include name="GMapsFX\src\main\resources/**" />
 			</fileset>
 		</copy>
 	</target>
@@ -115,14 +125,16 @@
 			<fileset dir="externalLibs">
 				<include name="jxbrowser-win-6.12.jar"/>
 				<include name="mockito-core-1.9.5.jar"/>
-				<include name="jxbrowser-linux32-6.12.jar"/>
 				<include name="slf4j-api-1.7.2.jar"/>
 				<include name="jxbrowser-6.12.jar"/>
-				<include name="license.jar"/>
+				<include name="org.hamcrest.core_1.3.0.v201303031735.jar"/>
+				<include name="hamcrest-core-1.1.jar"/>
+				<include name="junit.jar"/>
+				<include name="bridj-0.6.2.jar"/>
+				<include name="jxbrowser-linux32-6.12.jar"/>
+				<include name="licence.jar"/>
 				<include name="jxbrowser-linux64-6.12.jar"/>
 				<include name="junit-4.10.jar"/>
-				<include name="hamcrest-core-1.1.jar"/>
-				<include name="bridj-0.6.2.jar"/>
 				<include name="jxbrowser-mac-6.12.jar"/>
 				<include name="objenesis-1.0.jar"/>
 			</fileset>

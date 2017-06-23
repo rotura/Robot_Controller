@@ -8,22 +8,21 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="TankControll.jar" size="140026" download="eager" />
-    <jar href="libs\bootstrap.jar" size="33902" download="eager" />
+    <jar href="TankControll.jar" size="147026" download="eager" />
     <jar href="libs\bridj-0.6.2.jar" size="878674" download="eager" />
-    <jar href="libs\commons-daemon.jar" size="24283" download="eager" />
     <jar href="libs\hamcrest-core-1.1.jar" size="76643" download="eager" />
     <jar href="libs\junit-4.10.jar" size="253160" download="eager" />
+    <jar href="libs\junit.jar" size="314932" download="eager" />
     <jar href="libs\jxbrowser-6.12.jar" size="1046204" download="eager" />
     <jar href="libs\jxbrowser-linux32-6.12.jar" size="46206958" download="eager" />
     <jar href="libs\jxbrowser-linux64-6.12.jar" size="45874168" download="eager" />
     <jar href="libs\jxbrowser-mac-6.12.jar" size="51368361" download="eager" />
     <jar href="libs\jxbrowser-win-6.12.jar" size="35825479" download="eager" />
-    <jar href="libs\license.jar" size="484" download="eager" />
+    <jar href="libs\licence.jar" size="509" download="eager" />
     <jar href="libs\mockito-core-1.9.5.jar" size="1500011" download="eager" />
     <jar href="libs\objenesis-1.0.jar" size="28569" download="eager" />
+    <jar href="libs\org.hamcrest.core_1.3.0.v201303031735.jar" size="55198" download="eager" />
     <jar href="libs\slf4j-api-1.7.2.jar" size="26083" download="eager" />
-    <jar href="libs\tomcat-juli.jar" size="41137" download="eager" />
   </resources>
   <jfx:javafx-desc  width="0" height="0" main-class="application.Main"  name="Robot Controller" />
   <update check="background"/>

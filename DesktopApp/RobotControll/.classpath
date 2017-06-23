@@ -5,12 +5,12 @@
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/GMapsFX"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="libs/bridj-0.6.2.jar"/>
-	<classpathentry kind="lib" path="libs/jxbrowser-6.12.jar"/>
-	<classpathentry kind="lib" path="libs/jxbrowser-linux32-6.12.jar"/>
-	<classpathentry kind="lib" path="libs/jxbrowser-linux64-6.12.jar"/>
-	<classpathentry kind="lib" path="libs/jxbrowser-mac-6.12.jar"/>
-	<classpathentry kind="lib" path="libs/jxbrowser-win-6.12.jar"/>
 	<classpathentry kind="lib" path="libs/slf4j-api-1.7.2.jar"/>
 	<classpathentry kind="lib" path="libs/licence.jar"/>
+	<classpathentry kind="lib" path="C:/Users/enolm/Desktop/TFG/codigoNuevo/DesktopApp/RobotControll/libs/jxbrowser-6.14.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/enolm/Desktop/TFG/codigoNuevo/DesktopApp/RobotControll/libs/jxbrowser-linux32-6.14.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/enolm/Desktop/TFG/codigoNuevo/DesktopApp/RobotControll/libs/jxbrowser-linux64-6.14.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/enolm/Desktop/TFG/codigoNuevo/DesktopApp/RobotControll/libs/jxbrowser-mac-6.14.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/enolm/Desktop/TFG/codigoNuevo/DesktopApp/RobotControll/libs/jxbrowser-win32-6.14.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

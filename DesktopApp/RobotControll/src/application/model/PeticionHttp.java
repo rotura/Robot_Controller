@@ -2,8 +2,6 @@ package application.model;
 
 import java.net.URL;
 
-import application.Main;
-
 public class PeticionHttp extends Thread {
 
 	String peticion;

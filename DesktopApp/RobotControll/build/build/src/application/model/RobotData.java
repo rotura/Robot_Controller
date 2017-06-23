@@ -5,7 +5,9 @@ import javafx.collections.ObservableList;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.concurrent.Semaphore;
 
 import com.lynden.gmapsfx.javascript.object.LatLong;
 
@@ -30,11 +32,30 @@ public class RobotData {
 	private double tempMin = Integer.MAX_VALUE;
 
 	private final static RobotData instance = new RobotData();
+	public final Semaphore sem = new Semaphore(1);
+	public final ArrayList<String> tareas = new ArrayList<String>();
+	private boolean reset = false;
+	
+	public ArrayList<String> getTareas() {
+		if(reset)
+			tareas.clear();
+		reset=true;
+		return tareas;
+	}
 
 	public static RobotData getInstance() {
 		return instance;
 	}
 
+	public void addTarea(String t){
+		if(reset){
+			tareas.clear();
+			reset=false;
+		}
+		if(tareas.size() < 10)
+			tareas.add(t);
+	}
+	
 	public RobotData() {
 		temp = FXCollections.observableArrayList();
 		temp.add(0.0);
