@@ -5,8 +5,9 @@ import javafx.collections.ObservableList;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.concurrent.Semaphore;
 
 import com.lynden.gmapsfx.javascript.object.LatLong;
@@ -33,13 +34,10 @@ public class RobotData {
 
 	private final static RobotData instance = new RobotData();
 	public final Semaphore sem = new Semaphore(1);
-	public final ArrayList<String> tareas = new ArrayList<String>();
-	private boolean reset = false;
+	public final Queue<String> tareas = new LinkedList<String>();
+	private String lastTask = "";
 	
-	public ArrayList<String> getTareas() {
-		if(reset)
-			tareas.clear();
-		reset=true;
+	public Queue<String> getTareas() {
 		return tareas;
 	}
 
@@ -48,12 +46,10 @@ public class RobotData {
 	}
 
 	public void addTarea(String t){
-		if(reset){
-			tareas.clear();
-			reset=false;
-		}
-		if(tareas.size() < 10)
+		if(!lastTask.equals(tareas.peek())){
 			tareas.add(t);
+			lastTask = t;	
+		}
 	}
 	
 	public RobotData() {
@@ -76,8 +72,8 @@ public class RobotData {
 		date.add(new Date());
 		
 		robotPos = FXCollections.observableArrayList();
-		newPos[0] = 43.538762;
-		newPos[1] = -5.698957;
+		newPos[0] = 0.0;
+		newPos[1] = 0.0;
 		robotPos.add(newPos);
 	}
 
@@ -191,19 +187,23 @@ public class RobotData {
 	@SuppressWarnings("deprecation")
 	private char[] getContent() {
 		String data = "Date;Temp;Hum;Met;But;Co2;Lat;Lon";
-		for(int i = 0; i < hum.size(); i++){
+		for(int i = 0; i < date.size(); i++){
 			data += "\n" + date.get(i).toGMTString() + ";"
-					+ temp.get(i).toString() + ";"
-					+ hum.get(i).toString() + ";"
-					+ met.get(i).toString() + ";"
-					+ but.get(i).toString() + ";"
-					+ co2.get(i).toString() + ";"
-					+ robotPos.get(i)[0] + ";"
-					+ robotPos.get(i)[1] + ";"
+					+ (temp.size() >i? temp.get(i).toString(): 0) + ";"
+					+ (hum.size() >i? hum.get(i).toString(): 0) + ";"
+					+ (met.size() >i? met.get(i).toString(): 1) + ";"
+					+ (but.size() >i? but.get(i).toString(): 0) + ";"
+					+ (co2.size() >i? co2.get(i).toString(): 0) + ";"
+					+ (robotPos.size() >i? robotPos.get(i)[0]: 0) + ";"
+					+ (robotPos.size() >i? robotPos.get(i)[1]: 0) + ";"
 					;
 		}
 		System.out.println(data);
 		return data.toCharArray();
+	}
+
+	public String getTarea() {
+		return tareas.poll();
 	}
 
 }

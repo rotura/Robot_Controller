@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
@@ -135,6 +136,9 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	private BrowserView view;
 	private Timeline timeline;
 	private URL peticion;
+	private boolean state = false;
+	private boolean buttonPressed = false;
+	private Date date;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -185,11 +189,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 
 		// Añadir Cámara
 		setCamera();
-		try {
-			dataDaemon();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
 	}
 
 	/*
@@ -200,7 +200,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		// Sensor de humedad
 		XYChart.Series hum = new XYChart.Series();
 		hum.setName("Percentage of humidity");
-		hum.getData().add(new XYChart.Data("10:00", 23));
+		hum.getData().add(new XYChart.Data("10:00", 0));
 
 		humidity.getData().addAll(hum);
 
@@ -219,30 +219,30 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		// Sensor de Temeperatura
 		XYChart.Series series1 = new XYChart.Series<>();
 		series1.setName("Temp Max");
-		series1.getData().add(new XYChart.Data<>("10:01", 28));
-		series1.getData().add(new XYChart.Data<>("10:02", 30));
-		series1.getData().add(new XYChart.Data<>("10:03", 30));
-		series1.getData().add(new XYChart.Data<>("10:04", 32));
-		series1.getData().add(new XYChart.Data<>("10:05", 32));
-		series1.getData().add(new XYChart.Data<>("10:06", 32));
+		series1.getData().add(new XYChart.Data<>("1", 0));
+		series1.getData().add(new XYChart.Data<>("2", 0));
+		series1.getData().add(new XYChart.Data<>("3", 0));
+		series1.getData().add(new XYChart.Data<>("4", 0));
+		series1.getData().add(new XYChart.Data<>("5", 0));
+		series1.getData().add(new XYChart.Data<>("6", 0));
 
 		XYChart.Series series2 = new XYChart.Series<>();
 		series2.setName("Temp Act");
-		series2.getData().add(new XYChart.Data<>("10:01", 28));
-		series2.getData().add(new XYChart.Data<>("10:02", 30));
-		series2.getData().add(new XYChart.Data<>("10:03", 29));
-		series2.getData().add(new XYChart.Data<>("10:04", 32));
-		series2.getData().add(new XYChart.Data<>("10:05", 25));
-		series2.getData().add(new XYChart.Data<>("10:06", 27));
+		series2.getData().add(new XYChart.Data<>("1", 0));
+		series2.getData().add(new XYChart.Data<>("2", 0));
+		series2.getData().add(new XYChart.Data<>("3", 0));
+		series2.getData().add(new XYChart.Data<>("4", 0));
+		series2.getData().add(new XYChart.Data<>("5", 0));
+		series2.getData().add(new XYChart.Data<>("6", 0));
 
 		XYChart.Series series3 = new XYChart.Series<>();
 		series3.setName("Temp Min");
-		series3.getData().add(new XYChart.Data<>("10:01", 28));
-		series3.getData().add(new XYChart.Data<>("10:02", 28));
-		series3.getData().add(new XYChart.Data<>("10:03", 28));
-		series3.getData().add(new XYChart.Data<>("10:04", 28));
-		series3.getData().add(new XYChart.Data<>("10:05", 25));
-		series3.getData().add(new XYChart.Data<>("10:06", 25));
+		series3.getData().add(new XYChart.Data<>("1", 0));
+		series3.getData().add(new XYChart.Data<>("2", 0));
+		series3.getData().add(new XYChart.Data<>("3", 0));
+		series3.getData().add(new XYChart.Data<>("4", 0));
+		series3.getData().add(new XYChart.Data<>("5", 0));
+		series3.getData().add(new XYChart.Data<>("6", 0));
 
 		// Set ranges
 		tmpAxis.setAutoRanging(false);
@@ -262,9 +262,9 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		XYChart.Series met = new XYChart.Series<>();
 		XYChart.Series but = new XYChart.Series<>();
 		XYChart.Series co2 = new XYChart.Series<>();
-		met.getData().add(new XYChart.Data("Metano", 5));
-		but.getData().add(new XYChart.Data("Butano", 3));
-		co2.getData().add(new XYChart.Data("CO2", 1));
+		met.getData().add(new XYChart.Data("Metano", 0));
+		but.getData().add(new XYChart.Data("Butano", 0));
+		co2.getData().add(new XYChart.Data("CO2", 0));
 
 		gas.setLegendVisible(false);
 		gas.getData().addAll(met, but, co2);
@@ -287,10 +287,10 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	 * 
 	 */
 	private void setImages() {
+
 		// Boton derecho
 		Image image = new Image(getClass().getResourceAsStream("/images/rightArrow.png")); // Cargamos
-		// la
-		// imagen
+		// la imagen
 		ImageView imageViewRight = new ImageView(image); // Creamos el imageView
 		// con la imagen
 		// anterior
@@ -302,17 +302,23 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		rightButton.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				addTarea("d");
-				DropShadow shadow = new DropShadow();
-				rightButton.setEffect(shadow);
+				if (!buttonPressed) {
+					addTarea("d");
+					DropShadow shadow = new DropShadow();
+					rightButton.setEffect(shadow);
+					buttonPressed = true;
+				}
 			}
 		});
-		rightButton.addEventHandler(MouseEvent.MOUSE_RELEASED, 
-			    new EventHandler<MouseEvent>() {
-	        @Override public void handle(MouseEvent e) {
-	        	rightButton.setEffect(null);
-	    }
-	});
+		rightButton.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				addTarea("x");
+				rightButton.setEffect(null);
+				buttonPressed = false;
+			}
+		});
+
 		// Boton izquierdo
 		image = new Image(getClass().getResourceAsStream("/images/leftArrow.png"));
 		ImageView imageViewLeft = new ImageView(image);
@@ -322,17 +328,21 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		leftButton.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				addTarea("a");
-				DropShadow shadow = new DropShadow();
-				leftButton.setEffect(shadow);
+				if (!buttonPressed) {
+					addTarea("a");
+					DropShadow shadow = new DropShadow();
+					leftButton.setEffect(shadow);
+				}
 			}
 		});
-		leftButton.addEventHandler(MouseEvent.MOUSE_RELEASED, 
-			    new EventHandler<MouseEvent>() {
-	        @Override public void handle(MouseEvent e) {
-	        	leftButton.setEffect(null);
-	    }
-	});
+		leftButton.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				addTarea("x");
+				leftButton.setEffect(null);
+				buttonPressed = false;
+			}
+		});
 
 		// Boton arriba
 		image = new Image(getClass().getResourceAsStream("/images/upArrow.png"));
@@ -343,17 +353,21 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		upButton.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				addTarea("w");
-				DropShadow shadow = new DropShadow();
-				upButton.setEffect(shadow);
+				if (!buttonPressed) {
+					addTarea("w");
+					DropShadow shadow = new DropShadow();
+					upButton.setEffect(shadow);
+				}
 			}
 		});
-		upButton.addEventHandler(MouseEvent.MOUSE_RELEASED, 
-			    new EventHandler<MouseEvent>() {
-	        @Override public void handle(MouseEvent e) {
-	        	upButton.setEffect(null);
-	    }
-	});
+		upButton.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				addTarea("x");
+				upButton.setEffect(null);
+				buttonPressed = false;
+			}
+		});
 
 		// Boton abajo
 		image = new Image(getClass().getResourceAsStream("/images/downArrow.png"));
@@ -364,17 +378,21 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		downButton.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				addTarea("s");
-				DropShadow shadow = new DropShadow();
-				downButton.setEffect(shadow);
+				if (!buttonPressed) {
+					addTarea("s");
+					DropShadow shadow = new DropShadow();
+					downButton.setEffect(shadow);
+				}
 			}
 		});
-		downButton.addEventHandler(MouseEvent.MOUSE_RELEASED, 
-			    new EventHandler<MouseEvent>() {
-	        @Override public void handle(MouseEvent e) {
-	        	downButton.setEffect(null);
-	    }
-	});
+		downButton.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				addTarea("x");
+				downButton.setEffect(null);
+				buttonPressed = false;
+			}
+		});
 
 		// Boton rotar derecha
 		image = new Image(getClass().getResourceAsStream("/images/rightRotationArrow.png"));
@@ -385,16 +403,21 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		rightRotationButton.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				DropShadow shadow = new DropShadow();
-				rightRotationButton.setEffect(shadow);
+				if (!buttonPressed) {
+					addTarea("e");
+					DropShadow shadow = new DropShadow();
+					rightRotationButton.setEffect(shadow);
+				}
 			}
 		});
-		rightRotationButton.addEventHandler(MouseEvent.MOUSE_RELEASED, 
-			    new EventHandler<MouseEvent>() {
-	        @Override public void handle(MouseEvent e) {
-	        	rightRotationButton.setEffect(null);
-	    }
-	});
+		rightRotationButton.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				addTarea("x");
+				rightRotationButton.setEffect(null);
+				buttonPressed = false;
+			}
+		});
 
 		// Boton rotar izquierda
 		image = new Image(getClass().getResourceAsStream("/images/leftRotationArrow.png"));
@@ -405,16 +428,21 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		leftRotationButton.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				DropShadow shadow = new DropShadow();
-				leftRotationButton.setEffect(shadow);
+				if (!buttonPressed) {
+					addTarea("q");
+					DropShadow shadow = new DropShadow();
+					leftRotationButton.setEffect(shadow);
+				}
 			}
 		});
-		leftRotationButton.addEventHandler(MouseEvent.MOUSE_RELEASED, 
-			    new EventHandler<MouseEvent>() {
-	        @Override public void handle(MouseEvent e) {
-	        	leftRotationButton.setEffect(null);
-	    }
-	});
+		leftRotationButton.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				addTarea("x");
+				leftRotationButton.setEffect(null);
+				buttonPressed = false;
+			}
+		});
 
 		// Boton camara derecho
 		image = new Image(getClass().getResourceAsStream("/images/rightArrow.png"));
@@ -430,12 +458,12 @@ public class mainController implements Initializable, MapComponentInitializedLis
 				camRight.setEffect(shadow);
 			}
 		});
-		camRight.addEventHandler(MouseEvent.MOUSE_RELEASED, 
-			    new EventHandler<MouseEvent>() {
-	        @Override public void handle(MouseEvent e) {
-	        	camRight.setEffect(null);
-	    }
-	});
+		camRight.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				camRight.setEffect(null);
+			}
+		});
 		// Boton camara izquierdo
 		image = new Image(getClass().getResourceAsStream("/images/leftArrow.png"));
 		ImageView imageViewLeftC = new ImageView(image);
@@ -450,12 +478,12 @@ public class mainController implements Initializable, MapComponentInitializedLis
 				camLeft.setEffect(shadow);
 			}
 		});
-		camLeft.addEventHandler(MouseEvent.MOUSE_RELEASED, 
-			    new EventHandler<MouseEvent>() {
-	        @Override public void handle(MouseEvent e) {
-	        	camLeft.setEffect(null);
-	    }
-	});
+		camLeft.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				camLeft.setEffect(null);
+			}
+		});
 
 		// Boton camara arriba
 		image = new Image(getClass().getResourceAsStream("/images/upArrow.png"));
@@ -471,12 +499,12 @@ public class mainController implements Initializable, MapComponentInitializedLis
 				camUp.setEffect(shadow);
 			}
 		});
-		camUp.addEventHandler(MouseEvent.MOUSE_RELEASED, 
-			    new EventHandler<MouseEvent>() {
-	        @Override public void handle(MouseEvent e) {
-	        	camUp.setEffect(null);
-	    }
-	});
+		camUp.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				camUp.setEffect(null);
+			}
+		});
 
 		// Boton camara abajo
 		image = new Image(getClass().getResourceAsStream("/images/downArrow.png"));
@@ -492,24 +520,13 @@ public class mainController implements Initializable, MapComponentInitializedLis
 				camDown.setEffect(shadow);
 			}
 		});
-		camDown.addEventHandler(MouseEvent.MOUSE_RELEASED, 
-			    new EventHandler<MouseEvent>() {
-	        @Override public void handle(MouseEvent e) {
-	        	camDown.setEffect(null);
-	    }
-	});
+		camDown.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				camDown.setEffect(null);
+			}
+		});
 
-//		camCenter.setOnAction(new EventHandler<ActionEvent>() {
-//			@Override
-//			public void handle(ActionEvent event) {
-//				/*peticionHttp("http://192.168.4.1/camx=90");
-//				long t = System.currentTimeMillis();
-//				while(System.currentTimeMillis() - t < 1500){}
-//				peticionHttp("http://192.168.4.1/camy=120");*/
-//				addTarea("camx=90");
-//				addTarea("camy=120");
-//			}
-//		});
 		camCenter.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
@@ -519,12 +536,13 @@ public class mainController implements Initializable, MapComponentInitializedLis
 				camCenter.setEffect(shadow);
 			}
 		});
-		camCenter.addEventHandler(MouseEvent.MOUSE_RELEASED, 
-			    new EventHandler<MouseEvent>() {
-	        @Override public void handle(MouseEvent e) {
-	    		camCenter.setEffect(null);
-	    }
-	});
+
+		camCenter.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent e) {
+				camCenter.setEffect(null);
+			}
+		});
 	}
 
 	/*
@@ -538,20 +556,15 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		new PeticionHttp(pet).start();
 	}
 
-	@SuppressWarnings("unchecked")
+	/**
+	 * This method start a daemon to update all graphics
+	 * 
+	 * @throws IOException
+	 */
+	@SuppressWarnings({ "unchecked", "deprecation" })
 	private void dataDaemon() throws IOException {
-
+		date = new Date();
 		timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), ev -> {
-
-			// Datos para prueba
-			RobotData.getInstance().setBut(new Random().nextInt(10));
-			RobotData.getInstance().setMet(new Random().nextInt(10));
-			RobotData.getInstance().setCo2(new Random().nextInt(10));
-			//RobotData.getInstance().setTemp(new Random().nextInt(50) - 25);
-			//RobotData.getInstance().setHum(new Random().nextInt(50));
-			RobotData.getInstance().setDate(new Date());
-			RobotData.getInstance().setRobotPos(RobotData.getInstance().getNewPos()[0],
-					RobotData.getInstance().getNewPos()[1]);
 
 			// Actualizamos el texto plano
 			humL.setText(RobotData.getInstance().getHum() + "%");
@@ -565,55 +578,57 @@ public class mainController implements Initializable, MapComponentInitializedLis
 			// Humedad
 			((XYChart.Series<String, Number>) humidity.getData().get(0)).getData().get(0)
 					.setYValue(RobotData.getInstance().getHum());
+			((XYChart.Series<String, Number>) humidity.getData().get(0)).getData().get(0)
+					.setXValue(RobotData.getInstance().getHum() + "%");
 
 			for (Node n : humidity.lookupAll(".default-color0.chart-bar")) {
 				n.setStyle("-fx-bar-fill: blue;");
 			}
 
 			// Temp Max
-			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(0)
-					.setYValue((Number) temperature.getData().get(0).getData().get(1).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(1)
-					.setYValue((Number) temperature.getData().get(0).getData().get(2).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(2)
-					.setYValue((Number) temperature.getData().get(0).getData().get(3).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(3)
-					.setYValue((Number) temperature.getData().get(0).getData().get(4).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(4)
-					.setYValue((Number) temperature.getData().get(0).getData().get(5).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(5)
-					.setYValue(RobotData.getInstance().getTempMax());
-			
-			tmpAxis.setLowerBound(RobotData.getInstance().getTempMin()-1);
-			tmpAxis.setUpperBound(RobotData.getInstance().getTempMax()+1);
+						((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(0)
+								.setYValue((Number) temperature.getData().get(0).getData().get(1).getYValue());
+						((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(1)
+								.setYValue((Number) temperature.getData().get(0).getData().get(2).getYValue());
+						((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(2)
+								.setYValue((Number) temperature.getData().get(0).getData().get(3).getYValue());
+						((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(3)
+								.setYValue((Number) temperature.getData().get(0).getData().get(4).getYValue());
+						((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(4)
+								.setYValue((Number) temperature.getData().get(0).getData().get(5).getYValue());
+						((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(5)
+								.setYValue(RobotData.getInstance().getTempMax());
 
-			// Temp Actual
-			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(0)
-					.setYValue((Number) temperature.getData().get(1).getData().get(1).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(1)
-					.setYValue((Number) temperature.getData().get(1).getData().get(2).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(2)
-					.setYValue((Number) temperature.getData().get(1).getData().get(3).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(3)
-					.setYValue((Number) temperature.getData().get(1).getData().get(4).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(4)
-					.setYValue((Number) temperature.getData().get(1).getData().get(5).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(5)
-					.setYValue(RobotData.getInstance().getTemp());
+						tmpAxis.setLowerBound(RobotData.getInstance().getTempMin() - 1);
+						tmpAxis.setUpperBound(RobotData.getInstance().getTempMax() + 1);
 
-			// Temp Min
-			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(0)
-					.setYValue((Number) temperature.getData().get(2).getData().get(1).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(1)
-					.setYValue((Number) temperature.getData().get(2).getData().get(2).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(2)
-					.setYValue((Number) temperature.getData().get(2).getData().get(3).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(3)
-					.setYValue((Number) temperature.getData().get(2).getData().get(4).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(4)
-					.setYValue((Number) temperature.getData().get(2).getData().get(5).getYValue());
-			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(5)
-					.setYValue(RobotData.getInstance().getTempMin());
+						// Temp Actual
+						((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(0)
+								.setYValue((Number) temperature.getData().get(1).getData().get(1).getYValue());
+						((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(1)
+								.setYValue((Number) temperature.getData().get(1).getData().get(2).getYValue());
+						((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(2)
+								.setYValue((Number) temperature.getData().get(1).getData().get(3).getYValue());
+						((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(3)
+								.setYValue((Number) temperature.getData().get(1).getData().get(4).getYValue());
+						((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(4)
+								.setYValue((Number) temperature.getData().get(1).getData().get(5).getYValue());
+						((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(5)
+								.setYValue(RobotData.getInstance().getTemp());
+
+						// Temp Min
+						((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(0)
+								.setYValue((Number) temperature.getData().get(2).getData().get(1).getYValue());
+						((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(1)
+								.setYValue((Number) temperature.getData().get(2).getData().get(2).getYValue());
+						((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(2)
+								.setYValue((Number) temperature.getData().get(2).getData().get(3).getYValue());
+						((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(3)
+								.setYValue((Number) temperature.getData().get(2).getData().get(4).getYValue());
+						((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(4)
+								.setYValue((Number) temperature.getData().get(2).getData().get(5).getYValue());;
+						((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(5)
+								.setYValue(RobotData.getInstance().getTempMin());
 
 			// Butano
 			for (Node n : gas.lookupAll(".default-color1.chart-bar")) {
@@ -649,7 +664,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	@Override
 	public void mapInitialized() {
 		// Set the position of the map.
-		LatLong robotPosition = new LatLong(43.538762, -5.698957);
+		LatLong robotPosition = new LatLong(0.0, 0.0);
 
 		// Set the initial properties of the map.
 		MapOptions mapOptions = new MapOptions();
@@ -670,26 +685,26 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		// Añadimos un evento al pulsar en el mapa
 		map.addUIEventHandler(UIEventType.click, (JSObject obj) -> {
 			LatLong ll = new LatLong((JSObject) obj.getMember("latLng"));
+			if (state) {
+				Parent root;
+				try {
+					FXMLLoader loader = new FXMLLoader();
+					loader.setLocation(Main.class.getResource("ui/MapPopUp.fxml"));
+					loader.setController(new mapPopUpController());
+					root = loader.load();
+					Stage stage = new Stage();
+					stage.setTitle(resources.getString("locationWindow"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					((mapPopUpController) loader.getController()).setLatLon(ll);
+					((mapPopUpController) loader.getController()).setResource(resources);
+					;
+					stage.show();
 
-			Parent root;
-			try {
-				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(Main.class.getResource("ui/MapPopUp.fxml"));
-				loader.setController(new mapPopUpController());
-				root = loader.load();
-				Stage stage = new Stage();
-				stage.setTitle(resources.getString("locationWindow"));
-				stage.setScene(new Scene(root));
-				stage.initModality(Modality.APPLICATION_MODAL);
-				((mapPopUpController) loader.getController()).setLatLon(ll);
-				((mapPopUpController) loader.getController()).setResource(resources);
-				;
-				stage.show();
-
-			} catch (IOException e) {
-				e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
-
 		});
 
 	}
@@ -701,12 +716,93 @@ public class mainController implements Initializable, MapComponentInitializedLis
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource("ui/help.fxml"));
 			loader.setController(new helpController());
+			loader.setResources(resources);
 			root = loader.load();
 			Stage stage = new Stage();
 			stage.setTitle(resources.getString("Help"));
 			stage.setScene(new Scene(root));
+			stage.initModality(Modality.APPLICATION_MODAL);
 			stage.show();
 
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@FXML
+	private void startConexion() {
+		t = new Timer();
+		state = true;
+
+		// Start webDaemon
+		t.scheduleAtFixedRate(new TimerTask() {
+			public void run() {
+				InputStream response = null;
+				try {
+					RobotData.getInstance().sem.acquire();
+					String uri = "http://192.168.4.1/";
+					String tarea = RobotData.getInstance().getTarea();
+					if (tarea != null) {
+						uri += tarea + ";";
+						uri = uri.substring(0, uri.length() - 1);
+					}
+					System.out.println(uri + "\n");
+					URL url = new URL(uri);
+					response = url.openStream();
+
+					try (Scanner scanner = new Scanner(response)) {
+						String responseBody = scanner.useDelimiter("\\A").next();
+						String[] data = responseBody.split(";");
+
+						if (data != null && data.length > 0) {
+							RobotData.getInstance().setDate(new Date());
+							for (String sensor : data) { // Read all sensors in
+															// the response
+								System.out.println(sensor);
+								switch (sensor.split(":")[0]) {
+								case "temp":
+									RobotData.getInstance().setTemp(Double.parseDouble(sensor.split(":")[1]));
+									break;
+
+								case "hum":
+									RobotData.getInstance().setHum(Double.parseDouble(sensor.split(":")[1]));
+									break;
+
+								case "but":
+									RobotData.getInstance().setBut(Double.parseDouble(sensor.split(":")[1]));
+									break;
+
+								case "met":
+									RobotData.getInstance().setMet(Double.parseDouble(sensor.split(":")[1]));
+									break;
+
+								case "gps":
+									RobotData.getInstance().setRobotPos((Double.parseDouble(sensor.split(":")[1])),
+											Double.parseDouble(sensor.split(":")[2]));
+									break;
+
+								case "co2":
+									RobotData.getInstance().setMet(Double.parseDouble(sensor.split(":")[1]));
+									break;
+
+								}
+							}
+						}
+					}
+				} catch (IOException e) {
+					System.out.println("Fail to connect with the robot");
+					e.printStackTrace();
+				} catch (Exception e) {
+					System.out.println("Fail to connect with the robot");
+				}
+				RobotData.getInstance().sem.release();
+			}
+		}, 0, // run first occurrence immediately
+				3500);
+
+		// Start graphic updater
+		try {
+			dataDaemon();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -737,6 +833,9 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		humidity.setTitle(resources.getString("Hum"));
 	}
 
+	/**
+	 * Start the browser with the camera script
+	 */
 	private void setCamera() {
 		browser = new Browser();
 		view = new BrowserView(browser);
@@ -744,29 +843,28 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		sensorPane.add(view, 2, 1);
 		String location = null;
 		try {
-			location = new File(
-			        System.getProperty("user.dir") + File.separator + "src"
-			        		+ File.separator + "resources" + File.separator + "cam.html"
-			).toURI().toURL().toExternalForm();
+			location = new File(System.getProperty("user.dir") + File.separator + "src" + File.separator + "resources"
+					+ File.separator + "cam.html").toURI().toURL().toExternalForm();
 		} catch (MalformedURLException e) {
-			System.out.println("Error obteniendo la url");
+			System.out.println("Cant find URL");
 		}
-        
-        browser.loadURL(location);
-		/*
-		 * WebView b = new WebView(); WebEngine webEngine = b.getEngine();
-		 * webEngine.load("http://localhost:8180/cam.html"); sensorPane.add(b,
-		 * 2, 1);
-		 */
+
+		browser.loadURL(location);
 	}
 
+	/**
+	 * Stop all threads
+	 */
 	public void stopFunctions() {
-		timeline.stop();
+		if (state) {
+			timeline.stop();
+			t.cancel();
+		}
 		browser.dispose();
 	}
 
-	public void addTarea(String t){
+	public void addTarea(String t) {
 		RobotData.getInstance().addTarea(t);
 	}
-	
+
 }

@@ -376,12 +376,8 @@ void printLCD(){
   }
 
   void savePet(){
-    for(int i=0; i<15; i++){
-      String aux = getValue(peticion, ';', i) ;
-      if(aux != "" && pos < 15){
-        ejecutar(aux);
-      }
-     }
+      String aux = getValue(peticion, ';', 0) ;
+      ejecutar(aux);
     }
 
  void ejecutar(String p){
@@ -406,6 +402,8 @@ void printLCD(){
       atras();
     if (p == "d")
       derecha();
+    if (p == "x")
+      parar();
     if (p.indexOf("v=") != -1)
       setVelocidad(getValue(peticion, '=', 1));
   

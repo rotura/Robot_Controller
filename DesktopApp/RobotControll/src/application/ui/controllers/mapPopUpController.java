@@ -43,6 +43,8 @@ public class mapPopUpController implements Initializable{
 	    @Override
 	    public void handle(ActionEvent event) {
 		RobotData.getInstance().setNewPos(ll);
+		RobotData.getInstance().addTarea("gps:" + RobotData.getInstance().getLat() + ":" +
+				RobotData.getInstance().getLon());
 		Stage stage = (Stage) exit.getScene().getWindow();
 	        stage.close();
 	    }

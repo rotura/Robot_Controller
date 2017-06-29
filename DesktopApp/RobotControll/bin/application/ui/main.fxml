@@ -167,7 +167,7 @@
 								<Insets top="10.0" />
 							</padding>
 						</Label>
-						<Label fx:id="tempL" text="27ºC" GridPane.columnIndex="1" GridPane.rowIndex="1">
+						<Label fx:id="tempL" text="0ºC" GridPane.columnIndex="1" GridPane.rowIndex="1">
 							<font>
 								<Font size="18.0" />
 							</font>
@@ -175,7 +175,7 @@
 								<Insets left="10.0" />
 							</GridPane.margin>
 						</Label>
-						<Label fx:id="humL" text="21%" GridPane.columnIndex="1" GridPane.rowIndex="2">
+						<Label fx:id="humL" text="0%" GridPane.columnIndex="1" GridPane.rowIndex="2">
 							<GridPane.margin>
 								<Insets left="10.0" />
 							</GridPane.margin>
@@ -183,7 +183,7 @@
 								<Font size="18.0" />
 							</font>
 						</Label>
-						<TextArea fx:id="gasL" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="Metano - 5%&#10;Butano - 3%&#10;CO2 - 1%" GridPane.columnIndex="1" GridPane.rowIndex="3">
+						<TextArea fx:id="gasL" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="Metano - 0%&#10;Butano - 0%&#10;CO2 - 0%" GridPane.columnIndex="1" GridPane.rowIndex="3">
 							<font>
 								<Font size="18.0" />
 							</font>
@@ -204,7 +204,7 @@
 								<Insets top="10.0" />
 							</padding>
 						</Label>
-						<TextArea fx:id="gpsL" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="Lat: - 43.54654º&#10;Lon: -5.45632º" GridPane.columnIndex="1" GridPane.rowIndex="4">
+						<TextArea fx:id="gpsL" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="Lat: 0.0º&#10;Lon: 0.0º" GridPane.columnIndex="1" GridPane.rowIndex="4">
 							<font>
 								<Font size="18.0" />
 							</font>
@@ -223,12 +223,12 @@
 				<Menu fx:id="controll" mnemonicParsing="false" text="Controll">
 					<items>
 						<MenuItem fx:id="exportData" mnemonicParsing="false" text="Export Data" />
+						<MenuItem fx:id="moreInfo" mnemonicParsing="false" onAction="#startConexion" text="More Info" />
 					</items>
 				</Menu>
 				<Menu fx:id="helpText" mnemonicParsing="false" text="Help">
 					<items>
 						<MenuItem fx:id="help" mnemonicParsing="false" onAction="#openHelp" text="Tank Controll Help" />
-						<MenuItem fx:id="moreInfo" mnemonicParsing="false" text="More Info" />
 					</items>
 					<accelerator>
 						<KeyCodeCombination alt="UP" code="F1" control="UP" meta="UP" shift="UP" shortcut="UP" />

@@ -15,13 +15,13 @@
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints maxHeight="384.0" minHeight="10.0" prefHeight="364.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="384.0" minHeight="10.0" prefHeight="380.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="389.0" prefWidth="573.0">
          <children>
-            <TextArea editable="false" layoutX="10.0" layoutY="23.0" prefHeight="342.0" prefWidth="553.0" text="Help " />
+            <TextArea fx:id="helpText" editable="false" layoutX="10.0" layoutY="23.0" prefHeight="342.0" prefWidth="553.0" text="Help " />
          </children>
       </Pane>
       <GridPane GridPane.rowIndex="1">
