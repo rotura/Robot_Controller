@@ -1,5 +1,7 @@
 package application.ui.controllers;
 
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,10 +34,11 @@ import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.javafx.BrowserView;
 
 import application.Main;
-import application.model.PeticionHttp;
 import application.model.RobotData;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -53,6 +56,7 @@ import javafx.scene.chart.StackedBarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
@@ -64,7 +68,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.TilePane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
@@ -95,7 +104,10 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	private StackedBarChart<?, ?> gas;
 
 	@FXML
-	private GridPane sensorPane;
+	private TilePane sensorPane, dataPane;
+	
+	@FXML
+	private BorderPane tempPane, humPane, gasPane, gpsPane, dataBPane, cameraPane;
 
 	private Main mainApp;
 	private GoogleMap map;
@@ -124,13 +136,19 @@ public class mainController implements Initializable, MapComponentInitializedLis
 
 	@FXML
 	private Label humText, tempText, gasText, gpsText, sensorText, controllerText, camText;
+	
+	@FXML
+	private Label humPaneLabel, tempPaneLabel, gasPaneLabel, gpsPaneLabel, dataPaneLabel, cameraPaneLabel;
 
 	@FXML
 	private Menu helpText, languajeText, controll;
 
 	@FXML
 	private MenuItem esLanguaje, enLanguaje, help, moreInfo, exportData;
-
+	
+	@FXML
+	private CheckMenuItem tempView, humView, gasView, gpsView, cameraView, dataView;
+	
 	private ResourceBundle resources;
 	private Browser browser;
 	private BrowserView view;
@@ -143,6 +161,12 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
+		sensorPane.setHgap(10);
+		sensorPane.setVgap(10);
+		gpsPane.setPrefSize(50, 50);
+		sensorPane.setPrefTileHeight(400);
+		sensorPane.setPrefTileWidth(400);
+		
 		this.resources = resources;
 		setLocale(new Locale("es", "ES"));
 
@@ -153,6 +177,80 @@ public class mainController implements Initializable, MapComponentInitializedLis
 			}
 		});
 
+		
+		tempView.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if(tempView.isSelected()){
+					sensorPane.getChildren().add(tempPane);
+				}
+				else{
+					sensorPane.getChildren().remove(tempPane);
+				}
+			}
+		});
+		
+		gasView.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if(gasView.isSelected()){
+					sensorPane.getChildren().add(gasPane);
+				}
+				else{
+					sensorPane.getChildren().remove(gasPane);
+				}
+			}
+		});
+		
+		humView.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if(humView.isSelected()){
+					sensorPane.getChildren().add(humPane);
+				}
+				else{
+					sensorPane.getChildren().remove(humPane);
+				}
+			}
+		});
+		
+		
+		cameraView.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if(cameraView.isSelected()){
+					sensorPane.getChildren().add(cameraPane);
+				}
+				else{
+					sensorPane.getChildren().remove(cameraPane);
+				}
+			}
+		});
+		
+		gpsView.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if(gpsView.isSelected()){
+					sensorPane.getChildren().add(gpsPane);
+				}
+				else{
+					sensorPane.getChildren().remove(gpsPane);
+				}
+			}
+		});
+		
+		dataView.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if(dataView.isSelected()){
+					sensorPane.getChildren().add(dataBPane);
+				}
+				else{
+					sensorPane.getChildren().remove(dataBPane);
+				}
+			}
+		});
+		
 		enLanguaje.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -178,7 +276,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 				}
 			}
 		});
-		// Datos de prueba para rellenar gráficas
+		// Datos de inicio para rellenar gráficas
 		chargeData();
 
 		// Añadir el mapa
@@ -200,14 +298,14 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		// Sensor de humedad
 		XYChart.Series hum = new XYChart.Series();
 		hum.setName("Percentage of humidity");
-		hum.getData().add(new XYChart.Data("10:00", 0));
+		hum.getData().add(new XYChart.Data("%", 0));
 
 		humidity.getData().addAll(hum);
 
 		// Set ranges
 		humAxis.setAutoRanging(false);
 		humAxis.setLowerBound(0);
-		humAxis.setUpperBound(60);
+		humAxis.setUpperBound(70);
 		humAxis.setTickUnit(10);
 		humAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(gasAxis) {
 			@Override
@@ -552,83 +650,86 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		this.mainApp = mainApp;
 	}
 
-	private void peticionHttp(String pet) {
-		new PeticionHttp(pet).start();
-	}
-
 	/**
 	 * This method start a daemon to update all graphics
 	 * 
 	 * @throws IOException
 	 */
-	@SuppressWarnings({ "unchecked", "deprecation" })
+	@SuppressWarnings("unchecked")
 	private void dataDaemon() throws IOException {
 		date = new Date();
-		timeline = new Timeline(new KeyFrame(Duration.seconds(0.5), ev -> {
+		timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
 
 			// Actualizamos el texto plano
-			humL.setText(RobotData.getInstance().getHum() + "%");
-			tempL.setText(RobotData.getInstance().getTemp() + "ºC");
-			gpsL.setText("Lat: \t\t" + RobotData.getInstance().getLat() + "º\n" + "Lon: \t\t"
-					+ RobotData.getInstance().getLon() + "º");
-			gasL.setText("Metano: \t" + RobotData.getInstance().getMet() + "%\n" + "Butano: \t"
-					+ RobotData.getInstance().getBut() + "%\n" + "CO2: \t" + RobotData.getInstance().getCo2() + "%");
 
+			gasL.setText(gasL.getText() + RobotData.getInstance().getData());
+			gasL.setScrollTop(Double.MAX_VALUE);
+
+			// Opciones del marcador del robot
+			
+			MarkerOptions markerOptions = new MarkerOptions();
+			LatLong x = new LatLong(RobotData.getInstance().getLat(), RobotData.getInstance().getLon());
+			markerOptions.position(x).title("Tank position").animation(Animation.DROP).visible(true);
+
+			// Añadimos el marcador en la posición actual del tanque
+			map.removeMarker(robotPos);
+			robotPos = new Marker(markerOptions);
+			map.addMarker(robotPos);
+			
 			// Actualizamos las gráficas
 			// Humedad
 			((XYChart.Series<String, Number>) humidity.getData().get(0)).getData().get(0)
 					.setYValue(RobotData.getInstance().getHum());
-			((XYChart.Series<String, Number>) humidity.getData().get(0)).getData().get(0)
-					.setXValue(RobotData.getInstance().getHum() + "%");
 
 			for (Node n : humidity.lookupAll(".default-color0.chart-bar")) {
 				n.setStyle("-fx-bar-fill: blue;");
 			}
 
 			// Temp Max
-						((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(0)
-								.setYValue((Number) temperature.getData().get(0).getData().get(1).getYValue());
-						((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(1)
-								.setYValue((Number) temperature.getData().get(0).getData().get(2).getYValue());
-						((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(2)
-								.setYValue((Number) temperature.getData().get(0).getData().get(3).getYValue());
-						((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(3)
-								.setYValue((Number) temperature.getData().get(0).getData().get(4).getYValue());
-						((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(4)
-								.setYValue((Number) temperature.getData().get(0).getData().get(5).getYValue());
-						((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(5)
-								.setYValue(RobotData.getInstance().getTempMax());
+			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(0)
+					.setYValue((Number) temperature.getData().get(0).getData().get(1).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(1)
+					.setYValue((Number) temperature.getData().get(0).getData().get(2).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(2)
+					.setYValue((Number) temperature.getData().get(0).getData().get(3).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(3)
+					.setYValue((Number) temperature.getData().get(0).getData().get(4).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(4)
+					.setYValue((Number) temperature.getData().get(0).getData().get(5).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(0)).getData().get(5)
+					.setYValue(RobotData.getInstance().getTempMax());
 
-						tmpAxis.setLowerBound(RobotData.getInstance().getTempMin() - 1);
-						tmpAxis.setUpperBound(RobotData.getInstance().getTempMax() + 1);
+			tmpAxis.setLowerBound(RobotData.getInstance().getTempMin() - 1);
+			tmpAxis.setUpperBound(RobotData.getInstance().getTempMax() + 1);
 
-						// Temp Actual
-						((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(0)
-								.setYValue((Number) temperature.getData().get(1).getData().get(1).getYValue());
-						((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(1)
-								.setYValue((Number) temperature.getData().get(1).getData().get(2).getYValue());
-						((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(2)
-								.setYValue((Number) temperature.getData().get(1).getData().get(3).getYValue());
-						((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(3)
-								.setYValue((Number) temperature.getData().get(1).getData().get(4).getYValue());
-						((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(4)
-								.setYValue((Number) temperature.getData().get(1).getData().get(5).getYValue());
-						((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(5)
-								.setYValue(RobotData.getInstance().getTemp());
+			// Temp Actual
+			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(0)
+					.setYValue((Number) temperature.getData().get(1).getData().get(1).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(1)
+					.setYValue((Number) temperature.getData().get(1).getData().get(2).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(2)
+					.setYValue((Number) temperature.getData().get(1).getData().get(3).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(3)
+					.setYValue((Number) temperature.getData().get(1).getData().get(4).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(4)
+					.setYValue((Number) temperature.getData().get(1).getData().get(5).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(1)).getData().get(5)
+					.setYValue(RobotData.getInstance().getTemp());
 
-						// Temp Min
-						((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(0)
-								.setYValue((Number) temperature.getData().get(2).getData().get(1).getYValue());
-						((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(1)
-								.setYValue((Number) temperature.getData().get(2).getData().get(2).getYValue());
-						((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(2)
-								.setYValue((Number) temperature.getData().get(2).getData().get(3).getYValue());
-						((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(3)
-								.setYValue((Number) temperature.getData().get(2).getData().get(4).getYValue());
-						((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(4)
-								.setYValue((Number) temperature.getData().get(2).getData().get(5).getYValue());;
-						((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(5)
-								.setYValue(RobotData.getInstance().getTempMin());
+			// Temp Min
+			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(0)
+					.setYValue((Number) temperature.getData().get(2).getData().get(1).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(1)
+					.setYValue((Number) temperature.getData().get(2).getData().get(2).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(2)
+					.setYValue((Number) temperature.getData().get(2).getData().get(3).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(3)
+					.setYValue((Number) temperature.getData().get(2).getData().get(4).getYValue());
+			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(4)
+					.setYValue((Number) temperature.getData().get(2).getData().get(5).getYValue());
+			;
+			((XYChart.Series<String, Number>) temperature.getData().get(2)).getData().get(5)
+					.setYValue(RobotData.getInstance().getTempMin());
 
 			// Butano
 			for (Node n : gas.lookupAll(".default-color1.chart-bar")) {
@@ -668,7 +769,6 @@ public class mainController implements Initializable, MapComponentInitializedLis
 
 		// Set the initial properties of the map.
 		MapOptions mapOptions = new MapOptions();
-
 		mapOptions.center(robotPosition).overviewMapControl(false).panControl(false).rotateControl(false)
 				.scaleControl(false).streetViewControl(false).zoomControl(false).zoom(20);
 
@@ -677,7 +777,6 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		markerOptions.position(robotPosition).title("Tank position").animation(Animation.DROP).visible(true);
 
 		map = mapView.createMap(mapOptions, false);
-
 		// Añadimos el marcador en la posición actual del tanque
 		robotPos = new Marker(markerOptions);
 		map.addMarker(robotPos);
@@ -700,7 +799,6 @@ public class mainController implements Initializable, MapComponentInitializedLis
 					((mapPopUpController) loader.getController()).setResource(resources);
 					;
 					stage.show();
-
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -746,7 +844,6 @@ public class mainController implements Initializable, MapComponentInitializedLis
 						uri += tarea + ";";
 						uri = uri.substring(0, uri.length() - 1);
 					}
-					System.out.println(uri + "\n");
 					URL url = new URL(uri);
 					response = url.openStream();
 
@@ -758,7 +855,6 @@ public class mainController implements Initializable, MapComponentInitializedLis
 							RobotData.getInstance().setDate(new Date());
 							for (String sensor : data) { // Read all sensors in
 															// the response
-								System.out.println(sensor);
 								switch (sensor.split(":")[0]) {
 								case "temp":
 									RobotData.getInstance().setTemp(Double.parseDouble(sensor.split(":")[1]));
@@ -791,7 +887,6 @@ public class mainController implements Initializable, MapComponentInitializedLis
 					}
 				} catch (IOException e) {
 					System.out.println("Fail to connect with the robot");
-					e.printStackTrace();
 				} catch (Exception e) {
 					System.out.println("Fail to connect with the robot");
 				}
@@ -811,11 +906,6 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	private void setLocale(Locale locale) {
 		resources = ResourceBundle.getBundle("bundles.MyBundle", locale);
 
-		humText.setText(resources.getString("Hum"));
-		tempText.setText(resources.getString("Temp"));
-		gasText.setText(resources.getString("Gas"));
-		gpsText.setText(resources.getString("GPS"));
-		sensorText.setText(resources.getString("sensor"));
 		controllerText.setText(resources.getString("tankControll"));
 		camText.setText(resources.getString("camControl"));
 		helpText.setText(resources.getString("Help"));
@@ -828,9 +918,14 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		help.setText(resources.getString("Help"));
 		moreInfo.setText(resources.getString("moreInfo"));
 
-		gas.setTitle(resources.getString("Gas"));
-		temperature.setTitle(resources.getString("Temp"));
-		humidity.setTitle(resources.getString("Hum"));
+		gasPaneLabel.setText(resources.getString("Gas"));
+		tempPaneLabel.setText(resources.getString("Temp"));
+		humPaneLabel.setText(resources.getString("Hum"));
+		dataPaneLabel.setText(resources.getString("sensor"));
+		gpsPaneLabel.setText(resources.getString("GPS"));
+		cameraPaneLabel.setText(resources.getString("camera"));
+
+
 	}
 
 	/**
@@ -840,7 +935,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		browser = new Browser();
 		view = new BrowserView(browser);
 		view.setPadding(new Insets(2, 2, 2, 2));
-		sensorPane.add(view, 2, 1);
+		cameraPane.setCenter(view);;
 		String location = null;
 		try {
 			location = new File(System.getProperty("user.dir") + File.separator + "src" + File.separator + "resources"

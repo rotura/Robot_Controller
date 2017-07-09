@@ -61,5 +61,4 @@ public class mapPopUpController implements Initializable{
 		latlon.setText(resources.getString("position")+ ":\t" + ll.toString());
 
 	}
-
 }

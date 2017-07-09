@@ -19,7 +19,6 @@ public class Main extends Application {
 	FXMLLoader loader;
 	Process child;
 	public Boolean pet = false;
-
 	private final static Main instance = new Main();
 
 	public static Main getInstance() {

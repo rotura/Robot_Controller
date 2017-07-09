@@ -52,6 +52,10 @@ public class RobotData {
 		}
 	}
 	
+	public String getTarea() {
+		return tareas.poll();
+	}
+	
 	public RobotData() {
 		temp = FXCollections.observableArrayList();
 		temp.add(0.0);
@@ -189,21 +193,33 @@ public class RobotData {
 		String data = "Date;Temp;Hum;Met;But;Co2;Lat;Lon";
 		for(int i = 0; i < date.size(); i++){
 			data += "\n" + date.get(i).toGMTString() + ";"
-					+ (temp.size() >i? temp.get(i).toString(): 0) + ";"
-					+ (hum.size() >i? hum.get(i).toString(): 0) + ";"
-					+ (met.size() >i? met.get(i).toString(): 1) + ";"
-					+ (but.size() >i? but.get(i).toString(): 0) + ";"
-					+ (co2.size() >i? co2.get(i).toString(): 0) + ";"
-					+ (robotPos.size() >i? robotPos.get(i)[0]: 0) + ";"
-					+ (robotPos.size() >i? robotPos.get(i)[1]: 0) + ";"
+					+ (temp.size() >i? temp.get(i).toString(): "") + ";"
+					+ (hum.size() >i? hum.get(i).toString(): "") + ";"
+					+ (met.size() >i? met.get(i).toString(): "") + ";"
+					+ (but.size() >i? but.get(i).toString(): "") + ";"
+					+ (co2.size() >i? co2.get(i).toString(): "") + ";"
+					+ (robotPos.size() >i? robotPos.get(i)[0]: "") + ";"
+					+ (robotPos.size() >i? robotPos.get(i)[1]: "") + ";"
 					;
 		}
-		System.out.println(data);
 		return data.toCharArray();
 	}
 
-	public String getTarea() {
-		return tareas.poll();
+	@SuppressWarnings("deprecation")
+	public String getData(){
+		String data = "";
+		for(int i = 0; i < date.size(); i++){
+			data += "\n\nDate: " + date.get(i).toGMTString() + "\nTemp: "
+					+ (temp.size() >i? temp.get(i).toString(): "") + "\nHum: "
+					+ (hum.size() >i? hum.get(i).toString(): "") + "\nMet: "
+					+ (met.size() >i? met.get(i).toString(): "") + "\nBut: "
+					+ (but.size() >i? but.get(i).toString(): "") + "\nCo2: "
+					+ (co2.size() >i? co2.get(i).toString(): "") + "\nLat: "
+					+ (robotPos.size() >i? robotPos.get(i)[0]: "") + "\nLon: "
+					+ (robotPos.size() >i? robotPos.get(i)[1]: "") + "\n"
+					;
+		}
+		return data;
 	}
 
 }

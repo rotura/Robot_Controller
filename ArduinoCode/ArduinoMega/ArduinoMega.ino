@@ -1,16 +1,14 @@
-
+#include <Adafruit_Sensor.h>
+#include <DHT.h>
+#include <DHT_U.h>
 #include <Servo.h>
 #include <TinyGPS.h>
 #include <Wire.h>
+#include <LiquidCrystal_I2C.h>//Recuerda descargar la libreria en electrocrea.com  
+#define DHTPIN 52
+#define DHTTYPE DHT11  
+#define RADTODEG(R)((180.0 * R) / PI)//Converts Radians to Degrees 
 
-/*Ejemplo para controlar un LCD con un modulo Serial
-Instrucciones:
-VCC del modulo: 5v 
-GND del modulo: GND
-SCL del modulo (varia dependiendo de la placa Arduino) 
-SDA del modulo (varia dependiendo de la placa Arduino) 
-*/
-#include <LiquidCrystal_I2C.h>//Recuerda descargar la libreria en electrocrea.com    
 LiquidCrystal_I2C lcd(0x3F, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);//Direccion de LCD
 
 int IN3 = 10;    // Input3 conectada al pin 5
@@ -23,15 +21,19 @@ int ENA = 6;    // ENA conectada al pin 3 de Arduino
 
 int counter = 0;
 TinyGPS gps;
+
+DHT dht(DHTPIN, DHTTYPE);
+
 int pos = 0;
 Servo camX, camY;
 int acamX = 90;
 int acamY = 90;
 int velocidad = 255;
 
-double temp, alc, hum = 0.0;
-float lat, lon = 0.0;
+double temp, alc, but, hum = 0.0;
+float lat, lon, newLat, newLon = 0.0;
 String peticion = "";
+boolean autopilot = false;
 
 void setup()   { 
   camX.attach(5);
@@ -60,6 +62,8 @@ void setup()   {
   pinMode (ENA, OUTPUT); 
   pinMode (IN1, OUTPUT);
   pinMode (IN2, OUTPUT);
+
+  dht.begin();
 }
 
 void loop() {
@@ -86,23 +90,20 @@ void loop() {
 
 void readSensor(){
   temp = Thermistor(analogRead(0));
-  //alc = map(analogRead(1),0,1023,10,1000);
 
   int adc_MQ = analogRead(1); //Lemos la salida analógica  del MQ
   float voltaje = adc_MQ * (5.0 / 1023.0); //Convertimos la lectura en un valor de voltaje
   float Rs=2000*((5-voltaje)/voltaje);  //Calculamos Rs con un RL de 1k
   alc=0.4091*pow(Rs/5463, -1.497); // calculamos la concentración  de alcohol con la ecuación obtenida.
 
-  /*Serial.print("adc:");
-  Serial.print(adc_MQ);
-  Serial.print("    voltaje:");
-  Serial.print(voltaje);
-  Serial.print("    Rs:");
-  Serial.print(Rs);
-  Serial.print("    alcohol:");
-  Serial.print(alc);
-  Serial.println("mg/L");*/
-  //Serial.println("lat: " + String(lat));
+  hum = dht.readHumidity();
+  delay(100);
+
+  adc_MQ = analogRead(2); //Lemos la salida analógica  del MQ
+  voltaje = adc_MQ * (5.0 / 1023.0); //Convertimos la lectura en un valor de voltaje
+  Rs=2000*((5-voltaje)/voltaje);  //Calculamos Rs con un RL de 1k
+  but=0.4091*pow(Rs/5463, -1.497); // calculamos la concentración  de alcohol con la ecuación obtenida.
+
   delay(100);
   llamarGps();
 }
@@ -134,13 +135,15 @@ void llamarGps(){
     }
   }
 
-  /*if (newData)
+  if (newData)
   {
     float flat, flon;
     unsigned long age;
     gps.f_get_position(&flat, &flon, &age);
     lat = flat;
     lon = flon;
+    if(calc_dist(newLat, newLon, lat, lon) < 10 && autopilot)
+      parar();
   }
   else
   {
@@ -153,25 +156,13 @@ void llamarGps(){
   Serial.println(failed);
   }
   if (chars == 0)
-    Serial.println("** No characters received from GPS: check wiring **");*/
+    Serial.println("** No characters received from GPS: check wiring **");
 }
-
-String GetLineWIFI()
-   {   String S = "" ;
-       if (Serial1.available())
-          {    char c = Serial1.read();
-                while ( c != '\n' )            //Hasta que el caracter sea intro
-                  {     S = S + c ;
-                        delay(25) ;
-                        c = Serial1.read();
-                   }
-                 return( S ) ;
-          }
-   }
 
 void webserver(void) 
     {   
-       String resp = "hum:" + String(hum) + ";temp:" + String(temp);
+       String resp = "hum:" + String(hum) + ";temp:" + String(temp) + ";but:" + String(but) + ";met:" + String(alc)
+                      + ";gps:" + String(lat) + ":" + String(lon);
        String httpResponse;
        String httpHeader;
        httpHeader = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\n"; 
@@ -182,10 +173,7 @@ void webserver(void)
        httpResponse = httpHeader + resp + " ";
        http(httpResponse);
        delay(1);
-       Serial1.println("AT+CIPCLOSE=0");
-
-      
-       
+       Serial1.println("AT+CIPCLOSE=0");    
     }
 
 void http(String output)
@@ -272,9 +260,7 @@ void adelante(){
   analogWrite(ENA,velocidad);
   analogWrite(ENB,velocidad - 40); //Ajuste para igualar motores
   delay(500);
-  
-  analogWrite(ENA,0);
-  analogWrite(ENB,0);
+  autopilot = false;
 }
 
 void atras(){
@@ -286,10 +272,7 @@ void atras(){
 
   analogWrite(ENA,velocidad);
   analogWrite(ENB,velocidad - 40); //Ajuste para igualar motores
-  delay(500);
-  
-  analogWrite(ENA,0);
-  analogWrite(ENB,0);
+  autopilot = false;
 }
 
 void derecha(){
@@ -301,10 +284,7 @@ void derecha(){
 
   analogWrite(ENA,velocidad);
   analogWrite(ENB,velocidad - 40); //Ajuste para igualar motores
-  delay(500);
-  
-  analogWrite(ENA,0);
-  analogWrite(ENB,0);
+  autopilot = false;
 }
 
 void izquierda(){
@@ -316,10 +296,13 @@ void izquierda(){
 
   analogWrite(ENA,velocidad);
   analogWrite(ENB,velocidad - 40); //Ajuste para igualar motores
-  delay(500);
-  
+  autopilot = false;
+}
+
+void parar(){
   analogWrite(ENA,0);
   analogWrite(ENB,0);
+  autopilot = false;
 }
 
 void setVelocidad(String s){
@@ -408,3 +391,55 @@ void printLCD(){
       setVelocidad(getValue(peticion, '=', 1));
   
   }
+
+// Function to calculate the distance between two waypoints
+float calc_dist(float flat1, float flon1, float flat2, float flon2)
+{
+  float dist_calc=0;
+  float dist_calc2=0;
+  float diflat=0;
+  float diflon=0;
+
+  diflat=radians(flat2-flat1);
+  flat1=radians(flat1);
+  flat2=radians(flat2);
+  diflon=radians((flon2)-(flon1));
+
+  dist_calc = (sin(diflat/2.0)*sin(diflat/2.0));
+  dist_calc2= cos(flat1);
+  dist_calc2*=cos(flat2);
+  dist_calc2*=sin(diflon/2.0);
+  dist_calc2*=sin(diflon/2.0);
+  dist_calc +=dist_calc2;
+
+  dist_calc=(2*atan2(sqrt(dist_calc),sqrt(1.0-dist_calc)));
+
+  dist_calc*=6371000.0; //Converting to meters
+  return dist_calc;
+}
+
+float cal_angle(float X, float Z){
+  float y = X / Z;
+  float x = asin(y);
+  float z = RADTODEG (x);
+  return z;
+  
+}
+
+void movePos(){
+  float angle = 0; //SE NECESITA UN COMPAS Y LEER AQUI EL VALOR.
+  float X = calc_dist(newLat, newLon, 0.0, 0.0);
+  float Z = calc_dist(newLat, newLon, lat, lon);
+
+  float newAngle = cal_angle(X, Z);
+  while(angle != newAngle){
+    derecha();
+    delay(300);
+    parar();
+    angle= angle+1; //LEER DE NUEVO EL ANGULO DEL COMPAS
+  }
+
+  adelante();
+  autopilot = true;
+}
+
