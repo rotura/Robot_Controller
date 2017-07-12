@@ -24,6 +24,8 @@ public class RobotData {
 	private ObservableList<Double> met;
 	private ObservableList<Double> but;
 	private ObservableList<Double> co2;
+	private ObservableList<Integer> analog;
+	private ObservableList<Integer> digital;
 	private ObservableList<Date> date;
 
 	private ObservableList<double[]> robotPos;
@@ -72,6 +74,12 @@ public class RobotData {
 		co2 = FXCollections.observableArrayList();
 		co2.add(0.0);
 
+		analog = FXCollections.observableArrayList();
+		analog.add(0);
+		
+		digital = FXCollections.observableArrayList();
+		digital.add(0);
+		
 		date = FXCollections.observableArrayList();
 		date.add(new Date());
 		
@@ -190,7 +198,7 @@ public class RobotData {
 
 	@SuppressWarnings("deprecation")
 	private char[] getContent() {
-		String data = "Date;Temp;Hum;Met;But;Co2;Lat;Lon";
+		String data = "Date;Temp;Hum;Met;But;Co2;Lat;Lon;Digit;Analog";
 		for(int i = 0; i < date.size(); i++){
 			data += "\n" + date.get(i).toGMTString() + ";"
 					+ (temp.size() >i? temp.get(i).toString(): "") + ";"
@@ -200,6 +208,8 @@ public class RobotData {
 					+ (co2.size() >i? co2.get(i).toString(): "") + ";"
 					+ (robotPos.size() >i? robotPos.get(i)[0]: "") + ";"
 					+ (robotPos.size() >i? robotPos.get(i)[1]: "") + ";"
+					+ (digital.size() >i? digital.get(i).toString(): "") + ";"
+					+ (analog.size() >i? analog.get(i).toString(): "") + ";"
 					;
 		}
 		return data.toCharArray();
@@ -216,10 +226,29 @@ public class RobotData {
 					+ (but.size() >i? but.get(i).toString(): "") + "\nCo2: "
 					+ (co2.size() >i? co2.get(i).toString(): "") + "\nLat: "
 					+ (robotPos.size() >i? robotPos.get(i)[0]: "") + "\nLon: "
-					+ (robotPos.size() >i? robotPos.get(i)[1]: "") + "\n"
+					+ (robotPos.size() >i? robotPos.get(i)[1]: "") + "\nDigit: "
+					+ (digital.size() >i? digital.get(i).toString(): "") + "\nAnalog: "
+					+ (analog.size() >i? analog.get(i).toString(): "") + "\n"
+
 					;
 		}
 		return data;
+	}
+
+	public Integer getDigital() {
+		return digital.get(digital.size() - 1);
+	}
+
+	public void setDigital(Integer digital) {
+		this.digital.add(digital);
+	}
+
+	public Integer getAnalog() {
+		return analog.get(analog.size() - 1);
+	}
+
+	public void setAnalog(Integer analog) {
+		this.analog.add(analog);
 	}
 
 }

@@ -87,7 +87,7 @@ import netscape.javascript.JSObject;
 public class mainController implements Initializable, MapComponentInitializedListener {
 
 	@FXML
-	private LineChart<?, ?> temperature;
+	private LineChart<?, ?> temperature, digital, analog;
 
 	// Tank's control buttons
 	@FXML
@@ -105,9 +105,9 @@ public class mainController implements Initializable, MapComponentInitializedLis
 
 	@FXML
 	private TilePane sensorPane, dataPane;
-	
+
 	@FXML
-	private BorderPane tempPane, humPane, gasPane, gpsPane, dataBPane, cameraPane;
+	private BorderPane tempPane, humPane, gasPane, gpsPane, dataBPane, cameraPane, dPane, aPane;
 
 	private Main mainApp;
 	private GoogleMap map;
@@ -126,8 +126,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	private TextArea gpsL;
 
 	@FXML
-	private NumberAxis humAxis, tmpAxis, gasAxis;
-
+	private NumberAxis humAxis, tmpAxis, gasAxis, analogAxis, digitalAxis;
 	@FXML
 	private GoogleMapView mapView;
 
@@ -136,19 +135,20 @@ public class mainController implements Initializable, MapComponentInitializedLis
 
 	@FXML
 	private Label humText, tempText, gasText, gpsText, sensorText, controllerText, camText;
-	
+
 	@FXML
-	private Label humPaneLabel, tempPaneLabel, gasPaneLabel, gpsPaneLabel, dataPaneLabel, cameraPaneLabel;
+	private Label humPaneLabel, tempPaneLabel, gasPaneLabel, gpsPaneLabel, dataPaneLabel, cameraPaneLabel, dLabel,
+			aLabel;
 
 	@FXML
 	private Menu helpText, languajeText, controll;
 
 	@FXML
-	private MenuItem esLanguaje, enLanguaje, help, moreInfo, exportData;
-	
+	private MenuItem esLanguaje, enLanguaje, help, moreInfo, exportData, cancell;
+
 	@FXML
-	private CheckMenuItem tempView, humView, gasView, gpsView, cameraView, dataView;
-	
+	private CheckMenuItem tempView, humView, gasView, gpsView, cameraView, dataView, digitAnag;
+
 	private ResourceBundle resources;
 	private Browser browser;
 	private BrowserView view;
@@ -166,7 +166,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		gpsPane.setPrefSize(50, 50);
 		sensorPane.setPrefTileHeight(400);
 		sensorPane.setPrefTileWidth(400);
-		
+
 		this.resources = resources;
 		setLocale(new Locale("es", "ES"));
 
@@ -177,80 +177,85 @@ public class mainController implements Initializable, MapComponentInitializedLis
 			}
 		});
 
-		
 		tempView.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if(tempView.isSelected()){
+				if (tempView.isSelected()) {
 					sensorPane.getChildren().add(tempPane);
-				}
-				else{
+				} else {
 					sensorPane.getChildren().remove(tempPane);
 				}
 			}
 		});
-		
+
 		gasView.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if(gasView.isSelected()){
+				if (gasView.isSelected()) {
 					sensorPane.getChildren().add(gasPane);
-				}
-				else{
+				} else {
 					sensorPane.getChildren().remove(gasPane);
 				}
 			}
 		});
-		
+
 		humView.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if(humView.isSelected()){
+				if (humView.isSelected()) {
 					sensorPane.getChildren().add(humPane);
-				}
-				else{
+				} else {
 					sensorPane.getChildren().remove(humPane);
 				}
 			}
 		});
-		
-		
+
 		cameraView.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if(cameraView.isSelected()){
+				if (cameraView.isSelected()) {
 					sensorPane.getChildren().add(cameraPane);
-				}
-				else{
+				} else {
 					sensorPane.getChildren().remove(cameraPane);
 				}
 			}
 		});
-		
+
 		gpsView.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if(gpsView.isSelected()){
+				if (gpsView.isSelected()) {
 					sensorPane.getChildren().add(gpsPane);
-				}
-				else{
+				} else {
 					sensorPane.getChildren().remove(gpsPane);
 				}
 			}
 		});
-		
+
 		dataView.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				if(dataView.isSelected()){
+				if (dataView.isSelected()) {
 					sensorPane.getChildren().add(dataBPane);
-				}
-				else{
+				} else {
 					sensorPane.getChildren().remove(dataBPane);
 				}
 			}
 		});
-		
+
+		digitAnag.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				if (digitAnag.isSelected()) {
+					sensorPane.getChildren().add(dPane);
+					sensorPane.getChildren().add(aPane);
+				} else {
+					sensorPane.getChildren().remove(dPane);
+					sensorPane.getChildren().remove(aPane);
+				}
+			}
+		});
+
 		enLanguaje.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -378,6 +383,55 @@ public class mainController implements Initializable, MapComponentInitializedLis
 				return (object.intValue()) + "%";
 			}
 		});
+
+		// Sensor de Temeperatura
+		XYChart.Series analog = new XYChart.Series<>();
+		analog.setName("Analog");
+		analog.getData().add(new XYChart.Data<>("1", 0));
+		analog.getData().add(new XYChart.Data<>("2", 0));
+		analog.getData().add(new XYChart.Data<>("3", 0));
+		analog.getData().add(new XYChart.Data<>("4", 0));
+		analog.getData().add(new XYChart.Data<>("5", 0));
+		analog.getData().add(new XYChart.Data<>("6", 0));
+
+		// Set ranges
+		analogAxis.setAutoRanging(false);
+		analogAxis.setLowerBound(-1);
+		analogAxis.setUpperBound(1025);
+		analogAxis.setTickUnit(2);
+		analogAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(gasAxis) {
+			@Override
+			public String toString(Number object) {
+				return (object.intValue() + "");
+			}
+		});
+
+		this.analog.getData().addAll(analog);
+
+		// Sensor digital
+		XYChart.Series digit = new XYChart.Series<>();
+		digit.setName("Digital");
+		digit.getData().add(new XYChart.Data<>("1", 0));
+		digit.getData().add(new XYChart.Data<>("2", 0));
+		digit.getData().add(new XYChart.Data<>("3", 0));
+		digit.getData().add(new XYChart.Data<>("4", 0));
+		digit.getData().add(new XYChart.Data<>("5", 0));
+		digit.getData().add(new XYChart.Data<>("6", 0));
+
+		// Set ranges
+		digitalAxis.setAutoRanging(false);
+		digitalAxis.setLowerBound(-1);
+		digitalAxis.setUpperBound(2);
+		digitalAxis.setTickUnit(1);
+		digitalAxis.setTickLabelFormatter(new NumberAxis.DefaultFormatter(gasAxis) {
+			@Override
+			public String toString(Number object) {
+				return (object.intValue() + "");
+			}
+		});
+
+		digital.getData().addAll(digit);
+
 	}
 
 	/*
@@ -666,7 +720,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 			gasL.setScrollTop(Double.MAX_VALUE);
 
 			// Opciones del marcador del robot
-			
+
 			MarkerOptions markerOptions = new MarkerOptions();
 			LatLong x = new LatLong(RobotData.getInstance().getLat(), RobotData.getInstance().getLon());
 			markerOptions.position(x).title("Tank position").animation(Animation.DROP).visible(true);
@@ -675,7 +729,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 			map.removeMarker(robotPos);
 			robotPos = new Marker(markerOptions);
 			map.addMarker(robotPos);
-			
+
 			// Actualizamos las gráficas
 			// Humedad
 			((XYChart.Series<String, Number>) humidity.getData().get(0)).getData().get(0)
@@ -751,6 +805,34 @@ public class mainController implements Initializable, MapComponentInitializedLis
 			}
 			((XYChart.Series<String, Number>) gas.getData().get(0)).getData().get(0)
 					.setYValue(RobotData.getInstance().getMet());
+
+			// Analogico
+			((XYChart.Series<String, Number>) analog.getData().get(0)).getData().get(0)
+					.setYValue((Number) analog.getData().get(0).getData().get(1).getYValue());
+			((XYChart.Series<String, Number>) analog.getData().get(0)).getData().get(1)
+					.setYValue((Number) analog.getData().get(0).getData().get(2).getYValue());
+			((XYChart.Series<String, Number>) analog.getData().get(0)).getData().get(2)
+					.setYValue((Number) analog.getData().get(0).getData().get(3).getYValue());
+			((XYChart.Series<String, Number>) analog.getData().get(0)).getData().get(3)
+					.setYValue((Number) analog.getData().get(0).getData().get(4).getYValue());
+			((XYChart.Series<String, Number>) analog.getData().get(0)).getData().get(4)
+					.setYValue((Number) analog.getData().get(0).getData().get(5).getYValue());
+			((XYChart.Series<String, Number>) analog.getData().get(0)).getData().get(5)
+					.setYValue(RobotData.getInstance().getAnalog());
+
+			// Digital
+			((XYChart.Series<String, Number>) digital.getData().get(0)).getData().get(0)
+					.setYValue((Number) digital.getData().get(0).getData().get(1).getYValue());
+			((XYChart.Series<String, Number>) digital.getData().get(0)).getData().get(1)
+					.setYValue((Number) digital.getData().get(0).getData().get(2).getYValue());
+			((XYChart.Series<String, Number>) digital.getData().get(0)).getData().get(2)
+					.setYValue((Number) digital.getData().get(0).getData().get(3).getYValue());
+			((XYChart.Series<String, Number>) digital.getData().get(0)).getData().get(3)
+					.setYValue((Number) digital.getData().get(0).getData().get(4).getYValue());
+			((XYChart.Series<String, Number>) digital.getData().get(0)).getData().get(4)
+					.setYValue((Number) digital.getData().get(0).getData().get(5).getYValue());
+			((XYChart.Series<String, Number>) digital.getData().get(0)).getData().get(5)
+					.setYValue(RobotData.getInstance().getDigital());
 
 		}));
 		timeline.setCycleCount(Integer.MAX_VALUE);
@@ -830,76 +912,88 @@ public class mainController implements Initializable, MapComponentInitializedLis
 	@FXML
 	private void startConexion() {
 		t = new Timer();
-		state = true;
+		if (!state) {
 
-		// Start webDaemon
-		t.scheduleAtFixedRate(new TimerTask() {
-			public void run() {
-				InputStream response = null;
-				try {
-					RobotData.getInstance().sem.acquire();
-					String uri = "http://192.168.4.1/";
-					String tarea = RobotData.getInstance().getTarea();
-					if (tarea != null) {
-						uri += tarea + ";";
-						uri = uri.substring(0, uri.length() - 1);
-					}
-					URL url = new URL(uri);
-					response = url.openStream();
+			state = true;
 
-					try (Scanner scanner = new Scanner(response)) {
-						String responseBody = scanner.useDelimiter("\\A").next();
-						String[] data = responseBody.split(";");
+			// Start webDaemon
+			t.scheduleAtFixedRate(new TimerTask() {
+				public void run() {
+					InputStream response = null;
+					try {
+						RobotData.getInstance().sem.acquire();
+						String uri = "http://192.168.4.1/";
+						String tarea = RobotData.getInstance().getTarea();
+						if (tarea != null) {
+							uri += tarea + ";";
+							uri = uri.substring(0, uri.length() - 1);
+						}
+						URL url = new URL(uri);
+						response = url.openStream();
 
-						if (data != null && data.length > 0) {
-							RobotData.getInstance().setDate(new Date());
-							for (String sensor : data) { // Read all sensors in
-															// the response
-								switch (sensor.split(":")[0]) {
-								case "temp":
-									RobotData.getInstance().setTemp(Double.parseDouble(sensor.split(":")[1]));
-									break;
+						try (Scanner scanner = new Scanner(response)) {
+							String responseBody = scanner.useDelimiter("\\A").next();
+							String[] data = responseBody.split(";");
 
-								case "hum":
-									RobotData.getInstance().setHum(Double.parseDouble(sensor.split(":")[1]));
-									break;
+							if (data != null && data.length > 0) {
+								RobotData.getInstance().setDate(new Date());
+								for (String sensor : data) { // Read all sensors
+																// in
+																// the response
+									switch (sensor.split(":")[0]) {
+									case "temp":
+										RobotData.getInstance().setTemp(Double.parseDouble(sensor.split(":")[1]));
+										break;
 
-								case "but":
-									RobotData.getInstance().setBut(Double.parseDouble(sensor.split(":")[1]));
-									break;
+									case "hum":
+										RobotData.getInstance().setHum(Double.parseDouble(sensor.split(":")[1]));
+										break;
 
-								case "met":
-									RobotData.getInstance().setMet(Double.parseDouble(sensor.split(":")[1]));
-									break;
+									case "but":
+										RobotData.getInstance().setBut(Double.parseDouble(sensor.split(":")[1]));
+										break;
 
-								case "gps":
-									RobotData.getInstance().setRobotPos((Double.parseDouble(sensor.split(":")[1])),
-											Double.parseDouble(sensor.split(":")[2]));
-									break;
+									case "met":
+										RobotData.getInstance().setMet(Double.parseDouble(sensor.split(":")[1]));
+										break;
 
-								case "co2":
-									RobotData.getInstance().setMet(Double.parseDouble(sensor.split(":")[1]));
-									break;
+									case "gps":
+										RobotData.getInstance().setRobotPos((Double.parseDouble(sensor.split(":")[1])),
+												Double.parseDouble(sensor.split(":")[2]));
+										break;
 
+									case "co2":
+										RobotData.getInstance().setMet(Double.parseDouble(sensor.split(":")[1]));
+										break;
+
+									case "digit":
+										RobotData.getInstance().setDigital(Integer.parseInt(sensor.split(":")[1]));
+										break;
+
+									case "analog":
+										RobotData.getInstance().setAnalog(Integer.parseInt(sensor.split(":")[1]));
+										break;
+
+									}
 								}
 							}
 						}
+					} catch (IOException e) {
+						System.out.println("Fail to connect with the robot");
+					} catch (Exception e) {
+						System.out.println("Fail to connect with the robot");
 					}
-				} catch (IOException e) {
-					System.out.println("Fail to connect with the robot");
-				} catch (Exception e) {
-					System.out.println("Fail to connect with the robot");
+					RobotData.getInstance().sem.release();
 				}
-				RobotData.getInstance().sem.release();
-			}
-		}, 0, // run first occurrence immediately
-				3500);
+			}, 0, // run first occurrence immediately
+					3500);
 
-		// Start graphic updater
-		try {
-			dataDaemon();
-		} catch (IOException e) {
-			e.printStackTrace();
+			// Start graphic updater
+			try {
+				dataDaemon();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -917,6 +1011,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		controll.setText(resources.getString("controll"));
 		help.setText(resources.getString("Help"));
 		moreInfo.setText(resources.getString("moreInfo"));
+		cancell.setText(resources.getString("lessInfo"));
 
 		gasPaneLabel.setText(resources.getString("Gas"));
 		tempPaneLabel.setText(resources.getString("Temp"));
@@ -924,7 +1019,16 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		dataPaneLabel.setText(resources.getString("sensor"));
 		gpsPaneLabel.setText(resources.getString("GPS"));
 		cameraPaneLabel.setText(resources.getString("camera"));
+		dLabel.setText(resources.getString("digit"));
+		aLabel.setText(resources.getString("Anag"));
 
+		tempView.setText(resources.getString("Temp"));
+		humView.setText(resources.getString("Hum"));
+		gasView.setText(resources.getString("Gas"));
+		gpsView.setText(resources.getString("GPS"));
+		dataView.setText(resources.getString("sensor"));
+		cameraView.setText(resources.getString("camera"));
+		digitAnag.setText(resources.getString("digitAnag"));
 
 	}
 
@@ -935,7 +1039,8 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		browser = new Browser();
 		view = new BrowserView(browser);
 		view.setPadding(new Insets(2, 2, 2, 2));
-		cameraPane.setCenter(view);;
+		cameraPane.setCenter(view);
+		;
 		String location = null;
 		try {
 			location = new File(System.getProperty("user.dir") + File.separator + "src" + File.separator + "resources"
@@ -954,10 +1059,19 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		if (state) {
 			timeline.stop();
 			t.cancel();
+			state = false;
+		}
+	}
+
+	
+	public void exit(){
+		if(state){
+			timeline.stop();
+			t.cancel();
 		}
 		browser.dispose();
 	}
-
+	
 	public void addTarea(String t) {
 		RobotData.getInstance().addTarea(t);
 	}

@@ -39,7 +39,7 @@ public class Main extends Application {
 
 	@Override
 	public void stop() {
-		((mainController) loader.getController()).stopFunctions();
+		((mainController) loader.getController()).exit();
 	}
 
 	private void initAplicationView() {

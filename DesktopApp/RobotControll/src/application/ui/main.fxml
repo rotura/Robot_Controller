@@ -26,7 +26,7 @@
 <?import javafx.scene.text.Font?>
 <?import com.lynden.gmapsfx.GoogleMapView?>
 
-<BorderPane prefHeight="720.0" prefWidth="1280.0"
+<BorderPane prefHeight="720.0" prefWidth="1450.0"
 	xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
 	<left>
 		<FlowPane prefHeight="200.0" prefWidth="200.0"
@@ -177,7 +177,7 @@
 						</BorderPane>
 						<BorderPane fx:id="humPane">
 							<top>
-								<Label fx:id="humPaneLabel" text="Humidity" >
+								<Label fx:id="humPaneLabel" text="Humidity">
 									<font>
 										<Font name="System Bold" size="30.0" />
 									</font>
@@ -196,7 +196,7 @@
 						</BorderPane>
 						<BorderPane fx:id="gasPane">
 							<top>
-								<Label fx:id="gasPaneLabel" text="Gas" >
+								<Label fx:id="gasPaneLabel" text="Gas">
 									<font>
 										<Font name="System Bold" size="30.0" />
 									</font>
@@ -215,7 +215,7 @@
 						</BorderPane>
 						<BorderPane fx:id="gpsPane">
 							<top>
-								<Label fx:id="gpsPaneLabel" text="GPS" >
+								<Label fx:id="gpsPaneLabel" text="GPS">
 									<font>
 										<Font name="System Bold" size="30.0" />
 									</font>
@@ -227,7 +227,7 @@
 						</BorderPane>
 						<BorderPane fx:id="dataBPane">
 							<top>
-								<Label fx:id="dataPaneLabel" text="GPS" >
+								<Label fx:id="dataPaneLabel" text="GPS">
 									<font>
 										<Font name="System Bold" size="30.0" />
 									</font>
@@ -244,12 +244,50 @@
 						</BorderPane>
 						<BorderPane fx:id="cameraPane">
 							<top>
-								<Label fx:id="cameraPaneLabel" text="Camera" >
+								<Label fx:id="cameraPaneLabel" text="Camera">
 									<font>
 										<Font name="System Bold" size="30.0" />
 									</font>
 								</Label>
 							</top>
+						</BorderPane>
+						<BorderPane fx:id="aPane">
+							<top>
+								<Label fx:id="aLabel" text="Analog">
+									<font>
+										<Font name="System Bold" size="30.0" />
+									</font>
+								</Label>
+							</top>
+							<center>
+								<LineChart fx:id="analog">
+									<xAxis>
+										<CategoryAxis side="BOTTOM" />
+									</xAxis>
+									<yAxis>
+										<NumberAxis fx:id="analogAxis" side="LEFT" />
+									</yAxis>
+								</LineChart>
+							</center>
+						</BorderPane>
+						<BorderPane fx:id="dPane">
+							<top>
+								<Label fx:id="dLabel" text="Digital">
+									<font>
+										<Font name="System Bold" size="30.0" />
+									</font>
+								</Label>
+							</top>
+							<center>
+								<LineChart fx:id="digital">
+									<xAxis>
+										<CategoryAxis side="BOTTOM" />
+									</xAxis>
+									<yAxis>
+										<NumberAxis fx:id="digitalAxis" side="LEFT" />
+									</yAxis>
+								</LineChart>
+							</center>
 						</BorderPane>
 					</children>
 					<cursor>
@@ -268,6 +306,8 @@
 							text="Export Data" />
 						<MenuItem fx:id="moreInfo" mnemonicParsing="false"
 							onAction="#startConexion" text="More Info" />
+						<MenuItem fx:id="cancell" mnemonicParsing="false"
+							onAction="#stopFunctions" text="cancell" />
 					</items>
 				</Menu>
 				<Menu fx:id="helpText" mnemonicParsing="false" text="Help">
@@ -294,6 +334,8 @@
 							selected="true" text="GPS" />
 						<CheckMenuItem fx:id="dataView" mnemonicParsing="false"
 							selected="true" text="Raw data" />
+						<CheckMenuItem fx:id="digitAnag" mnemonicParsing="false"
+							selected="true" text="Digital/Analog" />
 					</items>
 				</Menu>
 				<Menu fx:id="languajeText" mnemonicParsing="false" text="Languaje">
