@@ -715,8 +715,13 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
 
 			// Actualizamos el texto plano
-
-			gasL.setText(gasL.getText() + RobotData.getInstance().getData());
+			String newData = RobotData.getInstance().getData();
+			if(gasL.getText().length() >= newData.length() * 10){
+				gasL.setText(gasL.getText().substring(newData.length()) + RobotData.getInstance().getData());
+			}
+			else{
+				gasL.setText(gasL.getText() + RobotData.getInstance().getData());
+			}
 			gasL.setScrollTop(Double.MAX_VALUE);
 
 			// Opciones del marcador del robot
@@ -971,7 +976,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 										break;
 
 									case "analog":
-										RobotData.getInstance().setAnalog(Integer.parseInt(sensor.split(":")[1]));
+										RobotData.getInstance().setAnalog(Integer.parseInt((sensor.split(":")[1]).trim()));
 										break;
 
 									}
@@ -981,6 +986,7 @@ public class mainController implements Initializable, MapComponentInitializedLis
 					} catch (IOException e) {
 						System.out.println("Fail to connect with the robot");
 					} catch (Exception e) {
+						e.printStackTrace();
 						System.out.println("Fail to connect with the robot");
 					}
 					RobotData.getInstance().sem.release();
@@ -1042,12 +1048,15 @@ public class mainController implements Initializable, MapComponentInitializedLis
 		cameraPane.setCenter(view);
 		;
 		String location = null;
-		try {
-			location = new File(System.getProperty("user.dir") + File.separator + "src" + File.separator + "resources"
-					+ File.separator + "cam.html").toURI().toURL().toExternalForm();
-		} catch (MalformedURLException e) {
-			System.out.println("Cant find URL");
-		}
+//		try {
+			//Para exportar
+			location = new File("").getAbsolutePath()+ File.separator + "cam.html";
+			//Para eclipse
+//			location = new File(System.getProperty("user.dir") + File.separator + "src" + File.separator + "resources"
+//					+ File.separator + "cam.html").toURI().toURL().toExternalForm();
+//		} catch (MalformedURLException e) {
+//			System.out.println("Cant find URL");
+//		}
 
 		browser.loadURL(location);
 	}

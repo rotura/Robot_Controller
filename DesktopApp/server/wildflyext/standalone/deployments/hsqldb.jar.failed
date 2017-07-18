@@ -1,8 +1,0 @@
-"{\"JBAS014879: One or more services were unable to start due to one or more indirect dependencies not being available.\" => {
-    \"Services that were unable to start:\" => [\"jboss.deployment.unit.\\\"hsqldb.jar\\\".INSTALL\"],
-    \"Services that may be the cause:\" => [
-        \"jboss.http-upgrade-registry.default\",
-        \"jboss.jdbc-driver.hsqldb_jar\",
-        \"jboss.remoting.remotingConnectorInfoService.http-remoting-connector\"
-    ]
-}}"

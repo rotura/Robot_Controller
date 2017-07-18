@@ -4,12 +4,13 @@
 #include <Servo.h>
 #include <TinyGPS.h>
 #include <Wire.h>
-#include <LiquidCrystal_I2C.h>//Recuerda descargar la libreria en electrocrea.com  
+#include "I2Cdev.h"
+#include "HMC5883L.h"
+
+
 #define DHTPIN 52
 #define DHTTYPE DHT11  
 #define RADTODEG(R)((180.0 * R) / PI)//Converts Radians to Degrees 
-
-LiquidCrystal_I2C lcd(0x3F, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE);//Direccion de LCD
 
 int IN3 = 10;    // Input3 conectada al pin 5
 int IN4 = 9;    // Input4 conectada al pin 4 
@@ -22,6 +23,13 @@ int ENA = 6;    // ENA conectada al pin 3 de Arduino
 int counter = 0;
 TinyGPS gps;
 
+//GND - GND
+//VCC - VCC
+//SDA - 20
+//SCL - 21
+HMC5883L compass;
+int16_t mx, my, mz;
+
 DHT dht(DHTPIN, DHTTYPE);
 
 int pos = 0;
@@ -30,6 +38,7 @@ int acamX = 90;
 int acamY = 90;
 int velocidad = 255;
 
+int digital, analogico = 0;
 double temp, alc, but, hum = 0.0;
 float lat, lon, newLat, newLon = 0.0;
 String peticion = "";
@@ -62,6 +71,9 @@ void setup()   {
   pinMode (ENA, OUTPUT); 
   pinMode (IN1, OUTPUT);
   pinMode (IN2, OUTPUT);
+  
+  Wire.begin();
+  compass.initialize();
 
   dht.begin();
 }
@@ -79,16 +91,21 @@ void loop() {
               webserver();
           }
    }
-  /*if(counter < 1){
-    initLCD();
-  }
-  else{
-    printLCD();  
-  }*/
+   if(autopilot){
+      if(calc_dist(newLat, newLon, lat, lon) < 5){ //Margen de 5 metros del punto señalado
+        parar();
+      }
+      else{
+        movePos(newLat, newLon);  
+      }
+   }
 }
 
 
 void readSensor(){
+  digital = digitalRead(26);
+  analogico = analogRead(A10);
+  
   temp = Thermistor(analogRead(0));
 
   int adc_MQ = analogRead(1); //Lemos la salida analógica  del MQ
@@ -162,7 +179,7 @@ void llamarGps(){
 void webserver(void) 
     {   
        String resp = "hum:" + String(hum) + ";temp:" + String(temp) + ";but:" + String(but) + ";met:" + String(alc)
-                      + ";gps:" + String(lat) + ":" + String(lon);
+                      + ";gps:" + String(lat) + ":" + String(lon) + ";digit:" + String(digital) + ";analog:" + String(analogico);
        String httpResponse;
        String httpHeader;
        httpHeader = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\n"; 
@@ -299,6 +316,30 @@ void izquierda(){
   autopilot = false;
 }
 
+void rotIzquierda(){
+  digitalWrite (IN3, HIGH);
+  digitalWrite (IN4, LOW);
+
+  digitalWrite (IN1, LOW);
+  digitalWrite (IN2, HIGH);
+
+  analogWrite(ENA,velocidad);
+  analogWrite(ENB,velocidad - 40); //Ajuste para igualar motores
+  autopilot = false;
+}
+
+void rotDerecha(){
+  digitalWrite (IN3, LOW);
+  digitalWrite (IN4, HIGH);
+
+  digitalWrite (IN1, HIGH);
+  digitalWrite (IN2, LOW);
+
+  analogWrite(ENA,velocidad);
+  analogWrite(ENB,velocidad - 40); //Ajuste para igualar motores
+  autopilot = false;
+}
+
 void parar(){
   analogWrite(ENA,0);
   analogWrite(ENB,0);
@@ -309,54 +350,6 @@ void setVelocidad(String s){
   if(s.toInt() >= 140)
     velocidad = s.toInt();
 }
-
-void printLCD(){
-  lcd.setCursor(0,0);             
-    lcd.print("Temp:");
-    lcd.print(temp);
-    lcd.print("C");
-    
-    lcd.setCursor(12,0);             
-    lcd.print("Hum:");
-    lcd.print(hum,0);
-    lcd.print("%");
-
-    lcd.setCursor(0,1);            
-    lcd.print("Alcohol: ");
-    lcd.print(alc);
-    lcd.setCursor(13,1);            
-    lcd.print(" mg/L");
-
-    lcd.setCursor(0,2);            
-    lcd.print("Lat:");
-    lcd.print(lat, 6);
-    
-    lcd.setCursor(0,3);            
-    lcd.print("Lon:");
-    lcd.print(lon, 6);
-    
-    delay (1000);//Dura 1 segundo 
-  }
-
-  void initLCD(){
-    lcd.clear();
-    lcd.setCursor(0,0);//Posiciona la primera letra despues del segmento 5 en linea 1             
-    lcd.print("Robot:");
-    lcd.setCursor(0,1);//Posiciona la primera letra despues del segmento 6 en linea 2            
-    lcd.print("Inicializando");
-    delay (1000);//Dura 1 segundo  
-    lcd.setCursor(0,1);//Posiciona la primera letra despues del segmento 6 en linea 2            
-    lcd.print("Inicializando.");
-    delay (1000);//Dura 1 segundo  
-    lcd.setCursor(0,1);//Posiciona la primera letra despues del segmento 6 en linea 2            
-    lcd.print("Inicializando..");
-    delay (1000);//Dura 1 segundo  
-    lcd.setCursor(0,1);//Posiciona la primera letra despues del segmento 6 en linea 2            
-    lcd.print("Inicializando...");
-    delay(1000);
-    lcd.clear();
-    counter++;
-  }
 
   void savePet(){
       String aux = getValue(peticion, ';', 0) ;
@@ -385,11 +378,22 @@ void printLCD(){
       atras();
     if (p == "d")
       derecha();
+    if (p == "e")
+      rotDerecha();
+    if (p == "q")
+      rotIzquierda();
     if (p == "x")
       parar();
     if (p.indexOf("v=") != -1)
       setVelocidad(getValue(peticion, '=', 1));
-  
+    if(getValue(p,':',0) == "gps"){
+      String lat = getValue(p,':',1);
+      String lon = getValue(p,':',2);
+      lat.remove(9);
+      lon.remove(9);
+     
+      movePos(lat.toFloat(), lon.toFloat());
+    }
   }
 
 // Function to calculate the distance between two waypoints
@@ -426,17 +430,33 @@ float cal_angle(float X, float Z){
   
 }
 
-void movePos(){
-  float angle = 0; //SE NECESITA UN COMPAS Y LEER AQUI EL VALOR.
+float compasAngle(){
+  //Obtener componentes del campo magnético
+    compass .getHeading(&mx, &my, &mz);
+ 
+    //Calcular ángulo el ángulo del eje X respecto al norte
+    float angulo = atan2(my, mx);
+    angulo = angulo * RAD_TO_DEG;
+    
+    if(angulo < 0) angulo = angulo + 360;
+    
+    return angulo;
+}
+
+void movePos(float lat, float lon){
+  newLat = lat;
+  newLon = lon;
+  
+  float angle = compasAngle(); //SE NECESITA UN COMPAS Y LEER AQUI EL VALOR.
   float X = calc_dist(newLat, newLon, 0.0, 0.0);
   float Z = calc_dist(newLat, newLon, lat, lon);
 
   float newAngle = cal_angle(X, Z);
-  while(angle != newAngle){
+  while(abs(angle - newAngle) < 1){ //Margen de 1 grado
     derecha();
     delay(300);
     parar();
-    angle= angle+1; //LEER DE NUEVO EL ANGULO DEL COMPAS
+    angle= compasAngle(); //LEER DE NUEVO EL ANGULO DEL COMPAS
   }
 
   adelante();

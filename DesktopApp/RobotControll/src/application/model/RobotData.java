@@ -37,7 +37,6 @@ public class RobotData {
 	private final static RobotData instance = new RobotData();
 	public final Semaphore sem = new Semaphore(1);
 	public final Queue<String> tareas = new LinkedList<String>();
-	private String lastTask = "";
 	
 	public Queue<String> getTareas() {
 		return tareas;
@@ -48,10 +47,7 @@ public class RobotData {
 	}
 
 	public void addTarea(String t){
-		if(!lastTask.equals(tareas.peek())){
 			tareas.add(t);
-			lastTask = t;	
-		}
 	}
 	
 	public String getTarea() {
